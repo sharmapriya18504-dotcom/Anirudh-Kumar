@@ -1,0 +1,364 @@
+// BLOG SYSTEM LOGIC
+// Embedded data for local "file://" protocol support (CORS fallback)
+const EMBEDDED_BLOGS = [
+  {
+    "id": 1,
+    "slug": "best-seo-expert-in-lucknow",
+    "title": "How to Choose the Best SEO Expert in Lucknow (2026 Guide)",
+    "category": "SEO",
+    "date": "Jan 10, 2026",
+    "readTime": "8 min read",
+    "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bde7?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "Lucknow ki competitive market mein sahi SEO partner chunna mushkil hai. Discover the 5 essential qualities of a top-tier expert...",
+    "content": "<h2>Why Lucknow Businesses Need a Specialist</h2><p>Lucknow is no longer a small town; it's a booming digital marketplace. From Gomti Nagar to Hazratganj, every business is fighting for that #1 spot on Google. But hiring a generic agency often leads to generic results.</p><h3>1. Local Market Knowledge</h3><p>An expert who lives in Lucknow understands the local search intent. They know that people searching for 'Best Doctor' have different needs than those searching in Delhi or Mumbai.</p><h3>2. Transparency in Reporting</h3><p>Avoid anyone who guarantees #1 rankings in 24 hours. SEO takes time. A real expert will show you technical audits, backlink profiles, and honest growth charts.</p><h2>The Anirudh Kumar Advantage</h2><p>With 5+ years of experience specifically in the UP market, I bring a data-driven approach that focuses on ROI, not just traffic.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["SEO", "Lucknow", "Local Business"]
+  },
+  {
+    "id": 2,
+    "slug": "seo-cost-in-lucknow",
+    "title": "Complete Breakdown of SEO Cost in Lucknow & Kanpur",
+    "category": "Marketing",
+    "date": "Jan 15, 2026",
+    "readTime": "10 min read",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "SEO kitna mehnga hai? Understand the pricing models, hidden costs, and how to maximize your ROI in the local market...",
+    "content": "<h2>The Big Question: Budget</h2><p>One of the most frequent questions I get is, 'Anirudh, SEO ka kharcha kitna aayega?' The answer depends on your competition. Ranking for 'Bakery in Lucknow' is easier than ranking for 'Real Estate in Lucknow'.</p><h3>Standard Pricing Models</h3><ul><li><strong>Monthly Retainer:</strong> Best for long-term growth (₹15,000 - ₹50,000).</li><li><strong>Project Based:</strong> For specific audits or technical fixes.</li><li><strong>Performance Based:</strong> Rare, but used for lead-gen focused campaigns.</li></ul><h3>What are you actually paying for?</h3><p>You're paying for high-quality content, technical optimization, premium backlink acquisition, and expert strategy. Don't fall for cheap ₹5,000 packages—they often use 'Black Hat' techniques that can get your site banned.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["Pricing", "Investment", "Business Growth"]
+  },
+  {
+    "id": 3,
+    "slug": "how-to-rank-business-in-lucknow",
+    "title": "How to Rank Your Local Business in Lucknow Maps",
+    "category": "Local SEO",
+    "date": "Jan 22, 2026",
+    "readTime": "6 min read",
+    "image": "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "Google Maps is the secret weapon for local stores. Learn how to dominate 'Near Me' searches in Gomti Nagar and beyond...",
+    "content": "<h2>The Power of 'Near Me' Searches</h2><p>Did you know that 46% of all Google searches have local intent? If you own a showroom, clinic, or restaurant in Lucknow, your Google Business Profile (GBP) is your most important asset.</p><h3>Step 1: Optimize Your Profile</h3><p>Fill out every detail. Add high-quality photos of your shop, mention your specific area (like 'Near Wave Mall'), and keep your hours updated.</p><h3>Step 2: The Review Game</h3><p>Encourage happy customers to leave reviews. Don't just get stars—ask them to mention your services in the text. This helps Google understand what you do.</p><h2>Local Citations</h2><p>List your business in local directories. Consistency in Name, Address, and Phone (NAP) across the web is crucial for map rankings.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["Local SEO", "GMB", "Google Maps"]
+  },
+  {
+    "id": 4,
+    "slug": "meta-ads-guide-2026",
+    "title": "Scaling Lucknow Startups with Meta Ads in 2026",
+    "category": "Meta Ads",
+    "date": "Feb 02, 2026",
+    "readTime": "12 min read",
+    "image": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "Facebook and Instagram ads are changing. Learn the latest targeting strategies to lower your CPL and increase sales...",
+    "content": "<h2>Why Meta Ads?</h2><p>While SEO is a marathon, Meta Ads are a sprint. If you have a new product or a limited-time offer, Instagram is where your Lucknow audience is hanging out.</p><h3>Targeting the 'Lucknow' Audience</h3><p>Don't just target 'Lucknow'. Use interest-based layering. For example, if you sell premium furniture, target people interested in 'Home Decor' who also live in high-income pins like 226010.</p><h3>Creative is King</h3><p>In 2026, the algorithm favors great content over complex settings. High-quality Reels that solve a problem perform 3x better than static images.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["Meta Ads", "Instagram", "Facebook"]
+  },
+  {
+    "id": 5,
+    "slug": "local-seo-checklist-2026",
+    "title": "The Ultimate Local SEO Checklist for 2026",
+    "category": "Local SEO",
+    "date": "Feb 10, 2026",
+    "readTime": "15 min read",
+    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "Everything you need to know to rank #1 in local search results in Lucknow, Kanpur, and beyond...",
+    "content": "<h2>2026 Local SEO Blueprint</h2><p>Local SEO is becoming more about entities and less about just keywords. Here is your checklist for this year.</p><ul><li>Google Business Profile Verification</li><li>NAP Consistency across 50+ Directories</li><li>Local Keyword Clustering</li><li>Entity Schema Implementation</li></ul><p>By following these steps, you ensure that Google sees you as the most authoritative local result.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["Checklist", "Local SEO", "Rankings"]
+  },
+  {
+    "id": 6,
+    "slug": "google-ads-vs-meta-ads",
+    "title": "Google Ads vs Meta Ads: Which is Better for Your Local Business?",
+    "category": "Marketing",
+    "date": "Feb 18, 2026",
+    "readTime": "11 min read",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "Choosing between intent-based search ads and interruption-based social ads for your Lucknow brand...",
+    "content": "<h2>The Clash of the Titans</h2><p>Should you spend your budget on Google or Meta? The answer lies in your goal.</p><h3>Google Ads: Capturing Demand</h3><p>If someone searches for 'Dentist in Lucknow', they have immediate intent. Google Ads captures this demand at the perfect moment.</p><h3>Meta Ads: Creating Demand</h3><p>If you have a new cafe or a trendy boutique, people might not be searching for you yet. Meta Ads creates awareness and desire through visual storytelling.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["Ads", "PPC", "Strategy"]
+  },
+  {
+    "id": 7,
+    "slug": "why-businesses-need-seo-in-kanpur",
+    "title": "Why Businesses in Kanpur are Rapidly Investing in SEO",
+    "category": "SEO",
+    "date": "Mar 05, 2026",
+    "readTime": "9 min read",
+    "image": "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "Kanpur's industrial landscape is moving online. Learn why technical SEO is the new competitive edge for manufacturers...",
+    "content": "<h2>The Digital Shift in Kanpur</h2><p>Kanpur, the industrial hub of UP, is seeing a massive shift. Manufacturers and B2B businesses are realizing that a catalog is no longer enough.</p><h3>Global Reach from Kanpur</h3><p>With proper SEO, a leather manufacturer in Jajmau can reach buyers in Dubai or London. It's about breaking local barriers.</p><h3>Trust Building</h3><p>When a B2B buyer finds you at the top of Google, it builds instant credibility that cold calling can never achieve.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["Kanpur", "SEO", "B2B"]
+  },
+  {
+    "id": 8,
+    "slug": "lead-gen-real-estate-lucknow",
+    "title": "Lead Generation Strategies for Real Estate in Lucknow",
+    "category": "Meta Ads",
+    "date": "Mar 15, 2026",
+    "readTime": "14 min read",
+    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "How to generate high-quality property leads in Lucknow using Meta's Lead Forms and CRM integration...",
+    "content": "<h2>Real Estate Dominance</h2><p>Real estate is one of the most competitive sectors in Lucknow. From Amar Shaheed Path projects to Gomti Nagar apartments, the competition is fierce.</p><h3>High-Performance Funnels</h3><p>Don't just run ads. Run funnels. Use Meta Lead Forms to capture data and immediately send an automated WhatsApp brochure. Speed of response is key to closing property deals.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["Real Estate", "Leads", "Lucknow"]
+  },
+  {
+    "id": 9,
+    "slug": "content-marketing-strategy-up",
+    "title": "Content Marketing Strategy for Uttar Pradesh Brands",
+    "category": "Marketing",
+    "date": "Mar 25, 2026",
+    "readTime": "10 min read",
+    "image": "https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "Writing content that resonates with the UP audience. From language nuances to platform selection...",
+    "content": "<h2>Connecting with the Local Audience</h2><p>UP has a unique cultural identity. Your content should reflect the local language and values to build a real connection.</p><h3>Short-Form Video Dominance</h3><p>Reels and YouTube Shorts are the most consumed content types in Lucknow and Kanpur. Educational content delivered in a relatable, local style works best.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["Content", "Branding", "UP"]
+  },
+  {
+    "id": 10,
+    "slug": "ecommerce-seo-strategies-2026",
+    "title": "E-commerce SEO Strategies for Scaling Online Stores",
+    "category": "SEO",
+    "date": "Apr 05, 2026",
+    "readTime": "13 min read",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "Go beyond product descriptions. Master internal linking and schema for massive e-commerce growth...",
+    "content": "<h2>The E-commerce SEO Playbook</h2><p>Ranking an online store is vastly different from a blog. You need to manage thousands of pages and handle technical debt.</p><h3>Category Page Power</h3><p>Your category pages are your main ranking assets. Optimize them with long-form content and internal links to your top products.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["Ecommerce", "SEO", "Scale"]
+  },
+  {
+    "id": 11,
+    "slug": "technical-seo-for-beginners",
+    "title": "Technical SEO for Beginners: A Simple Guide",
+    "category": "SEO",
+    "date": "Apr 15, 2026",
+    "readTime": "7 min read",
+    "image": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "Don't let the technical stuff scare you. Here are the 5 most important things to fix on your website today...",
+    "content": "<h2>SEO is More Than Just Keywords</h2><p>If your technical foundation is weak, your keywords won't matter. Here are the basics every site owner should know.</p><h3>HTTPS and Security</h3><p>A secure site is a mandatory ranking factor. Ensure you have an SSL certificate active.</p><h3>Sitemaps and Robots.txt</h3><p>Tell Google exactly which pages to crawl and which to ignore. This saves crawl budget and improves indexing speed.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["Technical", "Beginner", "SEO"]
+  },
+  {
+    "id": 12,
+    "slug": "digital-marketing-roi-measurement",
+    "title": "How to Measure Your Digital Marketing ROI Accurately",
+    "category": "Marketing",
+    "date": "Apr 25, 2026",
+    "readTime": "9 min read",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "Stop guessing and start tracking. Learn the essential metrics to monitor for your marketing success...",
+    "content": "<h2>Data-Driven Decisions</h2><p>If you can't measure it, you can't improve it. Tracking ROI is the difference between a successful campaign and wasted money.</p><h3>Key Performance Indicators (KPIs)</h3><p>Focus on Cost Per Lead (CPL), Customer Acquisition Cost (CAC), and overall conversion rate from different channels.</p>",
+    "author": "Anirudh Kumar",
+    "tags": ["ROI", "Data", "Marketing"]
+  }
+];
+
+let allBlogs = [];
+let filteredBlogs = [];
+let currentPage = 1;
+const blogsPerPage = 6;
+
+// FETCH BLOGS
+async function initBlogSystem() {
+    try {
+        const response = await fetch('blogs.json');
+        if (response.ok) {
+            allBlogs = await response.json();
+        } else {
+            throw new Error('Fallback to embedded');
+        }
+    } catch (error) {
+        console.warn('Using embedded blog data (Local Mode)');
+        allBlogs = EMBEDDED_BLOGS;
+    }
+    
+    filteredBlogs = [...allBlogs];
+    
+    if (document.getElementById('blogGrid')) {
+        renderListing();
+    }
+}
+
+// RENDER LISTING
+function renderListing() {
+    const grid = document.getElementById('blogGrid');
+    if (!grid) return;
+
+    grid.innerHTML = '';
+    
+    const start = (currentPage - 1) * blogsPerPage;
+    const end = start + blogsPerPage;
+    const paginatedBlogs = filteredBlogs.slice(start, end);
+
+    if (paginatedBlogs.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px 0;"><h3>No articles found matching your criteria.</h3></div>';
+        const pagWrap = document.getElementById('blogPagination');
+        if(pagWrap) pagWrap.innerHTML = '';
+        return;
+    }
+
+    paginatedBlogs.forEach(blog => {
+        const card = `
+            <article class="modern-blog-card">
+                <div class="card-img-wrap">
+                    <span class="card-category">${blog.category}</span>
+                    <img src="${blog.image}" alt="${blog.title}">
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span>📅 ${blog.date}</span>
+                        <span>⏱️ ${blog.readTime}</span>
+                    </div>
+                    <h3 class="card-title">${blog.title}</h3>
+                    <p class="card-excerpt">${blog.excerpt}</p>
+                    <div class="card-footer">
+                        <a href="blog-post.html?post=${blog.slug}" class="read-more-link">Read Article <span>→</span></a>
+                    </div>
+                </div>
+            </article>
+        `;
+        grid.innerHTML += card;
+    });
+
+    renderPagination();
+}
+
+// RENDER PAGINATION
+function renderPagination() {
+    const paginationWrap = document.getElementById('blogPagination');
+    if (!paginationWrap) return;
+
+    const totalPages = Math.ceil(filteredBlogs.length / blogsPerPage);
+    if (totalPages <= 1) {
+        paginationWrap.innerHTML = '';
+        return;
+    }
+
+    let html = '';
+    if (currentPage > 1) {
+        html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})">← Prev</button>`;
+    }
+    for (let i = 1; i <= totalPages; i++) {
+        html += `<div class="page-num ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</div>`;
+    }
+    if (currentPage < totalPages) {
+        html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})">Next →</button>`;
+    }
+
+    paginationWrap.innerHTML = html;
+}
+
+function goToPage(page) {
+    currentPage = page;
+    renderListing();
+    const listTop = document.getElementById('blog-listing');
+    if(listTop) window.scrollTo({ top: listTop.offsetTop - 100, behavior: 'smooth' });
+}
+
+// SEARCH & FILTER
+function handleSearch(query) {
+    const q = query.toLowerCase();
+    filteredBlogs = allBlogs.filter(blog => 
+        blog.title.toLowerCase().includes(q) || 
+        blog.excerpt.toLowerCase().includes(q) ||
+        blog.category.toLowerCase().includes(q)
+    );
+    currentPage = 1;
+    renderListing();
+}
+
+function filterCategory(cat) {
+    const btns = document.querySelectorAll('.filter-btn');
+    btns.forEach(btn => btn.classList.remove('active'));
+    if(event && event.target) event.target.classList.add('active');
+
+    if (cat === 'all') {
+        filteredBlogs = [...allBlogs];
+    } else {
+        filteredBlogs = allBlogs.filter(blog => blog.category === cat);
+    }
+    currentPage = 1;
+    renderListing();
+}
+
+// LOAD SINGLE POST
+async function loadBlogPost(slug) {
+    let blogs = [];
+    try {
+        const response = await fetch('blogs.json');
+        if(response.ok) {
+            blogs = await response.json();
+        } else {
+            blogs = EMBEDDED_BLOGS;
+        }
+    } catch (e) {
+        blogs = EMBEDDED_BLOGS;
+    }
+
+    const post = blogs.find(b => b.slug === slug);
+    if (!post) {
+        window.location.href = 'blog.html';
+        return;
+    }
+
+    document.title = `${post.title} | Anirudh Kumar Blog`;
+    const titleEl = document.getElementById('post-title');
+    const metaEl = document.getElementById('post-meta-cat-date');
+    const readEl = document.getElementById('post-read-time');
+    const imgEl = document.getElementById('post-img');
+    const contentEl = document.getElementById('post-content');
+
+    if(titleEl) titleEl.innerText = post.title;
+    if(metaEl) metaEl.innerHTML = `<span>${post.category}</span> <span>•</span> <span>${post.date}</span>`;
+    if(readEl) readEl.innerText = post.readTime;
+    if(imgEl) imgEl.innerHTML = `<img src="${post.image}" alt="${post.title}">`;
+    if(contentEl) contentEl.innerHTML = post.content;
+
+    const metaDesc = document.getElementById('meta-desc');
+    if(metaDesc) metaDesc.setAttribute('content', post.excerpt);
+
+    if(contentEl) {
+        const headings = contentEl.querySelectorAll('h2, h3');
+        const tocList = document.getElementById('post-toc');
+        if(tocList) {
+            tocList.innerHTML = '';
+            headings.forEach((h, index) => {
+                const id = `heading-${index}`;
+                h.id = id;
+                tocList.innerHTML += `<li><a href="#${id}">${h.innerText}</a></li>`;
+            });
+        }
+    }
+
+    const related = blogs.filter(b => b.category === post.category && b.slug !== post.slug).slice(0, 3);
+    const relatedGrid = document.getElementById('related-grid');
+    if (relatedGrid) {
+        relatedGrid.innerHTML = '';
+        if (related.length > 0) {
+            related.forEach(blog => {
+                relatedGrid.innerHTML += `
+                    <article class="modern-blog-card">
+                        <div class="card-img-wrap" style="height:150px;">
+                            <img src="${blog.image}" alt="${blog.title}">
+                        </div>
+                        <div class="card-body" style="padding:15px;">
+                            <h4 style="font-size:0.9rem; margin-bottom:10px;">${blog.title}</h4>
+                            <a href="blog-post.html?post=${blog.slug}" class="read-more-link" style="font-size:0.8rem;">Read →</a>
+                        </div>
+                    </article>
+                `;
+            });
+        } else {
+            const relSection = relatedGrid.closest('.related-posts');
+            if(relSection) relSection.style.display = 'none';
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initBlogSystem);
