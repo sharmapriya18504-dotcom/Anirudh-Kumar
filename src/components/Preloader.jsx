@@ -1,49 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useLoader } from '../context/LoaderContext.jsx';
 
 export default function Preloader() {
-  const [pct, setPct] = useState(0);
-  const [isDone, setIsDone] = useState(false);
-  const [hidden, setHidden] = useState(false);
-
+  const { isLoading, loadingPct, isDone } = useLoader();
   const name = 'Anirudh Kumar';
 
-  useEffect(() => {
-    // Disable scroll while loading
-    document.body.style.overflow = 'hidden';
-
-    let current = 0;
-    const interval = setInterval(() => {
-      current = Math.min(100, current + Math.random() * 8 + 3);
-      setPct(Math.round(current));
-
-      if (current >= 100) {
-        clearInterval(interval);
-        setTimeout(() => {
-          setIsDone(true);
-          document.body.style.overflow = 'auto';
-          setTimeout(() => {
-            setHidden(true);
-          }, 800);
-        }, 400);
-      }
-    }, 50);
-
-    return () => {
-      clearInterval(interval);
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
-
-  if (hidden) return null;
+  if (!isLoading && isDone) return null;
 
   return (
-    <div id="loader" className={isDone ? 'done' : ''}>
+    <div id="loader" className={isDone ? 'done' : ''} style={{ pointerEvents: isDone ? 'none' : 'auto' }}>
       <div className="loader-name" id="loaderName">
         {name.split('').map((char, index) => (
           <span
-            key={index}
+            key={`${index}-${loadingPct > 0 ? 1 : 0}`}
             className="loader-char"
-            style={{ animationDelay: `${0.05 * index}s` }}
+            style={{ animationDelay: `${0.04 * index}s` }}
           >
             {char === ' ' ? '\u00A0' : char}
           </span>
@@ -52,13 +23,12 @@ export default function Preloader() {
       <div className="loader-bar-wrap">
         <div
           className="loader-bar"
-          style={{ width: `${pct}%`, transition: 'width 0.1s ease-out' }}
+          style={{ width: `${loadingPct}%`, transition: 'width 0.08s ease-out' }}
         ></div>
       </div>
       <div className="loader-pct" id="loaderPct">
-        {pct}%
+        {loadingPct}%
       </div>
     </div>
   );
 }
-

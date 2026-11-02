@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export function useSiteInteractions() {
+export function useSiteInteractions(refreshKey = 0) {
   const location = useLocation();
 
   // Scroll to top or anchor on route change
@@ -15,11 +15,9 @@ export function useSiteInteractions() {
         }
       }, 100);
     } else {
-      window.scrollTo({ top: 0, behavior: 'instant' });
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
+      window.scrollTo(0, 0);
     }
-  }, [location.pathname, location.hash, location.key]);
+  }, [location.pathname, location.hash, refreshKey]);
 
   // Setup observers, counters, tilt, faq, etc.
   useEffect(() => {
@@ -64,6 +62,7 @@ export function useSiteInteractions() {
     }, { threshold: 0.5 });
 
     document.querySelectorAll('[data-target]').forEach(el => {
+      el.textContent = '0';
       counterObserver.observe(el);
     });
 
@@ -123,5 +122,5 @@ export function useSiteInteractions() {
       window.removeEventListener('scroll', handleScrollNav);
       cleanupFns.forEach(fn => fn());
     };
-  }, [location.pathname, location.key]);
+  }, [location.pathname, refreshKey]);
 }

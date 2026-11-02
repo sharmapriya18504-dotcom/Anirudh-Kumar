@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useLoader } from '../context/LoaderContext.jsx';
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+  const { triggerPageLoad } = useLoader();
+
+  const handleLinkClick = (e, path) => {
+    e.preventDefault();
+    triggerPageLoad(path);
   };
 
   return (
@@ -13,15 +14,17 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Link
-              to="/"
-              onClick={scrollToTop}
+            <a
+              href="/"
+              onClick={(e) => handleLinkClick(e, '/')}
               className="nav-logo"
               style={{
                 fontSize: '2rem',
                 marginBottom: '20px',
                 color: 'var(--text2)',
                 transition: 'color var(--transition)',
+                display: 'inline-flex',
+                alignItems: 'center',
                 textDecoration: 'none'
               }}
             >
@@ -32,9 +35,9 @@ export default function Footer() {
                 style={{ width: '60px', height: '60px' }}
               />
               ANIRUDH KUMAR
-            </Link>
+            </a>
             <p>
-              Lucknow & Kanpur ka trusted Digital Marketing Expert. SEO, Social Media, Ads, Website — everything you need
+              Lucknow &amp; Kanpur ka trusted Digital Marketing Expert. SEO, Social Media, Ads, Website — everything you need
               to grow your business online.
             </p>
             <div className="footer-social mt-6">
@@ -69,34 +72,38 @@ export default function Footer() {
               </a>
             </div>
           </div>
+
           <div className="footer-col">
             <h4>Services</h4>
             <ul>
-              <li><Link to="/seo-lucknow" onClick={scrollToTop}>SEO Services Lucknow</Link></li>
-              <li><Link to="/smm-lucknow" onClick={scrollToTop}>Social Media Marketing</Link></li>
-              <li><Link to="/ads-lucknow" onClick={scrollToTop}>Google & Meta Ads</Link></li>
-              <li><Link to="/web-dev-lucknow" onClick={scrollToTop}>Website Development</Link></li>
-              <li><Link to="/marketing-kanpur" onClick={scrollToTop}>Digital Marketing Kanpur</Link></li>
-              <li><Link to="/seo-consultant" onClick={scrollToTop}>SEO Consultant</Link></li>
+              <li><a href="/seo-lucknow" onClick={(e) => handleLinkClick(e, '/seo-lucknow')}>SEO Services Lucknow</a></li>
+              <li><a href="/smm-lucknow" onClick={(e) => handleLinkClick(e, '/smm-lucknow')}>Social Media Marketing</a></li>
+              <li><a href="/ads-lucknow" onClick={(e) => handleLinkClick(e, '/ads-lucknow')}>Google &amp; Meta Ads</a></li>
+              <li><a href="/web-dev-lucknow" onClick={(e) => handleLinkClick(e, '/web-dev-lucknow')}>Website Development</a></li>
+              <li><a href="/marketing-kanpur" onClick={(e) => handleLinkClick(e, '/marketing-kanpur')}>Digital Marketing Kanpur</a></li>
+              <li><a href="/seo-consultant" onClick={(e) => handleLinkClick(e, '/seo-consultant')}>SEO Consultant</a></li>
             </ul>
           </div>
+
           <div className="footer-col">
             <h4>Results</h4>
             <ul>
-              <li><Link to="/testimonials" onClick={scrollToTop}>Client Reviews</Link></li>
-              <li><Link to="/case-studies" onClick={scrollToTop}>Case Studies</Link></li>
-              <li><Link to="/blog" onClick={scrollToTop}>Latest Articles</Link></li>
+              <li><a href="/testimonials" onClick={(e) => handleLinkClick(e, '/testimonials')}>Client Reviews</a></li>
+              <li><a href="/case-studies" onClick={(e) => handleLinkClick(e, '/case-studies')}>Case Studies</a></li>
+              <li><a href="/blog" onClick={(e) => handleLinkClick(e, '/blog')}>Latest Articles</a></li>
             </ul>
           </div>
+
           <div className="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><Link to="/about" onClick={scrollToTop}>My Story</Link></li>
-              <li><Link to="/why-choose-us" onClick={scrollToTop}>Why Choose Us</Link></li>
-              <li><Link to="/contact" onClick={scrollToTop}>Free SEO Audit</Link></li>
+              <li><a href="/about" onClick={(e) => handleLinkClick(e, '/about')}>My Story</a></li>
+              <li><a href="/why-choose-us" onClick={(e) => handleLinkClick(e, '/why-choose-us')}>Why Choose Us</a></li>
+              <li><a href="/contact" onClick={(e) => handleLinkClick(e, '/contact')}>Free SEO Audit</a></li>
             </ul>
           </div>
         </div>
+
         <div className="footer-bottom">
           <span>© 2025 Anirudh Kumar | Professional Digital Marketer</span>
           <span>Made with ❤️ in Lucknow, UP 🇮🇳</span>

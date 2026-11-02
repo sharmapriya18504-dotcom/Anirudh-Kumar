@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useLoader } from '../context/LoaderContext.jsx';
 
 export default function Navbar() {
   const [theme, setTheme] = useState(() => {
@@ -8,6 +9,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { triggerPageLoad } = useLoader();
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -16,9 +18,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -36,63 +38,129 @@ export default function Navbar() {
     setMenuOpen(prev => !prev);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+  const handleNavClick = (e, path) => {
+    e.preventDefault();
     setMenuOpen(false);
+    triggerPageLoad(path);
+  };
+
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname.startsWith(path);
   };
 
   return (
     <>
       <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
         <div className="container nav-inner">
-          <Link className="nav-logo" to="/" onClick={scrollToTop}>
+          <a
+            className="nav-logo"
+            href="/"
+            onClick={(e) => handleNavClick(e, '/')}
+            title="Anirudh Kumar - Home"
+          >
             <img src="/Untitled design (12).png" alt="Anirudh Kumar" className="nav-portrait" />
-            ANIRUDH KUMAR
-          </Link>
+            <span className="nav-logo-text">ANIRUDH KUMAR</span>
+          </a>
+
           <ul className="nav-links">
             <li>
-              <Link to="/" onClick={scrollToTop}>Home</Link>
+              <a
+                href="/"
+                className={isActive('/') ? 'active-nav-link' : ''}
+                onClick={(e) => handleNavClick(e, '/')}
+              >
+                Home
+              </a>
             </li>
+
             <li className="nav-item-dropdown">
-              <Link to="/services" onClick={scrollToTop}>
+              <a
+                href="/services"
+                className={isActive('/services') || isActive('/seo-') || isActive('/smm-') || isActive('/ads-') || isActive('/web-dev') || isActive('/marketing-') ? 'active-nav-link' : ''}
+                onClick={(e) => handleNavClick(e, '/services')}
+              >
                 Services <i className="bi bi-chevron-down" style={{ fontSize: '0.7rem', marginLeft: '4px' }}></i>
-              </Link>
+              </a>
               <div className="dropdown-menu">
-                <Link to="/seo-lucknow" onClick={scrollToTop}>SEO Services Lucknow</Link>
-                <Link to="/smm-lucknow" onClick={scrollToTop}>Social Media Marketing</Link>
-                <Link to="/ads-lucknow" onClick={scrollToTop}>Google & Meta Ads</Link>
-                <Link to="/web-dev-lucknow" onClick={scrollToTop}>Website Development</Link>
-                <Link to="/marketing-kanpur" onClick={scrollToTop}>Digital Marketing Kanpur</Link>
-                <Link to="/seo-consultant" onClick={scrollToTop}>SEO Consultant</Link>
+                <a href="/seo-lucknow" onClick={(e) => handleNavClick(e, '/seo-lucknow')}>
+                  <span>SEO Services Lucknow</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                </a>
+                <a href="/smm-lucknow" onClick={(e) => handleNavClick(e, '/smm-lucknow')}>
+                  <span>Social Media Marketing</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                </a>
+                <a href="/ads-lucknow" onClick={(e) => handleNavClick(e, '/ads-lucknow')}>
+                  <span>Google &amp; Meta Ads</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                </a>
+                <a href="/web-dev-lucknow" onClick={(e) => handleNavClick(e, '/web-dev-lucknow')}>
+                  <span>Website Development</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                </a>
+                <a href="/marketing-kanpur" onClick={(e) => handleNavClick(e, '/marketing-kanpur')}>
+                  <span>Digital Marketing Kanpur</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                </a>
+                <a href="/seo-consultant" onClick={(e) => handleNavClick(e, '/seo-consultant')}>
+                  <span>SEO Consultant</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                </a>
               </div>
             </li>
+
             <li className="nav-item-dropdown">
-              <Link to="/results" onClick={scrollToTop}>
+              <a
+                href="/results"
+                className={isActive('/results') || isActive('/testimonials') || isActive('/case-studies') ? 'active-nav-link' : ''}
+                onClick={(e) => handleNavClick(e, '/results')}
+              >
                 Results <i className="bi bi-chevron-down" style={{ fontSize: '0.7rem', marginLeft: '4px' }}></i>
-              </Link>
+              </a>
               <div className="dropdown-menu">
-                <Link to="/testimonials" onClick={scrollToTop}>Client Reviews</Link>
-                <Link to="/case-studies" onClick={scrollToTop}>Case Studies</Link>
+                <a href="/testimonials" onClick={(e) => handleNavClick(e, '/testimonials')}>
+                  <span>Client Reviews</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                </a>
+                <a href="/case-studies" onClick={(e) => handleNavClick(e, '/case-studies')}>
+                  <span>Case Studies</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                </a>
               </div>
             </li>
+
             <li className="nav-item-dropdown">
-              <Link to="/about" onClick={scrollToTop}>
+              <a
+                href="/about"
+                className={isActive('/about') || isActive('/why-choose-us') ? 'active-nav-link' : ''}
+                onClick={(e) => handleNavClick(e, '/about')}
+              >
                 About <i className="bi bi-chevron-down" style={{ fontSize: '0.7rem', marginLeft: '4px' }}></i>
-              </Link>
+              </a>
               <div className="dropdown-menu">
-                <Link to="/about" onClick={scrollToTop}>My Story</Link>
-                <Link to="/why-choose-us" onClick={scrollToTop}>Why Choose Us</Link>
+                <a href="/about" onClick={(e) => handleNavClick(e, '/about')}>
+                  <span>My Story</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                </a>
+                <a href="/why-choose-us" onClick={(e) => handleNavClick(e, '/why-choose-us')}>
+                  <span>Why Choose Us</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                </a>
               </div>
             </li>
+
             <li>
-              <Link to="/blog" onClick={scrollToTop}>Blog</Link>
+              <a
+                href="/blog"
+                className={isActive('/blog') ? 'active-nav-link' : ''}
+                onClick={(e) => handleNavClick(e, '/blog')}
+              >
+                Blog
+              </a>
             </li>
+
             <li>
-              <Link to="/contact" onClick={scrollToTop}>Contact</Link>
+              <a
+                href="/contact"
+                className={isActive('/contact') ? 'active-nav-link' : ''}
+                onClick={(e) => handleNavClick(e, '/contact')}
+              >
+                Contact
+              </a>
             </li>
           </ul>
+
           <div className="nav-actions">
             <button
               className="theme-btn"
@@ -106,9 +174,13 @@ export default function Navbar() {
                 <i className="bi bi-moon-stars-fill"></i>
               )}
             </button>
-            <Link className="nav-cta" to="/contact" onClick={scrollToTop}>
+            <a
+              className="nav-cta"
+              href="/contact"
+              onClick={(e) => handleNavClick(e, '/contact')}
+            >
               Free SEO Audit
-            </Link>
+            </a>
             <div
               className={`hamburger ${menuOpen ? 'active' : ''}`}
               onClick={toggleMenu}
@@ -126,27 +198,22 @@ export default function Navbar() {
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} id="mobileMenu">
         <button
           onClick={toggleMenu}
-          style={{
-            position: 'absolute',
-            top: '24px',
-            right: '24px',
-            background: 'none',
-            color: 'var(--text)',
-            fontSize: '1.5rem',
-            border: 'none',
-            cursor: 'pointer'
-          }}
+          className="mobile-close-btn"
           aria-label="Close menu"
         >
           ✕
         </button>
-        <Link to="/" onClick={scrollToTop}>Home</Link>
-        <Link to="/services" onClick={scrollToTop}>Services</Link>
-        <Link to="/results" onClick={scrollToTop}>Results</Link>
-        <Link to="/about" onClick={scrollToTop}>About</Link>
-        <Link to="/blog" onClick={scrollToTop}>Blog</Link>
-        <Link to="/contact" onClick={scrollToTop}>Contact</Link>
-        <Link className="btn btn-primary" to="/contact" onClick={scrollToTop}>Free SEO Audit</Link>
+        <div className="mobile-menu-links">
+          <a href="/" onClick={(e) => handleNavClick(e, '/')}>Home</a>
+          <a href="/services" onClick={(e) => handleNavClick(e, '/services')}>Services</a>
+          <a href="/results" onClick={(e) => handleNavClick(e, '/results')}>Results</a>
+          <a href="/about" onClick={(e) => handleNavClick(e, '/about')}>About</a>
+          <a href="/blog" onClick={(e) => handleNavClick(e, '/blog')}>Blog</a>
+          <a href="/contact" onClick={(e) => handleNavClick(e, '/contact')}>Contact</a>
+          <a className="btn btn-primary mobile-cta" href="/contact" onClick={(e) => handleNavClick(e, '/contact')}>
+            Free SEO Audit
+          </a>
+        </div>
       </div>
     </>
   );

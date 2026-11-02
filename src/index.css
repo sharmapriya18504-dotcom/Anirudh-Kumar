@@ -5676,3 +5676,157 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--accent) !important;
   box-shadow: 0 0 12px rgba(255, 107, 0, 0.25) !important;
 }
+
+/* ==================== ADVANCED UI / UX POLISH ==================== */
+
+/* Active nav link indicator */
+.active-nav-link {
+  color: var(--accent) !important;
+  position: relative;
+  font-weight: 700;
+}
+.active-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: 4px;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* Dropdown menu modern styling */
+.dropdown-menu {
+  background: var(--bg2) !important;
+  border: 1px solid var(--border) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 107, 0, 0.1) !important;
+  border-radius: 14px !important;
+  padding: 8px !important;
+  min-width: 240px !important;
+}
+
+.dropdown-menu a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 10px 14px !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
+  transition: all 0.25s ease !important;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(255, 107, 0, 0.12) !important;
+  color: var(--accent) !important;
+  padding-left: 18px !important;
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: all 0.25s ease;
+  color: var(--accent);
+}
+
+.dropdown-menu a:hover .dropdown-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Nav logo hover micro-interaction */
+.nav-logo {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-logo:hover {
+  transform: scale(1.02);
+}
+.nav-logo:hover .nav-portrait {
+  border-color: var(--accent2);
+  box-shadow: 0 0 15px var(--glow);
+}
+
+/* Typewriter blinking cursor */
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: var(--accent);
+  font-weight: 300;
+  animation: blinkCursor 0.9s infinite;
+}
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* WhatsApp pulsing ripple effect */
+.wa-bubble {
+  position: relative;
+}
+.wa-bubble::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.45);
+  z-index: -1;
+  animation: waPulseRipple 2.2s cubic-bezier(0.1, 0.5, 0.6, 1) infinite;
+}
+@keyframes waPulseRipple {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  70% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+/* Floating badges floating physics */
+.metric-badge-1, .floating-badge-1 {
+  animation: badgeFloat1 4.5s ease-in-out infinite;
+}
+.metric-badge-2, .floating-badge-2 {
+  animation: badgeFloat2 5.5s ease-in-out infinite;
+}
+.metric-badge-3, .floating-badge-3 {
+  animation: badgeFloat3 5s ease-in-out infinite;
+}
+
+@keyframes badgeFloat1 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes badgeFloat2 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes badgeFloat3 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+/* Mobile close button */
+.mobile-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-size: 1.3rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.mobile-close-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}

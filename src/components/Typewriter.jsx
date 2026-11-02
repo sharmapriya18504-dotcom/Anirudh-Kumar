@@ -7,12 +7,12 @@ export default function Typewriter({ words = ["BEST SEO EXPERT", "DIGITAL MARKET
 
   useEffect(() => {
     const currentWord = words[wordIndex];
-    let delay = isDeleting ? 80 : 150;
+    let delay = isDeleting ? 75 : 140;
 
     if (!isDeleting && text === currentWord) {
-      delay = 2000; // Pause at end of word
+      delay = 2200; // Pause at end of word
     } else if (isDeleting && text === '') {
-      delay = 500; // Pause before typing next word
+      delay = 450; // Pause before typing next word
     }
 
     const timer = setTimeout(() => {
@@ -35,6 +35,10 @@ export default function Typewriter({ words = ["BEST SEO EXPERT", "DIGITAL MARKET
     return () => clearTimeout(timer);
   }, [text, isDeleting, wordIndex, words]);
 
-  return <span className="line2" id="changing-word">{text}</span>;
+  return (
+    <span className="line2" id="changing-word">
+      {text}
+      <span className="typewriter-cursor">|</span>
+    </span>
+  );
 }
-

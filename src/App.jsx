@@ -8,6 +8,7 @@ import FloatingWhatsApp from './components/FloatingWhatsApp.jsx';
 import ScrollProgressBar from './components/ScrollProgressBar.jsx';
 import MouseFollower from './components/MouseFollower.jsx';
 import { useSiteInteractions } from './hooks/useSiteInteractions.js';
+import { LoaderProvider, useLoader } from './context/LoaderContext.jsx';
 
 // Pages
 import HomePage from './pages/HomePage.jsx';
@@ -28,8 +29,9 @@ import BlogPage from './pages/BlogPage.jsx';
 import BlogPostPage from './pages/BlogPostPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 
-export default function App() {
-  useSiteInteractions();
+function AppContent() {
+  const { refreshKey } = useLoader();
+  useSiteInteractions(refreshKey);
 
   return (
     <div className="site-root">
@@ -40,24 +42,24 @@ export default function App() {
 
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/seo-lucknow" element={<SeoLucknowPage />} />
-          <Route path="/smm-lucknow" element={<SmmLucknowPage />} />
-          <Route path="/ads-lucknow" element={<AdsLucknowPage />} />
-          <Route path="/web-dev-lucknow" element={<WebDevLucknowPage />} />
-          <Route path="/marketing-kanpur" element={<MarketingKanpurPage />} />
-          <Route path="/seo-consultant" element={<SeoConsultantPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/results" element={<ResultsPage />} />
-          <Route path="/testimonials" element={<TestimonialsPage />} />
-          <Route path="/case-studies" element={<CaseStudiesPage />} />
-          <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog-post" element={<BlogPostPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          {/* Support .html links if any were clicked */}
+          <Route path="/" element={<HomePage key={`home-${refreshKey}`} />} />
+          <Route path="/services" element={<ServicesPage key={`services-${refreshKey}`} />} />
+          <Route path="/seo-lucknow" element={<SeoLucknowPage key={`seo-${refreshKey}`} />} />
+          <Route path="/smm-lucknow" element={<SmmLucknowPage key={`smm-${refreshKey}`} />} />
+          <Route path="/ads-lucknow" element={<AdsLucknowPage key={`ads-${refreshKey}`} />} />
+          <Route path="/web-dev-lucknow" element={<WebDevLucknowPage key={`web-${refreshKey}`} />} />
+          <Route path="/marketing-kanpur" element={<MarketingKanpurPage key={`mkt-${refreshKey}`} />} />
+          <Route path="/seo-consultant" element={<SeoConsultantPage key={`seoc-${refreshKey}`} />} />
+          <Route path="/about" element={<AboutPage key={`about-${refreshKey}`} />} />
+          <Route path="/results" element={<ResultsPage key={`res-${refreshKey}`} />} />
+          <Route path="/testimonials" element={<TestimonialsPage key={`testi-${refreshKey}`} />} />
+          <Route path="/case-studies" element={<CaseStudiesPage key={`case-${refreshKey}`} />} />
+          <Route path="/why-choose-us" element={<WhyChooseUsPage key={`why-${refreshKey}`} />} />
+          <Route path="/pricing" element={<PricingPage key={`price-${refreshKey}`} />} />
+          <Route path="/blog" element={<BlogPage key={`blog-${refreshKey}`} />} />
+          <Route path="/blog-post" element={<BlogPostPage key={`post-${refreshKey}`} />} />
+          <Route path="/contact" element={<ContactPage key={`contact-${refreshKey}`} />} />
+          {/* Legacy .html links */}
           <Route path="/services.html" element={<ServicesPage />} />
           <Route path="/about.html" element={<AboutPage />} />
           <Route path="/blog.html" element={<BlogPage />} />
@@ -74,3 +76,10 @@ export default function App() {
   );
 }
 
+export default function App() {
+  return (
+    <LoaderProvider>
+      <AppContent />
+    </LoaderProvider>
+  );
+}
