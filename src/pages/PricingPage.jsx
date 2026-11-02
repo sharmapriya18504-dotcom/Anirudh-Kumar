@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import Toast from '../components/Toast.jsx';
+import InteractivePricing from '../components/InteractivePricing.jsx';
 
 
 export default function PricingPage() {
@@ -49,96 +50,7 @@ export default function PricingPage() {
                     <p className="section-sub">Koi hidden charges nahi. Jo package choose karo, wahi milega. Sabhi packages mein free
           SEO audit included hai.</p>
           </div>
-                <div className="pricing-grid">
-                    <div className="pricing-card reveal visible" style={{"transitionDelay":"0.1s"}}>
-                        <div className="pricing-name">Starter</div>
-                        <div className="pricing-price">₹8,000              <span>/month</span></div>
-                        <p className="pricing-desc">Chhote businesses aur startups ke liye. Digital presence banana shuru karein.</p>
-                        <div className="pricing-features">
-                            <div className="pf">
-                                <div className="pf-check">✓</div>On-Page SEO (10 pages)
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Google Business Profile Setup
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>2 Blog Posts/Month
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Monthly Report
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>WhatsApp Support
-            </div>
-                            <div className="pf pf-x">
-                                <div className="pf-check">✗</div>Meta/Google Ads
-            </div>
-                            <div className="pf pf-x">
-                                <div className="pf-check">✗</div>Social Media Management
-            </div>
-              </div>
-                        <Link className="btn btn-outline" to="/contact" style={{"width":"100%","justifyContent":"center"}}>Get Started</Link>
-            </div>
-                    <div className="pricing-card popular reveal visible" style={{"transitionDelay":"0.2s"}}>
-                        <div className="popular-badge">🔥 Most Popular</div>
-                        <div className="pricing-name">Professional</div>
-                        <div className="pricing-price">₹18,000              <span>/month</span></div>
-                        <p className="pricing-desc">Growing businesses ke liye. Full digital marketing + ads management.</p>
-                        <div className="pricing-features">
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Complete SEO (20+ pages)
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Social Media (2 platforms)
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Meta Ads Management
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>4 Blog Posts/Month
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Weekly Reporting
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Google Ads Setup
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Priority WhatsApp Support
-            </div>
-              </div>
-                        <Link className="btn btn-primary" to="/contact" style={{"width":"100%","justifyContent":"center"}}>Get Started</Link>
-            </div>
-                    <div className="pricing-card reveal visible" style={{"transitionDelay":"0.3s"}}>
-                        <div className="pricing-name">Enterprise</div>
-                        <div className="pricing-price">₹35,000              <span>/month</span></div>
-                        <p className="pricing-desc">Established brands ke liye. Full-scale digital marketing dominance.</p>
-                        <div className="pricing-features">
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Everything in Professional
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Full Social Media (4 platforms)
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Meta + Google Ads Both
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>8 Blog Posts + Content Strategy
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>YouTube SEO & Management
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Website Development Included
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Dedicated Account Manager (Me!)
-            </div>
-              </div>
-                        <Link className="btn btn-outline" to="/contact" style={{"width":"100%","justifyContent":"center"}}>Let's Talk</Link>
-            </div>
-          </div>
+                <InteractivePricing />
                 <p className="text-center mt-4" style={{"color":"var(--text2)","fontSize":"0.85rem"}}>Custom requirements hain?           <Link to="/contact" style={{"color":"var(--accent)","fontWeight":"700"}}>Contact karein</Link> — aapke liye custom package
         bana deta hoon.</p>
         </div>

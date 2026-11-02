@@ -3,15 +3,28 @@ import { Link } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import Toast from '../components/Toast.jsx';
 import Typewriter from '../components/Typewriter.jsx';
-
+import InteractivePricing from '../components/InteractivePricing.jsx';
+import RoiCalculator from '../components/RoiCalculator.jsx';
+import InteractiveFaq from '../components/InteractiveFaq.jsx';
+import SeoAuditModal from '../components/SeoAuditModal.jsx';
 
 export default function HomePage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [showToast, setShowToast] = useState(false);
+  const [toastMsg, setToastMsg] = useState('24 hours mein aapko callback ya email reply mil jayega.');
+  const [auditModalOpen, setAuditModalOpen] = useState(false);
+  const [portfolioTab, setPortfolioTab] = useState('all');
+
+  const copyToClipboard = (text, label) => {
+    navigator.clipboard.writeText(text);
+    setToastMsg(`📋 ${label} copied to clipboard: ${text}`);
+    setShowToast(true);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
+    setToastMsg('✅ Thank you! 24 hours mein aapko callback ya email reply mil jayega.');
     setShowToast(true);
 
     try {
@@ -57,8 +70,8 @@ export default function HomePage() {
               Let's work together to dominate local search and maximize your revenue.</span>
               </h1>
                         <div className="hero-btns">
-                            <a href="#contact" className="btn btn-primary">                <i className="bi bi-rocket-takeoff" style={{"marginRight":"8px"}}></i>
-              Claim Free SEO Audit</a>
+                            <button type="button" onClick={() => setAuditModalOpen(true)} className="btn btn-primary" style={{"cursor":"pointer"}}>                <i className="bi bi-rocket-takeoff" style={{"marginRight":"8px"}}></i>
+              Claim Free SEO Audit</button>
                             <a href="#portfolio" className="btn btn-outline">                <i className="bi bi-shield-check" style={{"marginRight":"8px"}}></i>
               See Verified Results</a>
               </div>
@@ -473,8 +486,37 @@ export default function HomePage() {
                     <h2 className="section-heading">Real Growth,             <span className="gradient-text">Real Clients</span></h2>
                     <p className="section-sub">Numbers speak louder than words. See how the premier Freelance SEO Expert Lucknow
           consistently secures remarkable Google rankings.</p>
+                    {/* Interactive Filter Pills */}
+                    <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }}>
+                      {[
+                        { id: 'all', label: 'All Case Studies (3)' },
+                        { id: 'healthcare', label: '🏥 Healthcare' },
+                        { id: 'ecommerce', label: '🛍️ E-Commerce' },
+                        { id: 'education', label: '🎓 Education' }
+                      ].map(tab => (
+                        <button
+                          key={tab.id}
+                          type="button"
+                          onClick={() => setPortfolioTab(tab.id)}
+                          style={{
+                            background: portfolioTab === tab.id ? 'var(--accent)' : 'var(--bg2)',
+                            color: portfolioTab === tab.id ? '#fff' : 'var(--text2)',
+                            border: portfolioTab === tab.id ? '1px solid var(--accent)' : '1px solid var(--border)',
+                            borderRadius: '30px',
+                            padding: '6px 16px',
+                            fontSize: '0.85rem',
+                            fontWeight: 600,
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
+                          }}
+                        >
+                          {tab.label}
+                        </button>
+                      ))}
+                    </div>
           </div>
                 <div className="portfolio-grid">
+                    {(portfolioTab === 'all' || portfolioTab === 'healthcare') && (
                     <div className="portfolio-card reveal" style={{"transitionDelay":"0.1s"}}>
                         <div className="portfolio-img">
                             <span style={{"position":"relative","zIndex":"1","color":"var(--accent)","fontSize":"2rem"}}>                <i className="bi bi-hospital"></i></span>
@@ -501,6 +543,8 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+                    )}
+                    {(portfolioTab === 'all' || portfolioTab === 'ecommerce') && (
                     <div className="portfolio-card reveal" style={{"transitionDelay":"0.2s"}}>
                         <div className="portfolio-img">
                             <span style={{"position":"relative","zIndex":"1","color":"var(--accent)","fontSize":"2rem"}}>                <i className="bi bi-shop"></i></span>
@@ -527,6 +571,8 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+                    )}
+                    {(portfolioTab === 'all' || portfolioTab === 'education') && (
                     <div className="portfolio-card reveal" style={{"transitionDelay":"0.3s"}}>
                         <div className="portfolio-img">
                             <span style={{"position":"relative","zIndex":"1","color":"var(--accent)","fontSize":"2rem"}}>                <i className="bi bi-mortarboard"></i></span>
@@ -553,6 +599,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+                    )}
           </div>
                 <div className="flex-center mt-6">
                     <a href="#contact" className="btn btn-outline">📋 Start Your Growth Story Today — Let's Talk →</a>
@@ -618,6 +665,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <div className="container">
+        <RoiCalculator />
+      </div>
     <section id="pricing">
             <div className="container">
                 <div className="section-header center text-center reveal">
@@ -627,96 +677,7 @@ export default function HomePage() {
                     <p className="section-sub">Koi hidden charges nahi. Jo package choose karo, wahi milega. Sabhi packages mein free
           SEO audit included hai.</p>
           </div>
-                <div className="pricing-grid">
-                    <div className="pricing-card reveal" style={{"transitionDelay":"0.1s"}}>
-                        <div className="pricing-name">Starter</div>
-                        <div className="pricing-price">₹8,000              <span>/month</span></div>
-                        <p className="pricing-desc">Chhote businesses aur startups ke liye. Digital presence banana shuru karein.</p>
-                        <div className="pricing-features">
-                            <div className="pf">
-                                <div className="pf-check">✓</div>On-Page SEO (10 pages)
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Google Business Profile Setup
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>2 Blog Posts/Month
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Monthly Report
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>WhatsApp Support
-            </div>
-                            <div className="pf pf-x">
-                                <div className="pf-check">✗</div>Meta/Google Ads
-            </div>
-                            <div className="pf pf-x">
-                                <div className="pf-check">✗</div>Social Media Management
-            </div>
-              </div>
-                        <a href="#contact" className="btn btn-outline" style={{"width":"100%","justifyContent":"center"}}>Get Started</a>
-            </div>
-                    <div className="pricing-card popular reveal" style={{"transitionDelay":"0.2s"}}>
-                        <div className="popular-badge">🔥 Most Popular</div>
-                        <div className="pricing-name">Professional</div>
-                        <div className="pricing-price">₹18,000              <span>/month</span></div>
-                        <p className="pricing-desc">Growing businesses ke liye. Full digital marketing + ads management.</p>
-                        <div className="pricing-features">
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Complete SEO (20+ pages)
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Social Media (2 platforms)
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Meta Ads Management
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>4 Blog Posts/Month
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Weekly Reporting
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Google Ads Setup
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Priority WhatsApp Support
-            </div>
-              </div>
-                        <a href="#contact" className="btn btn-primary" style={{"width":"100%","justifyContent":"center"}}>Get Started</a>
-            </div>
-                    <div className="pricing-card reveal" style={{"transitionDelay":"0.3s"}}>
-                        <div className="pricing-name">Enterprise</div>
-                        <div className="pricing-price">₹35,000              <span>/month</span></div>
-                        <p className="pricing-desc">Established brands ke liye. Full-scale digital marketing dominance.</p>
-                        <div className="pricing-features">
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Everything in Professional
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Full Social Media (4 platforms)
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Meta + Google Ads Both
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>8 Blog Posts + Content Strategy
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>YouTube SEO & Management
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Website Development Included
-            </div>
-                            <div className="pf">
-                                <div className="pf-check">✓</div>Dedicated Account Manager (Me!)
-            </div>
-              </div>
-                        <a href="#contact" className="btn btn-outline" style={{"width":"100%","justifyContent":"center"}}>Let's Talk</a>
-            </div>
-          </div>
+                <InteractivePricing />
                 <p className="text-center mt-4" style={{"color":"var(--text2)","fontSize":"0.85rem"}}>Custom requirements hain?           <a href="#contact" style={{"color":"var(--accent)","fontWeight":"700"}}>Contact karein</a> — aapke liye custom package
         bana deta hoon.</p>
         </div>
@@ -858,74 +819,19 @@ export default function HomePage() {
                         <h2 className="section-heading reveal">Aapke               <span className="gradient-text">Sawaal,                <br />Mere Jawab</span></h2>
                         <p className="section-sub reveal" style={{"marginBottom":"32px"}}>Koi bhi doubt ho toh seedha WhatsApp karein — main
             personally jawab deta hoon.</p>
-                        <div className="faq-list">
-                            <div className="faq-item reveal">
-                                <div className="faq-q">What is SEO cost in Lucknow?                   <div className="faq-icon">+</div>
-                  </div>
-                                <div className="faq-a">My standard SEO pricing is strictly transparent and customized exclusively based on
-                your competitive vertical. An exact proposal is provided directly after our extensive free SEO audit.
-              </div>
-                </div>
-                            <div className="faq-item reveal">
-                                <div className="faq-q">How long SEO takes?                   <div className="faq-icon">+</div>
-                  </div>
-                                <div className="faq-a">Aggressive Local Google dominance prominently shows high growth within 3-6 months. We
-                solely employ sustainable White-Hat SEO techniques ensuring unshakeable, long-lasting ROI.</div>
-                </div>
-                            <div className="faq-item reveal">
-                                <div className="faq-q">Do you work in Kanpur?                   <div className="faq-icon">+</div>
-                  </div>
-                                <div className="faq-a">Yes. While I am prominently located in Lucknow, my Digital Marketing capabilities
-                routinely rank local Kanpur businesses #1 on Google Maps.</div>
-                </div>
-                            <div className="faq-item reveal">
-                                <div className="faq-q">Can you rank my business?                   <div className="faq-icon">+</div>
-                  </div>
-                                <div className="faq-a">Absolutely. Our localized technical auditing, vast backlink networks, and proprietary
-                keyword research routinely propel businesses entirely beyond their competitors organically.</div>
-                </div>
-                            <div className="faq-item reveal">
-                                <div className="faq-q">Free SEO audit mein kya milta hai?                   <div className="faq-icon">+</div>
-                  </div>
-                                <div className="faq-a">Free SEO audit mein aapko milega: Current website health score, Top 10 technical
-                issues, Keyword opportunity analysis, Competitor analysis (top 3), Local SEO assessment, aur Custom
-                action plan. Completely free — koi strings attached nahi.</div>
-                </div>
-                            <div className="faq-item reveal">
-                                <div className="faq-q">Reporting kitni often milti hai?                   <div className="faq-icon">+</div>
-                  </div>
-                                <div className="faq-a">Professional aur Enterprise packages mein weekly detailed PDF reports milti hain —
-                traffic, rankings, leads, ad spend, ROI — sab clearly mentioned. Starter package mein monthly report
-                milti hai. Anytime WhatsApp par update maang sakte hain.</div>
-                </div>
-                            <div className="faq-item reveal">
-                                <div className="faq-q">Kya aap website bhi banate hain?                   <div className="faq-icon">+</div>
-                  </div>
-                                <div className="faq-a">Haan! Main Custom HTML/CSS, WordPress, Landing Pages aur E-commerce websites banata
-                hoon. Mere websites ka Google PageSpeed score 95+ hota hai — blazing fast, mobile-first, aur fully
-                SEO-optimized.</div>
-                </div>
-                            <div className="faq-item reveal">
-                                <div className="faq-q">Agency hire karein ya aapko? Fark kya hai?                   <div className="faq-icon">+</div>
-                  </div>
-                                <div className="faq-a">Jab aap mujhe hire karte hain, toh seedha ek senior expert ke saath kaam karte hain —
-                koi intern, koi account manager chain nahi. Main personally aapke campaigns manage karta hoon. Agencies
-                se cheaper bhi hoon aur faster results bhi deliver karta hoon. Plus — transparent pricing aur no
-                lock-in.</div>
-                </div>
-              </div>
-            </div>
+                        <InteractiveFaq />
+                    </div>
                     <div className="faq-sidebar">
                         <div className="faq-sidebar-card reveal-right">
                             <h3>🚀 Need a Free SEO Audit?</h3>
                             <p>Schedule a complete technical health check instantly. I personally review your architecture and send over
               a robust, actionable blueprint.</p>
-                            <a href="#contact" className="btn btn-primary" style={{"width":"100%","justifyContent":"center"}}>Request Free Audit</a>
+                            <button type="button" onClick={() => setAuditModalOpen(true)} className="btn btn-primary" style={{"width":"100%","justifyContent":"center","cursor":"pointer"}}>Request Free Audit</button>
               </div>
                         <div className="faq-sidebar-card reveal-right" style={{"transitionDelay":"0.2s","background":"rgba(37,211,102,0.05)","borderColor":"rgba(37,211,102,0.2)"}}>
                             <h3>💬 WhatsApp Par Baat Karein</h3>
                             <p>Seedha WhatsApp karein — main 10 mins mein reply karta hoon. Aapke sawaal ka jawab abhi milega.</p>
-                            <a href="https://wa.me/919999999999?text=Hi%20Anirudh!%20I%20need%20digital%20marketing%20help%20for%20my%20business." className="btn btn-whatsapp" style={{"width":"100%","justifyContent":"center"}} target="_blank">📱 WhatsApp Now</a>
+                            <a href="https://wa.me/919999999999?text=Hi%20Anirudh!%20I%20need%20digital%20marketing%20help%20for%20my%20business." className="btn btn-whatsapp" style={{"width":"100%","justifyContent":"center"}} target="_blank" rel="noreferrer">📱 WhatsApp Now</a>
               </div>
             </div>
           </div>
@@ -941,17 +847,17 @@ export default function HomePage() {
                         <p className="section-sub reveal">Free consultation + free SEO audit — koi charge nahi. Batao kya chahiye, main
             solution deta hoon.</p>
                         <div className="contact-info">
-                            <div className="contact-item reveal" style={{"transitionDelay":"0.1s"}}>
+                            <div className="contact-item reveal" style={{"transitionDelay":"0.1s","cursor":"pointer"}} onClick={() => copyToClipboard('+919999999999', 'Phone Number')} title="Click to copy number">
                                 <div className="contact-icon">                  <i className="bi bi-whatsapp"></i></div>
                                 <div>
-                                    <div className="contact-label">WhatsApp / Call</div>
+                                    <div className="contact-label">WhatsApp / Call (Click to Copy)</div>
                                     <div className="contact-value">+91-9999999999</div>
                   </div>
                 </div>
-                            <div className="contact-item reveal" style={{"transitionDelay":"0.2s"}}>
+                            <div className="contact-item reveal" style={{"transitionDelay":"0.2s","cursor":"pointer"}} onClick={() => copyToClipboard('hello@anirudhkumar.in', 'Email')} title="Click to copy email">
                                 <div className="contact-icon">                  <i className="bi bi-envelope"></i></div>
                                 <div>
-                                    <div className="contact-label">Email</div>
+                                    <div className="contact-label">Email (Click to Copy)</div>
                                     <div className="contact-value">hello@anirudhkumar.in</div>
                   </div>
                 </div>
@@ -964,19 +870,19 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-                    <div className="contact-form reveal-right">
+                    <form className="contact-form reveal-right" onSubmit={handleSubmit}>
                         <h3 style={{"fontSize":"1.2rem","fontWeight":"800","marginBottom":"8px"}}>Book Your Free SEO Audit Now</h3>
                         <p style={{"fontSize":"0.85rem","color":"var(--text2)","marginBottom":"24px"}}>24 hours rapid reply guaranteed - let us
             scale your growth.</p>
                         <div className="form-row">
-                            <div className="form-group">                <label>Your Name *</label>                <input type="text" placeholder="John Doe" /></div>
-                            <div className="form-group">                <label>Phone Number *</label>                <input type="tel" placeholder="+91 98765 43210" /></div>
+                            <div className="form-group">                <label>Your Name *</label>                <input type="text" name="name" required placeholder="John Doe" /></div>
+                            <div className="form-group">                <label>Phone Number *</label>                <input type="tel" name="phone" required placeholder="+91 98765 43210" /></div>
               </div>
-                        <div className="form-group">              <label>Email Address</label>              <input type="email" placeholder="aapka@email.com" /></div>
+                        <div className="form-group">              <label>Email Address</label>              <input type="email" name="email" placeholder="aapka@email.com" /></div>
                         <div className="form-group">
                             <label>Required Service</label>
-                            <select>
-                                <option value>— Select Service —</option>
+                            <select name="service">
+                                <option value="">— Select Service —</option>
                                 <option>SEO Services</option>
                                 <option>Social Media Marketing</option>
                                 <option>Meta Ads / Google Ads</option>
@@ -985,17 +891,21 @@ export default function HomePage() {
                                 <option>Free SEO Audit</option>
                 </select>
               </div>
-                        <div className="form-group">              <label>Describe your business or goals</label>              <textarea placeholder="Share what you need help with so I can come prepared with an audit..."></textarea></div>
-                        <button className="btn btn-primary" style={{"width":"100%","justifyContent":"center","fontSize":"1rem"}} onSubmit={handleSubmit}>🚀 Book Your Free SEO Audit Now</button>
+                        <div className="form-group">              <label>Describe your business or goals</label>              <textarea name="message" placeholder="Share what you need help with so I can come prepared with an audit..."></textarea></div>
+                        <button type="submit" className="btn btn-primary" style={{"width":"100%","justifyContent":"center","fontSize":"1rem"}}>🚀 Book Your Free SEO Audit Now</button>
                         <p style={{"fontSize":"0.75rem","color":"var(--text2)","textAlign":"center","marginTop":"12px"}}>100% Free Consultation. We
             reply immediately.</p>
-            </div>
+            </form>
           </div>
         </div>
       </section>
+      <SeoAuditModal
+        isOpen={auditModalOpen}
+        onClose={() => setAuditModalOpen(false)}
+      />
       <Toast
         isVisible={showToast}
-        message="24 hours mein aapko callback ya email reply mil jayega."
+        message={toastMsg}
         onClose={() => setShowToast(false)}
       />
     </div>

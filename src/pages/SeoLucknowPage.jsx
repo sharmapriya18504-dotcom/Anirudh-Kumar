@@ -138,12 +138,12 @@ export default function SeoLucknowPage() {
                             <div className="contact-item">✅ 100% White Hat Strategies</div>
               </div>
             </div>
-                    <div className="contact-form">
-                        <div className="form-group">              <label>Name</label>              <input type="text" placeholder="Your Name" /></div>
-                        <div className="form-group">              <label>Website Link</label>              <input type="text" placeholder="www.yourbusiness.com" /></div>
-                        <div className="form-group">              <label>WhatsApp Number</label>              <input type="tel" placeholder="+91" /></div>
-                        <button className="btn btn-primary w-100 mt-4" onSubmit={handleSubmit}>Claim Free Audit Now</button>
-            </div>
+                    <form className="contact-form" onSubmit={handleSubmit}>
+                        <div className="form-group">              <label>Name</label>              <input type="text" name="name" required placeholder="Your Name" /></div>
+                        <div className="form-group">              <label>Website Link</label>              <input type="text" name="website" placeholder="www.yourbusiness.com" /></div>
+                        <div className="form-group">              <label>WhatsApp Number</label>              <input type="tel" name="phone" required placeholder="+91" /></div>
+                        <button type="submit" className="btn btn-primary w-100 mt-4">Claim Free Audit Now</button>
+            </form>
           </div>
         </div>
       </section>

@@ -43,12 +43,11 @@ export function LoaderProvider({ children }) {
 
   const triggerPageLoad = useCallback((toPath) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-    startLoaderAnimation(() => {
-      if (toPath) {
-        navigate(toPath);
-      }
-      setKey(prev => prev + 1); // Triggers re-render for fresh counters, typewriter, and reveals
-    });
+    if (toPath) {
+      navigate(toPath);
+    }
+    setKey(prev => prev + 1); // Triggers re-render for fresh counters, typewriter, and reveals
+    startLoaderAnimation();
   }, [navigate, startLoaderAnimation]);
 
   return (
@@ -65,3 +64,4 @@ export function useLoader() {
   }
   return context;
 }
+

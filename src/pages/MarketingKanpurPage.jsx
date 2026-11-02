@@ -118,12 +118,12 @@ export default function MarketingKanpurPage() {
                         <h2 className="section-heading">Scale Your               <span className="gradient-text">Kanpur Brand?</span></h2>
                         <p>Get a personalized digital marketing audit for your Kanpur business.</p>
             </div>
-                    <div className="contact-form">
-                        <div className="form-group">              <label>Name</label>              <input type="text" placeholder="Your Name" /></div>
-                        <div className="form-group">              <label>Business Type</label>              <input type="text" placeholder="e.g. Leather, Retail" /></div>
-                        <div className="form-group">              <label>WhatsApp Number</label>              <input type="tel" placeholder="+91" /></div>
-                        <button className="btn btn-primary w-100 mt-4" onSubmit={handleSubmit}>Start My Kanpur Audit</button>
-            </div>
+                    <form className="contact-form" onSubmit={handleSubmit}>
+                        <div className="form-group">              <label>Name</label>              <input type="text" name="name" required placeholder="Your Name" /></div>
+                        <div className="form-group">              <label>Business Type</label>              <input type="text" name="business" placeholder="e.g. Leather, Retail" /></div>
+                        <div className="form-group">              <label>WhatsApp Number</label>              <input type="tel" name="phone" required placeholder="+91" /></div>
+                        <button type="submit" className="btn btn-primary w-100 mt-4">Start My Kanpur Audit</button>
+            </form>
           </div>
         </div>
       </section>

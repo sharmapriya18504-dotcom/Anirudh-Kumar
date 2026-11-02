@@ -118,12 +118,12 @@ export default function WebDevLucknowPage() {
                         <h2 className="section-heading">Ready for a               <span className="gradient-text">Better Site?</span></h2>
                         <p>Get a free quote for your custom website project today.</p>
             </div>
-                    <div className="contact-form">
-                        <div className="form-group">              <label>Name</label>              <input type="text" placeholder="Your Name" /></div>
-                        <div className="form-group">              <label>Business Category</label>              <input type="text" placeholder="e.g. Hospital, School" /></div>
-                        <div className="form-group">              <label>WhatsApp Number</label>              <input type="tel" placeholder="+91" /></div>
-                        <button className="btn btn-primary w-100 mt-4" onSubmit={handleSubmit}>Get Free Quote</button>
-            </div>
+                    <form className="contact-form" onSubmit={handleSubmit}>
+                        <div className="form-group">              <label>Name</label>              <input type="text" name="name" required placeholder="Your Name" /></div>
+                        <div className="form-group">              <label>Business Category</label>              <input type="text" name="category" placeholder="e.g. Hospital, School" /></div>
+                        <div className="form-group">              <label>WhatsApp Number</label>              <input type="tel" name="phone" required placeholder="+91" /></div>
+                        <button type="submit" className="btn btn-primary w-100 mt-4">Get Free Quote</button>
+            </form>
           </div>
         </div>
       </section>

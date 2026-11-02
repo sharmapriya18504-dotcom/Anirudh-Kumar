@@ -118,12 +118,12 @@ export default function SmmLucknowPage() {
                         <h2 className="section-heading">Want to Go               <span className="gradient-text">Viral?</span></h2>
                         <p>Let's build a social media strategy that actually makes you money. Fill the form below.</p>
             </div>
-                    <div className="contact-form">
-                        <div className="form-group">              <label>Name</label>              <input type="text" placeholder="Your Name" /></div>
-                        <div className="form-group">              <label>Instagram/FB Handle</label>              <input type="text" placeholder="@yourbrand" /></div>
-                        <div className="form-group">              <label>WhatsApp Number</label>              <input type="tel" placeholder="+91" /></div>
-                        <button className="btn btn-primary w-100 mt-4" onSubmit={handleSubmit}>Start My Strategy Now</button>
-            </div>
+                    <form className="contact-form" onSubmit={handleSubmit}>
+                        <div className="form-group">              <label>Name</label>              <input type="text" name="name" required placeholder="Your Name" /></div>
+                        <div className="form-group">              <label>Instagram/FB Handle</label>              <input type="text" name="handle" placeholder="@yourbrand" /></div>
+                        <div className="form-group">              <label>WhatsApp Number</label>              <input type="tel" name="phone" required placeholder="+91" /></div>
+                        <button type="submit" className="btn btn-primary w-100 mt-4">Start My Strategy Now</button>
+            </form>
           </div>
         </div>
       </section>

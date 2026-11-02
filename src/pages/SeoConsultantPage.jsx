@@ -118,12 +118,12 @@ export default function SeoConsultantPage() {
                         <h2 className="section-heading">Need an               <span className="gradient-text">SEO Mentor?</span></h2>
                         <p>Let's talk about how I can help your team achieve SEO excellence.</p>
             </div>
-                    <div className="contact-form">
-                        <div className="form-group">              <label>Name</label>              <input type="text" placeholder="Your Name" /></div>
-                        <div className="form-group">              <label>Website/Brand</label>              <input type="text" placeholder="Your Website" /></div>
-                        <div className="form-group">              <label>WhatsApp Number</label>              <input type="tel" placeholder="+91" /></div>
-                        <button className="btn btn-primary w-100 mt-4" onSubmit={handleSubmit}>Book My Strategy Call</button>
-            </div>
+                    <form className="contact-form" onSubmit={handleSubmit}>
+                        <div className="form-group">              <label>Name</label>              <input type="text" name="name" required placeholder="Your Name" /></div>
+                        <div className="form-group">              <label>Website/Brand</label>              <input type="text" name="website" placeholder="Your Website" /></div>
+                        <div className="form-group">              <label>WhatsApp Number</label>              <input type="tel" name="phone" required placeholder="+91" /></div>
+                        <button type="submit" className="btn btn-primary w-100 mt-4">Book My Strategy Call</button>
+            </form>
           </div>
         </div>
       </section>
