@@ -15,9 +15,11 @@ export function useSiteInteractions() {
         }
       }, 100);
     } else {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
     }
-  }, [location.pathname, location.hash]);
+  }, [location.pathname, location.hash, location.key]);
 
   // Setup observers, counters, tilt, faq, etc.
   useEffect(() => {
@@ -121,5 +123,5 @@ export function useSiteInteractions() {
       window.removeEventListener('scroll', handleScrollNav);
       cleanupFns.forEach(fn => fn());
     };
-  }, [location.pathname]);
+  }, [location.pathname, location.key]);
 }

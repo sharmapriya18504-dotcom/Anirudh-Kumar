@@ -36,49 +36,62 @@ export default function Navbar() {
     setMenuOpen(prev => !prev);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    setMenuOpen(false);
+  };
+
   return (
     <>
       <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
         <div className="container nav-inner">
-          <Link className="nav-logo" to="/">
+          <Link className="nav-logo" to="/" onClick={scrollToTop}>
             <img src="/Untitled design (12).png" alt="Anirudh Kumar" className="nav-portrait" />
             ANIRUDH KUMAR
           </Link>
           <ul className="nav-links">
-            <li><Link to="/">Home</Link></li>
+            <li>
+              <Link to="/" onClick={scrollToTop}>Home</Link>
+            </li>
             <li className="nav-item-dropdown">
-              <Link to="/services">
+              <Link to="/services" onClick={scrollToTop}>
                 Services <i className="bi bi-chevron-down" style={{ fontSize: '0.7rem', marginLeft: '4px' }}></i>
               </Link>
               <div className="dropdown-menu">
-                <Link to="/seo-lucknow">SEO Services Lucknow</Link>
-                <Link to="/smm-lucknow">Social Media Marketing</Link>
-                <Link to="/ads-lucknow">Google & Meta Ads</Link>
-                <Link to="/web-dev-lucknow">Website Development</Link>
-                <Link to="/marketing-kanpur">Digital Marketing Kanpur</Link>
-                <Link to="/seo-consultant">SEO Consultant</Link>
+                <Link to="/seo-lucknow" onClick={scrollToTop}>SEO Services Lucknow</Link>
+                <Link to="/smm-lucknow" onClick={scrollToTop}>Social Media Marketing</Link>
+                <Link to="/ads-lucknow" onClick={scrollToTop}>Google & Meta Ads</Link>
+                <Link to="/web-dev-lucknow" onClick={scrollToTop}>Website Development</Link>
+                <Link to="/marketing-kanpur" onClick={scrollToTop}>Digital Marketing Kanpur</Link>
+                <Link to="/seo-consultant" onClick={scrollToTop}>SEO Consultant</Link>
               </div>
             </li>
             <li className="nav-item-dropdown">
-              <Link to="/results">
+              <Link to="/results" onClick={scrollToTop}>
                 Results <i className="bi bi-chevron-down" style={{ fontSize: '0.7rem', marginLeft: '4px' }}></i>
               </Link>
               <div className="dropdown-menu">
-                <Link to="/testimonials">Client Reviews</Link>
-                <Link to="/case-studies">Case Studies</Link>
+                <Link to="/testimonials" onClick={scrollToTop}>Client Reviews</Link>
+                <Link to="/case-studies" onClick={scrollToTop}>Case Studies</Link>
               </div>
             </li>
             <li className="nav-item-dropdown">
-              <Link to="/about">
+              <Link to="/about" onClick={scrollToTop}>
                 About <i className="bi bi-chevron-down" style={{ fontSize: '0.7rem', marginLeft: '4px' }}></i>
               </Link>
               <div className="dropdown-menu">
-                <Link to="/about">My Story</Link>
-                <Link to="/why-choose-us">Why Choose Us</Link>
+                <Link to="/about" onClick={scrollToTop}>My Story</Link>
+                <Link to="/why-choose-us" onClick={scrollToTop}>Why Choose Us</Link>
               </div>
             </li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li>
+              <Link to="/blog" onClick={scrollToTop}>Blog</Link>
+            </li>
+            <li>
+              <Link to="/contact" onClick={scrollToTop}>Contact</Link>
+            </li>
           </ul>
           <div className="nav-actions">
             <button
@@ -93,7 +106,9 @@ export default function Navbar() {
                 <i className="bi bi-moon-stars-fill"></i>
               )}
             </button>
-            <Link className="nav-cta" to="/contact">Free SEO Audit</Link>
+            <Link className="nav-cta" to="/contact" onClick={scrollToTop}>
+              Free SEO Audit
+            </Link>
             <div
               className={`hamburger ${menuOpen ? 'active' : ''}`}
               onClick={toggleMenu}
@@ -125,15 +140,14 @@ export default function Navbar() {
         >
           ✕
         </button>
-        <Link to="/" onClick={toggleMenu}>Home</Link>
-        <Link to="/services" onClick={toggleMenu}>Services</Link>
-        <Link to="/results" onClick={toggleMenu}>Results</Link>
-        <Link to="/about" onClick={toggleMenu}>About</Link>
-        <Link to="/blog" onClick={toggleMenu}>Blog</Link>
-        <Link to="/contact" onClick={toggleMenu}>Contact</Link>
-        <Link className="btn btn-primary" to="/contact" onClick={toggleMenu}>Free SEO Audit</Link>
+        <Link to="/" onClick={scrollToTop}>Home</Link>
+        <Link to="/services" onClick={scrollToTop}>Services</Link>
+        <Link to="/results" onClick={scrollToTop}>Results</Link>
+        <Link to="/about" onClick={scrollToTop}>About</Link>
+        <Link to="/blog" onClick={scrollToTop}>Blog</Link>
+        <Link to="/contact" onClick={scrollToTop}>Contact</Link>
+        <Link className="btn btn-primary" to="/contact" onClick={scrollToTop}>Free SEO Audit</Link>
       </div>
     </>
   );
 }
-

@@ -2,18 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+
   return (
     <footer>
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <div
+            <Link
+              to="/"
+              onClick={scrollToTop}
               className="nav-logo"
               style={{
                 fontSize: '2rem',
                 marginBottom: '20px',
                 color: 'var(--text2)',
-                transition: 'color var(--transition)'
+                transition: 'color var(--transition)',
+                textDecoration: 'none'
               }}
             >
               <img
@@ -23,7 +32,7 @@ export default function Footer() {
                 style={{ width: '60px', height: '60px' }}
               />
               ANIRUDH KUMAR
-            </div>
+            </Link>
             <p>
               Lucknow & Kanpur ka trusted Digital Marketing Expert. SEO, Social Media, Ads, Website — everything you need
               to grow your business online.
@@ -63,28 +72,28 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Services</h4>
             <ul>
-              <li><Link to="/seo-lucknow">SEO Services Lucknow</Link></li>
-              <li><Link to="/smm-lucknow">Social Media Marketing</Link></li>
-              <li><Link to="/ads-lucknow">Google & Meta Ads</Link></li>
-              <li><Link to="/web-dev-lucknow">Website Development</Link></li>
-              <li><Link to="/marketing-kanpur">Digital Marketing Kanpur</Link></li>
-              <li><Link to="/seo-consultant">SEO Consultant</Link></li>
+              <li><Link to="/seo-lucknow" onClick={scrollToTop}>SEO Services Lucknow</Link></li>
+              <li><Link to="/smm-lucknow" onClick={scrollToTop}>Social Media Marketing</Link></li>
+              <li><Link to="/ads-lucknow" onClick={scrollToTop}>Google & Meta Ads</Link></li>
+              <li><Link to="/web-dev-lucknow" onClick={scrollToTop}>Website Development</Link></li>
+              <li><Link to="/marketing-kanpur" onClick={scrollToTop}>Digital Marketing Kanpur</Link></li>
+              <li><Link to="/seo-consultant" onClick={scrollToTop}>SEO Consultant</Link></li>
             </ul>
           </div>
           <div className="footer-col">
             <h4>Results</h4>
             <ul>
-              <li><Link to="/testimonials">Client Reviews</Link></li>
-              <li><Link to="/case-studies">Case Studies</Link></li>
-              <li><Link to="/blog">Latest Articles</Link></li>
+              <li><Link to="/testimonials" onClick={scrollToTop}>Client Reviews</Link></li>
+              <li><Link to="/case-studies" onClick={scrollToTop}>Case Studies</Link></li>
+              <li><Link to="/blog" onClick={scrollToTop}>Latest Articles</Link></li>
             </ul>
           </div>
           <div className="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><Link to="/about">My Story</Link></li>
-              <li><Link to="/why-choose-us">Why Choose Us</Link></li>
-              <li><Link to="/contact">Free SEO Audit</Link></li>
+              <li><Link to="/about" onClick={scrollToTop}>My Story</Link></li>
+              <li><Link to="/why-choose-us" onClick={scrollToTop}>Why Choose Us</Link></li>
+              <li><Link to="/contact" onClick={scrollToTop}>Free SEO Audit</Link></li>
             </ul>
           </div>
         </div>
@@ -96,4 +105,3 @@ export default function Footer() {
     </footer>
   );
 }
-
