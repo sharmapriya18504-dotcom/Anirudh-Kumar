@@ -52,7 +52,7 @@ export default function TiltCard3D({ children, className = '', style = {}, maxTi
           position: 'absolute',
           inset: 0,
           borderRadius: 'inherit',
-          background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(0, 229, 255, 0.28) 0%, rgba(124, 77, 255, 0.15) 30%, transparent 70%)`,
+          background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255, 107, 0, 0.28) 0%, rgba(255, 184, 0, 0.16) 35%, transparent 70%)`,
           opacity: glare.opacity,
           pointerEvents: 'none',
           transition: 'opacity 0.25s ease',
@@ -63,3 +63,4 @@ export default function TiltCard3D({ children, className = '', style = {}, maxTi
     </div>
   );
 }
+

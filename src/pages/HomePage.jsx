@@ -63,7 +63,7 @@ export default function HomePage() {
     if (btn) {
       const originalText = btn.textContent;
       btn.textContent = '✅ Message Sent! Expect a reply within 24 hours';
-      btn.style.background = '#00E5FF';
+      btn.style.background = '#FF6B00';
       btn.style.color = '#050814';
       btn.disabled = true;
       setTimeout(() => {
@@ -181,16 +181,16 @@ export default function HomePage() {
           ========================================================================= */}
       <section id="hero" style={{ position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '110px', paddingBottom: '60px' }}>
         {/* Subtle ambient lighting backdrop */}
-        <div style={{ position: 'absolute', top: '-10%', left: '5%', width: '450px', height: '450px', background: 'radial-gradient(circle, rgba(41,121,255,0.12) 0%, transparent 70%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
-        <div style={{ position: 'absolute', top: '20%', right: '5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(124,77,255,0.12) 0%, transparent 70%)', filter: 'blur(90px)', pointerEvents: 'none', zIndex: 0 }} />
+        <div style={{ position: 'absolute', top: '-10%', left: '5%', width: '450px', height: '450px', background: 'radial-gradient(circle, rgba(255,107,0,0.16) 0%, transparent 70%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+        <div style={{ position: 'absolute', top: '20%', right: '5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(255,184,0,0.14) 0%, transparent 70%)', filter: 'blur(90px)', pointerEvents: 'none', zIndex: 0 }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
             {/* Left Hero Content */}
             <div className="hero-content">
-              <div className="hero-eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '6px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '30px', marginBottom: '20px' }}>
-                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#00E5FF', display: 'inline-block', boxShadow: '0 0 10px #00E5FF' }}></span>
-                <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#00E5FF', letterSpacing: '0.04em' }}>
+              <div className="hero-eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '6px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '30px', marginBottom: '20px' }}>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#FF6B00', display: 'inline-block', boxShadow: '0 0 10px #FF6B00' }}></span>
+                <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FF8800', letterSpacing: '0.04em' }}>
                   Available for New Projects • Pan-India & UP / NCR
                 </span>
               </div>
@@ -205,8 +205,8 @@ export default function HomePage() {
               </p>
 
               {/* Direct Working Promise Note */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '12px', marginBottom: '32px', maxWidth: '540px' }}>
-                <span style={{ fontSize: '1.2rem', color: '#00E5FF' }}>🛡️</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', marginBottom: '32px', maxWidth: '540px' }}>
+                <span style={{ fontSize: '1.2rem', color: '#FF8800' }}>🛡️</span>
                 <span style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.4 }}>
                   <strong>You work directly with me.</strong> No account managers, no interns, no lock-in contract.
                 </span>
@@ -238,13 +238,13 @@ export default function HomePage() {
               {/* Trust Bar (PDF B3 & B5 Specification: Replace marquee with clean certified credentials) */}
               <div className="trust-bar" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', alignItems: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
-                  <span style={{ color: '#00E5FF' }}>✓</span> Google Analytics Certified
+                  <span style={{ color: '#FF8800' }}>✓</span> Google Analytics Certified
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
-                  <span style={{ color: '#2979FF' }}>✓</span> Google Ads Certified
+                  <span style={{ color: '#FF6B00' }}>✓</span> Google Ads Certified
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
-                  <span style={{ color: '#7C4DFF' }}>✓</span> Meta Ads Certified
+                  <span style={{ color: '#FFB800' }}>✓</span> Meta Ads Certified
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
                   <span style={{ color: '#00D68F' }}>✓</span> 100% White-Hat SEO
@@ -263,10 +263,10 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 6: SIX INTERACTIVE 3D SERVICE CARDS
           ========================================================================= */}
-      <section id="services" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+      <section id="services" className="page-section" style={{ position: 'relative', background: 'var(--bg2)', padding: '90px 0' }}>
         <div className="container">
           <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
-            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#FF8800', marginBottom: '12px' }}>
               What I Do
             </span>
             <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
@@ -287,10 +287,10 @@ export default function HomePage() {
                     justifyContent: 'space-between',
                     height: '100%',
                     padding: '32px 28px',
-                    background: 'linear-gradient(145deg, rgba(14,21,56,0.7) 0%, rgba(8,13,34,0.85) 100%)',
+                    background: 'var(--card)',
                     borderRadius: '20px',
-                    border: '1px solid rgba(41,121,255,0.2)',
-                    boxShadow: '0 12px 36px rgba(0,0,0,0.35)',
+                    border: '1px solid var(--border)',
+                    boxShadow: 'var(--shadow)',
                     transition: 'border-color 0.3s ease'
                   }}
                 >
@@ -301,14 +301,7 @@ export default function HomePage() {
                         width: '60px',
                         height: '60px',
                         borderRadius: '16px',
-                        background: 'linear-gradient(135deg, rgba(41,121,255,0.2) 0%, rgba(124,77,255,0.2) 100%)',
-                        border: '1px solid rgba(41,121,255,0.4)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#00E5FF',
-                        marginBottom: '20px',
-                        boxShadow: '0 8px 20px rgba(41,121,255,0.15)'
+                        background: 'linear-gradient(135deg, rgba(255,107,0,0.15) 0%, rgba(255,184,0,0.25) 100%)', border: '1px solid rgba(255,107,0,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF6B00', marginBottom: '20px', boxShadow: '0 8px 20px rgba(255,107,0,0.18)'
                       }}
                     >
                       {srv.icon}
@@ -318,7 +311,7 @@ export default function HomePage() {
                       {srv.title}
                     </h3>
 
-                    <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#00E5FF', marginBottom: '14px' }}>
+                    <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FF6B00', marginBottom: '14px' }}>
                       {srv.tagline}
                     </div>
 
@@ -335,12 +328,12 @@ export default function HomePage() {
                       gap: '6px',
                       fontSize: '0.9rem',
                       fontWeight: 700,
-                      color: '#2979FF',
+                      color: 'var(--accent)',
                       textDecoration: 'none',
                       transition: 'gap 0.2s ease, color 0.2s ease'
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.color = '#00E5FF'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = '#2979FF'; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = '#FFA040'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--accent)'; }}
                   >
                     {srv.linkText}
                   </Link>
@@ -364,7 +357,7 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 7: ABOUT ME
           ========================================================================= */}
-      <section id="about" className="page-section" style={{ position: 'relative', background: '#050814', padding: '90px 0' }}>
+      <section id="about" className="page-section" style={{ position: 'relative', background: 'var(--bg)', padding: '90px 0' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
             {/* Visual Persona Card */}
@@ -373,11 +366,11 @@ export default function HomePage() {
                 <div
                   style={{
                     position: 'relative',
-                    background: 'linear-gradient(145deg, rgba(14,21,56,0.6) 0%, rgba(8,13,34,0.9) 100%)',
+                    background: 'var(--card)',
                     borderRadius: '24px',
-                    border: '1px solid rgba(41,121,255,0.25)',
+                    border: '1px solid var(--border)',
                     padding: '24px',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+                    boxShadow: 'var(--shadow)',
                     textAlign: 'center',
                     overflow: 'hidden'
                   }}
@@ -401,7 +394,7 @@ export default function HomePage() {
                       transform: 'translateX(-50%)',
                       background: 'rgba(5,8,20,0.85)',
                       backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(0,229,255,0.3)',
+                      border: '1px solid rgba(255,107,0,0.35)',
                       borderRadius: '30px',
                       padding: '8px 20px',
                       display: 'flex',
@@ -410,7 +403,7 @@ export default function HomePage() {
                       whiteSpace: 'nowrap'
                     }}
                   >
-                    <span style={{ color: '#00E5FF' }}>📍</span>
+                    <span style={{ color: '#FF6B00' }}>📍</span>
                     <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#fff' }}>
                       Lucknow, UP • On-Site & Remote Pan-India
                     </span>
@@ -421,7 +414,7 @@ export default function HomePage() {
 
             {/* About Copy matching PDF A4 */}
             <div>
-              <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '14px' }}>
+              <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#FF8800', marginBottom: '14px' }}>
                 About Me
               </span>
               <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.2vw, 2.6rem)', fontWeight: 800, color: '#fff', marginBottom: '20px', lineHeight: 1.25 }}>
@@ -439,19 +432,19 @@ export default function HomePage() {
               {/* Core Philosophy Bullets */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '28px' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <span style={{ color: '#00E5FF', fontSize: '1.1rem', marginTop: '2px' }}>🎯</span>
+                  <span style={{ color: '#FF6B00', fontSize: '1.1rem', marginTop: '2px' }}>🎯</span>
                   <div style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>
                     <strong style={{ color: '#fff' }}>Revenue Over Vanity:</strong> Traffic is meaningless if it doesn't convert. I focus on high-intent keywords that drive paying clients.
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <span style={{ color: '#00E5FF', fontSize: '1.1rem', marginTop: '2px' }}>📊</span>
+                  <span style={{ color: '#FF6B00', fontSize: '1.1rem', marginTop: '2px' }}>📊</span>
                   <div style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>
                     <strong style={{ color: '#fff' }}>100% Transparency:</strong> You get straightforward reporting on what was done, what moved, and what I am optimizing next.
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <span style={{ color: '#00E5FF', fontSize: '1.1rem', marginTop: '2px' }}>🔓</span>
+                  <span style={{ color: '#FF6B00', fontSize: '1.1rem', marginTop: '2px' }}>🔓</span>
                   <div style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>
                     <strong style={{ color: '#fff' }}>Month-to-Month Flexibility:</strong> No long-term lock-in contracts. You continue working with me because you see measurable value.
                   </div>
@@ -479,10 +472,10 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 8: WHY WORK WITH ME (4 PILLARS + VERIFIED COMPARISON TABLE)
           ========================================================================= */}
-      <section id="why" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+      <section id="why" className="page-section" style={{ position: 'relative', background: 'var(--bg2)', padding: '90px 0' }}>
         <div className="container">
           <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
-            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#FF8800', marginBottom: '12px' }}>
               Why Work With Me
             </span>
             <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
@@ -495,7 +488,7 @@ export default function HomePage() {
 
           {/* 4 Pillars Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', marginBottom: '50px' }}>
-            <div style={{ padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px' }}>
+            <div style={{ padding: '28px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '18px' }}>
               <div style={{ fontSize: '2rem', marginBottom: '14px' }}>🤝</div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>Direct Access to Me</h3>
               <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
@@ -503,7 +496,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div style={{ padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px' }}>
+            <div style={{ padding: '28px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '18px' }}>
               <div style={{ fontSize: '2rem', marginBottom: '14px' }}>📊</div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>Clear, Honest Reporting</h3>
               <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
@@ -511,7 +504,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div style={{ padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px' }}>
+            <div style={{ padding: '28px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '18px' }}>
               <div style={{ fontSize: '2rem', marginBottom: '14px' }}>📍</div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>Local & Remote Flexibility</h3>
               <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
@@ -519,7 +512,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div style={{ padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px' }}>
+            <div style={{ padding: '28px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '18px' }}>
               <div style={{ fontSize: '2rem', marginBottom: '14px' }}>🔓</div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>No Lock-in Contracts</h3>
               <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
@@ -529,7 +522,7 @@ export default function HomePage() {
           </div>
 
           {/* Honest Comparison Table */}
-          <div style={{ background: 'rgba(14,21,56,0.7)', borderRadius: '20px', border: '1px solid rgba(41,121,255,0.2)', padding: '28px', overflowX: 'auto' }}>
+          <div style={{ background: 'var(--card)', borderRadius: '20px', border: '1px solid var(--border)', padding: '28px', overflowX: 'auto' }}>
             <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '20px', textAlign: 'center' }}>
               Working With Anirudh Kumar vs. A Typical Marketing Agency
             </h3>
@@ -537,34 +530,34 @@ export default function HomePage() {
               <thead>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <th style={{ textAlign: 'left', padding: '14px 16px', color: 'rgba(255,255,255,0.6)', fontWeight: 600 }}>Feature</th>
-                  <th style={{ textAlign: 'left', padding: '14px 16px', color: '#00E5FF', fontWeight: 700, background: 'rgba(41,121,255,0.15)', borderRadius: '8px 8px 0 0' }}>✓ Working With Me</th>
+                  <th style={{ textAlign: 'left', padding: '14px 16px', color: '#FF6B00', fontWeight: 700, background: 'rgba(255, 107, 0, 0.15)', borderRadius: '8px 8px 0 0' }}>✓ Working With Me</th>
                   <th style={{ textAlign: 'left', padding: '14px 16px', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>Typical Agency</th>
                 </tr>
               </thead>
               <tbody>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <td style={{ padding: '14px 16px', color: '#FFFFFF', fontWeight: 600 }}>Point of Contact</td>
-                  <td style={{ padding: '14px 16px', color: '#00E5FF', background: 'rgba(41,121,255,0.08)' }}>Direct communication with Anirudh</td>
+                  <td style={{ padding: '14px 16px', color: '#FF6B00', background: 'rgba(41,121,255,0.08)' }}>Direct communication with Anirudh</td>
                   <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.6)' }}>Junior account managers or interns</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <td style={{ padding: '14px 16px', color: '#FFFFFF', fontWeight: 600 }}>Pricing Structure</td>
-                  <td style={{ padding: '14px 16px', color: '#00E5FF', background: 'rgba(41,121,255,0.08)' }}>Transparent, flat monthly packages from ₹8,000</td>
+                  <td style={{ padding: '14px 16px', color: '#FF6B00', background: 'rgba(41,121,255,0.08)' }}>Transparent, flat monthly packages from ₹8,000</td>
                   <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.6)' }}>Vague retainers + hidden implementation fees</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <td style={{ padding: '14px 16px', color: '#FFFFFF', fontWeight: 600 }}>Commitment</td>
-                  <td style={{ padding: '14px 16px', color: '#00E5FF', background: 'rgba(41,121,255,0.08)' }}>Month-to-month, cancel anytime</td>
+                  <td style={{ padding: '14px 16px', color: '#FF6B00', background: 'rgba(41,121,255,0.08)' }}>Month-to-month, cancel anytime</td>
                   <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.6)' }}>6-12 month binding contracts</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <td style={{ padding: '14px 16px', color: '#FFFFFF', fontWeight: 600 }}>Strategy & Execution</td>
-                  <td style={{ padding: '14px 16px', color: '#00E5FF', background: 'rgba(41,121,255,0.08)' }}>Tailored to your specific city and buyers</td>
+                  <td style={{ padding: '14px 16px', color: '#FF6B00', background: 'rgba(41,121,255,0.08)' }}>Tailored to your specific city and buyers</td>
                   <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.6)' }}>Recycled generic templates across clients</td>
                 </tr>
                 <tr>
                   <td style={{ padding: '14px 16px', color: '#FFFFFF', fontWeight: 600 }}>Response Time</td>
-                  <td style={{ padding: '14px 16px', color: '#00E5FF', background: 'rgba(41,121,255,0.08)', borderRadius: '0 0 8px 8px' }}>Prompt response within 24 hours guaranteed</td>
+                  <td style={{ padding: '14px 16px', color: '#FF6B00', background: 'rgba(41,121,255,0.08)', borderRadius: '0 0 8px 8px' }}>Prompt response within 24 hours guaranteed</td>
                   <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.6)' }}>Slow email ticketing queues</td>
                 </tr>
               </tbody>
@@ -576,10 +569,10 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 9: WORK PROCESS (5-STEP ANIMATED TIMELINE)
           ========================================================================= */}
-      <section id="process" className="page-section" style={{ position: 'relative', background: '#050814', padding: '90px 0' }}>
+      <section id="process" className="page-section" style={{ position: 'relative', background: 'var(--bg)', padding: '90px 0' }}>
         <div className="container">
           <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
-            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#FF8800', marginBottom: '12px' }}>
               My Process
             </span>
             <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
@@ -623,8 +616,7 @@ export default function HomePage() {
                 style={{
                   position: 'relative',
                   padding: '24px 20px',
-                  background: 'rgba(14,21,56,0.6)',
-                  border: '1px solid rgba(41,121,255,0.2)',
+                  background: 'var(--card)', border: '1px solid var(--border)',
                   borderRadius: '16px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -636,7 +628,7 @@ export default function HomePage() {
                     fontSize: '1.8rem',
                     fontWeight: 900,
                     fontFamily: 'monospace',
-                    color: '#00E5FF',
+                    color: '#FF6B00',
                     opacity: 0.9
                   }}
                 >
@@ -664,10 +656,10 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 10: CASE STUDIES & RESULTS FRAMEWORK (AUTHENTIC & COMPLIANT)
           ========================================================================= */}
-      <section id="results" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+      <section id="results" className="page-section" style={{ position: 'relative', background: 'var(--bg2)', padding: '90px 0' }}>
         <div className="container">
           <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
-            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#FF8800', marginBottom: '12px' }}>
               Results & Proof
             </span>
             <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
@@ -680,7 +672,7 @@ export default function HomePage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px', marginBottom: '40px' }}>
             <TiltCard3D maxTilt={8} scale={1.01}>
-              <div style={{ height: '100%', padding: '32px 26px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '20px' }}>
+              <div style={{ height: '100%', padding: '32px 26px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '20px' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '16px' }}>🔒</div>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>Client Confidentiality First</h3>
                 <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
@@ -690,7 +682,7 @@ export default function HomePage() {
             </TiltCard3D>
 
             <TiltCard3D maxTilt={8} scale={1.01}>
-              <div style={{ height: '100%', padding: '32px 26px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '20px' }}>
+              <div style={{ height: '100%', padding: '32px 26px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '20px' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '16px' }}>📈</div>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>How I Measure Success</h3>
                 <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
@@ -700,7 +692,7 @@ export default function HomePage() {
             </TiltCard3D>
 
             <TiltCard3D maxTilt={8} scale={1.01}>
-              <div style={{ height: '100%', padding: '32px 26px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '20px' }}>
+              <div style={{ height: '100%', padding: '32px 26px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '20px' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '16px' }}>🚀</div>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>Become My Next Case Study</h3>
                 <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
@@ -721,7 +713,7 @@ export default function HomePage() {
       {/* =========================================================================
           ROI CALCULATOR SECTION
           ========================================================================= */}
-      <section className="page-section" style={{ background: '#050814', padding: '80px 0' }}>
+      <section className="page-section" style={{ background: 'var(--bg)', padding: '80px 0' }}>
         <div className="container">
           <RoiCalculator />
         </div>
@@ -730,10 +722,10 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 12: PRICING SECTION (PDF A2 VERIFIED PACKAGES)
           ========================================================================= */}
-      <section id="pricing" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+      <section id="pricing" className="page-section" style={{ position: 'relative', background: 'var(--bg2)', padding: '90px 0' }}>
         <div className="container">
           <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
-            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#FF8800', marginBottom: '12px' }}>
               Transparent Pricing
             </span>
             <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
@@ -748,7 +740,7 @@ export default function HomePage() {
 
           <p style={{ textAlign: 'center', marginTop: '30px', color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem' }}>
             Need a custom combination of SEO, Google Ads, and Website Development?{' '}
-            <a href="#contact" style={{ color: '#00E5FF', fontWeight: 600, textDecoration: 'underline' }}>
+            <a href="#contact" style={{ color: '#FF6B00', fontWeight: 600, textDecoration: 'underline' }}>
               Contact me for a custom proposal
             </a>
           </p>
@@ -758,10 +750,10 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 13: WHERE I WORK (SERVICE LOCATIONS)
           ========================================================================= */}
-      <section id="locations" className="page-section" style={{ position: 'relative', background: '#050814', padding: '90px 0' }}>
+      <section id="locations" className="page-section" style={{ position: 'relative', background: 'var(--bg)', padding: '90px 0' }}>
         <div className="container">
           <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
-            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#FF8800', marginBottom: '12px' }}>
               Service Coverage
             </span>
             <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
@@ -775,16 +767,16 @@ export default function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
             {/* Lucknow */}
             <TiltCard3D maxTilt={7} scale={1.01}>
-              <div style={{ height: '100%', padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div style={{ height: '100%', padding: '28px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🏛️</div>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>SEO Expert in Lucknow</h3>
-                  <div style={{ fontSize: '0.85rem', color: '#00E5FF', fontWeight: 600, marginBottom: '12px' }}>Capital City & Regional Hub</div>
+                  <div style={{ fontSize: '0.85rem', color: '#FF6B00', fontWeight: 600, marginBottom: '12px' }}>Capital City & Regional Hub</div>
                   <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, marginBottom: '16px' }}>
                     Dedicated local SEO for Gomti Nagar, Hazratganj, Aliganj, and Indira Nagar businesses. In-person meetings available.
                   </p>
                 </div>
-                <Link to="/seo-expert-lucknow" style={{ color: '#2979FF', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                <Link to="/seo-expert-lucknow" style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
                   Explore Lucknow SEO →
                 </Link>
               </div>
@@ -792,16 +784,16 @@ export default function HomePage() {
 
             {/* Kanpur */}
             <TiltCard3D maxTilt={7} scale={1.01}>
-              <div style={{ height: '100%', padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div style={{ height: '100%', padding: '28px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🏭</div>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>SEO Expert in Kanpur</h3>
-                  <div style={{ fontSize: '0.85rem', color: '#00E5FF', fontWeight: 600, marginBottom: '12px' }}>Commercial & Industrial Center</div>
+                  <div style={{ fontSize: '0.85rem', color: '#FF6B00', fontWeight: 600, marginBottom: '12px' }}>Commercial & Industrial Center</div>
                   <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, marginBottom: '16px' }}>
                     B2B and local search strategies for manufacturing, retail, and service brands across Civil Lines, Swaroop Nagar, and Kidwai Nagar.
                   </p>
                 </div>
-                <Link to="/seo-expert-kanpur" style={{ color: '#2979FF', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                <Link to="/seo-expert-kanpur" style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
                   Explore Kanpur SEO →
                 </Link>
               </div>
@@ -809,16 +801,16 @@ export default function HomePage() {
 
             {/* Noida */}
             <TiltCard3D maxTilt={7} scale={1.01}>
-              <div style={{ height: '100%', padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div style={{ height: '100%', padding: '28px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🏢</div>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>SEO Expert in Noida</h3>
-                  <div style={{ fontSize: '0.85rem', color: '#00E5FF', fontWeight: 600, marginBottom: '12px' }}>Tech & Corporate Hub</div>
+                  <div style={{ fontSize: '0.85rem', color: '#FF6B00', fontWeight: 600, marginBottom: '12px' }}>Tech & Corporate Hub</div>
                   <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, marginBottom: '16px' }}>
                     Consulting for startups, D2C brands, and tech companies across Sectors 62, 125, Greater Noida, and Delhi NCR.
                   </p>
                 </div>
-                <Link to="/seo-expert-noida" style={{ color: '#2979FF', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                <Link to="/seo-expert-noida" style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
                   Explore Noida SEO →
                 </Link>
               </div>
@@ -826,16 +818,16 @@ export default function HomePage() {
 
             {/* Remote India */}
             <TiltCard3D maxTilt={7} scale={1.01}>
-              <div style={{ height: '100%', padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div style={{ height: '100%', padding: '28px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🌐</div>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>Remote SEO Pan-India</h3>
-                  <div style={{ fontSize: '0.85rem', color: '#00E5FF', fontWeight: 600, marginBottom: '12px' }}>Seamless Remote Workflow</div>
+                  <div style={{ fontSize: '0.85rem', color: '#FF6B00', fontWeight: 600, marginBottom: '12px' }}>Seamless Remote Workflow</div>
                   <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, marginBottom: '16px' }}>
                     Serving clients in Delhi, Bengaluru, Mumbai, Pune, and nationwide with weekly Google Meet sessions and real-time dashboards.
                   </p>
                 </div>
-                <Link to="/remote-seo-services" style={{ color: '#2979FF', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                <Link to="/remote-seo-services" style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
                   Explore Remote Services →
                 </Link>
               </div>
@@ -847,10 +839,10 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 14: BLOG & GUIDES PREVIEW (VERIFIED GUIDES FROM DATA)
           ========================================================================= */}
-      <section id="blog" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+      <section id="blog" className="page-section" style={{ position: 'relative', background: 'var(--bg2)', padding: '90px 0' }}>
         <div className="container">
           <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
-            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#FF8800', marginBottom: '12px' }}>
               SEO & Marketing Insights
             </span>
             <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
@@ -864,10 +856,10 @@ export default function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px' }}>
             {BLOGS.slice(0, 3).map((post) => (
               <TiltCard3D key={post.slug} maxTilt={6} scale={1.01}>
-                <div style={{ height: '100%', padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div style={{ height: '100%', padding: '28px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                      <span style={{ fontSize: '0.78rem', fontWeight: 700, padding: '4px 10px', background: 'rgba(41,121,255,0.15)', color: '#00E5FF', borderRadius: '12px' }}>
+                      <span style={{ fontSize: '0.78rem', fontWeight: 700, padding: '4px 10px', background: 'rgba(255, 107, 0, 0.15)', color: '#FF6B00', borderRadius: '12px' }}>
                         {post.category}
                       </span>
                       <span style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
@@ -883,7 +875,7 @@ export default function HomePage() {
                   </div>
                   <Link
                     to={`/blog-post?post=${post.slug}`}
-                    style={{ color: '#2979FF', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}
+                    style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}
                   >
                     Read Guide →
                   </Link>
@@ -903,11 +895,11 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 15: FAQ
           ========================================================================= */}
-      <section id="faq" className="page-section" style={{ position: 'relative', background: '#050814', padding: '90px 0' }}>
+      <section id="faq" className="page-section" style={{ position: 'relative', background: 'var(--bg)', padding: '90px 0' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'start' }}>
             <div>
-              <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+              <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#FF8800', marginBottom: '12px' }}>
                 Common Questions
               </span>
               <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
@@ -922,7 +914,7 @@ export default function HomePage() {
 
             {/* Sidebar CTA cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ padding: '30px', background: 'linear-gradient(145deg, rgba(14,21,56,0.8) 0%, rgba(8,13,34,0.9) 100%)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px' }}>
+              <div style={{ padding: '30px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '20px' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>
                   🚀 Claim Your Free SEO Audit
                 </h3>
@@ -964,12 +956,12 @@ export default function HomePage() {
       {/* =========================================================================
           SECTION 16: CONTACT SECTION (VERIFIED DETAILS & REAL FORM)
           ========================================================================= */}
-      <section id="contact" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+      <section id="contact" className="page-section" style={{ position: 'relative', background: 'var(--bg2)', padding: '90px 0' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'start' }}>
             {/* Contact Details */}
             <div>
-              <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+              <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(255,107,0,0.1)', border: '1px solid rgba(255,107,0,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#FF8800', marginBottom: '12px' }}>
                 Get In Touch
               </span>
               <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
@@ -983,10 +975,10 @@ export default function HomePage() {
                 {/* Phone */}
                 <div
                   onClick={() => copyToClipboard('+91 86046 25862', 'Phone Number')}
-                  style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '14px', cursor: 'pointer' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '14px', cursor: 'pointer' }}
                   title="Click to copy phone number"
                 >
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(41,121,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#00E5FF', fontSize: '1.2rem' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(255,107,0,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF6B00', fontSize: '1.2rem' }}>
                     <i className="bi bi-telephone"></i>
                   </div>
                   <div>
@@ -998,10 +990,10 @@ export default function HomePage() {
                 {/* Email */}
                 <div
                   onClick={() => copyToClipboard('anirudhkumarseo@gmail.com', 'Email Address')}
-                  style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '14px', cursor: 'pointer' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '14px', cursor: 'pointer' }}
                   title="Click to copy email"
                 >
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(41,121,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#00E5FF', fontSize: '1.2rem' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(255,107,0,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF6B00', fontSize: '1.2rem' }}>
                     <i className="bi bi-envelope"></i>
                   </div>
                   <div>
@@ -1011,8 +1003,8 @@ export default function HomePage() {
                 </div>
 
                 {/* Location */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '14px' }}>
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(41,121,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#00E5FF', fontSize: '1.2rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '14px' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(255,107,0,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF6B00', fontSize: '1.2rem' }}>
                     <i className="bi bi-geo-alt"></i>
                   </div>
                   <div>
@@ -1024,7 +1016,7 @@ export default function HomePage() {
             </div>
 
             {/* Direct Form */}
-            <div style={{ background: 'rgba(14,21,56,0.85)', padding: '36px 32px', borderRadius: '24px', border: '1px solid rgba(41,121,255,0.25)', boxShadow: '0 20px 50px rgba(0,0,0,0.4)' }}>
+            <div style={{ background: 'var(--card)', padding: '36px 32px', borderRadius: '24px', border: '1px solid var(--border)', boxShadow: '0 20px 50px rgba(0,0,0,0.4)' }}>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>
                 Request a Free SEO Audit & Consultation
               </h3>
@@ -1057,7 +1049,7 @@ export default function HomePage() {
                       placeholder="e.g. Rahul Sharma"
                       value={formData.name}
                       onChange={handleInputChange}
-                      style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
+                      style={{ width: '100%', padding: '12px 14px', background: 'var(--bg3)', border: '1px solid var(--border)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
                     />
                   </div>
                   <div>
@@ -1071,7 +1063,7 @@ export default function HomePage() {
                       placeholder="+91 98765 43210"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
+                      style={{ width: '100%', padding: '12px 14px', background: 'var(--bg3)', border: '1px solid var(--border)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
                     />
                   </div>
                 </div>
@@ -1087,7 +1079,7 @@ export default function HomePage() {
                       placeholder="you@company.com"
                       value={formData.email}
                       onChange={handleInputChange}
-                      style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
+                      style={{ width: '100%', padding: '12px 14px', background: 'var(--bg3)', border: '1px solid var(--border)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
                     />
                   </div>
                   <div>
@@ -1100,7 +1092,7 @@ export default function HomePage() {
                       placeholder="https://example.com"
                       value={formData.website}
                       onChange={handleInputChange}
-                      style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
+                      style={{ width: '100%', padding: '12px 14px', background: 'var(--bg3)', border: '1px solid var(--border)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
                     />
                   </div>
                 </div>
@@ -1113,7 +1105,7 @@ export default function HomePage() {
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.9)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
+                    style={{ width: '100%', padding: '12px 14px', background: 'var(--bg3)', border: '1px solid var(--border)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
                   >
                     <option value="">— Select Primary Goal —</option>
                     <option value="Free SEO Audit">Free SEO Audit & Analysis</option>
@@ -1135,7 +1127,7 @@ export default function HomePage() {
                     placeholder="Tell me about your target city, current rankings, or what you want to achieve..."
                     value={formData.message}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem', resize: 'vertical' }}
+                    style={{ width: '100%', padding: '12px 14px', background: 'var(--bg3)', border: '1px solid var(--border)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem', resize: 'vertical' }}
                   ></textarea>
                 </div>
 

@@ -79,7 +79,7 @@ export default function SeoExpertNoidaPage() {
       </section>
 
       {/* Who I Can Help in Noida */}
-      <section style={{ padding: '60px 0', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(41, 121, 255, 0.15)' }}>
+      <section style={{ padding: '60px 0', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <span className="tag">Noida Ecosystem</span>
@@ -100,7 +100,7 @@ export default function SeoExpertNoidaPage() {
             ].map((item, idx) => (
               <TiltCard3D key={idx}>
                 <div className="glass-panel" style={{ padding: '28px', height: '100%' }}>
-                  <div style={{ fontSize: '1.4rem', color: '#00E5FF', marginBottom: '10px' }}>🏢</div>
+                  <div style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '10px' }}>🏢</div>
                   <h3 style={{ fontSize: '1.15rem', color: '#f0f4fc', marginBottom: '8px' }}>{item.title}</h3>
                   <p style={{ color: '#98a7c6', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
                 </div>
@@ -129,8 +129,8 @@ export default function SeoExpertNoidaPage() {
                   'Working alongside your in-house team as an active SEO or digital marketing lead.',
                   'Training and upskilling your marketing team on modern algorithmic best practices.',
                 ].map((item, idx) => (
-                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'rgba(14, 21, 52, 0.5)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(41, 121, 255, 0.15)' }}>
-                    <span style={{ color: '#00E5FF', fontWeight: 800 }}>⚡</span>
+                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'rgba(14, 21, 52, 0.5)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.15)' }}>
+                    <span style={{ color: '#FF6B00', fontWeight: 800 }}>⚡</span>
                     <span style={{ color: '#dbe4f5', fontSize: '0.92rem' }}>{item}</span>
                   </div>
                 ))}
@@ -138,20 +138,20 @@ export default function SeoExpertNoidaPage() {
             </div>
 
             <div className="glass-panel" style={{ padding: '36px' }}>
-              <h3 style={{ fontSize: '1.4rem', color: '#00E5FF', marginBottom: '14px' }}>Engagement Options</h3>
+              <h3 style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '14px' }}>Engagement Options</h3>
               <p style={{ color: '#98a7c6', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '20px' }}>
                 I offer flexible collaboration formats to fit your stage and bandwidth:
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
-                <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(41, 121, 255, 0.2)' }}>
+                <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                   <div style={{ fontWeight: 700, color: '#f0f4fc' }}>1. Monthly Retainer</div>
                   <div style={{ color: '#98a7c6', fontSize: '0.86rem' }}>Hands-on execution, monthly roadmaps, and continuous ranking improvements.</div>
                 </div>
-                <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(41, 121, 255, 0.2)' }}>
+                <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                   <div style={{ fontWeight: 700, color: '#f0f4fc' }}>2. On-Site &amp; Hybrid Consulting</div>
                   <div style={{ color: '#98a7c6', fontSize: '0.86rem' }}>Available for on-site working sessions in Noida to guide your team directly.</div>
                 </div>
-                <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(41, 121, 255, 0.2)' }}>
+                <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                   <div style={{ fontWeight: 700, color: '#f0f4fc' }}>3. One-Time Technical Audits</div>
                   <div style={{ color: '#98a7c6', fontSize: '0.86rem' }}>Deep-dive crawl and architecture audit with a prioritized developer checklist.</div>
                 </div>
@@ -162,7 +162,7 @@ export default function SeoExpertNoidaPage() {
       </section>
 
       {/* Noida Project Form */}
-      <section id="audit-form" style={{ padding: '70px 0', background: 'rgba(7, 11, 28, 0.85)', borderTop: '1px solid rgba(41, 121, 255, 0.15)' }}>
+      <section id="audit-form" style={{ padding: '70px 0', background: 'rgba(7, 11, 28, 0.85)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container" style={{ maxWidth: '780px' }}>
           <div style={{ textAlign: 'center', marginBottom: '35px' }}>
             <span className="tag">Project Discussion</span>
@@ -178,28 +178,28 @@ export default function SeoExpertNoidaPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '18px' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Your Name *</label>
-                <input type="text" name="name" required placeholder="Vikas Sharma" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }} />
+                <input type="text" name="name" required placeholder="Vikas Sharma" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Phone / WhatsApp Number *</label>
-                <input type="tel" name="phone" required placeholder="+91 86046 25862" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }} />
+                <input type="tel" name="phone" required placeholder="+91 86046 25862" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
               </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '18px' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Work Email (optional)</label>
-                <input type="email" name="email" placeholder="vikas@company.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }} />
+                <input type="email" name="email" placeholder="vikas@company.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Website URL *</label>
-                <input type="text" name="website" required placeholder="www.mybrand.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }} />
+                <input type="text" name="website" required placeholder="www.mybrand.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
               </div>
             </div>
 
             <div style={{ marginBottom: '22px' }}>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Project Overview &amp; Goals</label>
-              <textarea name="message" rows="3" placeholder="Tell me what your brand does and whether you need ongoing SEO, ads management, or on-site consulting..." style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }}></textarea>
+              <textarea name="message" rows="3" placeholder="Tell me what your brand does and whether you need ongoing SEO, ads management, or on-site consulting..." style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}></textarea>
             </div>
 
             <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '14px', fontSize: '1rem', justifyContent: 'center' }}>
@@ -216,3 +216,4 @@ export default function SeoExpertNoidaPage() {
     </div>
   );
 }
+

@@ -27,7 +27,7 @@ export default function AboutPage() {
               >
                 About <span className="gradient-text">Anirudh Kumar</span>
               </h1>
-              <p style={{ fontSize: '1.2rem', color: '#00E5FF', fontWeight: 600, marginBottom: '16px' }}>
+              <p style={{ fontSize: '1.2rem', color: '#FF6B00', fontWeight: 600, marginBottom: '16px' }}>
                 Freelance SEO &amp; Digital Marketing Consultant based in Lucknow, Uttar Pradesh.
               </p>
               <p style={{ color: '#98a7c6', fontSize: '1.02rem', lineHeight: 1.7, marginBottom: '20px' }}>
@@ -60,9 +60,9 @@ export default function AboutPage() {
                     padding: '24px',
                     borderRadius: '28px',
                     background: 'linear-gradient(135deg, rgba(14, 21, 52, 0.85), rgba(8, 12, 32, 0.95))',
-                    border: '1px solid rgba(0, 229, 255, 0.3)',
+                    border: '1px solid rgba(255, 107, 0, 0.3)',
                     maxWidth: '380px',
-                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 229, 255, 0.15)',
+                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 107, 0, 0.15)',
                   }}
                 >
                   <img
@@ -77,7 +77,7 @@ export default function AboutPage() {
                   />
                   <div style={{ textAlign: 'center' }}>
                     <h3 style={{ fontSize: '1.3rem', color: '#f0f4fc', margin: '0 0 4px 0' }}>Anirudh Kumar</h3>
-                    <p style={{ color: '#00E5FF', fontSize: '0.85rem', fontWeight: 600, margin: '0 0 12px 0' }}>
+                    <p style={{ color: '#FF6B00', fontSize: '0.85rem', fontWeight: 600, margin: '0 0 12px 0' }}>
                       SEO Specialist &amp; Digital Marketer
                     </p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '12px' }}>
@@ -93,7 +93,7 @@ export default function AboutPage() {
       </section>
 
       {/* What I Believe & Approach */}
-      <section style={{ padding: '70px 0', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(41, 121, 255, 0.15)' }}>
+      <section style={{ padding: '70px 0', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container">
           <div style={{ maxWidth: '850px', margin: '0 auto' }}>
             <div className="glass-panel" style={{ padding: '40px', marginBottom: '35px' }}>
@@ -124,7 +124,7 @@ export default function AboutPage() {
                     key={idx}
                     style={{
                       background: 'rgba(14, 21, 52, 0.6)',
-                      border: '1px solid rgba(41, 121, 255, 0.25)',
+                      border: '1px solid rgba(255, 107, 0, 0.25)',
                       borderRadius: '16px',
                       padding: '20px',
                       display: 'flex',
@@ -135,7 +135,7 @@ export default function AboutPage() {
                     <span style={{ fontSize: '1.8rem' }}>{cert.icon}</span>
                     <div>
                       <div style={{ color: '#f0f4fc', fontWeight: 700, fontSize: '0.94rem' }}>{cert.name}</div>
-                      <div style={{ color: '#00E5FF', fontSize: '0.8rem', marginTop: '2px' }}>{cert.issuer}</div>
+                      <div style={{ color: '#FF6B00', fontSize: '0.8rem', marginTop: '2px' }}>{cert.issuer}</div>
                     </div>
                   </div>
                 ))}

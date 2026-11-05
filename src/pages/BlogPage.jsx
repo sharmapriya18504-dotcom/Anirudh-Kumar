@@ -94,7 +94,7 @@ export default function BlogPage() {
                 outline: 'none',
               }}
             />
-            <span style={{ position: 'absolute', left: '18px', top: '50%', transform: 'translateY(-50%)', color: '#00E5FF' }}>
+            <span style={{ position: 'absolute', left: '18px', top: '50%', transform: 'translateY(-50%)', color: '#FF6B00' }}>
               <i className="bi bi-search"></i>
             </span>
           </div>
@@ -107,9 +107,9 @@ export default function BlogPage() {
                 type="button"
                 onClick={() => handleCategory(cat)}
                 style={{
-                  background: selectedCategory === cat ? 'linear-gradient(135deg, #00E5FF, #2979FF)' : 'rgba(14, 21, 52, 0.6)',
+                  background: selectedCategory === cat ? 'linear-gradient(135deg, #FF9100, #FF6B00)' : 'rgba(14, 21, 52, 0.6)',
                   color: selectedCategory === cat ? '#050814' : '#98a7c6',
-                  border: selectedCategory === cat ? '1px solid #00E5FF' : '1px solid rgba(41, 121, 255, 0.2)',
+                  border: selectedCategory === cat ? '1px solid #FF6B00' : '1px solid rgba(255, 107, 0, 0.2)',
                   borderRadius: '30px',
                   padding: '6px 16px',
                   fontSize: '0.82rem',
@@ -160,12 +160,12 @@ export default function BlogPage() {
                         left: '12px',
                         background: 'rgba(5, 8, 20, 0.85)',
                         backdropFilter: 'blur(8px)',
-                        color: '#00E5FF',
+                        color: '#FF6B00',
                         fontSize: '0.75rem',
                         fontWeight: 700,
                         padding: '4px 12px',
                         borderRadius: '20px',
-                        border: '1px solid rgba(0, 229, 255, 0.3)',
+                        border: '1px solid rgba(255, 107, 0, 0.3)',
                       }}
                     >
                       {b.category}
@@ -191,7 +191,7 @@ export default function BlogPage() {
                     <Link
                       to={`/blog-post?post=${b.slug}`}
                       style={{
-                        color: '#00E5FF',
+                        color: '#FF6B00',
                         fontWeight: 700,
                         fontSize: '0.88rem',
                         display: 'inline-flex',
@@ -224,8 +224,8 @@ export default function BlogPage() {
                       width: '42px',
                       height: '42px',
                       borderRadius: '10px',
-                      border: currentPage === p ? '1px solid #00E5FF' : '1px solid rgba(41, 121, 255, 0.25)',
-                      background: currentPage === p ? '#2979FF' : 'rgba(14, 21, 52, 0.6)',
+                      border: currentPage === p ? '1px solid #FF6B00' : '1px solid rgba(255, 107, 0, 0.25)',
+                      background: currentPage === p ? '#FF8800' : 'rgba(14, 21, 52, 0.6)',
                       color: '#fff',
                       fontWeight: 700,
                       cursor: 'pointer',

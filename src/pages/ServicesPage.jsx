@@ -11,7 +11,7 @@ export default function ServicesPage() {
       tagline: 'Rank for searches your customers actually make',
       desc: 'Get your website to rank on Google for the searches your customers actually make. Technical fixes, on-page SEO, content and link building.',
       icon: 'bi-search',
-      color: '#00E5FF',
+      color: '#FF6B00',
       details: [
         'Technical SEO (Site speed, Core Web Vitals, Crawlability)',
         'On-Page Optimization (Title tags, Schema markup, Meta robots)',
@@ -28,7 +28,7 @@ export default function ServicesPage() {
       tagline: 'Dominate Google Maps & "Near Me" searches',
       desc: "Show up in Google Maps and 'near me' searches so nearby customers call you first instead of the competitor down the street.",
       icon: 'bi-geo-alt-fill',
-      color: '#2979FF',
+      color: '#FF8800',
       details: [
         'Google Business Profile setup, claim & suspension resolution',
         'Map 3-Pack rank tracking across target city neighborhoods',
@@ -45,7 +45,7 @@ export default function ServicesPage() {
       tagline: 'Paid campaigns built around leads and sales, not just clicks',
       desc: 'Paid advertising campaigns designed to generate measurable revenue. Clear tracking so you know what each rupee returns.',
       icon: 'bi-bullseye',
-      color: '#7C4DFF',
+      color: '#FFB800',
       details: [
         'High-intent Google Search Ads targeting active buyers',
         'Meta Ads (Facebook & Instagram) hyper-targeted by location & interest',
@@ -62,7 +62,7 @@ export default function ServicesPage() {
       tagline: 'Consistent branding that builds long-term recall and trust',
       desc: 'Consistent content and community building on Instagram, LinkedIn and more, so people remember and trust your brand.',
       icon: 'bi-share-fill',
-      color: '#00E5FF',
+      color: '#FF6B00',
       details: [
         'Visual identity & social post templates',
         'Educational and promotional content calendar planning',
@@ -79,7 +79,7 @@ export default function ServicesPage() {
       tagline: 'Fast, mobile-friendly websites designed to convert',
       desc: 'Fast, mobile-friendly websites and landing pages designed to turn visitors into enquiries with SEO built in from day one.',
       icon: 'bi-laptop-fill',
-      color: '#2979FF',
+      color: '#FF8800',
       details: [
         'Clean React / Vite / Modern HTML architecture with 0 bloat',
         'Sub-second load times and 90+ Mobile Core Web Vitals compliance',
@@ -96,7 +96,7 @@ export default function ServicesPage() {
       tagline: 'Direct strategy sessions for marketing clarity',
       desc: 'Not ready for a full retainer? Book a strategy session. I review your marketing, find the bottlenecks, and give you a clear action plan.',
       icon: 'bi-compass-fill',
-      color: '#7C4DFF',
+      color: '#FFB800',
       details: [
         'Full digital architecture and competitor review',
         'Identification of wasted ad spend and lost search traffic',
@@ -174,7 +174,7 @@ export default function ServicesPage() {
                     </div>
 
                     <h3 style={{ fontSize: '1.3rem', color: '#f0f4fc', marginBottom: '8px' }}>{s.title}</h3>
-                    <div style={{ fontSize: '0.82rem', color: '#00E5FF', fontWeight: 600, marginBottom: '14px' }}>
+                    <div style={{ fontSize: '0.82rem', color: '#FF6B00', fontWeight: 600, marginBottom: '14px' }}>
                       {s.tagline}
                     </div>
                     <p style={{ color: '#98a7c6', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '20px' }}>
@@ -199,7 +199,7 @@ export default function ServicesPage() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '8px',
-                      color: '#00E5FF',
+                      color: '#FF6B00',
                       fontWeight: 700,
                       fontSize: '0.9rem',
                       textDecoration: 'none',
@@ -217,7 +217,7 @@ export default function ServicesPage() {
       </section>
 
       {/* City Hub Cards Linkage */}
-      <section style={{ padding: '60px 0 80px', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(41, 121, 255, 0.15)' }}>
+      <section style={{ padding: '60px 0 80px', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <span className="tag">Where I Work</span>
           <h2 className="section-heading" style={{ marginTop: '10px' }}>
@@ -247,10 +247,10 @@ export default function ServicesPage() {
                   transition: 'all 0.25s ease',
                 }}
               >
-                <div style={{ fontSize: '1.4rem', color: '#00E5FF', marginBottom: '8px' }}>📍</div>
+                <div style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '8px' }}>📍</div>
                 <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#f0f4fc' }}>{loc.city}</div>
                 <div style={{ fontSize: '0.8rem', color: '#98a7c6', marginTop: '4px' }}>{loc.tag}</div>
-                <span style={{ color: '#2979FF', fontSize: '0.82rem', fontWeight: 700, marginTop: '12px' }}>
+                <span style={{ color: '#FF8800', fontSize: '0.82rem', fontWeight: 700, marginTop: '12px' }}>
                   Explore Local Services →
                 </span>
               </Link>

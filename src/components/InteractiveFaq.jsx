@@ -74,20 +74,20 @@ export default function InteractiveFaq() {
             width: '100%',
             padding: '14px 20px 14px 46px',
             borderRadius: '50px',
-            background: 'rgba(14, 21, 52, 0.7)',
+            background: 'var(--card)',
             backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(41, 121, 255, 0.25)',
-            color: '#f0f4fc',
+            border: '1px solid var(--border)',
+            color: 'var(--text)',
             fontSize: '0.92rem',
             outline: 'none',
             transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
           }}
           onFocus={(e) => {
-            e.target.style.borderColor = '#00E5FF';
-            e.target.style.boxShadow = '0 0 20px rgba(0, 229, 255, 0.25)';
+            e.target.style.borderColor = '#FF6B00';
+            e.target.style.boxShadow = '0 0 20px rgba(255, 107, 0, 0.25)';
           }}
           onBlur={(e) => {
-            e.target.style.borderColor = 'rgba(41, 121, 255, 0.25)';
+            e.target.style.borderColor = 'var(--border)';
             e.target.style.boxShadow = 'none';
           }}
         />
@@ -97,7 +97,7 @@ export default function InteractiveFaq() {
             left: '18px',
             top: '50%',
             transform: 'translateY(-50%)',
-            color: '#00E5FF',
+            color: '#FF6B00',
             pointerEvents: 'none',
           }}
         >
@@ -114,7 +114,7 @@ export default function InteractiveFaq() {
               transform: 'translateY(-50%)',
               background: 'transparent',
               border: 'none',
-              color: '#98a7c6',
+              color: 'var(--text3)',
               cursor: 'pointer',
               fontSize: '1rem',
             }}
@@ -132,10 +132,10 @@ export default function InteractiveFaq() {
             style={{
               padding: '30px',
               textAlign: 'center',
-              background: 'rgba(14, 21, 52, 0.5)',
+              background: 'var(--card)',
               borderRadius: '16px',
-              border: '1px dashed rgba(41, 121, 255, 0.25)',
-              color: '#98a7c6',
+              border: '1px dashed var(--border)',
+              color: 'var(--text2)',
             }}
           >
             <p style={{ margin: 0, fontSize: '0.95rem' }}>
@@ -145,8 +145,8 @@ export default function InteractiveFaq() {
               href="https://wa.me/918604625862?text=Hi%20Anirudh!%20I%20have%20a%20question%20about%20your%20services."
               target="_blank"
               rel="noreferrer"
-              className="btn btn-whatsapp"
-              style={{ display: 'inline-flex', marginTop: '14px', padding: '10px 22px', fontSize: '0.88rem' }}
+              className="btn btn-outline"
+              style={{ display: 'inline-flex', marginTop: '14px', padding: '10px 22px', fontSize: '0.88rem', borderColor: '#25D366', color: '#25D366' }}
             >
               💬 WhatsApp Me (+91 86046 25862)
             </a>
@@ -160,13 +160,13 @@ export default function InteractiveFaq() {
                 className={`faq-item ${isOpen ? 'open' : ''}`}
                 style={{
                   cursor: 'pointer',
-                  border: isOpen ? '1px solid rgba(0, 229, 255, 0.45)' : '1px solid rgba(41, 121, 255, 0.18)',
+                  border: isOpen ? '1px solid #FF6B00' : '1px solid var(--border)',
                   borderRadius: '16px',
                   marginBottom: '12px',
-                  background: isOpen ? 'rgba(14, 21, 52, 0.85)' : 'rgba(10, 16, 40, 0.65)',
+                  background: isOpen ? 'var(--card)' : 'var(--bg2)',
                   backdropFilter: 'blur(12px)',
                   transition: 'all 0.25s ease',
-                  boxShadow: isOpen ? '0 8px 25px rgba(0, 0, 0, 0.35), 0 0 15px rgba(0, 229, 255, 0.1)' : 'none',
+                  boxShadow: isOpen ? '0 8px 25px rgba(0, 0, 0, 0.15), 0 0 15px rgba(255, 107, 0, 0.15)' : 'none',
                 }}
                 onClick={() => toggleItem(idx)}
               >
@@ -179,7 +179,7 @@ export default function InteractiveFaq() {
                     padding: '20px 24px',
                     fontWeight: 700,
                     fontSize: '1.02rem',
-                    color: isOpen ? '#00E5FF' : '#f0f4fc',
+                    color: isOpen ? '#FF6B00' : 'var(--text)',
                   }}
                 >
                   <span style={{ paddingRight: '12px' }}>{item.q}</span>
@@ -190,7 +190,7 @@ export default function InteractiveFaq() {
                       transition: 'transform 0.25s ease',
                       fontSize: '1.5rem',
                       lineHeight: '1',
-                      color: isOpen ? '#00E5FF' : '#2979FF',
+                      color: isOpen ? '#FF6B00' : 'var(--accent)',
                       flexShrink: 0,
                     }}
                   >
@@ -202,10 +202,10 @@ export default function InteractiveFaq() {
                     className="faq-a"
                     style={{
                       padding: '0 24px 22px 24px',
-                      color: '#98a7c6',
+                      color: 'var(--text2)',
                       fontSize: '0.94rem',
                       lineHeight: '1.65',
-                      borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+                      borderTop: '1px solid var(--border2)',
                       paddingTop: '14px',
                     }}
                   >

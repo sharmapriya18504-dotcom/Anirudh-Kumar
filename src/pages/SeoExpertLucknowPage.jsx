@@ -79,7 +79,7 @@ export default function SeoExpertLucknowPage() {
       </section>
 
       {/* Lucknow Sectors Covered */}
-      <section style={{ padding: '60px 0', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(41, 121, 255, 0.15)' }}>
+      <section style={{ padding: '60px 0', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <span className="tag">Local Industry Focus</span>
@@ -100,7 +100,7 @@ export default function SeoExpertLucknowPage() {
             ].map((item, idx) => (
               <TiltCard3D key={idx}>
                 <div className="glass-panel" style={{ padding: '28px', height: '100%' }}>
-                  <div style={{ fontSize: '1.4rem', color: '#00E5FF', marginBottom: '10px' }}>📍</div>
+                  <div style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '10px' }}>📍</div>
                   <h3 style={{ fontSize: '1.15rem', color: '#f0f4fc', marginBottom: '8px' }}>{item.title}</h3>
                   <p style={{ color: '#98a7c6', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
                 </div>
@@ -129,7 +129,7 @@ export default function SeoExpertLucknowPage() {
                   'Competitors rank above you for the exact high-value services you sell.',
                   'Traffic comes occasionally, but no one calls, sends an email or fills out your enquiry form.',
                 ].map((prob, idx) => (
-                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'rgba(14, 21, 52, 0.5)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(41, 121, 255, 0.15)' }}>
+                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'rgba(14, 21, 52, 0.5)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.15)' }}>
                     <span style={{ color: '#ff4757', fontWeight: 800 }}>⚠️</span>
                     <span style={{ color: '#dbe4f5', fontSize: '0.92rem' }}>{prob}</span>
                   </div>
@@ -138,7 +138,7 @@ export default function SeoExpertLucknowPage() {
             </div>
 
             <div className="glass-panel" style={{ padding: '36px' }}>
-              <h3 style={{ fontSize: '1.4rem', color: '#00E5FF', marginBottom: '14px' }}>What I Do For Your Lucknow Business</h3>
+              <h3 style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '14px' }}>What I Do For Your Lucknow Business</h3>
               <p style={{ color: '#98a7c6', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '20px' }}>
                 I handle end-to-end local search optimization tailored to Lucknow's competitive neighborhoods:
               </p>
@@ -161,7 +161,7 @@ export default function SeoExpertLucknowPage() {
       </section>
 
       {/* Lucknow Contact / Audit Form */}
-      <section id="audit-form" style={{ padding: '70px 0', background: 'rgba(7, 11, 28, 0.85)', borderTop: '1px solid rgba(41, 121, 255, 0.15)' }}>
+      <section id="audit-form" style={{ padding: '70px 0', background: 'rgba(7, 11, 28, 0.85)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container" style={{ maxWidth: '780px' }}>
           <div style={{ textAlign: 'center', marginBottom: '35px' }}>
             <span className="tag">Free Technical Review</span>
@@ -177,28 +177,28 @@ export default function SeoExpertLucknowPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '18px' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Your Name *</label>
-                <input type="text" name="name" required placeholder="Anurag Verma" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }} />
+                <input type="text" name="name" required placeholder="Anurag Verma" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Phone / WhatsApp Number *</label>
-                <input type="tel" name="phone" required placeholder="+91 86046 25862" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }} />
+                <input type="tel" name="phone" required placeholder="+91 86046 25862" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
               </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '18px' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Email Address (optional)</label>
-                <input type="email" name="email" placeholder="you@business.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }} />
+                <input type="email" name="email" placeholder="you@business.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Website or Google Maps Link *</label>
-                <input type="text" name="website" required placeholder="www.mybusiness.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }} />
+                <input type="text" name="website" required placeholder="www.mybusiness.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
               </div>
             </div>
 
             <div style={{ marginBottom: '22px' }}>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Your Business &amp; Target Lucknow Area</label>
-              <textarea name="message" rows="3" placeholder="Tell me what you sell and which Lucknow areas you want more enquiries from (e.g. Gomti Nagar, Hazratganj)..." style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }}></textarea>
+              <textarea name="message" rows="3" placeholder="Tell me what you sell and which Lucknow areas you want more enquiries from (e.g. Gomti Nagar, Hazratganj)..." style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}></textarea>
             </div>
 
             <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '14px', fontSize: '1rem', justifyContent: 'center' }}>
@@ -215,3 +215,4 @@ export default function SeoExpertLucknowPage() {
     </div>
   );
 }
+

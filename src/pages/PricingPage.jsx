@@ -40,7 +40,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Related to Pricing */}
-      <section style={{ padding: '60px 0 80px', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(41, 121, 255, 0.15)' }}>
+      <section style={{ padding: '60px 0 80px', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container" style={{ maxWidth: '850px' }}>
           <div style={{ textAlign: 'center', marginBottom: '35px' }}>
             <span className="tag">Pricing FAQs</span>

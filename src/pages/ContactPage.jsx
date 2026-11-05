@@ -140,7 +140,7 @@ export default function ContactPage() {
                   }}
                   title="Click to copy phone number"
                 >
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(0, 229, 255, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#00E5FF', fontSize: '1.3rem' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(255, 107, 0, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF6B00', fontSize: '1.3rem' }}>
                     <i className="bi bi-telephone-fill"></i>
                   </div>
                   <div>
@@ -196,7 +196,7 @@ export default function ContactPage() {
                   }}
                   title="Click to copy email"
                 >
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(41, 121, 255, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#2979FF', fontSize: '1.3rem' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(255, 107, 0, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF8800', fontSize: '1.3rem' }}>
                     <i className="bi bi-envelope-fill"></i>
                   </div>
                   <div>
@@ -211,7 +211,7 @@ export default function ContactPage() {
 
                 {/* Location */}
                 <div className="glass-panel" style={{ padding: '18px 22px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(124, 77, 255, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7c4dff', fontSize: '1.3rem' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(255, 184, 0, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFB800', fontSize: '1.3rem' }}>
                     <i className="bi bi-geo-alt-fill"></i>
                   </div>
                   <div>
@@ -286,7 +286,7 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="John Doe"
-                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }}
+                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
                         />
                       </div>
                       <div>
@@ -300,7 +300,7 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+91 86046 25862"
-                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }}
+                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
                         />
                       </div>
                     </div>
@@ -316,7 +316,7 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="you@company.com"
-                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }}
+                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
                         />
                       </div>
                       <div>
@@ -329,7 +329,7 @@ export default function ContactPage() {
                           value={formData.website}
                           onChange={handleChange}
                           placeholder="www.yourwebsite.com"
-                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }}
+                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
                         />
                       </div>
                     </div>
@@ -342,7 +342,7 @@ export default function ContactPage() {
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
-                        style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }}
+                        style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
                       >
                         <option value="">— Select Service —</option>
                         <option value="Free SEO Audit">Free SEO Audit</option>
@@ -365,7 +365,7 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell me what you need help with so I can come prepared with an audit..."
-                        style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(41, 121, 255, 0.25)', color: '#fff' }}
+                        style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
                       />
                     </div>
 
@@ -396,7 +396,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section style={{ padding: '60px 0 80px', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(41, 121, 255, 0.15)' }}>
+      <section style={{ padding: '60px 0 80px', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container" style={{ maxWidth: '850px' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <span className="tag">Questions &amp; Answers</span>

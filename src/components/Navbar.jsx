@@ -188,13 +188,17 @@ export default function Navbar() {
 
           <div className="nav-actions">
             <button
+              type="button"
               className="theme-btn"
               onClick={toggleTheme}
-              aria-label="Toggle theme"
-              title="Dark/Light Mode"
-              style={{ display: 'none' }} // Futuristic dark theme is standard
+              aria-label="Toggle dark/light theme"
+              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             >
-              {theme === 'dark' ? <i className="bi bi-brightness-high-fill"></i> : <i className="bi bi-moon-stars-fill"></i>}
+              {theme === 'dark' ? (
+                <i className="bi bi-brightness-high-fill" style={{ color: '#FFB800' }}></i>
+              ) : (
+                <i className="bi bi-moon-stars-fill" style={{ color: '#FF6B00' }}></i>
+              )}
             </button>
             <a
               className="btn btn-primary nav-cta"
@@ -235,6 +239,39 @@ export default function Navbar() {
           ✕
         </button>
         <div className="mobile-menu-links">
+          {/* Mobile Theme Toggle */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '10px',
+              padding: '12px 20px',
+              borderRadius: '30px',
+              border: '1px solid var(--border)',
+              background: 'var(--bg2)',
+              color: 'var(--text)',
+              fontSize: '0.92rem',
+              fontWeight: 700,
+              cursor: 'pointer',
+              marginBottom: '16px',
+              width: '100%'
+            }}
+          >
+            {theme === 'dark' ? (
+              <>
+                <i className="bi bi-brightness-high-fill" style={{ color: '#FFB800', fontSize: '1.2rem' }}></i>
+                <span>☀️ Switch to Light Mode</span>
+              </>
+            ) : (
+              <>
+                <i className="bi bi-moon-stars-fill" style={{ color: '#FF6B00', fontSize: '1.2rem' }}></i>
+                <span>🌙 Switch to Dark Mode</span>
+              </>
+            )}
+          </button>
           <a href="/" onClick={(e) => handleNavClick(e, '/')}>Home</a>
           <a href="/about" onClick={(e) => handleNavClick(e, '/about')}>About</a>
           <a href="/services" onClick={(e) => handleNavClick(e, '/services')}>Services Overview</a>

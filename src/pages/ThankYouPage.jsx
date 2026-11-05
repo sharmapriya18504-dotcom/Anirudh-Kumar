@@ -27,7 +27,7 @@ export default function ThankYouPage() {
             background: 'linear-gradient(135deg, rgba(14, 21, 52, 0.85), rgba(8, 12, 32, 0.95))',
             border: '1px solid rgba(0, 229, 255, 0.35)',
             borderRadius: '24px',
-            boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 229, 255, 0.15)',
+            boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 107, 0, 0.15)',
           }}
         >
           <div style={{ fontSize: '3.5rem', marginBottom: '16px' }}>🎉</div>
@@ -60,3 +60,4 @@ export default function ThankYouPage() {
     </div>
   );
 }
+

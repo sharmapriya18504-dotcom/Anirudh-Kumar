@@ -32,11 +32,11 @@ export default function RoiCalculator() {
       <div
         className="roi-card glass-panel"
         style={{
-          background: 'linear-gradient(135deg, rgba(14, 21, 52, 0.85), rgba(8, 12, 32, 0.95))',
-          border: '1px solid rgba(41, 121, 255, 0.25)',
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
           borderRadius: '24px',
           padding: '44px 36px',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 229, 255, 0.1)',
+          boxShadow: 'var(--shadow)',
           backdropFilter: 'blur(16px)',
           position: 'relative',
           overflow: 'hidden',
@@ -50,7 +50,7 @@ export default function RoiCalculator() {
             right: '-60px',
             width: '260px',
             height: '260px',
-            background: 'radial-gradient(circle, rgba(0, 229, 255, 0.18) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255, 107, 0, 0.16) 0%, transparent 70%)',
             borderRadius: '50%',
             filter: 'blur(40px)',
             pointerEvents: 'none',
@@ -66,13 +66,13 @@ export default function RoiCalculator() {
               fontFamily: 'var(--ff-d)',
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               letterSpacing: '1px',
-              color: '#f0f4fc',
+              color: 'var(--text)',
               marginTop: '10px',
             }}
           >
             Calculate Your <span className="gradient-text">Estimated Search &amp; Lead Growth</span>
           </h3>
-          <p style={{ color: '#98a7c6', maxWidth: '620px', margin: '10px auto 0', fontSize: '0.94rem', lineHeight: 1.6 }}>
+          <p style={{ color: 'var(--text2)', maxWidth: '620px', margin: '10px auto 0', fontSize: '0.94rem', lineHeight: 1.6 }}>
             See how focusing on high-intent search terms and technical optimization can scale your organic enquiries.
           </p>
         </div>
@@ -90,12 +90,12 @@ export default function RoiCalculator() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                <label style={{ fontSize: '0.9rem', fontWeight: 600, color: '#f0f4fc' }}>
+                <label style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text)' }}>
                   Current Monthly Website Traffic:
                 </label>
                 <span
                   style={{
-                    color: '#00E5FF',
+                    color: '#FF6B00',
                     fontWeight: 800,
                     fontFamily: 'var(--ff-d)',
                     fontSize: '1.25rem',
@@ -113,7 +113,7 @@ export default function RoiCalculator() {
                 onChange={(e) => setVisitors(Number(e.target.value))}
                 style={{
                   width: '100%',
-                  accentColor: '#2979FF',
+                  accentColor: '#FF6B00',
                   cursor: 'pointer',
                   height: '6px',
                 }}
@@ -123,7 +123,7 @@ export default function RoiCalculator() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   fontSize: '0.75rem',
-                  color: '#657599',
+                  color: 'var(--text3)',
                   marginTop: '6px',
                 }}
               >
@@ -134,7 +134,7 @@ export default function RoiCalculator() {
             </div>
 
             <div>
-              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '12px' }}>
+              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text)', marginBottom: '12px' }}>
                 Select Your Business Type:
               </label>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
@@ -146,9 +146,9 @@ export default function RoiCalculator() {
                     style={{
                       padding: '12px 14px',
                       borderRadius: '12px',
-                      border: goal === g.id ? '1px solid #00E5FF' : '1px solid rgba(41, 121, 255, 0.2)',
-                      background: goal === g.id ? 'rgba(0, 229, 255, 0.12)' : 'rgba(10, 16, 40, 0.6)',
-                      color: goal === g.id ? '#00E5FF' : '#98a7c6',
+                      border: goal === g.id ? '1px solid #FF6B00' : '1px solid var(--border)',
+                      background: goal === g.id ? 'rgba(255, 107, 0, 0.12)' : 'var(--bg2)',
+                      color: goal === g.id ? '#FF6B00' : 'var(--text2)',
                       fontWeight: goal === g.id ? 700 : 500,
                       fontSize: '0.82rem',
                       textAlign: 'left',
@@ -166,29 +166,29 @@ export default function RoiCalculator() {
           {/* Results Display Column */}
           <div
             style={{
-              background: 'rgba(5, 8, 22, 0.85)',
-              border: '1px solid rgba(41, 121, 255, 0.3)',
+              background: 'var(--bg2)',
+              border: '1px solid var(--border)',
               borderRadius: '20px',
               padding: '30px',
               display: 'flex',
               flexDirection: 'column',
               gap: '24px',
-              boxShadow: 'inset 0 0 25px rgba(41, 121, 255, 0.08)',
+              boxShadow: 'var(--shadow)',
             }}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border2)', paddingBottom: '16px' }}>
               <div>
-                <div style={{ fontSize: '0.8rem', color: '#657599', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Projected Monthly Traffic
                 </div>
-                <div style={{ fontFamily: 'var(--ff-d)', fontSize: '2.4rem', color: '#f0f4fc', lineHeight: 1.1, marginTop: '4px' }}>
+                <div style={{ fontFamily: 'var(--ff-d)', fontSize: '2.4rem', color: 'var(--text)', lineHeight: 1.1, marginTop: '4px' }}>
                   ~{projectedVisitors.toLocaleString('en-IN')}
                 </div>
               </div>
               <span
                 style={{
-                  background: 'rgba(0, 229, 255, 0.15)',
-                  color: '#00E5FF',
+                  background: 'rgba(255, 107, 0, 0.15)',
+                  color: '#FF6B00',
                   padding: '4px 10px',
                   borderRadius: '20px',
                   fontSize: '0.82rem',
@@ -199,9 +199,9 @@ export default function RoiCalculator() {
               </span>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border2)', paddingBottom: '16px' }}>
               <div>
-                <div style={{ fontSize: '0.8rem', color: '#657599', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Estimated Qualified Enquiries
                 </div>
                 <div style={{ fontFamily: 'var(--ff-d)', fontSize: '2.4rem', color: '#00d68f', lineHeight: 1.1, marginTop: '4px' }}>
