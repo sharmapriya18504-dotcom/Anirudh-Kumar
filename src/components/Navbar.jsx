@@ -69,8 +69,8 @@ export default function Navbar() {
                   width: '42px',
                   height: '42px',
                   borderRadius: '50%',
-                  border: '2px solid #00E5FF',
-                  boxShadow: '0 0 14px rgba(0, 229, 255, 0.4)',
+                  border: '2px solid var(--accent)',
+                  boxShadow: '0 0 14px rgba(255, 107, 0, 0.4)',
                 }}
               />
               <span
@@ -82,15 +82,15 @@ export default function Navbar() {
                   height: '10px',
                   borderRadius: '50%',
                   background: '#00d68f',
-                  border: '2px solid #050814',
+                  border: '2px solid var(--bg)',
                 }}
               ></span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span className="nav-logo-text" style={{ fontSize: '1.25rem', letterSpacing: '1px', color: '#f0f4fc', lineHeight: 1 }}>
+              <span className="nav-logo-text" style={{ fontSize: '1.25rem', letterSpacing: '1px', color: 'var(--text)', lineHeight: 1 }}>
                 ANIRUDH KUMAR
               </span>
-              <span style={{ fontSize: '0.65rem', color: '#00E5FF', letterSpacing: '0.5px', fontWeight: 700, marginTop: '2px' }}>
+              <span style={{ fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.5px', fontWeight: 700, marginTop: '2px' }}>
                 SEO EXPERT &amp; DIGITAL MARKETER
               </span>
             </div>

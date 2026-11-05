@@ -28,6 +28,17 @@ import SeoExpertKanpurPage from './pages/SeoExpertKanpurPage.jsx';
 import SeoExpertNoidaPage from './pages/SeoExpertNoidaPage.jsx';
 import RemoteSeoPage from './pages/RemoteSeoPage.jsx';
 
+// Dedicated Service & Subpages from reference clone
+import SeoLucknowPage from './pages/SeoLucknowPage.jsx';
+import SmmLucknowPage from './pages/SmmLucknowPage.jsx';
+import AdsLucknowPage from './pages/AdsLucknowPage.jsx';
+import WebDevLucknowPage from './pages/WebDevLucknowPage.jsx';
+import MarketingKanpurPage from './pages/MarketingKanpurPage.jsx';
+import SeoConsultantPage from './pages/SeoConsultantPage.jsx';
+import WhyChooseUsPage from './pages/WhyChooseUsPage.jsx';
+import ResultsPage from './pages/ResultsPage.jsx';
+import TestimonialsPage from './pages/TestimonialsPage.jsx';
+
 function AppContent() {
   const { refreshKey } = useLoader();
   useSiteInteractions(refreshKey);
@@ -59,16 +70,16 @@ function AppContent() {
           <Route path="/seo-expert-noida" element={<SeoExpertNoidaPage key={`noida-${refreshKey}`} />} />
           <Route path="/remote-seo-services" element={<RemoteSeoPage key={`remote-${refreshKey}`} />} />
 
-          {/* Legacy Aliases & 301-equivalent redirects (PDF B1) */}
-          <Route path="/seo-lucknow" element={<Navigate to="/seo-expert-lucknow" replace />} />
-          <Route path="/marketing-kanpur" element={<Navigate to="/seo-expert-kanpur" replace />} />
-          <Route path="/results" element={<Navigate to="/case-studies" replace />} />
-          <Route path="/testimonials" element={<Navigate to="/case-studies" replace />} />
-          <Route path="/why-choose-us" element={<Navigate to="/about" replace />} />
-          <Route path="/seo-consultant" element={<Navigate to="/services" replace />} />
-          <Route path="/smm-lucknow" element={<Navigate to="/services" replace />} />
-          <Route path="/ads-lucknow" element={<Navigate to="/services" replace />} />
-          <Route path="/web-dev-lucknow" element={<Navigate to="/services" replace />} />
+          {/* Dedicated Reference Service & Subpages */}
+          <Route path="/seo-lucknow" element={<SeoLucknowPage key={`seolucknow-${refreshKey}`} />} />
+          <Route path="/smm-lucknow" element={<SmmLucknowPage key={`smm-${refreshKey}`} />} />
+          <Route path="/ads-lucknow" element={<AdsLucknowPage key={`ads-${refreshKey}`} />} />
+          <Route path="/web-dev-lucknow" element={<WebDevLucknowPage key={`webdev-${refreshKey}`} />} />
+          <Route path="/marketing-kanpur" element={<MarketingKanpurPage key={`mkanpur-${refreshKey}`} />} />
+          <Route path="/seo-consultant" element={<SeoConsultantPage key={`consult-${refreshKey}`} />} />
+          <Route path="/why-choose-us" element={<WhyChooseUsPage key={`why-${refreshKey}`} />} />
+          <Route path="/results" element={<ResultsPage key={`res-${refreshKey}`} />} />
+          <Route path="/testimonials" element={<TestimonialsPage key={`testi-${refreshKey}`} />} />
 
           {/* Legacy .html links */}
           <Route path="/services.html" element={<Navigate to="/services" replace />} />
