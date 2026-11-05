@@ -143,84 +143,65 @@ export default function CaseStudiesPage() {
           <div className="portfolio-grid">
             {caseStudies.map((study, idx) => (
               <div key={study.id} className="portfolio-card reveal" style={{ transitionDelay: `${(idx + 1) * 0.1}s` }}>
-                <div className="portfolio-top-bar">
-                  <span className="portfolio-sector-badge">
-                    <i className={`bi ${study.icon}`}></i> {study.sector} • {study.location}
-                  </span>
-                  <span className="portfolio-verified-badge">
-                    <i className="bi bi-patch-check-fill"></i> {study.verifiedBy}
-                  </span>
-                </div>
-
-                <div className="portfolio-project-img-wrap">
-                  <img 
-                    src={study.id === 'clinic' ? '/service-seo.png' : study.id === 'textile' ? '/service-ads.png' : '/service-kanpur.png'} 
-                    alt={study.title} 
-                    className="portfolio-project-img" 
-                  />
-                  <div className="portfolio-project-overlay-tag">{study.sector}</div>
-                </div>
-                <h3>{study.title}</h3>
-                <p className="portfolio-card-desc">{study.desc}</p>
-
-                {/* Before / After Transformation Box */}
-                <div className="portfolio-transformation-banner">
-                  <div className="transform-col">
-                    <span className="transform-lbl">Before Campaign</span>
-                    <span className="transform-val red">{study.beforeVal}</span>
+                <div>
+                  <div className="portfolio-top-bar">
+                    <span className="portfolio-sector-badge">
+                      <i className={`bi ${study.icon}`}></i> {study.sector} • {study.location}
+                    </span>
+                    <span className="portfolio-verified-badge">
+                      <i className="bi bi-patch-check-fill"></i> {study.verifiedBy}
+                    </span>
                   </div>
-                  <div className="transform-arrow">➔</div>
-                  <div className="transform-col">
-                    <span className="transform-lbl">After Optimization</span>
-                    <span className="transform-val green">{study.afterVal}</span>
-                  </div>
-                  <div className="transform-badge">{study.growthBadge}</div>
-                </div>
 
-                {/* Mini Trajectory Chart */}
-                <div className="portfolio-visual-chart">
-                  <div className="chart-header">
-                    <span>Performance Trajectory</span>
-                    <span className="chart-peak">{study.chartPeak}</span>
+                  <div className="portfolio-project-img-wrap">
+                    <img 
+                      src={study.id === 'clinic' ? '/service-seo.png' : study.id === 'textile' ? '/service-ads.png' : '/service-kanpur.png'} 
+                      alt={study.title} 
+                      className="portfolio-project-img" 
+                    />
+                    <div className="portfolio-project-overlay-tag">{study.growthBadge}</div>
                   </div>
-                  <div className="chart-bars-wrap">
-                    {study.chartBars.map((bar, bidx) => (
-                      <div key={bidx} className="chart-bar-col">
-                        <div
-                          className={`chart-bar-fill ${bar.active ? 'active' : ''}`}
-                          style={{ height: bar.height }}
-                        ></div>
-                        <span className="bar-label">{bar.label}</span>
+
+                  <h3>{study.title}</h3>
+                  <p className="portfolio-card-desc">{study.desc}</p>
+
+                  {/* Minimal Hero Transformation Strip */}
+                  <div className="portfolio-hero-metric-wrap">
+                    <div>
+                      <div className="portfolio-hero-metric-val">{study.growthBadge}</div>
+                      <div style={{ fontSize: '0.8rem', color: '#FF8800', fontWeight: 600, marginTop: '2px' }}>
+                        {study.beforeVal} ➔ {study.afterVal}
+                      </div>
+                    </div>
+                    <div className="portfolio-hero-metric-lbl">{study.duration}</div>
+                  </div>
+
+                  {/* 3 Metric Stats */}
+                  <div className="portfolio-results-grid">
+                    {study.stats.map((st, sidx) => (
+                      <div key={sidx} className="portfolio-stat-box">
+                        <div className="stat-box-val">{st.val}</div>
+                        <div className="stat-box-lbl">{st.label}</div>
                       </div>
                     ))}
                   </div>
-                </div>
 
-                {/* Key Tactics Tags */}
-                <div className="portfolio-tags-row">
-                  {study.tactics.map((tactic, tidx) => (
-                    <span key={tidx} className="portfolio-pill-tag">
-                      {tactic}
-                    </span>
-                  ))}
-                </div>
+                  {/* Key Tactics Tags */}
+                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '14px' }}>
+                    {study.tactics.map((tactic, tidx) => (
+                      <span key={tidx} className="portfolio-minimal-badge">
+                        <i className="bi bi-check2" style={{ color: '#FF6B00' }}></i>
+                        <span>{tactic}</span>
+                      </span>
+                    ))}
+                  </div>
 
-                {/* 3 Metric Stats */}
-                <div className="portfolio-results-grid">
-                  {study.stats.map((st, sidx) => (
-                    <div key={sidx} className="portfolio-stat-box">
-                      <div className="stat-box-val">{st.val}</div>
-                      <div className="stat-box-lbl">{st.label}</div>
+                  {/* Minimal Client Quote */}
+                  <div className="portfolio-minimal-quote">
+                    "{study.quote}"
+                    <div style={{ marginTop: '4px', fontWeight: 700, color: 'var(--text)', fontStyle: 'normal', fontSize: '0.82rem' }}>
+                      {study.author}
                     </div>
-                  ))}
-                </div>
-
-                {/* Client Quote */}
-                <div className="portfolio-client-quote">
-                  <div className="client-avatar-badge">{study.avatar}</div>
-                  <div>
-                    <p className="client-quote-text">"{study.quote}"</p>
-                    <div className="client-quote-author">{study.author}</div>
                   </div>
                 </div>
 

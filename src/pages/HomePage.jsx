@@ -111,44 +111,38 @@ export default function HomePage() {
     {
       id: 'clinic',
       sector: 'Healthcare Clinic',
-      location: 'Gomti Nagar, Lucknow',
+      location: 'Lucknow',
       img: '/service-seo.png',
       title: 'Multi-Specialty Healthcare Clinic',
-      outcome: 'Ranked top 3 on Google Maps for 12 procedures. Patient calls expanded from 8 to 31/month.',
-      badge: '+287% Net Growth',
-      stats: [
-        { val: '+340%', lbl: 'Organic Traffic' },
-        { val: 'Page #1', lbl: '12 Niche Keywords' },
-        { val: '3.8x', lbl: 'Patient Calls' },
-      ],
+      outcome: 'Procedure page optimization and local citation clean-up for high-intent medical queries.',
+      heroMetric: '+287%',
+      heroMetricLabel: 'Patient Calls Growth',
+      beforeAfter: '8 calls/mo ➔ 31 calls/mo',
+      highlights: ['Top 3 Google Maps Pack', '12 Keywords Page #1'],
     },
     {
       id: 'apparel',
-      sector: 'Manufacturing & Export',
-      location: 'Industrial Area, Kanpur',
+      sector: 'Manufacturing & B2B',
+      location: 'Kanpur',
       img: '/service-ads.png',
-      title: 'Textile & Apparel Manufacturer',
-      outcome: 'Restructured Google Search and Meta Ads to capture wholesale buyers across North India.',
-      badge: '4.8x Verified ROAS',
-      stats: [
-        { val: '₹4.80', lbl: 'Return per ₹1 Spent' },
-        { val: '-62%', lbl: 'Cost Per Acquisition' },
-        { val: '45+', lbl: 'Wholesale Leads' },
-      ],
+      title: 'Cotton Apparel & Textile Manufacturer',
+      outcome: 'Restructured high-intent Google Search and Meta Ads to capture wholesale buyers.',
+      heroMetric: '7.2x',
+      heroMetricLabel: 'Verified Ad ROAS',
+      beforeAfter: '1.5x ROAS ➔ 7.2x Verified ROAS',
+      highlights: ['₹15L+ Monthly Trade', '45+ B2B Accounts'],
     },
     {
       id: 'noida',
-      sector: 'B2B Services Firm',
-      location: 'Sector 62, Noida & NCR',
+      sector: 'Education & Admissions',
+      location: 'Lucknow & NCR',
       img: '/service-kanpur.png',
-      title: 'Technology & Legal Services Firm',
-      outcome: 'Comprehensive technical crawl fix, schema architecture, and high-intent local landing pages.',
-      badge: 'Top 3 Map Pack',
-      stats: [
-        { val: '14', lbl: 'Keywords Page #1' },
-        { val: '210%', lbl: 'Website Inquiries' },
-        { val: '<1.0s', lbl: 'Core Web Vitals' },
-      ],
+      title: 'Competitive Exam Coaching Institute',
+      outcome: 'Targeted competitive exam keywords across UP to fill student batches ahead of admissions.',
+      heroMetric: '#1 Rank',
+      heroMetricLabel: 'Google Maps 3-Pack',
+      beforeAfter: 'Page 4 ➔ #1 Google Maps 3-Pack',
+      highlights: ['1,280 Clicks / Month', '100% Batches Filled'],
     },
   ];
 
@@ -434,51 +428,68 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ==================== CASE STUDIES (3 MINIMAL PROJECT CARDS) ==================== */}
-      <section id="portfolio" style={{ padding: '90px 0', background: 'var(--bg2)' }}>
+      {/* ==================== CASE STUDIES (MINIMAL & EDITORIAL) ==================== */}
+      <section id="portfolio" style={{ padding: '95px 0', background: 'var(--bg2)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 45px' }}>
-            <span className="tag" style={{ marginBottom: '12px', display: 'inline-block' }}>Proven Outcomes</span>
+          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 50px' }}>
+            <span className="tag" style={{ marginBottom: '12px', display: 'inline-block' }}>
+              <i className="bi bi-shield-check" style={{ color: '#FF6B00', marginRight: '6px' }}></i>
+              Proven Outcomes
+            </span>
             <h2 className="section-heading">
-              Verified <span className="gradient-text">Campaign Results</span>
+              Verified <span className="gradient-text">Case Studies</span>
             </h2>
             <p className="section-sub" style={{ margin: '0 auto' }}>
-              No invented numbers or generic claims. Genuine performance metrics from actual client campaigns.
+              Real outcomes from active campaigns. Tying search rankings directly to customer inquiries.
             </p>
           </div>
 
           <div className="portfolio-grid">
             {caseStudies.map((study, idx) => (
               <div key={study.id} className="portfolio-card reveal" style={{ transitionDelay: `${idx * 0.1}s` }}>
-                <div className="portfolio-top-bar">
-                  <span className="portfolio-sector-badge">
-                    {study.sector} • {study.location}
-                  </span>
-                  <span className="portfolio-verified-badge">
-                    <i className="bi bi-patch-check-fill"></i> Verified Data
-                  </span>
-                </div>
+                <div>
+                  <div className="portfolio-top-bar">
+                    <span className="portfolio-sector-badge">
+                      {study.sector} • {study.location}
+                    </span>
+                    <span className="portfolio-verified-badge">
+                      <i className="bi bi-patch-check-fill"></i> Verified Data
+                    </span>
+                  </div>
 
-                <div className="portfolio-project-img-wrap">
-                  <img src={study.img} alt={study.title} className="portfolio-project-img" />
-                  <div className="portfolio-project-overlay-tag">{study.badge}</div>
-                </div>
+                  <div className="portfolio-project-img-wrap">
+                    <img src={study.img} alt={study.title} className="portfolio-project-img" />
+                    <div className="portfolio-project-overlay-tag">{study.heroMetric}</div>
+                  </div>
 
-                <h3 style={{ fontSize: '1.22rem', fontWeight: 800, marginBottom: '8px' }}>{study.title}</h3>
-                <p className="portfolio-card-desc">{study.outcome}</p>
+                  <h3>{study.title}</h3>
+                  <p className="portfolio-card-desc">{study.outcome}</p>
 
-                <div className="portfolio-results-grid">
-                  {study.stats.map((st, sidx) => (
-                    <div key={sidx} className="portfolio-stat-box">
-                      <div className="stat-box-val">{st.val}</div>
-                      <div className="stat-box-lbl">{st.lbl}</div>
+                  {/* Minimal Hero Result Strip */}
+                  <div className="portfolio-hero-metric-wrap">
+                    <div>
+                      <div className="portfolio-hero-metric-val">{study.heroMetric}</div>
+                      <div style={{ fontSize: '0.8rem', color: '#FF8800', fontWeight: 600, marginTop: '2px' }}>
+                        {study.beforeAfter}
+                      </div>
                     </div>
-                  ))}
+                    <div className="portfolio-hero-metric-lbl">{study.heroMetricLabel}</div>
+                  </div>
+
+                  {/* Clean Proof Highlights */}
+                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '20px' }}>
+                    {study.highlights.map((item, hidx) => (
+                      <span key={hidx} className="portfolio-minimal-badge">
+                        <i className="bi bi-check2" style={{ color: '#FF6B00', fontWeight: 800 }}></i>
+                        <span>{item}</span>
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="portfolio-card-footer">
                   <Link to="/case-studies" className="portfolio-detail-btn">
-                    <span>View Campaign Strategy</span>
+                    <span>View Case Study Strategy</span>
                     <i className="bi bi-arrow-right"></i>
                   </Link>
                 </div>

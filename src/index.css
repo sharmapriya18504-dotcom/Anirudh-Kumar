@@ -20,8 +20,8 @@
   --radius: 16px;
   --radius-sm: 10px;
   --shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
-  --ff: 'Plus Jakarta Sans', sans-serif;
-  --ff-d: 'Space Grotesk', -apple-system, sans-serif;
+  --ff: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ff-d: 'Outfit', 'Space Grotesk', -apple-system, sans-serif;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -128,7 +128,17 @@
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
-      transition: background var(--transition), color var(--transition)
+      transition: background var(--transition), color var(--transition);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--ff-d);
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      color: var(--text);
     }
 
     a {
@@ -218,10 +228,13 @@
     }
 
     .section-heading {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-family: var(--ff-d);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
       font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 16px
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      margin-bottom: 16px;
+      color: var(--text);
     }
 
     .section-sub {
@@ -2833,8 +2846,8 @@
       --radius: 16px;
       --radius-sm: 10px;
       --shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-      --ff: 'Plus Jakarta Sans', sans-serif;
-      --ff-d: 'Bebas Neue', sans-serif;
+      --ff: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --ff-d: 'Outfit', 'Space Grotesk', -apple-system, sans-serif;
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -2871,7 +2884,17 @@
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
-      transition: background var(--transition), color var(--transition)
+      transition: background var(--transition), color var(--transition);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--ff-d);
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      color: var(--text);
     }
 
     a {
@@ -2961,10 +2984,13 @@
     }
 
     .section-heading {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-family: var(--ff-d);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
       font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 16px
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      margin-bottom: 16px;
+      color: var(--text);
     }
 
     .section-sub {
@@ -7830,7 +7856,7 @@ input:focus, textarea:focus, select:focus {
   border-top-color: rgba(0, 0, 0, 0.07) !important;
 }
 
-/* PORTFOLIO & CASE STUDIES CARDS */
+/* PORTFOLIO & CASE STUDIES CARDS (MINIMAL & EDITORIAL) */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -7840,10 +7866,11 @@ input:focus, textarea:focus, select:focus {
 .portfolio-card {
   background: var(--card);
   border: 1px solid var(--border2);
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 30px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -7852,14 +7879,14 @@ input:focus, textarea:focus, select:focus {
 .portfolio-card:hover {
   transform: translateY(-6px);
   border-color: rgba(255, 107, 0, 0.45);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 25px rgba(255, 107, 0, 0.12);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 107, 0, 0.12);
 }
 
 .portfolio-top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -7867,6 +7894,7 @@ input:focus, textarea:focus, select:focus {
 .portfolio-sector-badge {
   font-size: 0.74rem;
   font-weight: 700;
+  letter-spacing: 0.03em;
   padding: 4px 10px;
   border-radius: 6px;
   background: rgba(255, 107, 0, 0.12);
@@ -7888,10 +7916,10 @@ input:focus, textarea:focus, select:focus {
 
 .portfolio-project-img-wrap {
   width: 100%;
-  height: 190px;
+  height: 180px;
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   position: relative;
   background: #090A12;
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -7905,7 +7933,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .portfolio-card:hover .portfolio-project-img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .portfolio-project-overlay-tag {
@@ -7913,38 +7941,80 @@ input:focus, textarea:focus, select:focus {
   bottom: 10px;
   right: 10px;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 800;
   padding: 4px 10px;
   border-radius: 6px;
   background: rgba(8, 9, 16, 0.88);
   color: #FFFFFF;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 107, 0, 0.35);
 }
 
 .portfolio-card h3 {
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1.3;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: var(--text);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .portfolio-card-desc {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text2);
-  line-height: 1.65;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* MINIMAL HERO METRIC STRIP */
+.portfolio-hero-metric-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  margin: 16px 0;
+  border-radius: 12px;
+  background: rgba(255, 107, 0, 0.06);
+  border: 1px solid rgba(255, 107, 0, 0.22);
+}
+
+.portfolio-hero-metric-val {
+  font-family: var(--ff-d);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #FF6B00;
+  line-height: 1;
+}
+
+.portfolio-hero-metric-lbl {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
+.portfolio-minimal-badge {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border2);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .portfolio-results-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin: 18px 0;
-  padding: 14px 12px;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 12px 10px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
@@ -7953,23 +8023,33 @@ input:focus, textarea:focus, select:focus {
 
 .portfolio-stat-box .stat-box-val {
   font-family: var(--ff-d);
-  font-size: 1.22rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #FF6B00;
   line-height: 1.1;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .portfolio-stat-box .stat-box-lbl {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text2);
   font-weight: 600;
   line-height: 1.25;
 }
 
+.portfolio-minimal-quote {
+  font-size: 0.85rem;
+  color: var(--text2);
+  font-style: italic;
+  line-height: 1.55;
+  padding-left: 12px;
+  border-left: 2px solid #FF6B00;
+  margin: 14px 0 18px;
+}
+
 .portfolio-card-footer {
   margin-top: auto;
-  padding-top: 18px;
+  padding-top: 16px;
   border-top: 1px solid var(--border2);
 }
 
@@ -8014,6 +8094,21 @@ input:focus, textarea:focus, select:focus {
   color: #475569 !important;
 }
 
+[data-theme="light"] .portfolio-hero-metric-wrap {
+  background: #FFF7F0 !important;
+  border: 1px solid rgba(255, 107, 0, 0.25) !important;
+}
+
+[data-theme="light"] .portfolio-hero-metric-lbl {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .portfolio-minimal-badge {
+  background: #F8F9FD !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #090A10 !important;
+}
+
 [data-theme="light"] .portfolio-results-grid {
   background: #F8F9FC !important;
   border: 1px solid rgba(0, 0, 0, 0.07) !important;
@@ -8022,6 +8117,10 @@ input:focus, textarea:focus, select:focus {
 [data-theme="light"] .portfolio-stat-box .stat-box-lbl {
   color: #475569 !important;
   font-weight: 600 !important;
+}
+
+[data-theme="light"] .portfolio-minimal-quote {
+  color: #475569 !important;
 }
 
 [data-theme="light"] .portfolio-card-footer {
