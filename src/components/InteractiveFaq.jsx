@@ -146,7 +146,7 @@ export default function InteractiveFaq() {
               target="_blank"
               rel="noreferrer"
               className="btn btn-outline"
-              style={{ display: 'inline-flex', marginTop: '14px', padding: '10px 22px', fontSize: '0.88rem', borderColor: '#25D366', color: '#25D366' }}
+              style={{ display: 'inline-flex', marginTop: '14px', padding: '10px 22px', fontSize: '0.88rem', borderColor: '#FF6B00', color: '#FF6B00' }}
             >
               💬 WhatsApp Me (+91 86046 25862)
             </a>

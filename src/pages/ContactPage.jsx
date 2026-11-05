@@ -88,8 +88,8 @@ export default function ContactPage() {
     <div className="page-wrapper contact-page" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* Hero Section */}
       <section style={{ padding: '80px 0 50px', position: 'relative', overflow: 'hidden' }}>
-        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
-        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+        <div className="ambient-glow-orange" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-orange" style={{ top: '100px', right: '-150px' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '780px', margin: '0 auto' }}>
           <span className="tag" style={{ marginBottom: '14px', display: 'inline-block' }}>
@@ -165,15 +165,15 @@ export default function ContactPage() {
                     alignItems: 'center',
                     gap: '16px',
                     textDecoration: 'none',
-                    border: '1px solid rgba(0, 214, 143, 0.3)',
+                    border: '1px solid rgba(255, 107, 0, 0.3)',
                     transition: 'all 0.2s ease',
                   }}
                 >
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(0, 214, 143, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#00d68f', fontSize: '1.3rem' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(255, 107, 0, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF6B00', fontSize: '1.3rem' }}>
                     <i className="bi bi-whatsapp"></i>
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.75rem', color: '#00d68f', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 700 }}>
+                    <div style={{ fontSize: '0.75rem', color: '#FF6B00', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 700 }}>
                       Chat on WhatsApp (Fastest Response)
                     </div>
                     <div style={{ fontSize: '1.1rem', color: 'var(--text)', fontWeight: 700 }}>
@@ -230,7 +230,7 @@ export default function ContactPage() {
             <div className="glass-panel" style={{ padding: '40px', position: 'relative' }}>
               {submitted ? (
                 <div style={{ textAlign: 'center', padding: '40px 20px' }}>
-                  <div style={{ fontSize: '3rem', color: '#00d68f', marginBottom: '16px' }}>✅</div>
+                  <div style={{ fontSize: '3rem', color: '#FF6B00', marginBottom: '16px' }}>✅</div>
                   <h3 style={{ fontSize: '1.6rem', color: 'var(--text)', marginBottom: '12px' }}>
                     Audit Request Received!
                   </h3>
@@ -257,7 +257,7 @@ export default function ContactPage() {
                   </p>
 
                   {errorMsg && (
-                    <div style={{ background: 'rgba(255, 71, 87, 0.15)', border: '1px solid #ff4757', color: '#ff6b81', padding: '12px', borderRadius: '10px', fontSize: '0.86rem', marginBottom: '16px' }}>
+                    <div style={{ background: 'rgba(255, 71, 87, 0.15)', border: '1px solid #FF6B00', color: '#ff6b81', padding: '12px', borderRadius: '10px', fontSize: '0.86rem', marginBottom: '16px' }}>
                       {errorMsg}
                     </div>
                   )}

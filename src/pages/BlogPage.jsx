@@ -53,8 +53,8 @@ export default function BlogPage() {
     <div className="blog-page-wrap" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* BLOG HERO */}
       <header style={{ padding: '80px 0 50px', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
-        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
-        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+        <div className="ambient-glow-orange" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-orange" style={{ top: '100px', right: '-150px' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '800px', margin: '0 auto' }}>
           <span className="tag" style={{ marginBottom: '14px', display: 'inline-block' }}>

@@ -25,13 +25,13 @@ export default function ThankYouPage() {
           style={{
             padding: '50px 36px',
             background: 'linear-gradient(135deg, rgba(14, 21, 52, 0.85), rgba(8, 12, 32, 0.95))',
-            border: '1px solid rgba(0, 229, 255, 0.35)',
+            border: '1px solid rgba(255, 136, 0, 0.35)',
             borderRadius: '24px',
             boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 107, 0, 0.15)',
           }}
         >
           <div style={{ fontSize: '3.5rem', marginBottom: '16px' }}>🎉</div>
-          <span className="tag" style={{ background: 'rgba(0, 214, 143, 0.15)', color: '#00D68F', border: '1px solid #00D68F', marginBottom: '16px', display: 'inline-block' }}>
+          <span className="tag" style={{ background: 'rgba(255, 107, 0, 0.15)', color: '#FF6B00', border: '1px solid #FF6B00', marginBottom: '16px', display: 'inline-block' }}>
             Request Received Successfully
           </span>
           <h1 style={{ fontFamily: 'var(--ff-d)', fontSize: '2.4rem', color: 'var(--text)', margin: '10px 0 16px 0' }}>

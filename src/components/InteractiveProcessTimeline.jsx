@@ -205,7 +205,7 @@ export default function InteractiveProcessTimeline() {
             }}
           >
             <span>Direct execution by Anirudh Kumar</span>
-            <span style={{ color: '#00d68f', fontWeight: 700 }}>✓ Verified Process</span>
+            <span style={{ color: '#FF6B00', fontWeight: 700 }}>✓ Verified Process</span>
           </div>
         </div>
       </div>

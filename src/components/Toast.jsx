@@ -30,12 +30,12 @@ export default function Toast({ message, isVisible, onClose }) {
           width: '36px',
           height: '36px',
           borderRadius: '50%',
-          background: 'rgba(0, 214, 143, 0.15)',
-          border: '1px solid #00D68F',
+          background: 'rgba(255, 107, 0, 0.15)',
+          border: '1px solid #FF6B00',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#00D68F',
+          color: '#FF6B00',
           fontSize: '1.1rem',
           flexShrink: 0
         }}

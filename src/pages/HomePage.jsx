@@ -9,6 +9,7 @@ import InteractiveFaq from '../components/InteractiveFaq.jsx';
 import SeoAuditModal from '../components/SeoAuditModal.jsx';
 
 // Interactive & Visual Components (Matching Orange, Black & White Branding)
+import HeroGlobe3D from '../components/HeroGlobe3D.jsx';
 import QuickSeoScanner from '../components/QuickSeoScanner.jsx';
 import SerpSimulator from '../components/SerpSimulator.jsx';
 import CertificationsTrustBar from '../components/CertificationsTrustBar.jsx';
@@ -47,7 +48,7 @@ export default function HomePage() {
     if (btn) {
       const originalText = btn.textContent;
       btn.textContent = '✅ Submitted! 24 hrs mein reply milega.';
-      btn.style.background = '#00D68F';
+      btn.style.background = '#FF6B00';
       btn.disabled = true;
       setTimeout(() => {
         btn.textContent = originalText;
@@ -71,13 +72,10 @@ export default function HomePage() {
                 <span className="tag">📍 Lucknow, Kanpur &amp; Noida • Remote Pan-India</span>
               </div>
               <h1 className="hero-h1">
-                <span className="line1">ANIRUDH KUMAR –</span>
-                <Typewriter />
-                <span style={{ display: 'block', fontFamily: 'var(--ff-d)', fontSize: 'inherit', lineHeight: 'inherit', color: 'var(--text)' }}>
-                  &amp; DIGITAL MARKETING CONSULTANT
-                </span>
+                <span className="line1">SEO EXPERT &amp; DIGITAL MARKETER</span>
+                <span className="line2 gradient-text">FOR GROWING BUSINESSES</span>
                 <span className="line3">
-                  Helping businesses get found on Google, Maps and social media, and turn that visibility into real enquiries and sales. Work directly with me — no account managers, no interns, no lock-in contract.
+                  Hi, I'm <strong style={{ color: 'var(--text)' }}>Anirudh Kumar</strong>. I help businesses get found on <span style={{ color: 'var(--accent)', fontWeight: 700 }}>Google</span>, <span style={{ color: 'var(--accent)', fontWeight: 700 }}>Maps</span> and social media, and turn that visibility into real <span style={{ color: 'var(--accent)', fontWeight: 700 }}>enquiries and sales</span>. I work remotely across India and on-site in Lucknow, Kanpur and Noida.
                 </span>
               </h1>
               <div className="hero-btns">
@@ -96,14 +94,14 @@ export default function HomePage() {
                   rel="noreferrer"
                   className="btn btn-outline"
                 >
-                  <i className="bi bi-whatsapp" style={{ marginRight: '8px', color: '#25D366' }}></i>
+                  <i className="bi bi-whatsapp" style={{ marginRight: '8px', color: '#FF6B00' }}></i>
                   Chat on WhatsApp
                 </a>
               </div>
 
               {/* Direct Access Note */}
               <div style={{ marginTop: '14px', fontSize: '0.82rem', color: 'var(--text2)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ color: '#00d68f', fontWeight: 800 }}>✓</span>
+                <span style={{ color: '#FF6B00', fontWeight: 800 }}>✓</span>
                 <span>You work directly with Anirudh. Month-to-month, zero lock-in contracts.</span>
               </div>
 
@@ -123,50 +121,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="hero-visual">
-              <div className="hero-3d-wrap">
-                <div className="orbit-ring">
-                  <div className="orbit-dot"></div>
-                </div>
-                <div className="orbit-ring">
-                  <div className="orbit-dot" style={{ background: 'var(--accent2)' }}></div>
-                </div>
-                <img
-                  src="/Untitled design (12).png"
-                  alt="Anirudh Kumar - SEO Expert & Digital Marketer"
-                  className="hero-persona-img"
-                />
-              </div>
-              <div className="hero-card-float card1">
-                <div className="float-card-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                    <polyline points="17 6 23 6 23 12" />
-                  </svg>
-                </div>
-                <div className="float-card-label">Organic Traffic</div>
-                <div className="float-card-value">+340%</div>
-              </div>
-              <div className="hero-card-float card2">
-                <div className="float-card-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <circle cx="12" cy="12" r="6" />
-                    <circle cx="12" cy="12" r="2" />
-                  </svg>
-                </div>
-                <div className="float-card-label">ROI on Meta Ads</div>
-                <div className="float-card-value">7.2x</div>
-              </div>
-              <div className="hero-card-float card3">
-                <div className="float-card-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                </div>
-                <div className="float-card-label">Google Rating</div>
-                <div className="float-card-value">4.9/5</div>
-              </div>
+            <div className="hero-visual" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <HeroGlobe3D />
             </div>
           </div>
 
@@ -201,6 +157,93 @@ export default function HomePage() {
           <div className="marquee-item"><i className="bi bi-laptop"></i> Remote SEO Services</div>
         </div>
       </div>
+
+      {/* ==================== ABOUT SECTION ==================== */}
+      <section id="about">
+        <div className="container">
+          <div className="about-grid">
+            <div className="about-img-wrap reveal-left">
+              <div className="about-photo-frame">
+                <div className="about-photo-bg">
+                  <img src="/Untitled design (12).png" alt="Anirudh Kumar - SEO Expert" className="about-persona-img" />
+                  <div className="about-photo-badge">📍 Lucknow, Uttar Pradesh</div>
+                </div>
+              </div>
+              <div className="about-badge-float">
+                <div className="big">5+</div>
+                <div className="small">Years of Experience<br />in Digital Marketing</div>
+              </div>
+            </div>
+
+            <div className="about-content reveal-right">
+              <span className="tag">Hi, I'm Anirudh</span>
+              <div className="divider"></div>
+              <h2 className="section-heading">
+                Direct Freelance <span className="gradient-text">SEO &amp; Growth Partner</span>
+              </h2>
+              <p>
+                I'm a digital marketer and SEO specialist based in Lucknow. I help local businesses, clinics, coaching institutes, real estate firms, manufacturers and D2C brands dominate Google search and generate predictable enquiries.
+              </p>
+              <p>
+                I keep my client list intentionally small so every single project receives my direct personal attention. My approach is simple: find what is stopping your business from being found, fix it, measure it, and report it in plain language.
+              </p>
+
+              <div className="cert-grid">
+                <div className="cert-item">
+                  <span className="cert-icon">🏆</span>
+                  <span className="cert-text">Google Analytics Certified</span>
+                </div>
+                <div className="cert-item">
+                  <span className="cert-icon">🎯</span>
+                  <span className="cert-text">Google Ads Certified</span>
+                </div>
+                <div className="cert-item">
+                  <span className="cert-icon">📱</span>
+                  <span className="cert-text">Meta Ads Certified</span>
+                </div>
+              </div>
+
+              <div className="skill-bars">
+                <div className="skill-row">
+                  <div className="skill-label">
+                    <span>Technical &amp; Local SEO</span>
+                    <span>98%</span>
+                  </div>
+                  <div className="skill-bar-track">
+                    <div className="skill-bar-fill animate" style={{ transform: 'scaleX(0.98)' }}></div>
+                  </div>
+                </div>
+                <div className="skill-row">
+                  <div className="skill-label">
+                    <span>Performance Ads (Google &amp; Meta ROAS)</span>
+                    <span>95%</span>
+                  </div>
+                  <div className="skill-bar-track">
+                    <div className="skill-bar-fill animate" style={{ transform: 'scaleX(0.95)' }}></div>
+                  </div>
+                </div>
+                <div className="skill-row">
+                  <div className="skill-label">
+                    <span>Conversion Architecture &amp; CRO</span>
+                    <span>92%</span>
+                  </div>
+                  <div className="skill-bar-track">
+                    <div className="skill-bar-fill animate" style={{ transform: 'scaleX(0.92)' }}></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <Link className="btn btn-outline" to="/about">Read My Story →</Link>
+                <a href="#contact" className="btn btn-primary">Book Consultation →</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Real Verified Industry Certifications Showcase */}
+          <CertificationsTrustBar />
+        </div>
+      </section>
 
       {/* ==================== SERVICES SECTION ==================== */}
       <section id="services">
@@ -438,93 +481,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ==================== ABOUT SECTION ==================== */}
-      <section id="about">
-        <div className="container">
-          <div className="about-grid">
-            <div className="about-img-wrap reveal-left">
-              <div className="about-photo-frame">
-                <div className="about-photo-bg">
-                  <img src="/Untitled design (12).png" alt="Anirudh Kumar - SEO Expert" className="about-persona-img" />
-                  <div className="about-photo-badge">📍 Lucknow, Uttar Pradesh</div>
-                </div>
-              </div>
-              <div className="about-badge-float">
-                <div className="big">5+</div>
-                <div className="small">Years of Experience<br />in Digital Marketing</div>
-              </div>
-            </div>
-
-            <div className="about-content reveal-right">
-              <span className="tag">Hi, I'm Anirudh</span>
-              <div className="divider"></div>
-              <h2 className="section-heading">
-                Direct Freelance <span className="gradient-text">SEO &amp; Growth Partner</span>
-              </h2>
-              <p>
-                I'm a digital marketer and SEO specialist based in Lucknow. I help local businesses, clinics, coaching institutes, real estate firms, manufacturers and D2C brands dominate Google search and generate predictable enquiries.
-              </p>
-              <p>
-                I keep my client list intentionally small so every single project receives my direct personal attention. My approach is simple: find what is stopping your business from being found, fix it, measure it, and report it in plain language.
-              </p>
-
-              <div className="cert-grid">
-                <div className="cert-item">
-                  <span className="cert-icon">🏆</span>
-                  <span className="cert-text">Google Analytics Certified</span>
-                </div>
-                <div className="cert-item">
-                  <span className="cert-icon">🎯</span>
-                  <span className="cert-text">Google Ads Certified</span>
-                </div>
-                <div className="cert-item">
-                  <span className="cert-icon">📱</span>
-                  <span className="cert-text">Meta Ads Certified</span>
-                </div>
-              </div>
-
-              <div className="skill-bars">
-                <div className="skill-row">
-                  <div className="skill-label">
-                    <span>Technical &amp; Local SEO</span>
-                    <span>98%</span>
-                  </div>
-                  <div className="skill-bar-track">
-                    <div className="skill-bar-fill animate" style={{ transform: 'scaleX(0.98)' }}></div>
-                  </div>
-                </div>
-                <div className="skill-row">
-                  <div className="skill-label">
-                    <span>Performance Ads (Google &amp; Meta ROAS)</span>
-                    <span>95%</span>
-                  </div>
-                  <div className="skill-bar-track">
-                    <div className="skill-bar-fill animate" style={{ transform: 'scaleX(0.95)' }}></div>
-                  </div>
-                </div>
-                <div className="skill-row">
-                  <div className="skill-label">
-                    <span>Conversion Architecture &amp; CRO</span>
-                    <span>92%</span>
-                  </div>
-                  <div className="skill-bar-track">
-                    <div className="skill-bar-fill animate" style={{ transform: 'scaleX(0.92)' }}></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                <Link className="btn btn-outline" to="/about">Read My Story →</Link>
-                <a href="#contact" className="btn btn-primary">Book Consultation →</a>
-              </div>
-            </div>
-          </div>
-
-          {/* Real Verified Industry Certifications Showcase */}
-          <CertificationsTrustBar />
-        </div>
-      </section>
-
       {/* ==================== WHY CHOOSE ME & COMPARISON ==================== */}
       <section id="why" className="page-section" style={{ background: 'var(--bg2)' }}>
         <div className="container">
@@ -698,6 +654,10 @@ export default function HomePage() {
                   </span>
                 </div>
 
+                <div className="portfolio-project-img-wrap">
+                  <img src="/service-seo.png" alt="Multi-Specialty Healthcare Clinic Case Study" className="portfolio-project-img" />
+                  <div className="portfolio-project-overlay-tag">Healthcare • Lucknow</div>
+                </div>
                 <h3>Multi-Specialty Healthcare Clinic</h3>
                 <p className="portfolio-card-desc">
                   Procedure page optimization and local citation clean-up for high-intent medical queries in Gomti Nagar and Indiranagar.
@@ -798,6 +758,10 @@ export default function HomePage() {
                   </span>
                 </div>
 
+                <div className="portfolio-project-img-wrap">
+                  <img src="/service-ads.png" alt="Cotton Fabric & Apparel Supplier Case Study" className="portfolio-project-img" />
+                  <div className="portfolio-project-overlay-tag">B2B Apparel • Kanpur</div>
+                </div>
                 <h3>Cotton Fabric &amp; Apparel Supplier</h3>
                 <p className="portfolio-card-desc">
                   Wholesale B2B intent search optimization and targeted Meta retargeting campaigns across Uttar Pradesh and Delhi NCR.
@@ -898,6 +862,10 @@ export default function HomePage() {
                   </span>
                 </div>
 
+                <div className="portfolio-project-img-wrap">
+                  <img src="/service-kanpur.png" alt="Competitive Exam Coaching Institute Case Study" className="portfolio-project-img" />
+                  <div className="portfolio-project-overlay-tag">Education • Lucknow</div>
+                </div>
                 <h3>Competitive Exam Coaching Institute</h3>
                 <p className="portfolio-card-desc">
                   Ranked #1 for 14 competitive exam search queries across Lucknow, capturing student searches before admission sessions opened.
@@ -995,6 +963,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ==================== ROI CALCULATOR ==================== */}
+      <div className="container">
+        <RoiCalculator />
+      </div>
+
+      {/* ==================== PRICING SECTION ==================== */}
+      <section id="pricing">
+        <div className="container">
+          <div className="section-header center text-center reveal">
+            <span className="tag">Transparent Pricing</span>
+            <div className="divider"></div>
+            <h2 className="section-heading">Simple, Clear <span className="gradient-text">Pricing</span></h2>
+            <p className="section-sub">
+              Every package starts with a free SEO audit. No hidden charges, no lock-in contracts.
+            </p>
+          </div>
+
+          <InteractivePricing />
+
+          <p className="text-center mt-4" style={{ color: 'var(--text2)', fontSize: '0.85rem' }}>
+            Need something custom? Tell me what you need and I will build a package for you.{' '}
+            <a href="#contact" style={{ color: 'var(--accent)', fontWeight: '700' }}>Contact karein</a>
+          </p>
+        </div>
+      </section>
+
       {/* ==================== TESTIMONIALS ==================== */}
       <section id="testimonials">
         <div className="container">
@@ -1071,32 +1065,6 @@ export default function HomePage() {
               ⭐⭐⭐⭐⭐ 4.9 / 5.0
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ==================== ROI CALCULATOR ==================== */}
-      <div className="container">
-        <RoiCalculator />
-      </div>
-
-      {/* ==================== PRICING SECTION ==================== */}
-      <section id="pricing">
-        <div className="container">
-          <div className="section-header center text-center reveal">
-            <span className="tag">Transparent Pricing</span>
-            <div className="divider"></div>
-            <h2 className="section-heading">Simple, Clear <span className="gradient-text">Pricing</span></h2>
-            <p className="section-sub">
-              Every package starts with a free SEO audit. No hidden charges, no lock-in contracts.
-            </p>
-          </div>
-
-          <InteractivePricing />
-
-          <p className="text-center mt-4" style={{ color: 'var(--text2)', fontSize: '0.85rem' }}>
-            Need something custom? Tell me what you need and I will build a package for you.{' '}
-            <a href="#contact" style={{ color: 'var(--accent)', fontWeight: '700' }}>Contact karein</a>
-          </p>
         </div>
       </section>
 
@@ -1218,7 +1186,7 @@ export default function HomePage() {
                 </button>
               </div>
 
-              <div className="faq-sidebar-card reveal-right" style={{ transitionDelay: '0.2s', background: 'rgba(37,211,102,0.05)', borderColor: 'rgba(37,211,102,0.2)' }}>
+              <div className="faq-sidebar-card reveal-right" style={{ transitionDelay: '0.2s', background: 'rgba(255, 107, 0, 0.05)', borderColor: 'rgba(255, 107, 0, 0.2)' }}>
                 <h3>💬 WhatsApp Par Baat Karein</h3>
                 <p>Seedha WhatsApp karein — main 10 mins mein reply karta hoon. Aapke sawaal ka jawab abhi milega.</p>
                 <a

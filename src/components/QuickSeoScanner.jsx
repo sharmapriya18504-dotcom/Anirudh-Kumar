@@ -172,7 +172,7 @@ export default function QuickSeoScanner() {
                   fontSize: '1.8rem',
                   fontWeight: 900,
                   fontFamily: 'var(--ff-d)',
-                  color: result.score >= 80 ? '#00d68f' : result.score >= 60 ? '#FFB800' : '#ff4d4f'
+                  color: result.score >= 80 ? '#FF6B00' : result.score >= 60 ? '#FFB800' : '#ff4d4f'
                 }}
               >
                 {result.score} / 100
@@ -183,7 +183,7 @@ export default function QuickSeoScanner() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.82rem', marginBottom: '18px' }}>
             <div style={{ background: 'var(--card)', padding: '10px', borderRadius: '8px', border: '1px solid var(--border2)' }}>
-              📱 Mobile Friendly: <span style={{ color: '#00d68f', fontWeight: 700 }}>Passed ✓</span>
+              📱 Mobile Friendly: <span style={{ color: '#FF6B00', fontWeight: 700 }}>Passed ✓</span>
             </div>
             <div style={{ background: 'var(--card)', padding: '10px', borderRadius: '8px', border: '1px solid var(--border2)' }}>
               ⚡ Speed: <span style={{ color: '#FFB800', fontWeight: 700 }}>{result.speedRating}</span>

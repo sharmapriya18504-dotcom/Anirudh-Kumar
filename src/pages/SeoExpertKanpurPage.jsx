@@ -22,7 +22,7 @@ export default function SeoExpertKanpurPage() {
     if (btn) {
       const orig = btn.textContent;
       btn.textContent = '✅ Audit Request Sent!';
-      btn.style.background = '#00D68F';
+      btn.style.background = '#FF6B00';
       btn.disabled = true;
       setTimeout(() => {
         btn.textContent = orig;
@@ -37,14 +37,14 @@ export default function SeoExpertKanpurPage() {
     <div className="page-wrapper city-page" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* City Hero */}
       <section className="city-hero" style={{ padding: '80px 0 60px', position: 'relative', overflow: 'hidden' }}>
-        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
-        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+        <div className="ambient-glow-orange" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-orange" style={{ top: '100px', right: '-150px' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '820px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
               <span className="tag">📍 On-Site &amp; Remote in Kanpur</span>
-              <span style={{ fontSize: '0.85rem', color: '#00d68f', fontWeight: 600 }}>Industrial &amp; Local Business SEO</span>
+              <span style={{ fontSize: '0.85rem', color: '#FF6B00', fontWeight: 600 }}>Industrial &amp; Local Business SEO</span>
             </div>
             <h1
               className="section-heading"
@@ -130,7 +130,7 @@ export default function SeoExpertKanpurPage() {
                   'Your business details are inaccurate, unverified or completely missing on Google Maps.',
                 ].map((prob, idx) => (
                   <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'var(--card)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.15)' }}>
-                    <span style={{ color: '#ff4757', fontWeight: 800 }}>⚠️</span>
+                    <span style={{ color: '#FF6B00', fontWeight: 800 }}>⚠️</span>
                     <span style={{ color: 'var(--text)', fontSize: '0.92rem' }}>{prob}</span>
                   </div>
                 ))}
@@ -149,7 +149,7 @@ export default function SeoExpertKanpurPage() {
                 <li><strong>Google &amp; Meta Ads (Optional):</strong> Laser-focused paid lead campaigns when you need immediate enquiries.</li>
               </ul>
 
-              <div style={{ marginTop: '28px', padding: '16px', background: 'rgba(41, 121, 255, 0.1)', borderRadius: '12px', border: '1px solid rgba(41, 121, 255, 0.3)' }}>
+              <div style={{ marginTop: '28px', padding: '16px', background: 'rgba(255, 107, 0, 0.1)', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.3)' }}>
                 <div style={{ fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>🚆 On-site or Remote Availability:</div>
                 <div style={{ color: 'var(--text2)', fontSize: '0.88rem' }}>
                   I'm available for on-site meetings and work in Kanpur, and I can also work with your team remotely with seamless weekly reporting.

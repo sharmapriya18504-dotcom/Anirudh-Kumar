@@ -22,7 +22,7 @@ export default function RemoteSeoPage() {
     if (btn) {
       const orig = btn.textContent;
       btn.textContent = '✅ Audit Request Sent!';
-      btn.style.background = '#00D68F';
+      btn.style.background = '#FF6B00';
       btn.disabled = true;
       setTimeout(() => {
         btn.textContent = orig;
@@ -37,14 +37,14 @@ export default function RemoteSeoPage() {
     <div className="page-wrapper city-page" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* Hero */}
       <section className="city-hero" style={{ padding: '80px 0 60px', position: 'relative', overflow: 'hidden' }}>
-        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
-        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+        <div className="ambient-glow-orange" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-orange" style={{ top: '100px', right: '-150px' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '820px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
               <span className="tag">🌐 Pan-India Remote Collaboration</span>
-              <span style={{ fontSize: '0.85rem', color: '#00d68f', fontWeight: 600 }}>Seamless Communication &amp; Transparent Reporting</span>
+              <span style={{ fontSize: '0.85rem', color: '#FF6B00', fontWeight: 600 }}>Seamless Communication &amp; Transparent Reporting</span>
             </div>
             <h1
               className="section-heading"
@@ -147,7 +147,7 @@ export default function RemoteSeoPage() {
                 <li><strong>One-Time Projects:</strong> Technical site migrations, site audits, or speed overhauls.</li>
                 <li><strong>Remote Part-Time / Full-Time Roles:</strong> Embedded specialist driving growth for your product or agency.</li>
               </ul>
-              <div style={{ color: '#00d68f', fontSize: '0.88rem', fontWeight: 600 }}>
+              <div style={{ color: '#FF6B00', fontSize: '0.88rem', fontWeight: 600 }}>
                 ✓ No agency lock-in. Month-to-month flexibility.
               </div>
             </div>

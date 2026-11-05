@@ -8,8 +8,8 @@ export default function PricingPage() {
     <div className="page-wrapper pricing-page" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* Hero */}
       <section style={{ padding: '80px 0 50px', position: 'relative', overflow: 'hidden' }}>
-        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
-        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+        <div className="ambient-glow-orange" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-orange" style={{ top: '100px', right: '-150px' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
           <span className="tag" style={{ marginBottom: '14px', display: 'inline-block' }}>

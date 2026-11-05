@@ -338,8 +338,8 @@ export default function SerpSimulator() {
             <div
               style={{
                 marginTop: '16px',
-                background: 'rgba(0, 214, 143, 0.1)',
-                border: '1px solid rgba(0, 214, 143, 0.3)',
+                background: 'rgba(255, 107, 0, 0.1)',
+                border: '1px solid rgba(255, 107, 0, 0.3)',
                 borderRadius: '8px',
                 padding: '10px 14px',
                 display: 'flex',
@@ -349,7 +349,7 @@ export default function SerpSimulator() {
                 gap: '8px'
               }}
             >
-              <div style={{ fontSize: '0.84rem', color: '#00d68f', fontWeight: 700 }}>
+              <div style={{ fontSize: '0.84rem', color: '#FF6B00', fontWeight: 700 }}>
                 📈 Real Impact: {current.afterClicks} generated
               </div>
               <a

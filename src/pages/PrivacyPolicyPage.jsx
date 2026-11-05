@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
               <div>Anirudh Kumar • Freelance SEO Expert</div>
               <div>Gomti Nagar, Lucknow, Uttar Pradesh, India</div>
               <div>Email: <a href="mailto:anirudhkumarseo@gmail.com" style={{ color: '#FF6B00' }}>anirudhkumarseo@gmail.com</a></div>
-              <div>Phone / WhatsApp: <a href="tel:+918604625862" style={{ color: '#00d68f' }}>+91 86046 25862</a></div>
+              <div>Phone / WhatsApp: <a href="tel:+918604625862" style={{ color: '#FF6B00' }}>+91 86046 25862</a></div>
             </div>
 
             <div style={{ marginTop: '30px' }}>

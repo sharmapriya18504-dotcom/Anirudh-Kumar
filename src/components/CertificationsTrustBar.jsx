@@ -22,7 +22,7 @@ const certs = [
     issuer: 'Meta Blueprint',
     id: 'META-BLUEPRINT-CERT',
     icon: '📱',
-    color: '#00E5FF',
+    color: '#FF8800',
     skills: 'Instagram & Facebook Ads, Audience Retargeting & ROAS'
   },
   {
@@ -30,7 +30,7 @@ const certs = [
     issuer: 'HubSpot Academy',
     id: 'HUBSPOT-SEO-CERT',
     icon: '🏆',
-    color: '#00D68F',
+    color: '#FF6B00',
     skills: 'Technical SEO, Content Architecture & Organic Lead Generation'
   }
 ];
@@ -66,7 +66,7 @@ export default function CertificationsTrustBar() {
             VERIFIED INDUSTRY CREDENTIALS &amp; CERTIFICATIONS
           </span>
         </div>
-        <span style={{ fontSize: '0.78rem', color: '#00d68f', fontWeight: 700, background: 'rgba(0,214,143,0.1)', padding: '4px 10px', borderRadius: '12px' }}>
+        <span style={{ fontSize: '0.78rem', color: '#FF6B00', fontWeight: 700, background: 'rgba(255, 107, 0, 0.1)', padding: '4px 10px', borderRadius: '12px' }}>
           ✓ 100% Verified Credentials
         </span>
       </div>
@@ -118,7 +118,7 @@ export default function CertificationsTrustBar() {
               }}
             >
               <span>Verified ID: {c.id}</span>
-              <span style={{ color: '#00d68f' }}>● Active</span>
+              <span style={{ color: '#FF6B00' }}>● Active</span>
             </div>
           </div>
         ))}

@@ -25,7 +25,7 @@ export default function WhyChooseUsPage() {
     if (btn) {
       const originalText = btn.textContent;
       btn.textContent = '✅ Submitted! 24 hrs mein reply milega.';
-      btn.style.background = '#00D68F';
+      btn.style.background = '#FF6B00';
       btn.disabled = true;
       setTimeout(() => {
         btn.textContent = originalText;

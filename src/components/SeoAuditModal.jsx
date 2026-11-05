@@ -263,7 +263,7 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
         {step === 'results' && (
           <div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-              <span className="tag" style={{ background: 'rgba(0, 214, 143, 0.15)', color: '#00D68F', border: '1px solid #00D68F' }}>
+              <span className="tag" style={{ background: 'rgba(255, 107, 0, 0.15)', color: '#FF6B00', border: '1px solid #FF6B00' }}>
                 ✓ Initial Health Audit Complete
               </span>
               <span style={{ fontSize: '0.82rem', color: 'var(--text3)' }}>{url}</span>
@@ -344,7 +344,7 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
                 type="button"
                 onClick={handleWhatsApp}
                 className="btn btn-outline"
-                style={{ width: '100%', justifyContent: 'center', cursor: 'pointer', borderColor: '#25D366', color: '#25D366' }}
+                style={{ width: '100%', justifyContent: 'center', cursor: 'pointer', borderColor: '#FF6B00', color: '#FF6B00' }}
               >
                 💬 Chat on WhatsApp (+91 86046 25862)
               </button>

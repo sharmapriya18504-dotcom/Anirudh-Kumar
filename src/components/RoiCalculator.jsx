@@ -204,14 +204,14 @@ export default function RoiCalculator() {
                 <div style={{ fontSize: '0.8rem', color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Estimated Qualified Enquiries
                 </div>
-                <div style={{ fontFamily: 'var(--ff-d)', fontSize: '2.4rem', color: '#00d68f', lineHeight: 1.1, marginTop: '4px' }}>
+                <div style={{ fontFamily: 'var(--ff-d)', fontSize: '2.4rem', color: '#FF6B00', lineHeight: 1.1, marginTop: '4px' }}>
                   ~{estimatedLeads.toLocaleString('en-IN')} /mo
                 </div>
               </div>
               <span
                 style={{
-                  background: 'rgba(0, 214, 143, 0.15)',
-                  color: '#00d68f',
+                  background: 'rgba(255, 107, 0, 0.15)',
+                  color: '#FF6B00',
                   padding: '4px 10px',
                   borderRadius: '20px',
                   fontSize: '0.82rem',

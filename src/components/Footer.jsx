@@ -49,7 +49,7 @@ export default function Footer() {
                   href="https://wa.me/918604625862"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: '#00d68f', fontWeight: 600 }}
+                  style={{ color: '#FF6B00', fontWeight: 600 }}
                 >
                   Chat on WhatsApp
                 </a>

@@ -51,7 +51,7 @@ const locationsData = [
       'Open to hybrid contracts & team coaching'
     ],
     pageUrl: '/seo-expert-noida',
-    badgeColor: '#00E5FF'
+    badgeColor: '#FF8800'
   },
   {
     id: 'remote',
@@ -68,7 +68,7 @@ const locationsData = [
       'Zero lock-in month-to-month flexibility'
     ],
     pageUrl: '/remote-seo-services',
-    badgeColor: '#00D68F'
+    badgeColor: '#FF6B00'
   }
 ];
 

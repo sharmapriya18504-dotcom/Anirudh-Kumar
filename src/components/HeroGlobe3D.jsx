@@ -469,7 +469,7 @@ export default function HeroGlobe3D() {
             Conversion Attribution
           </div>
           <div style={{ fontSize: '0.96rem', fontWeight: 800, color: 'var(--text)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-            Direct Inbound Enquiries <span style={{ fontSize: '0.75rem', color: '#00d68f', fontWeight: 700 }}>GA4 Active</span>
+            Direct Inbound Enquiries <span style={{ fontSize: '0.75rem', color: '#FF8800', fontWeight: 700 }}>GA4 Active</span>
           </div>
         </div>
       </div>

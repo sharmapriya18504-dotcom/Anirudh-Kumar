@@ -81,7 +81,7 @@ export default function Navbar() {
                   width: '10px',
                   height: '10px',
                   borderRadius: '50%',
-                  background: '#00d68f',
+                  background: '#FF6B00',
                   border: '2px solid var(--bg)',
                 }}
               ></span>

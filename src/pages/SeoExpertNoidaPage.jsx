@@ -22,7 +22,7 @@ export default function SeoExpertNoidaPage() {
     if (btn) {
       const orig = btn.textContent;
       btn.textContent = '✅ Project Inquiry Sent!';
-      btn.style.background = '#00D68F';
+      btn.style.background = '#FF6B00';
       btn.disabled = true;
       setTimeout(() => {
         btn.textContent = orig;
@@ -37,14 +37,14 @@ export default function SeoExpertNoidaPage() {
     <div className="page-wrapper city-page" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* City Hero */}
       <section className="city-hero" style={{ padding: '80px 0 60px', position: 'relative', overflow: 'hidden' }}>
-        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
-        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+        <div className="ambient-glow-orange" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-orange" style={{ top: '100px', right: '-150px' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '820px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
               <span className="tag">📍 On-Site &amp; Hybrid in Noida / NCR</span>
-              <span style={{ fontSize: '0.85rem', color: '#00d68f', fontWeight: 600 }}>Startups, D2C &amp; Enterprise Growth</span>
+              <span style={{ fontSize: '0.85rem', color: '#FF6B00', fontWeight: 600 }}>Startups, D2C &amp; Enterprise Growth</span>
             </div>
             <h1
               className="section-heading"

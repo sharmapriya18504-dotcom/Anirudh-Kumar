@@ -164,7 +164,7 @@ export default function AnalyticsGraphicCard() {
               Client Duration: <strong style={{ color: 'var(--text)' }}>{c.period}</strong> • Direct execution by Anirudh
             </div>
           </div>
-          <div style={{ background: 'rgba(0, 214, 143, 0.1)', border: '1px solid rgba(0, 214, 143, 0.3)', padding: '6px 14px', borderRadius: '16px', color: '#00d68f', fontWeight: 800, fontSize: '0.88rem' }}>
+          <div style={{ background: 'rgba(255, 107, 0, 0.1)', border: '1px solid rgba(255, 107, 0, 0.3)', padding: '6px 14px', borderRadius: '16px', color: '#FF6B00', fontWeight: 800, fontSize: '0.88rem' }}>
             {c.metricHighlight}
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function AnalyticsGraphicCard() {
                 <circle cx="0" cy="140" r="5" fill="#FFB800" />
                 <circle cx="250" cy="100" r="5" fill="#FFB800" />
                 <circle cx="450" cy="45" r="5" fill="#FFB800" />
-                <circle cx="600" cy="20" r="6" fill="#00D68F" />
+                <circle cx="600" cy="20" r="6" fill="#FF6B00" />
               </svg>
             </div>
 
@@ -215,7 +215,7 @@ export default function AnalyticsGraphicCard() {
               </div>
               <div style={{ background: 'var(--card)', padding: '12px', borderRadius: '10px', border: '1px solid var(--border2)' }}>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text2)' }}>Current Clicks / Mo</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#00d68f' }}>{c.finalClicks}</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#FF6B00' }}>{c.finalClicks}</div>
               </div>
               <div style={{ background: 'var(--card)', padding: '12px', borderRadius: '10px', border: '1px solid var(--border2)' }}>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text2)' }}>Monthly Impressions</div>

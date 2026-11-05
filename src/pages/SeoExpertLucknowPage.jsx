@@ -22,7 +22,7 @@ export default function SeoExpertLucknowPage() {
     if (btn) {
       const orig = btn.textContent;
       btn.textContent = '✅ Audit Request Sent!';
-      btn.style.background = '#00D68F';
+      btn.style.background = '#FF6B00';
       btn.disabled = true;
       setTimeout(() => {
         btn.textContent = orig;
@@ -37,14 +37,14 @@ export default function SeoExpertLucknowPage() {
     <div className="page-wrapper city-page" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* City Hero */}
       <section className="city-hero" style={{ padding: '80px 0 60px', position: 'relative', overflow: 'hidden' }}>
-        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
-        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+        <div className="ambient-glow-orange" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-orange" style={{ top: '100px', right: '-150px' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '820px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
               <span className="tag">📍 Based in Gomti Nagar, Lucknow</span>
-              <span style={{ fontSize: '0.85rem', color: '#00d68f', fontWeight: 600 }}>Available for On-Site Meetings</span>
+              <span style={{ fontSize: '0.85rem', color: '#FF6B00', fontWeight: 600 }}>Available for On-Site Meetings</span>
             </div>
             <h1
               className="section-heading"
@@ -130,7 +130,7 @@ export default function SeoExpertLucknowPage() {
                   'Traffic comes occasionally, but no one calls, sends an email or fills out your enquiry form.',
                 ].map((prob, idx) => (
                   <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'var(--card)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.15)' }}>
-                    <span style={{ color: '#ff4757', fontWeight: 800 }}>⚠️</span>
+                    <span style={{ color: '#FF6B00', fontWeight: 800 }}>⚠️</span>
                     <span style={{ color: 'var(--text)', fontSize: '0.92rem' }}>{prob}</span>
                   </div>
                 ))}
@@ -149,7 +149,7 @@ export default function SeoExpertLucknowPage() {
                 <li><strong>Content &amp; Monthly Reporting:</strong> High-intent service copy and clear monthly PDF reports showing real enquiry trends.</li>
               </ul>
 
-              <div style={{ marginTop: '28px', padding: '16px', background: 'rgba(0, 229, 255, 0.08)', borderRadius: '12px', border: '1px solid rgba(0, 229, 255, 0.25)' }}>
+              <div style={{ marginTop: '28px', padding: '16px', background: 'rgba(255, 136, 0, 0.08)', borderRadius: '12px', border: '1px solid rgba(255, 136, 0, 0.25)' }}>
                 <div style={{ fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>🤝 Work with me in person:</div>
                 <div style={{ color: 'var(--text2)', fontSize: '0.88rem' }}>
                   I'm based in Lucknow and happy to meet you at your office in Gomti Nagar, Hazratganj, or nearby areas to review your digital strategy.

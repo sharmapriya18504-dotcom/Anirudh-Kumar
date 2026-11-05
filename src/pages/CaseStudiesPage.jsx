@@ -96,8 +96,8 @@ export default function CaseStudiesPage() {
     <div className="page-wrapper case-studies-page" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* Hero Section */}
       <section style={{ padding: '70px 0 50px', position: 'relative', overflow: 'hidden' }}>
-        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
-        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+        <div className="ambient-glow-orange" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-orange" style={{ top: '100px', right: '-150px' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '820px', margin: '0 auto' }}>
           <span className="tag" style={{ marginBottom: '14px', display: 'inline-block' }}>
@@ -150,6 +150,14 @@ export default function CaseStudiesPage() {
                   </span>
                 </div>
 
+                <div className="portfolio-project-img-wrap">
+                  <img 
+                    src={study.id === 'clinic' ? '/service-seo.png' : study.id === 'textile' ? '/service-ads.png' : '/service-kanpur.png'} 
+                    alt={study.title} 
+                    className="portfolio-project-img" 
+                  />
+                  <div className="portfolio-project-overlay-tag">{study.sector}</div>
+                </div>
                 <h3>{study.title}</h3>
                 <p className="portfolio-card-desc">{study.desc}</p>
 
@@ -258,7 +266,7 @@ export default function CaseStudiesPage() {
 
             <div className="framework-grid">
               <div className="framework-card">
-                <div className="framework-card-num" style={{ color: '#FF4757' }}>01</div>
+                <div className="framework-card-num" style={{ color: '#FF6B00' }}>01</div>
                 <div className="framework-card-title">The Initial Problem</div>
                 <p className="framework-card-desc">
                   Diagnose what is stopping your business from ranking: missing procedure pages, technical crawl blocks, or Google Maps misconfigurations.
@@ -274,7 +282,7 @@ export default function CaseStudiesPage() {
               </div>
 
               <div className="framework-card">
-                <div className="framework-card-num" style={{ color: '#00D68F' }}>03</div>
+                <div className="framework-card-num" style={{ color: '#FF6B00' }}>03</div>
                 <div className="framework-card-title">Real Measurement</div>
                 <p className="framework-card-desc">
                   Real phone calls, form submissions, and Google Maps direction requests tracked over a realistic 3 to 6-month timeframe.
