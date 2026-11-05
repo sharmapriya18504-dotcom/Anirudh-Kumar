@@ -4,6 +4,12 @@ import { useLoader } from '../context/LoaderContext.jsx';
 
 export default function Navbar() {
   const [theme, setTheme] = useState(() => {
+    var v = localStorage.getItem('ak_theme_pm_v1');
+    if (!v) {
+      localStorage.setItem('ak_theme_pm_v1', 'light');
+      localStorage.setItem('theme', 'light');
+      return 'light';
+    }
     return localStorage.getItem('theme') || 'light';
   });
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,6 +20,7 @@ export default function Navbar() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    localStorage.setItem('ak_theme_pm_v1', theme);
   }, [theme]);
 
   useEffect(() => {

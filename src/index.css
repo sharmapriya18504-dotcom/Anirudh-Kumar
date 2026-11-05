@@ -7928,59 +7928,38 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 107, 0, 0.12);
 }
 
-.portfolio-minimal-img-frame {
-  width: 100%;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-  background: #090A12;
+.portfolio-minimal-header {
+  padding: 24px 26px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.portfolio-minimal-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.portfolio-minimal-card:hover .portfolio-minimal-img {
-  transform: scale(1.05);
-}
-
-.portfolio-minimal-category {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: rgba(6, 6, 14, 0.85);
-  color: #FF8800;
-  border: 1px solid rgba(255, 107, 0, 0.3);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+.portfolio-minimal-sector {
   display: inline-flex;
   align-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 107, 0, 0.08);
+  color: #FF6B00;
+  border: 1px solid rgba(255, 107, 0, 0.25);
 }
 
-.portfolio-minimal-loc {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  font-size: 0.72rem;
+.portfolio-minimal-loc-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.74rem;
   font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: rgba(6, 6, 14, 0.82);
-  color: #94A3B8;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  color: var(--text3);
 }
 
 .portfolio-minimal-body {
-  padding: 26px 26px 28px;
+  padding: 0 26px 26px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -8105,15 +8084,14 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 16px 36px rgba(255, 107, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
 }
 
-[data-theme="light"] .portfolio-minimal-category {
-  background: rgba(255, 255, 255, 0.94) !important;
+[data-theme="light"] .portfolio-minimal-sector {
+  background: #FFF3EB !important;
   color: #D95300 !important;
-  border-color: rgba(255, 107, 0, 0.3) !important;
+  border-color: rgba(255, 107, 0, 0.35) !important;
 }
 
-[data-theme="light"] .portfolio-minimal-loc {
-  background: rgba(255, 255, 255, 0.94) !important;
-  color: #475569 !important;
+[data-theme="light"] .portfolio-minimal-loc-pill {
+  color: #647082 !important;
 }
 
 [data-theme="light"] .portfolio-hero-stat-row {
@@ -8433,13 +8411,20 @@ html, body, #root, .page-wrapper {
   }
   .service-card,
   .portfolio-card,
-  .portfolio-minimal-card,
   .framework-wrapper-card {
     padding: 24px 20px !important;
     border-radius: 16px !important;
   }
-  .service-img-wrap,
-  .portfolio-minimal-img-frame {
+  .portfolio-minimal-card {
+    border-radius: 16px !important;
+  }
+  .portfolio-minimal-header {
+    padding: 18px 18px 10px !important;
+  }
+  .portfolio-minimal-body {
+    padding: 0 18px 20px !important;
+  }
+  .service-img-wrap {
     height: 180px !important;
   }
   .case-cta-banner {

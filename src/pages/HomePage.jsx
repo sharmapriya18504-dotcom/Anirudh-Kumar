@@ -447,12 +447,15 @@ export default function HomePage() {
           <div className="portfolio-minimal-grid">
             {caseStudies.map((study, idx) => (
               <div key={study.id} className="portfolio-minimal-card reveal" style={{ transitionDelay: `${idx * 0.1}s` }}>
-                <div className="portfolio-minimal-img-frame">
-                  <img src={study.img} alt={study.title} className="portfolio-minimal-img" />
-                  <span className="portfolio-minimal-category">
-                    {study.sector}
-                  </span>
-                  <span className="portfolio-minimal-loc">{study.location}</span>
+                <div className="portfolio-minimal-header">
+                  <div className="portfolio-minimal-sector">
+                    <i className={`bi ${study.id === 'clinic' ? 'bi-hospital' : study.id === 'apparel' ? 'bi-buildings' : 'bi-mortarboard'}`} style={{ color: '#FF6B00', marginRight: '6px' }}></i>
+                    <span>{study.sector}</span>
+                  </div>
+                  <div className="portfolio-minimal-loc-pill">
+                    <i className="bi bi-geo-alt" style={{ color: '#FF6B00', marginRight: '4px' }}></i>
+                    <span>{study.location}</span>
+                  </div>
                 </div>
 
                 <div className="portfolio-minimal-body">
