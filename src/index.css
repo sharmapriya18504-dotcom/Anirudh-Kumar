@@ -321,7 +321,7 @@
       font-family: var(--ff-d);
       font-size: 1.8rem;
       letter-spacing: 0.05em;
-      color: #06060F;
+      color: var(--text);
     }
 
     .nav-links {
@@ -333,7 +333,7 @@
     .nav-links a {
       font-size: 0.875rem;
       font-weight: 600;
-      color: #06060F;
+      color: var(--text);
       transition: color var(--transition);
       position: relative
     }
@@ -3067,7 +3067,7 @@
       font-family: var(--ff-d);
       font-size: 1.8rem;
       letter-spacing: 0.05em;
-      color: #06060F;
+      color: var(--text);
     }
 
     .nav-links {
@@ -3079,7 +3079,7 @@
     .nav-links a {
       font-size: 0.875rem;
       font-weight: 600;
-      color: #06060F;
+      color: var(--text);
       transition: color var(--transition);
       position: relative
     }
@@ -5839,4 +5839,176 @@ input:focus, textarea:focus, select:focus {
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
+}
+
+
+/* ==================== BULLETPROOF LIGHT MODE CONTRAST JUGAD ==================== */
+[data-theme="light"] {
+  --bg: #F8F9FA !important;
+  --bg2: #F1F3F5 !important;
+  --bg3: #E9ECEF !important;
+  --card: #FFFFFF !important;
+  --border: rgba(255, 107, 0, 0.25) !important;
+  --border2: rgba(0, 0, 0, 0.08) !important;
+  --text: #0E121B !important;
+  --text2: #343A40 !important;
+  --text3: #6C757D !important;
+  --glass: rgba(255, 255, 255, 0.95) !important;
+  --glow: rgba(255, 107, 0, 0.2) !important;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] body {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Ensure ALL headings, labels, values and links in light mode are dark, sharp, and 100% visible */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] .section-heading,
+[data-theme="light"] .hero-h1,
+[data-theme="light"] .hero-h1 .line1,
+[data-theme="light"] .hero-h1 span:not(.line2):not(.typewriter-cursor),
+[data-theme="light"] .nav-logo,
+[data-theme="light"] .nav-logo-text,
+[data-theme="light"] .nav-links a,
+[data-theme="light"] .dropdown-menu a,
+[data-theme="light"] .mobile-menu a,
+[data-theme="light"] .float-card-value,
+[data-theme="light"] .service-card h3,
+[data-theme="light"] .portfolio-card h3,
+[data-theme="light"] .testi-card h3,
+[data-theme="light"] .testi-name,
+[data-theme="light"] .testi-text,
+[data-theme="light"] .why-point-title,
+[data-theme="light"] .vs-header div,
+[data-theme="light"] .vs-row .label,
+[data-theme="light"] .location-body h3,
+[data-theme="light"] .blog-body h3,
+[data-theme="light"] .faq-question,
+[data-theme="light"] .faq-sidebar-card h3,
+[data-theme="light"] .contact-label,
+[data-theme="light"] .contact-value,
+[data-theme="light"] .footer-col h4,
+[data-theme="light"] .contact-form h3,
+[data-theme="light"] .pricing-card h3,
+[data-theme="light"] .pricing-price,
+[data-theme="light"] label,
+[data-theme="light"] strong {
+  color: #0E121B !important;
+}
+
+[data-theme="light"] p,
+[data-theme="light"] .section-sub,
+[data-theme="light"] .hero-h1 .line3,
+[data-theme="light"] .service-card p,
+[data-theme="light"] .portfolio-card p,
+[data-theme="light"] .why-point-desc,
+[data-theme="light"] .testi-role,
+[data-theme="light"] .testi-city,
+[data-theme="light"] .location-body p,
+[data-theme="light"] .blog-body p,
+[data-theme="light"] .faq-answer,
+[data-theme="light"] .faq-sidebar-card p,
+[data-theme="light"] .footer-col a,
+[data-theme="light"] .footer-brand p,
+[data-theme="light"] .stat-label,
+[data-theme="light"] .float-card-label {
+  color: #343A40 !important;
+}
+
+/* Light mode for form controls */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: #FFFFFF !important;
+  color: #0E121B !important;
+  border: 1px solid rgba(0, 0, 0, 0.16) !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #888899 !important;
+}
+
+/* Light mode for cards & containers */
+[data-theme="light"] .card,
+[data-theme="light"] .glass-panel,
+[data-theme="light"] .service-card,
+[data-theme="light"] .portfolio-card,
+[data-theme="light"] .testi-card,
+[data-theme="light"] .faq-sidebar-card,
+[data-theme="light"] .contact-form,
+[data-theme="light"] .location-card,
+[data-theme="light"] .blog-card,
+[data-theme="light"] .pricing-card,
+[data-theme="light"] .vs-table,
+[data-theme="light"] .about-badge-float,
+[data-theme="light"] .hero-card-float,
+[data-theme="light"] .dropdown-menu {
+  background: #FFFFFF !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Navbar in light mode */
+[data-theme="light"] nav {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .nav-links a {
+  color: #0E121B !important;
+}
+
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active-nav-link {
+  color: var(--accent) !important;
+}
+
+[data-theme="light"] .dropdown-menu a {
+  color: #0E121B !important;
+}
+
+[data-theme="light"] .dropdown-menu a:hover {
+  background: rgba(255, 107, 0, 0.08) !important;
+  color: var(--accent) !important;
+}
+
+/* Mobile menu in light mode */
+[data-theme="light"] .mobile-menu {
+  background: #FFFFFF !important;
+}
+
+[data-theme="light"] .mobile-menu a {
+  color: #0E121B !important;
+}
+
+[data-theme="light"] .mobile-close-btn {
+  color: #0E121B !important;
+}
+
+/* Marquee in light mode */
+[data-theme="light"] .marquee-section {
+  background: #EEEEF5 !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .marquee-item {
+  color: #343A40 !important;
+}
+
+/* Quick SEO scanner & SERP simulator in light mode */
+[data-theme="light"] .quick-seo-scanner,
+[data-theme="light"] .serp-simulator-wrapper,
+[data-theme="light"] .analytics-proof-card,
+[data-theme="light"] .certifications-trust-bar {
+  background: #FFFFFF !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
 }

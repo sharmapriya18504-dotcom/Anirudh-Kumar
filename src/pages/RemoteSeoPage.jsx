@@ -52,12 +52,12 @@ export default function RemoteSeoPage() {
                 fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
                 lineHeight: 1.15,
                 marginBottom: '20px',
-                color: '#f0f4fc',
+                color: 'var(--text)',
               }}
             >
               Remote SEO &amp; <span className="gradient-text">Digital Marketing Services</span>
             </h1>
-            <p style={{ fontSize: '1.15rem', color: '#98a7c6', lineHeight: 1.65, marginBottom: '28px' }}>
+            <p style={{ fontSize: '1.15rem', color: 'var(--text2)', lineHeight: 1.65, marginBottom: '28px' }}>
               You don't need to be in my city to work with me. I support businesses across India remotely, with the same personal attention, clear communication, and transparent reporting as my local clients.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px' }}>
@@ -86,7 +86,7 @@ export default function RemoteSeoPage() {
             <h2 className="section-heading" style={{ marginTop: '10px' }}>
               How Remote Work <span className="gradient-text">Runs</span>
             </h2>
-            <p style={{ color: '#98a7c6', maxWidth: '600px', margin: '0 auto' }}>
+            <p style={{ color: 'var(--text2)', maxWidth: '600px', margin: '0 auto' }}>
               Structured, low-friction collaboration designed to keep you informed without wasting your time.
             </p>
           </div>
@@ -101,8 +101,8 @@ export default function RemoteSeoPage() {
               <TiltCard3D key={idx}>
                 <div className="glass-panel" style={{ padding: '28px', height: '100%' }}>
                   <div style={{ fontFamily: 'var(--ff-d)', fontSize: '2rem', color: '#FF6B00', marginBottom: '10px' }}>{item.step}</div>
-                  <h3 style={{ fontSize: '1.2rem', color: '#f0f4fc', marginBottom: '8px' }}>{item.title}</h3>
-                  <p style={{ color: '#98a7c6', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                  <h3 style={{ fontSize: '1.2rem', color: 'var(--text)', marginBottom: '8px' }}>{item.title}</h3>
+                  <p style={{ color: 'var(--text2)', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
                 </div>
               </TiltCard3D>
             ))}
@@ -119,7 +119,7 @@ export default function RemoteSeoPage() {
               <h2 className="section-heading" style={{ marginTop: '10px', fontSize: '2.2rem' }}>
                 Tools I Use to <span className="gradient-text">Drive Results</span>
               </h2>
-              <p style={{ color: '#98a7c6', lineHeight: 1.6, marginBottom: '24px' }}>
+              <p style={{ color: 'var(--text2)', lineHeight: 1.6, marginBottom: '24px' }}>
                 I rely on industry-standard analytics, auditing, and reporting tools to make sure decisions are backed by real search data:
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
@@ -139,7 +139,7 @@ export default function RemoteSeoPage() {
 
             <div className="glass-panel" style={{ padding: '36px' }}>
               <h3 style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '14px' }}>Flexible Collaboration</h3>
-              <p style={{ color: '#98a7c6', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '20px' }}>
+              <p style={{ color: 'var(--text2)', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '20px' }}>
                 I am open to different engagement formats depending on your business requirements:
               </p>
               <ul style={{ color: '#dbe4f5', fontSize: '0.94rem', lineHeight: 2, paddingLeft: '20px', margin: '0 0 24px 0' }}>
@@ -163,7 +163,7 @@ export default function RemoteSeoPage() {
             <h2 className="section-heading" style={{ marginTop: '10px' }}>
               Request Your Free <span className="gradient-text">Remote SEO Audit</span>
             </h2>
-            <p style={{ color: '#98a7c6', fontSize: '0.95rem' }}>
+            <p style={{ color: 'var(--text2)', fontSize: '0.95rem' }}>
               Send me your website link. I will review your site and send over a clear breakdown of what needs to be improved.
             </p>
           </div>
@@ -171,29 +171,29 @@ export default function RemoteSeoPage() {
           <form onSubmit={handleSubmit} className="glass-panel" style={{ padding: '36px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '18px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Your Name *</label>
-                <input type="text" name="name" required placeholder="Aman Agarwal" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Your Name *</label>
+                <input type="text" name="name" required placeholder="Aman Agarwal" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>WhatsApp / Phone Number *</label>
-                <input type="tel" name="phone" required placeholder="+91 86046 25862" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>WhatsApp / Phone Number *</label>
+                <input type="tel" name="phone" required placeholder="+91 86046 25862" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '18px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Email Address (optional)</label>
-                <input type="email" name="email" placeholder="aman@company.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Email Address (optional)</label>
+                <input type="email" name="email" placeholder="aman@company.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Website URL *</label>
-                <input type="text" name="website" required placeholder="www.yourwebsite.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Website URL *</label>
+                <input type="text" name="website" required placeholder="www.yourwebsite.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
             </div>
 
             <div style={{ marginBottom: '22px' }}>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Business Summary &amp; Location</label>
-              <textarea name="message" rows="3" placeholder="Tell me your city and what specific goals you want to achieve through SEO or digital marketing..." style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}></textarea>
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Business Summary &amp; Location</label>
+              <textarea name="message" rows="3" placeholder="Tell me your city and what specific goals you want to achieve through SEO or digital marketing..." style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }}></textarea>
             </div>
 
             <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '14px', fontSize: '1rem', justifyContent: 'center' }}>

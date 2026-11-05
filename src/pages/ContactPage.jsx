@@ -101,12 +101,12 @@ export default function ContactPage() {
               fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
               lineHeight: 1.15,
               marginBottom: '16px',
-              color: '#f0f4fc',
+              color: 'var(--text)',
             }}
           >
             Start Your <span className="gradient-text">Search Growth Today</span>
           </h1>
-          <p style={{ fontSize: '1.1rem', color: '#98a7c6', lineHeight: 1.65 }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--text2)', lineHeight: 1.65 }}>
             Free consultation + free SEO audit. Tell me what your business sells, and I will review your search visibility and tell you what to fix first.
           </p>
         </div>
@@ -118,10 +118,10 @@ export default function ContactPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', alignItems: 'start' }}>
             {/* Left: Contact Info */}
             <div>
-              <h2 style={{ fontSize: '1.8rem', color: '#f0f4fc', marginBottom: '16px' }}>
+              <h2 style={{ fontSize: '1.8rem', color: 'var(--text)', marginBottom: '16px' }}>
                 Direct Access to <span className="gradient-text">Anirudh Kumar</span>
               </h2>
-              <p style={{ color: '#98a7c6', fontSize: '0.96rem', lineHeight: 1.65, marginBottom: '28px' }}>
+              <p style={{ color: 'var(--text2)', fontSize: '0.96rem', lineHeight: 1.65, marginBottom: '28px' }}>
                 You deal with me directly. No account managers, no junior handoffs, and no sales runaround.
               </p>
 
@@ -147,7 +147,7 @@ export default function ContactPage() {
                     <div style={{ fontSize: '0.75rem', color: '#657599', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 700 }}>
                       Phone / Direct Line (Click to Copy)
                     </div>
-                    <div style={{ fontSize: '1.1rem', color: '#f0f4fc', fontWeight: 700 }}>
+                    <div style={{ fontSize: '1.1rem', color: 'var(--text)', fontWeight: 700 }}>
                       +91 86046 25862
                     </div>
                   </div>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                     <div style={{ fontSize: '0.75rem', color: '#00d68f', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 700 }}>
                       Chat on WhatsApp (Fastest Response)
                     </div>
-                    <div style={{ fontSize: '1.1rem', color: '#f0f4fc', fontWeight: 700 }}>
+                    <div style={{ fontSize: '1.1rem', color: 'var(--text)', fontWeight: 700 }}>
                       Message Anirudh Directly
                     </div>
                   </div>
@@ -203,7 +203,7 @@ export default function ContactPage() {
                     <div style={{ fontSize: '0.75rem', color: '#657599', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 700 }}>
                       Email Address (Click to Copy)
                     </div>
-                    <div style={{ fontSize: '1.05rem', color: '#f0f4fc', fontWeight: 700 }}>
+                    <div style={{ fontSize: '1.05rem', color: 'var(--text)', fontWeight: 700 }}>
                       anirudhkumarseo@gmail.com
                     </div>
                   </div>
@@ -218,7 +218,7 @@ export default function ContactPage() {
                     <div style={{ fontSize: '0.75rem', color: '#657599', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 700 }}>
                       Service Coverage &amp; Office
                     </div>
-                    <div style={{ fontSize: '0.96rem', color: '#f0f4fc', fontWeight: 600 }}>
+                    <div style={{ fontSize: '0.96rem', color: 'var(--text)', fontWeight: 600 }}>
                       Gomti Nagar, Lucknow • Kanpur • Noida • Remote Pan-India
                     </div>
                   </div>
@@ -231,10 +231,10 @@ export default function ContactPage() {
               {submitted ? (
                 <div style={{ textAlign: 'center', padding: '40px 20px' }}>
                   <div style={{ fontSize: '3rem', color: '#00d68f', marginBottom: '16px' }}>✅</div>
-                  <h3 style={{ fontSize: '1.6rem', color: '#f0f4fc', marginBottom: '12px' }}>
+                  <h3 style={{ fontSize: '1.6rem', color: 'var(--text)', marginBottom: '12px' }}>
                     Audit Request Received!
                   </h3>
-                  <p style={{ color: '#98a7c6', fontSize: '0.98rem', lineHeight: 1.6, marginBottom: '24px' }}>
+                  <p style={{ color: 'var(--text2)', fontSize: '0.98rem', lineHeight: 1.6, marginBottom: '24px' }}>
                     Thank you! I will personally inspect your website, check your Google rankings, and get back to you within 24 hours.
                   </p>
                   <a
@@ -249,10 +249,10 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <>
-                  <h3 style={{ fontSize: '1.4rem', color: '#f0f4fc', marginBottom: '6px' }}>
+                  <h3 style={{ fontSize: '1.4rem', color: 'var(--text)', marginBottom: '6px' }}>
                     Book Your Free SEO Audit
                   </h3>
-                  <p style={{ fontSize: '0.86rem', color: '#98a7c6', marginBottom: '24px' }}>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--text2)', marginBottom: '24px' }}>
                     Prompt reply within 24 hours guaranteed.
                   </p>
 
@@ -276,7 +276,7 @@ export default function ContactPage() {
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '6px' }}>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '6px' }}>
                           Your Name *
                         </label>
                         <input
@@ -286,11 +286,11 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="John Doe"
-                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
+                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }}
                         />
                       </div>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '6px' }}>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '6px' }}>
                           Phone Number *
                         </label>
                         <input
@@ -300,14 +300,14 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+91 86046 25862"
-                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
+                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }}
                         />
                       </div>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '6px' }}>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '6px' }}>
                           Email Address (optional)
                         </label>
                         <input
@@ -316,11 +316,11 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="you@company.com"
-                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
+                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }}
                         />
                       </div>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '6px' }}>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '6px' }}>
                           Website URL (add this)
                         </label>
                         <input
@@ -329,20 +329,20 @@ export default function ContactPage() {
                           value={formData.website}
                           onChange={handleChange}
                           placeholder="www.yourwebsite.com"
-                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
+                          style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }}
                         />
                       </div>
                     </div>
 
                     <div style={{ marginBottom: '16px' }}>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '6px' }}>
+                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '6px' }}>
                         Required Service
                       </label>
                       <select
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
-                        style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
+                        style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }}
                       >
                         <option value="">— Select Service —</option>
                         <option value="Free SEO Audit">Free SEO Audit</option>
@@ -356,7 +356,7 @@ export default function ContactPage() {
                     </div>
 
                     <div style={{ marginBottom: '22px' }}>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '6px' }}>
+                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '6px' }}>
                         Describe your business, goals, or city
                       </label>
                       <textarea
@@ -365,7 +365,7 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell me what you need help with so I can come prepared with an audit..."
-                        style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}
+                        style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }}
                       />
                     </div>
 
@@ -403,7 +403,7 @@ export default function ContactPage() {
             <h2 className="section-heading" style={{ marginTop: '10px' }}>
               Frequently Asked <span className="gradient-text">Questions</span>
             </h2>
-            <p style={{ color: '#98a7c6', fontSize: '0.94rem' }}>
+            <p style={{ color: 'var(--text2)', fontSize: '0.94rem' }}>
               Clear, transparent answers about how I work.
             </p>
           </div>

@@ -52,12 +52,12 @@ export default function SeoExpertKanpurPage() {
                 fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
                 lineHeight: 1.15,
                 marginBottom: '20px',
-                color: '#f0f4fc',
+                color: 'var(--text)',
               }}
             >
               SEO Expert in <span className="gradient-text">Kanpur</span>
             </h1>
-            <p style={{ fontSize: '1.15rem', color: '#98a7c6', lineHeight: 1.65, marginBottom: '28px' }}>
+            <p style={{ fontSize: '1.15rem', color: 'var(--text2)', lineHeight: 1.65, marginBottom: '28px' }}>
               Kanpur has a strong mix of traders, manufacturers, institutes and growing service businesses, but many of them are still invisible online. I help Kanpur businesses get found by customers searching on Google and turn that attention into real leads.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px' }}>
@@ -86,7 +86,7 @@ export default function SeoExpertKanpurPage() {
             <h2 className="section-heading" style={{ marginTop: '10px' }}>
               Who I Help in <span className="gradient-text">Kanpur</span>
             </h2>
-            <p style={{ color: '#98a7c6', maxWidth: '600px', margin: '0 auto' }}>
+            <p style={{ color: 'var(--text2)', maxWidth: '600px', margin: '0 auto' }}>
               Targeted digital visibility built around the unique industrial and retail landscape of Kanpur.
             </p>
           </div>
@@ -101,8 +101,8 @@ export default function SeoExpertKanpurPage() {
               <TiltCard3D key={idx}>
                 <div className="glass-panel" style={{ padding: '28px', height: '100%' }}>
                   <div style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '10px' }}>🏭</div>
-                  <h3 style={{ fontSize: '1.15rem', color: '#f0f4fc', marginBottom: '8px' }}>{item.title}</h3>
-                  <p style={{ color: '#98a7c6', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                  <h3 style={{ fontSize: '1.15rem', color: 'var(--text)', marginBottom: '8px' }}>{item.title}</h3>
+                  <p style={{ color: 'var(--text2)', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
                 </div>
               </TiltCard3D>
             ))}
@@ -119,7 +119,7 @@ export default function SeoExpertKanpurPage() {
               <h2 className="section-heading" style={{ marginTop: '10px', fontSize: '2.2rem' }}>
                 Problems Kanpur Businesses <span className="gradient-text">Face Online</span>
               </h2>
-              <p style={{ color: '#98a7c6', lineHeight: 1.6, marginBottom: '24px' }}>
+              <p style={{ color: 'var(--text2)', lineHeight: 1.6, marginBottom: '24px' }}>
                 Kanpur has immense commercial capability, but traditional offline businesses often lose online customers due to these issues:
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -139,7 +139,7 @@ export default function SeoExpertKanpurPage() {
 
             <div className="glass-panel" style={{ padding: '36px' }}>
               <h3 style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '14px' }}>What I Do For Kanpur Businesses</h3>
-              <p style={{ color: '#98a7c6', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '20px' }}>
+              <p style={{ color: 'var(--text2)', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '20px' }}>
                 I build structured search strategies that establish your authority and generate enquiries:
               </p>
               <ul style={{ color: '#dbe4f5', fontSize: '0.92rem', lineHeight: 1.8, paddingLeft: '20px', margin: 0 }}>
@@ -150,8 +150,8 @@ export default function SeoExpertKanpurPage() {
               </ul>
 
               <div style={{ marginTop: '28px', padding: '16px', background: 'rgba(41, 121, 255, 0.1)', borderRadius: '12px', border: '1px solid rgba(41, 121, 255, 0.3)' }}>
-                <div style={{ fontWeight: 700, color: '#f0f4fc', marginBottom: '4px' }}>🚆 On-site or Remote Availability:</div>
-                <div style={{ color: '#98a7c6', fontSize: '0.88rem' }}>
+                <div style={{ fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>🚆 On-site or Remote Availability:</div>
+                <div style={{ color: 'var(--text2)', fontSize: '0.88rem' }}>
                   I'm available for on-site meetings and work in Kanpur, and I can also work with your team remotely with seamless weekly reporting.
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function SeoExpertKanpurPage() {
             <h2 className="section-heading" style={{ marginTop: '10px' }}>
               Request Your Free <span className="gradient-text">Kanpur SEO Audit</span>
             </h2>
-            <p style={{ color: '#98a7c6', fontSize: '0.95rem' }}>
+            <p style={{ color: 'var(--text2)', fontSize: '0.95rem' }}>
               Send me your website link. I will personally review your search presence and outline what needs to be fixed to generate enquiries.
             </p>
           </div>
@@ -176,29 +176,29 @@ export default function SeoExpertKanpurPage() {
           <form onSubmit={handleSubmit} className="glass-panel" style={{ padding: '36px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '18px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Your Name *</label>
-                <input type="text" name="name" required placeholder="Rajesh Gupta" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Your Name *</label>
+                <input type="text" name="name" required placeholder="Rajesh Gupta" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Phone / WhatsApp Number *</label>
-                <input type="tel" name="phone" required placeholder="+91 86046 25862" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Phone / WhatsApp Number *</label>
+                <input type="tel" name="phone" required placeholder="+91 86046 25862" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '18px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Email Address (optional)</label>
-                <input type="email" name="email" placeholder="you@kanpurbusiness.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Email Address (optional)</label>
+                <input type="email" name="email" placeholder="you@kanpurbusiness.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Website URL *</label>
-                <input type="text" name="website" required placeholder="www.yourcompany.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Website URL *</label>
+                <input type="text" name="website" required placeholder="www.yourcompany.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
             </div>
 
             <div style={{ marginBottom: '22px' }}>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Business Type &amp; Goals</label>
-              <textarea name="message" rows="3" placeholder="Tell me what you manufacture or sell and what enquiries you are targeting..." style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}></textarea>
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Business Type &amp; Goals</label>
+              <textarea name="message" rows="3" placeholder="Tell me what you manufacture or sell and what enquiries you are targeting..." style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }}></textarea>
             </div>
 
             <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '14px', fontSize: '1rem', justifyContent: 'center' }}>

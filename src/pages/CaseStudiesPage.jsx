@@ -19,12 +19,12 @@ export default function CaseStudiesPage() {
               fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
               lineHeight: 1.15,
               marginBottom: '20px',
-              color: '#f0f4fc',
+              color: 'var(--text)',
             }}
           >
             Project Case <span className="gradient-text">Studies &amp; Results</span>
           </h1>
-          <p style={{ fontSize: '1.1rem', color: '#98a7c6', lineHeight: 1.65, marginBottom: '28px' }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--text2)', lineHeight: 1.65, marginBottom: '28px' }}>
             I believe in 100% authentic data. In digital marketing, unverified claims and template screenshots damage trust. Here is how I evaluate, document, and publish project outcomes.
           </p>
         </div>
@@ -36,14 +36,14 @@ export default function CaseStudiesPage() {
           <div className="glass-panel" style={{ padding: '40px', marginBottom: '35px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <span style={{ fontSize: '1.5rem', color: '#FF6B00' }}>🔒</span>
-              <h2 style={{ fontSize: '1.5rem', color: '#f0f4fc', margin: 0 }}>
+              <h2 style={{ fontSize: '1.5rem', color: 'var(--text)', margin: 0 }}>
                 Client Privacy &amp; Verified Reporting Standards
               </h2>
             </div>
-            <p style={{ color: '#98a7c6', lineHeight: 1.7, margin: '0 0 16px 0' }}>
+            <p style={{ color: 'var(--text2)', lineHeight: 1.7, margin: '0 0 16px 0' }}>
               Many of my private clients in healthcare, industrial manufacturing, and professional services sign Non-Disclosure Agreements (NDAs). To respect their competitive advantage and privacy, I publish detailed case studies only with explicit written consent and verified Google Search Console / GBP insights.
             </p>
-            <p style={{ color: '#98a7c6', lineHeight: 1.7, margin: 0 }}>
+            <p style={{ color: 'var(--text2)', lineHeight: 1.7, margin: 0 }}>
               If you would like to see anonymized traffic growth curves, keyword progression logs, or relevant sector examples during my initial strategy consultation, I am glad to walk you through live Search Console dashboards.
             </p>
           </div>
@@ -56,25 +56,25 @@ export default function CaseStudiesPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
               <div style={{ background: 'rgba(5, 8, 20, 0.65)', padding: '20px', borderRadius: '14px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                 <div style={{ color: '#ff4757', fontWeight: 700, marginBottom: '6px' }}>1. The Initial Problem</div>
-                <p style={{ color: '#98a7c6', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ color: 'var(--text2)', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
                   What was stopping the business from appearing in search? Missing pages, penalty, or map misconfigurations.
                 </p>
               </div>
               <div style={{ background: 'rgba(5, 8, 20, 0.65)', padding: '20px', borderRadius: '14px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                 <div style={{ color: '#FF8800', fontWeight: 700, marginBottom: '6px' }}>2. Specific Actions Taken</div>
-                <p style={{ color: '#98a7c6', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ color: 'var(--text2)', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
                   Precise technical fixes, on-page optimization, content cluster creation, and local citation building.
                 </p>
               </div>
               <div style={{ background: 'rgba(5, 8, 20, 0.65)', padding: '20px', borderRadius: '14px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                 <div style={{ color: '#00d68f', fontWeight: 700, marginBottom: '6px' }}>3. Real Measurement</div>
-                <p style={{ color: '#98a7c6', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ color: 'var(--text2)', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
                   Calls, form fills, and direction requests tracked over a realistic 3 to 6-month timeframe.
                 </p>
               </div>
               <div style={{ background: 'rgba(5, 8, 20, 0.65)', padding: '20px', borderRadius: '14px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                 <div style={{ color: '#FF6B00', fontWeight: 700, marginBottom: '6px' }}>4. Plain Language Reports</div>
-                <p style={{ color: '#98a7c6', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ color: 'var(--text2)', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
                   Direct metrics tying rankings to business revenue rather than vanity impressions.
                 </p>
               </div>
@@ -83,10 +83,10 @@ export default function CaseStudiesPage() {
 
           {/* CTA */}
           <div style={{ textAlign: 'center', background: 'rgba(14, 21, 52, 0.5)', padding: '40px', borderRadius: '20px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
-            <h3 style={{ fontSize: '1.6rem', color: '#f0f4fc', marginBottom: '12px' }}>
+            <h3 style={{ fontSize: '1.6rem', color: 'var(--text)', marginBottom: '12px' }}>
               Want to see how your site compares?
             </h3>
-            <p style={{ color: '#98a7c6', fontSize: '0.96rem', maxWidth: '540px', margin: '0 auto 24px' }}>
+            <p style={{ color: 'var(--text2)', fontSize: '0.96rem', maxWidth: '540px', margin: '0 auto 24px' }}>
               Send me your website link. I will personally review your search presence and show you live ranking opportunities in your niche.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>

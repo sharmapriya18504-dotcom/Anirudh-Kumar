@@ -125,12 +125,12 @@ export default function ServicesPage() {
               fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
               lineHeight: 1.15,
               marginBottom: '20px',
-              color: '#f0f4fc',
+              color: 'var(--text)',
             }}
           >
             Digital Marketing &amp; <span className="gradient-text">SEO Services</span>
           </h1>
-          <p style={{ fontSize: '1.15rem', color: '#98a7c6', lineHeight: 1.65, marginBottom: '28px' }}>
+          <p style={{ fontSize: '1.15rem', color: 'var(--text2)', lineHeight: 1.65, marginBottom: '28px' }}>
             Pick one service or combine them. I will tell you honestly what your business needs first. You work directly with me—no account managers, no interns, no lock-in contract.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
@@ -173,11 +173,11 @@ export default function ServicesPage() {
                       </span>
                     </div>
 
-                    <h3 style={{ fontSize: '1.3rem', color: '#f0f4fc', marginBottom: '8px' }}>{s.title}</h3>
+                    <h3 style={{ fontSize: '1.3rem', color: 'var(--text)', marginBottom: '8px' }}>{s.title}</h3>
                     <div style={{ fontSize: '0.82rem', color: '#FF6B00', fontWeight: 600, marginBottom: '14px' }}>
                       {s.tagline}
                     </div>
-                    <p style={{ color: '#98a7c6', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '20px' }}>
+                    <p style={{ color: 'var(--text2)', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '20px' }}>
                       {s.desc}
                     </p>
 
@@ -223,7 +223,7 @@ export default function ServicesPage() {
           <h2 className="section-heading" style={{ marginTop: '10px' }}>
             Available On-Site &amp; <span className="gradient-text">Remotely Across India</span>
           </h2>
-          <p style={{ color: '#98a7c6', maxWidth: '600px', margin: '0 auto 40px' }}>
+          <p style={{ color: 'var(--text2)', maxWidth: '600px', margin: '0 auto 40px' }}>
             Choose your city for localized search strategies and in-person meeting details:
           </p>
 
@@ -248,8 +248,8 @@ export default function ServicesPage() {
                 }}
               >
                 <div style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '8px' }}>📍</div>
-                <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#f0f4fc' }}>{loc.city}</div>
-                <div style={{ fontSize: '0.8rem', color: '#98a7c6', marginTop: '4px' }}>{loc.tag}</div>
+                <div style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--text)' }}>{loc.city}</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text2)', marginTop: '4px' }}>{loc.tag}</div>
                 <span style={{ color: '#FF8800', fontSize: '0.82rem', fontWeight: 700, marginTop: '12px' }}>
                   Explore Local Services →
                 </span>

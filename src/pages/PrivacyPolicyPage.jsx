@@ -9,20 +9,20 @@ export default function PrivacyPolicyPage() {
           <span className="tag" style={{ marginBottom: '14px', display: 'inline-block' }}>
             Legal &amp; Privacy
           </span>
-          <h1 className="section-heading" style={{ fontSize: '2.4rem', color: '#f0f4fc', marginBottom: '16px' }}>
+          <h1 className="section-heading" style={{ fontSize: '2.4rem', color: 'var(--text)', marginBottom: '16px' }}>
             Privacy <span className="gradient-text">Policy</span>
           </h1>
           <p style={{ color: '#657599', fontSize: '0.88rem', marginBottom: '32px' }}>
             Last Updated: November 2026 • Anirudh Kumar (anirudhkumar.in)
           </p>
 
-          <div className="glass-panel" style={{ padding: '40px', color: '#98a7c6', lineHeight: 1.8, fontSize: '0.96rem' }}>
-            <h3 style={{ color: '#f0f4fc', fontSize: '1.25rem', marginTop: 0 }}>1. Overview</h3>
+          <div className="glass-panel" style={{ padding: '40px', color: 'var(--text2)', lineHeight: 1.8, fontSize: '0.96rem' }}>
+            <h3 style={{ color: 'var(--text)', fontSize: '1.25rem', marginTop: 0 }}>1. Overview</h3>
             <p>
               I respect your privacy and am committed to protecting any personal information you provide when requesting an SEO audit or communicating via anirudhkumar.in. This policy explains what information is collected, how it is used, and how it is protected.
             </p>
 
-            <h3 style={{ color: '#f0f4fc', fontSize: '1.25rem', marginTop: '28px' }}>2. Information Collected</h3>
+            <h3 style={{ color: 'var(--text)', fontSize: '1.25rem', marginTop: '28px' }}>2. Information Collected</h3>
             <p>
               When you submit an enquiry or audit request form, I collect the following details provided voluntarily by you:
             </p>
@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
               <li>Project goals and specific service requirements</li>
             </ul>
 
-            <h3 style={{ color: '#f0f4fc', fontSize: '1.25rem', marginTop: '28px' }}>3. How Your Information Is Used</h3>
+            <h3 style={{ color: 'var(--text)', fontSize: '1.25rem', marginTop: '28px' }}>3. How Your Information Is Used</h3>
             <p>
               Your contact information is strictly used to:
             </p>
@@ -47,12 +47,12 @@ export default function PrivacyPolicyPage() {
               <strong>I never sell, rent, or distribute your personal details to third-party telemarketers or advertisers.</strong>
             </p>
 
-            <h3 style={{ color: '#f0f4fc', fontSize: '1.25rem', marginTop: '28px' }}>4. Analytics &amp; Cookies</h3>
+            <h3 style={{ color: 'var(--text)', fontSize: '1.25rem', marginTop: '28px' }}>4. Analytics &amp; Cookies</h3>
             <p>
               This website uses standard web analytics (such as Google Analytics 4) to understand aggregate traffic trends and improve user experience. No personally identifiable financial information is collected through cookies.
             </p>
 
-            <h3 style={{ color: '#f0f4fc', fontSize: '1.25rem', marginTop: '28px' }}>5. Contact &amp; Questions</h3>
+            <h3 style={{ color: 'var(--text)', fontSize: '1.25rem', marginTop: '28px' }}>5. Contact &amp; Questions</h3>
             <p>
               If you have any questions regarding this privacy policy or your stored information, you can reach out directly:
             </p>

@@ -34,10 +34,10 @@ export default function ThankYouPage() {
           <span className="tag" style={{ background: 'rgba(0, 214, 143, 0.15)', color: '#00D68F', border: '1px solid #00D68F', marginBottom: '16px', display: 'inline-block' }}>
             Request Received Successfully
           </span>
-          <h1 style={{ fontFamily: 'var(--ff-d)', fontSize: '2.4rem', color: '#f0f4fc', margin: '10px 0 16px 0' }}>
+          <h1 style={{ fontFamily: 'var(--ff-d)', fontSize: '2.4rem', color: 'var(--text)', margin: '10px 0 16px 0' }}>
             Thank You! I Will Review Your <span className="gradient-text">Website Shortly</span>
           </h1>
-          <p style={{ color: '#98a7c6', fontSize: '1rem', lineHeight: 1.65, marginBottom: '28px' }}>
+          <p style={{ color: 'var(--text2)', fontSize: '1rem', lineHeight: 1.65, marginBottom: '28px' }}>
             I have received your details. I personally examine every website's technical health and Google rankings. You can expect a response within 24 hours.
           </p>
 

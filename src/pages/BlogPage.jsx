@@ -66,12 +66,12 @@ export default function BlogPage() {
               fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
               lineHeight: 1.15,
               marginBottom: '18px',
-              color: '#f0f4fc',
+              color: 'var(--text)',
             }}
           >
             Digital Marketing &amp; <span className="gradient-text">SEO Guides</span>
           </h1>
-          <p style={{ fontSize: '1.15rem', color: '#98a7c6', lineHeight: 1.65, margin: '0 auto 30px' }}>
+          <p style={{ fontSize: '1.15rem', color: 'var(--text2)', lineHeight: 1.65, margin: '0 auto 30px' }}>
             Practical search insights for business owners in Lucknow, Kanpur, Noida and across India. Learn how to rank higher on Google Maps and turn visibility into enquiries.
           </p>
 
@@ -178,13 +178,13 @@ export default function BlogPage() {
                       <span>⏱️ {b.readTime}</span>
                     </div>
 
-                    <h2 style={{ fontSize: '1.25rem', color: '#f0f4fc', lineHeight: 1.35, marginBottom: '10px' }}>
+                    <h2 style={{ fontSize: '1.25rem', color: 'var(--text)', lineHeight: 1.35, marginBottom: '10px' }}>
                       <Link to={`/blog-post?post=${b.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
                         {b.title}
                       </Link>
                     </h2>
 
-                    <p style={{ color: '#98a7c6', fontSize: '0.88rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '20px' }}>
+                    <p style={{ color: 'var(--text2)', fontSize: '0.88rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '20px' }}>
                       {b.excerpt}
                     </p>
 

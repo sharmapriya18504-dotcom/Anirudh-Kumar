@@ -52,12 +52,12 @@ export default function SeoExpertNoidaPage() {
                 fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
                 lineHeight: 1.15,
                 marginBottom: '20px',
-                color: '#f0f4fc',
+                color: 'var(--text)',
               }}
             >
               SEO Expert in <span className="gradient-text">Noida</span>
             </h1>
-            <p style={{ fontSize: '1.15rem', color: '#98a7c6', lineHeight: 1.65, marginBottom: '28px' }}>
+            <p style={{ fontSize: '1.15rem', color: 'var(--text2)', lineHeight: 1.65, marginBottom: '28px' }}>
               Noida is competitive. Startups, IT companies, agencies, real estate and e-commerce brands are all fighting for the same high-value searches. If you want a hands-on SEO expert who can sit with your team, I'm available on-site in Noida.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px' }}>
@@ -86,7 +86,7 @@ export default function SeoExpertNoidaPage() {
             <h2 className="section-heading" style={{ marginTop: '10px' }}>
               Who I Can Help in <span className="gradient-text">Noida &amp; NCR</span>
             </h2>
-            <p style={{ color: '#98a7c6', maxWidth: '600px', margin: '0 auto' }}>
+            <p style={{ color: 'var(--text2)', maxWidth: '600px', margin: '0 auto' }}>
               Tailored organic growth and customer acquisition for tech-forward companies in Noida.
             </p>
           </div>
@@ -101,8 +101,8 @@ export default function SeoExpertNoidaPage() {
               <TiltCard3D key={idx}>
                 <div className="glass-panel" style={{ padding: '28px', height: '100%' }}>
                   <div style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '10px' }}>🏢</div>
-                  <h3 style={{ fontSize: '1.15rem', color: '#f0f4fc', marginBottom: '8px' }}>{item.title}</h3>
-                  <p style={{ color: '#98a7c6', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                  <h3 style={{ fontSize: '1.15rem', color: 'var(--text)', marginBottom: '8px' }}>{item.title}</h3>
+                  <p style={{ color: 'var(--text2)', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
                 </div>
               </TiltCard3D>
             ))}
@@ -119,7 +119,7 @@ export default function SeoExpertNoidaPage() {
               <h2 className="section-heading" style={{ marginTop: '10px', fontSize: '2.2rem' }}>
                 How I Can Help <span className="gradient-text">Your Team</span>
               </h2>
-              <p style={{ color: '#98a7c6', lineHeight: 1.6, marginBottom: '24px' }}>
+              <p style={{ color: 'var(--text2)', lineHeight: 1.6, marginBottom: '24px' }}>
                 Whether you need a senior specialist to take full ownership of organic growth or an advisor to steer your existing in-house team:
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -139,21 +139,21 @@ export default function SeoExpertNoidaPage() {
 
             <div className="glass-panel" style={{ padding: '36px' }}>
               <h3 style={{ fontSize: '1.4rem', color: '#FF6B00', marginBottom: '14px' }}>Engagement Options</h3>
-              <p style={{ color: '#98a7c6', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '20px' }}>
+              <p style={{ color: 'var(--text2)', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '20px' }}>
                 I offer flexible collaboration formats to fit your stage and bandwidth:
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
                 <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
-                  <div style={{ fontWeight: 700, color: '#f0f4fc' }}>1. Monthly Retainer</div>
-                  <div style={{ color: '#98a7c6', fontSize: '0.86rem' }}>Hands-on execution, monthly roadmaps, and continuous ranking improvements.</div>
+                  <div style={{ fontWeight: 700, color: 'var(--text)' }}>1. Monthly Retainer</div>
+                  <div style={{ color: 'var(--text2)', fontSize: '0.86rem' }}>Hands-on execution, monthly roadmaps, and continuous ranking improvements.</div>
                 </div>
                 <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
-                  <div style={{ fontWeight: 700, color: '#f0f4fc' }}>2. On-Site &amp; Hybrid Consulting</div>
-                  <div style={{ color: '#98a7c6', fontSize: '0.86rem' }}>Available for on-site working sessions in Noida to guide your team directly.</div>
+                  <div style={{ fontWeight: 700, color: 'var(--text)' }}>2. On-Site &amp; Hybrid Consulting</div>
+                  <div style={{ color: 'var(--text2)', fontSize: '0.86rem' }}>Available for on-site working sessions in Noida to guide your team directly.</div>
                 </div>
                 <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
-                  <div style={{ fontWeight: 700, color: '#f0f4fc' }}>3. One-Time Technical Audits</div>
-                  <div style={{ color: '#98a7c6', fontSize: '0.86rem' }}>Deep-dive crawl and architecture audit with a prioritized developer checklist.</div>
+                  <div style={{ fontWeight: 700, color: 'var(--text)' }}>3. One-Time Technical Audits</div>
+                  <div style={{ color: 'var(--text2)', fontSize: '0.86rem' }}>Deep-dive crawl and architecture audit with a prioritized developer checklist.</div>
                 </div>
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function SeoExpertNoidaPage() {
             <h2 className="section-heading" style={{ marginTop: '10px' }}>
               Let's Discuss Your <span className="gradient-text">Noida Project</span>
             </h2>
-            <p style={{ color: '#98a7c6', fontSize: '0.95rem' }}>
+            <p style={{ color: 'var(--text2)', fontSize: '0.95rem' }}>
               Share your requirements below. I will personally review your site and goals and suggest an actionable path forward.
             </p>
           </div>
@@ -177,29 +177,29 @@ export default function SeoExpertNoidaPage() {
           <form onSubmit={handleSubmit} className="glass-panel" style={{ padding: '36px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '18px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Your Name *</label>
-                <input type="text" name="name" required placeholder="Vikas Sharma" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Your Name *</label>
+                <input type="text" name="name" required placeholder="Vikas Sharma" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Phone / WhatsApp Number *</label>
-                <input type="tel" name="phone" required placeholder="+91 86046 25862" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Phone / WhatsApp Number *</label>
+                <input type="tel" name="phone" required placeholder="+91 86046 25862" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '18px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Work Email (optional)</label>
-                <input type="email" name="email" placeholder="vikas@company.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Work Email (optional)</label>
+                <input type="email" name="email" placeholder="vikas@company.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Website URL *</label>
-                <input type="text" name="website" required placeholder="www.mybrand.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }} />
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Website URL *</label>
+                <input type="text" name="website" required placeholder="www.mybrand.com" style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
               </div>
             </div>
 
             <div style={{ marginBottom: '22px' }}>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#f0f4fc', marginBottom: '8px' }}>Project Overview &amp; Goals</label>
-              <textarea name="message" rows="3" placeholder="Tell me what your brand does and whether you need ongoing SEO, ads management, or on-site consulting..." style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#050814', border: '1px solid rgba(255, 107, 0, 0.25)', color: '#fff' }}></textarea>
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px' }}>Project Overview &amp; Goals</label>
+              <textarea name="message" rows="3" placeholder="Tell me what your brand does and whether you need ongoing SEO, ads management, or on-site consulting..." style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--text)' }}></textarea>
             </div>
 
             <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '14px', fontSize: '1rem', justifyContent: 'center' }}>

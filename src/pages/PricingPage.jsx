@@ -21,12 +21,12 @@ export default function PricingPage() {
               fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
               lineHeight: 1.15,
               marginBottom: '18px',
-              color: '#f0f4fc',
+              color: 'var(--text)',
             }}
           >
             Simple, Clear <span className="gradient-text">Pricing</span>
           </h1>
-          <p style={{ fontSize: '1.15rem', color: '#98a7c6', lineHeight: 1.65, marginBottom: '20px' }}>
+          <p style={{ fontSize: '1.15rem', color: 'var(--text2)', lineHeight: 1.65, marginBottom: '20px' }}>
             Every package starts with a free SEO audit. No hidden charges. Prices in INR. No long-term lock-in contract—work is month-to-month.
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function PricingPage() {
             <h2 className="section-heading" style={{ marginTop: '10px' }}>
               Frequently Asked <span className="gradient-text">Questions</span>
             </h2>
-            <p style={{ color: '#98a7c6', fontSize: '0.94rem' }}>
+            <p style={{ color: 'var(--text2)', fontSize: '0.94rem' }}>
               Common questions about budgeting, contracts, and expectations.
             </p>
           </div>

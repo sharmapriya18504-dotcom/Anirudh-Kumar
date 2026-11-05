@@ -22,7 +22,7 @@ export default function AboutPage() {
                   fontSize: 'clamp(2.4rem, 5vw, 3.6rem)',
                   lineHeight: 1.15,
                   marginBottom: '20px',
-                  color: '#f0f4fc',
+                  color: 'var(--text)',
                 }}
               >
                 About <span className="gradient-text">Anirudh Kumar</span>
@@ -30,10 +30,10 @@ export default function AboutPage() {
               <p style={{ fontSize: '1.2rem', color: '#FF6B00', fontWeight: 600, marginBottom: '16px' }}>
                 Freelance SEO &amp; Digital Marketing Consultant based in Lucknow, Uttar Pradesh.
               </p>
-              <p style={{ color: '#98a7c6', fontSize: '1.02rem', lineHeight: 1.7, marginBottom: '20px' }}>
+              <p style={{ color: 'var(--text2)', fontSize: '1.02rem', lineHeight: 1.7, marginBottom: '20px' }}>
                 I help businesses get found on Google, Maps and social media, and turn that visibility into real enquiries and sales. I work remotely with clients across India and on-site in Lucknow, Kanpur and Noida.
               </p>
-              <p style={{ color: '#98a7c6', fontSize: '0.96rem', lineHeight: 1.7, marginBottom: '28px' }}>
+              <p style={{ color: 'var(--text2)', fontSize: '0.96rem', lineHeight: 1.7, marginBottom: '28px' }}>
                 I keep my client list small on purpose. When you work with me, you work directly with me—no account managers, no junior interns, and no confusion between what was promised and what gets delivered.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
@@ -76,7 +76,7 @@ export default function AboutPage() {
                     }}
                   />
                   <div style={{ textAlign: 'center' }}>
-                    <h3 style={{ fontSize: '1.3rem', color: '#f0f4fc', margin: '0 0 4px 0' }}>Anirudh Kumar</h3>
+                    <h3 style={{ fontSize: '1.3rem', color: 'var(--text)', margin: '0 0 4px 0' }}>Anirudh Kumar</h3>
                     <p style={{ color: '#FF6B00', fontSize: '0.85rem', fontWeight: 600, margin: '0 0 12px 0' }}>
                       SEO Specialist &amp; Digital Marketer
                     </p>
@@ -98,20 +98,20 @@ export default function AboutPage() {
           <div style={{ maxWidth: '850px', margin: '0 auto' }}>
             <div className="glass-panel" style={{ padding: '40px', marginBottom: '35px' }}>
               <span className="tag">My Core Philosophy</span>
-              <h2 style={{ fontSize: '1.8rem', color: '#f0f4fc', marginTop: '12px', marginBottom: '16px' }}>
+              <h2 style={{ fontSize: '1.8rem', color: 'var(--text)', marginTop: '12px', marginBottom: '16px' }}>
                 Marketing should be <span className="gradient-text">measurable &amp; tied to revenue</span>
               </h2>
-              <p style={{ color: '#98a7c6', fontSize: '1.02rem', lineHeight: 1.75, margin: '0 0 16px 0' }}>
+              <p style={{ color: 'var(--text2)', fontSize: '1.02rem', lineHeight: 1.75, margin: '0 0 16px 0' }}>
                 I believe that digital marketing should never be hidden behind vanity metrics or technical jargon. More impressions mean nothing if your phone isn't ringing and enquiries aren't coming in.
               </p>
-              <p style={{ color: '#98a7c6', fontSize: '1.02rem', lineHeight: 1.75, margin: 0 }}>
+              <p style={{ color: 'var(--text2)', fontSize: '1.02rem', lineHeight: 1.75, margin: 0 }}>
                 My approach is simple: <strong>find what is stopping your business from being found, fix it, measure it, and report it in plain language.</strong>
               </p>
             </div>
 
             {/* Certifications (Verifiable) */}
             <div style={{ marginBottom: '40px' }}>
-              <h3 style={{ fontSize: '1.3rem', color: '#f0f4fc', marginBottom: '18px', textAlign: 'center' }}>
+              <h3 style={{ fontSize: '1.3rem', color: 'var(--text)', marginBottom: '18px', textAlign: 'center' }}>
                 Verified Platform Certifications
               </h3>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
@@ -134,7 +134,7 @@ export default function AboutPage() {
                   >
                     <span style={{ fontSize: '1.8rem' }}>{cert.icon}</span>
                     <div>
-                      <div style={{ color: '#f0f4fc', fontWeight: 700, fontSize: '0.94rem' }}>{cert.name}</div>
+                      <div style={{ color: 'var(--text)', fontWeight: 700, fontSize: '0.94rem' }}>{cert.name}</div>
                       <div style={{ color: '#FF6B00', fontSize: '0.8rem', marginTop: '2px' }}>{cert.issuer}</div>
                     </div>
                   </div>
@@ -144,7 +144,7 @@ export default function AboutPage() {
 
             {/* Services Overview */}
             <div className="glass-panel" style={{ padding: '36px' }}>
-              <h3 style={{ fontSize: '1.4rem', color: '#f0f4fc', marginBottom: '16px' }}>What I Do</h3>
+              <h3 style={{ fontSize: '1.4rem', color: 'var(--text)', marginBottom: '16px' }}>What I Do</h3>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px', color: '#dbe4f5', fontSize: '0.94rem' }}>
                 <div>• Technical &amp; On-Page SEO</div>
                 <div>• Local SEO &amp; Google Business Profile</div>
@@ -164,7 +164,7 @@ export default function AboutPage() {
           <h2 className="section-heading" style={{ fontSize: '2.2rem' }}>
             Let's Find Out What's Holding Your <span className="gradient-text">Business Back Online</span>
           </h2>
-          <p style={{ color: '#98a7c6', fontSize: '1rem', lineHeight: 1.6, margin: '16px 0 28px' }}>
+          <p style={{ color: 'var(--text2)', fontSize: '1rem', lineHeight: 1.6, margin: '16px 0 28px' }}>
             Send me your website link. I will review it and tell you what to fix first. Free, with no obligation.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
