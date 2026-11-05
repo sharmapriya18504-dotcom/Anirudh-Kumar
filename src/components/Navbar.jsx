@@ -4,7 +4,7 @@ import { useLoader } from '../context/LoaderContext.jsx';
 
 export default function Navbar() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'dark';
+    return localStorage.getItem('theme') || 'light';
   });
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);

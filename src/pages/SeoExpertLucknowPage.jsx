@@ -16,7 +16,7 @@ export default function SeoExpertLucknowPage() {
 
     try {
       confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
-    } catch (err) {}
+    } catch (err) { }
 
     const btn = e.target.querySelector('button[type="submit"]');
     if (btn) {

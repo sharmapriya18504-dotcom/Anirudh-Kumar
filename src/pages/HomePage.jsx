@@ -622,7 +622,7 @@ export default function HomePage() {
       </section>
 
       {/* ==================== FAQ SECTION ==================== */}
-      <section id="faq" style={{ padding: '90px 0', background: 'var(--bg2)' }}>
+      <section id="faq" style={{ padding: '90px 0' }}>
         <div className="container" style={{ maxWidth: '820px' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <span className="tag" style={{ marginBottom: '12px', display: 'inline-block' }}>FAQ</span>
@@ -639,7 +639,7 @@ export default function HomePage() {
       </section>
 
       {/* ==================== CONTACT SECTION ==================== */}
-      <section id="contact" style={{ padding: '95px 0' }}>
+      <section id="contact" style={{ padding: '95px 0', background: 'var(--bg2)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 50px' }}>
             <span className="tag" style={{ marginBottom: '12px', display: 'inline-block' }}>Get In Touch</span>

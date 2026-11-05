@@ -94,18 +94,18 @@
     }
 
     [data-theme="light"] {
-      --bg: #FAFAFC;
-      --bg2: #F1F3F7;
-      --bg3: #E7EAF0;
+      --bg: #FFFFFF;
+      --bg2: #F6F8FB;
+      --bg3: #EEF2F6;
       --card: #FFFFFF;
-      --border: rgba(255, 107, 0, 0.25);
-      --border2: rgba(0, 0, 0, 0.09);
-      --text: #090A10;
-      --text2: #475569;
-      --text3: #64748B;
-      --glass: rgba(255, 255, 255, 0.92);
+      --border: rgba(255, 107, 0, 0.3);
+      --border2: rgba(0, 0, 0, 0.08);
+      --text: #08090E;
+      --text2: #3D4654;
+      --text3: #647082;
+      --glass: rgba(255, 255, 255, 0.96);
       --glow: rgba(255, 107, 0, 0.15);
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
     }
 
 
@@ -2879,18 +2879,18 @@
     }
 
     [data-theme="light"] {
-      --bg: #FAFAFC;
-      --bg2: #F1F4F9;
-      --bg3: #E6EAF2;
+      --bg: #FFFFFF;
+      --bg2: #F6F8FB;
+      --bg3: #EEF2F6;
       --card: #FFFFFF;
-      --border: rgba(255, 107, 0, 0.35);
+      --border: rgba(255, 107, 0, 0.3);
       --border2: rgba(0, 0, 0, 0.08);
       --text: #08090E;
-      --text2: #3E4552;
-      --text3: #626A7A;
-      --glass: rgba(255, 255, 255, 0.94);
+      --text2: #3D4654;
+      --text3: #647082;
+      --glass: rgba(255, 255, 255, 0.96);
       --glow: rgba(255, 107, 0, 0.15);
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
     }
 
     *,
@@ -5923,20 +5923,20 @@ input:focus, textarea:focus, select:focus {
 }
 
 
-/* ==================== BULLETPROOF LIGHT MODE CONTRAST JUGAD ==================== */
+/* ==================== BULLETPROOF LIGHT MODE (PERFORMANCE MARKETER STYLE) ==================== */
 [data-theme="light"] {
-  --bg: #F8F9FA !important;
-  --bg2: #F1F3F5 !important;
-  --bg3: #E9ECEF !important;
+  --bg: #FFFFFF !important;
+  --bg2: #F6F8FB !important;
+  --bg3: #EEF2F6 !important;
   --card: #FFFFFF !important;
-  --border: rgba(255, 107, 0, 0.25) !important;
+  --border: rgba(255, 107, 0, 0.3) !important;
   --border2: rgba(0, 0, 0, 0.08) !important;
-  --text: #0E121B !important;
-  --text2: #343A40 !important;
-  --text3: #6C757D !important;
-  --glass: rgba(255, 255, 255, 0.95) !important;
-  --glow: rgba(255, 107, 0, 0.2) !important;
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.08) !important;
+  --text: #08090E !important;
+  --text2: #3D4654 !important;
+  --text3: #647082 !important;
+  --glass: rgba(255, 255, 255, 0.96) !important;
+  --glow: rgba(255, 107, 0, 0.15) !important;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.05) !important;
 }
 
 [data-theme="light"] body {
