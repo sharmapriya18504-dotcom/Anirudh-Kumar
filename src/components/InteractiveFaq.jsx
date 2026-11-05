@@ -69,7 +69,7 @@ export default function InteractiveFaq() {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="🔍 Search questions (e.g. agency, timeline, audit, cost, contract)..."
+          placeholder="Search questions (e.g. agency, timeline, audit, cost, contract)..."
           style={{
             width: '100%',
             padding: '14px 20px 14px 46px',
@@ -146,9 +146,9 @@ export default function InteractiveFaq() {
               target="_blank"
               rel="noreferrer"
               className="btn btn-outline"
-              style={{ display: 'inline-flex', marginTop: '14px', padding: '10px 22px', fontSize: '0.88rem', borderColor: '#FF6B00', color: '#FF6B00' }}
+              style={{ display: 'inline-flex', alignItems: 'center', marginTop: '14px', padding: '10px 22px', fontSize: '0.88rem', borderColor: '#FF6B00', color: '#FF6B00' }}
             >
-              💬 WhatsApp Me (+91 86046 25862)
+              <i className="bi bi-whatsapp" style={{ marginRight: '6px' }}></i> Chat on WhatsApp (+91 86046 25862)
             </a>
           </div>
         ) : (

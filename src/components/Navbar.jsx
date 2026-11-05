@@ -131,28 +131,18 @@ export default function Navbar() {
                 </a>
                 <div style={{ height: '1px', background: 'var(--border2)', margin: '6px 0' }}></div>
                 <a href="/seo-expert-lucknow" onClick={(e) => handleNavClick(e, '/seo-expert-lucknow')}>
-                  <span>📍 SEO Expert Lucknow (On-Site)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                  <span><i className="bi bi-geo-alt" style={{ marginRight: '6px', color: '#FF6B00' }}></i> Lucknow SEO (On-Site)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
                 <a href="/seo-expert-kanpur" onClick={(e) => handleNavClick(e, '/seo-expert-kanpur')}>
-                  <span>📍 SEO Expert Kanpur (On-Site)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                  <span><i className="bi bi-geo-alt" style={{ marginRight: '6px', color: '#FF6B00' }}></i> Kanpur SEO (On-Site)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
                 <a href="/seo-expert-noida" onClick={(e) => handleNavClick(e, '/seo-expert-noida')}>
-                  <span>📍 SEO Expert Noida (On-Site / Hybrid)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                  <span><i className="bi bi-geo-alt" style={{ marginRight: '6px', color: '#FF6B00' }}></i> Noida SEO (On-Site / Hybrid)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
                 <a href="/remote-seo-services" onClick={(e) => handleNavClick(e, '/remote-seo-services')}>
-                  <span>🌐 Remote SEO Services (Pan-India)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                  <span><i className="bi bi-globe" style={{ marginRight: '6px', color: '#FF6B00' }}></i> Remote SEO (Pan-India)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
               </div>
-            </li>
-
-            <li>
-              <a
-                href="/case-studies"
-                className={isActive('/portfolio') ? 'active-nav-link' : ''}
-                onClick={(e) => handleNavClick(e, '/case-studies')}
-              >
-                Portfolio
-              </a>
             </li>
 
             <li>
@@ -273,23 +263,22 @@ export default function Navbar() {
             {theme === 'dark' ? (
               <>
                 <i className="bi bi-brightness-high-fill" style={{ color: '#FFB800', fontSize: '1.2rem' }}></i>
-                <span>☀️ Switch to Light Mode</span>
+                <span>Switch to Light Mode</span>
               </>
             ) : (
               <>
                 <i className="bi bi-moon-stars-fill" style={{ color: '#FF6B00', fontSize: '1.2rem' }}></i>
-                <span>🌙 Switch to Dark Mode</span>
+                <span>Switch to Dark Mode</span>
               </>
             )}
           </button>
           <a href="/" onClick={(e) => handleNavClick(e, '/')}>Home</a>
           <a href="/about" onClick={(e) => handleNavClick(e, '/about')}>About</a>
           <a href="/services" onClick={(e) => handleNavClick(e, '/services')}>Services Overview</a>
-          <a href="/seo-expert-lucknow" onClick={(e) => handleNavClick(e, '/seo-expert-lucknow')}>📍 Lucknow SEO (On-Site)</a>
-          <a href="/seo-expert-kanpur" onClick={(e) => handleNavClick(e, '/seo-expert-kanpur')}>📍 Kanpur SEO (On-Site)</a>
-          <a href="/seo-expert-noida" onClick={(e) => handleNavClick(e, '/seo-expert-noida')}>📍 Noida SEO (On-Site / Hybrid)</a>
-          <a href="/remote-seo-services" onClick={(e) => handleNavClick(e, '/remote-seo-services')}>🌐 Remote SEO (Pan-India)</a>
-          <a href="/case-studies" onClick={(e) => handleNavClick(e, '/case-studies')}>Portfolio</a>
+          <a href="/seo-expert-lucknow" onClick={(e) => handleNavClick(e, '/seo-expert-lucknow')}>Lucknow SEO (On-Site)</a>
+          <a href="/seo-expert-kanpur" onClick={(e) => handleNavClick(e, '/seo-expert-kanpur')}>Kanpur SEO (On-Site)</a>
+          <a href="/seo-expert-noida" onClick={(e) => handleNavClick(e, '/seo-expert-noida')}>Noida SEO (On-Site / Hybrid)</a>
+          <a href="/remote-seo-services" onClick={(e) => handleNavClick(e, '/remote-seo-services')}>Remote SEO (Pan-India)</a>
           <a href="/case-studies" onClick={(e) => handleNavClick(e, '/case-studies')}>Case Studies</a>
           <a href="/pricing" onClick={(e) => handleNavClick(e, '/pricing')}>Pricing</a>
           <a href="/blog" onClick={(e) => handleNavClick(e, '/blog')}>Blog</a>

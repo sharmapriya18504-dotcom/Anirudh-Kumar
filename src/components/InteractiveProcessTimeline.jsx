@@ -5,7 +5,7 @@ const steps = [
     step: '01',
     title: 'Free SEO & Health Audit',
     subtitle: 'Zero Cost • 24-48 Hours Turnaround',
-    icon: '🔍',
+    icon: 'bi-search',
     description: 'I perform an in-depth review of your website architecture, Google Search Console data, Google Business Profile, PageSpeed, and top local competitors in your niche.',
     deliverables: [
       'Technical health & crawl error report',
@@ -18,7 +18,7 @@ const steps = [
     step: '02',
     title: 'Custom Action Plan',
     subtitle: 'Budget Aligned • Transparent Scope',
-    icon: '📋',
+    icon: 'bi-clipboard2-check-fill',
     description: 'No generic packages. You receive a structured roadmap custom-built for your business goals, target locations (Lucknow, Kanpur, Noida or Pan-India), and budget.',
     deliverables: [
       'High-intent keyword target list',
@@ -31,7 +31,7 @@ const steps = [
     step: '03',
     title: 'Precision Execution',
     subtitle: 'Hands-On • Ethical White-Hat Work',
-    icon: '⚡',
+    icon: 'bi-gear-wide-connected',
     description: 'I personally execute all technical on-page fixes, schema markup, Google Maps optimization, localized landing pages, content updates, and paid advertising campaigns.',
     deliverables: [
       'Meta tags, titles, headings & schema implementation',
@@ -44,7 +44,7 @@ const steps = [
     step: '04',
     title: 'Track & Continual Optimization',
     subtitle: 'Data-Driven • Weekly Monitoring',
-    icon: '📈',
+    icon: 'bi-graph-up-arrow',
     description: 'SEO is never set-and-forget. I continuously monitor keyword positions, user behavior, click-through rates, and algorithmic changes to double down on what works.',
     deliverables: [
       'Search Console impressions & clicks analysis',
@@ -57,7 +57,7 @@ const steps = [
     step: '05',
     title: 'Plain-Language Report & Scale',
     subtitle: 'No Jargon • Direct Review Call',
-    icon: '🚀',
+    icon: 'bi-award-fill',
     description: 'You get a clean, easy-to-read PDF report showing exact rankings, calls received, and leads generated. No vanity metrics — only numbers that affect your revenue.',
     deliverables: [
       'Monthly PDF report with plain-language summary',
@@ -70,40 +70,43 @@ const steps = [
 
 export default function InteractiveProcessTimeline() {
   const [activeStep, setActiveStep] = useState(0);
+
   const current = steps[activeStep];
 
   return (
-    <div className="interactive-process-wrap" style={{ marginTop: '24px' }}>
-      {/* Step Numbers Bar */}
+    <div className="interactive-process-timeline">
+      {/* 5-Step Horizontal Tab Indicator */}
       <div
+        className="timeline-step-tabs"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
-          gap: '10px',
-          marginBottom: '28px'
+          gap: '12px',
+          marginBottom: '32px'
         }}
       >
         {steps.map((s, index) => (
           <button
-            key={index}
+            key={s.step}
             type="button"
             onClick={() => setActiveStep(index)}
+            className={`timeline-step-btn ${activeStep === index ? 'active' : ''}`}
             style={{
-              padding: '14px 10px',
-              borderRadius: '12px',
+              padding: '16px 12px',
+              borderRadius: '16px',
               border: activeStep === index ? '2px solid var(--accent)' : '1px solid var(--border2)',
-              background: activeStep === index ? 'rgba(255, 107, 0, 0.12)' : 'var(--card)',
+              background: activeStep === index ? 'rgba(255, 107, 0, 0.08)' : 'var(--card)',
               color: activeStep === index ? 'var(--accent)' : 'var(--text2)',
               cursor: 'pointer',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '4px',
+              gap: '6px',
               transition: 'all 0.25s ease'
             }}
           >
-            <span style={{ fontSize: '1.4rem' }}>{s.icon}</span>
-            <span style={{ fontSize: '0.78rem', fontWeight: 800, letterSpacing: '1px' }}>
+            <i className={'bi ' + s.icon} style={{ fontSize: '1.25rem', color: activeStep === index ? '#FF6B00' : 'var(--text3)' }}></i>
+            <span style={{ fontSize: '0.78rem', fontWeight: 800, letterSpacing: '0.05em' }}>
               STEP {s.step}
             </span>
             <span
@@ -125,10 +128,10 @@ export default function InteractiveProcessTimeline() {
       <div
         style={{
           background: 'var(--card)',
-          border: '1px solid var(--border)',
+          border: '1px solid var(--border2)',
           borderRadius: 'var(--radius)',
           padding: '32px 28px',
-          boxShadow: '0 16px 36px rgba(0,0,0,0.2)',
+          boxShadow: 'var(--shadow)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '30px',
@@ -146,7 +149,8 @@ export default function InteractiveProcessTimeline() {
           </div>
 
           <h3 style={{ fontSize: '1.8rem', fontWeight: 800, margin: '6px 0 12px', color: 'var(--text)' }}>
-            {current.icon} {current.title}
+            <i className={'bi ' + current.icon} style={{ color: '#FF6B00', marginRight: '8px' }}></i>
+            {current.title}
           </h3>
 
           <p style={{ color: 'var(--text2)', fontSize: '0.94rem', lineHeight: 1.65, marginBottom: '20px' }}>
@@ -164,7 +168,7 @@ export default function InteractiveProcessTimeline() {
               className="btn btn-whatsapp"
               style={{ padding: '9px 18px', fontSize: '0.86rem', borderRadius: '20px' }}
             >
-              💬 Ask on WhatsApp
+              <i className="bi bi-whatsapp" style={{ marginRight: '6px' }}></i> Ask on WhatsApp
             </a>
           </div>
         </div>
@@ -179,7 +183,7 @@ export default function InteractiveProcessTimeline() {
           }}
         >
           <div style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--text)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ color: 'var(--accent)' }}>📦</span>
+            <i className="bi bi-box-seam-fill" style={{ color: 'var(--accent)' }}></i>
             <span>What You Receive in Step {current.step}:</span>
           </div>
 
@@ -212,4 +216,3 @@ export default function InteractiveProcessTimeline() {
     </div>
   );
 }
-

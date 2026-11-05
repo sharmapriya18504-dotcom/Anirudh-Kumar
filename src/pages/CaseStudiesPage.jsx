@@ -95,13 +95,14 @@ export default function CaseStudiesPage() {
   return (
     <div className="page-wrapper case-studies-page" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* Hero Section */}
-      <section style={{ padding: '70px 0 50px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '75px 0 50px', position: 'relative', overflow: 'hidden' }}>
         <div className="ambient-glow-orange" style={{ top: '-100px', left: '-100px' }} />
         <div className="ambient-glow-orange" style={{ top: '100px', right: '-150px' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '820px', margin: '0 auto' }}>
           <span className="tag" style={{ marginBottom: '14px', display: 'inline-block' }}>
-            Verified Results Policy
+            <i className="bi bi-shield-check" style={{ color: '#FF6B00', marginRight: '6px' }}></i>
+            Verified Performance Policy
           </span>
           <h1
             className="section-heading"
@@ -120,23 +121,24 @@ export default function CaseStudiesPage() {
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
             <Link to="/contact" className="btn btn-primary" style={{ padding: '13px 26px' }}>
-              🚀 Request My Free SEO Audit
+              Request My Free SEO Audit <i className="bi bi-arrow-right" style={{ marginLeft: '4px' }}></i>
             </Link>
             <a
               href="https://wa.me/918604625862?text=Hi%20Anirudh!%20I%20saw%20your%20case%20studies%20and%20want%20to%20discuss%20my%20website."
               target="_blank"
               rel="noreferrer"
-              className="btn btn-whatsapp"
+              className="btn btn-outline"
               style={{ padding: '13px 24px' }}
             >
-              💬 Chat on WhatsApp
+              <i className="bi bi-whatsapp" style={{ marginRight: '8px', color: '#FF6B00' }}></i>
+              Chat on WhatsApp
             </a>
           </div>
         </div>
       </section>
 
       {/* 3 Real Detailed Case Studies Grid */}
-      <section style={{ padding: '30px 0 70px' }}>
+      <section style={{ padding: '20px 0 70px' }}>
         <div className="container">
           <div className="portfolio-grid">
             {caseStudies.map((study, idx) => (
@@ -240,7 +242,9 @@ export default function CaseStudiesPage() {
           {/* Privacy Disclaimer Card */}
           <div className="framework-wrapper-card" style={{ marginBottom: '32px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
-              <span style={{ fontSize: '1.6rem', color: '#FF6B00' }}>🔒</span>
+              <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(255, 107, 0, 0.12)', border: '1px solid rgba(255, 107, 0, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF6B00', fontSize: '1.2rem' }}>
+                <i className="bi bi-shield-lock-fill"></i>
+              </div>
               <h2 style={{ fontSize: '1.45rem', color: 'var(--text)', margin: 0, fontWeight: 800 }}>
                 Client Privacy &amp; Verified Reporting Standards
               </h2>
@@ -253,36 +257,37 @@ export default function CaseStudiesPage() {
             </p>
           </div>
 
-          {/* The 4-Part Framework (Styled with responsive CSS classes) */}
+          {/* The 4-Part Framework */}
           <div className="framework-wrapper-card" style={{ marginBottom: '36px' }}>
-            <div style={{ marginBottom: '22px' }}>
+            <div style={{ marginBottom: '24px' }}>
               <span className="tag" style={{ fontSize: '0.74rem', marginBottom: '8px', display: 'inline-block' }}>
+                <i className="bi bi-gear-fill" style={{ color: '#FF6B00', marginRight: '5px' }}></i>
                 Systematic Execution
               </span>
-              <h3 style={{ fontSize: '1.35rem', color: 'var(--text)', margin: 0, fontWeight: 800 }}>
+              <h3 style={{ fontSize: '1.4rem', color: 'var(--text)', margin: 0, fontWeight: 800 }}>
                 The 4-Part Framework for Every Project
               </h3>
             </div>
 
             <div className="framework-grid">
               <div className="framework-card">
-                <div className="framework-card-num" style={{ color: '#FF6B00' }}>01</div>
-                <div className="framework-card-title">The Initial Problem</div>
+                <div className="framework-card-num">01</div>
+                <div className="framework-card-title">Problem Diagnostic</div>
                 <p className="framework-card-desc">
                   Diagnose what is stopping your business from ranking: missing procedure pages, technical crawl blocks, or Google Maps misconfigurations.
                 </p>
               </div>
 
               <div className="framework-card">
-                <div className="framework-card-num" style={{ color: '#FF8800' }}>02</div>
-                <div className="framework-card-title">Specific Actions Taken</div>
+                <div className="framework-card-num">02</div>
+                <div className="framework-card-title">Senior Execution</div>
                 <p className="framework-card-desc">
                   Precise technical fixes, Core Web Vitals speed optimization, content cluster creation, and local Indian directory citation building.
                 </p>
               </div>
 
               <div className="framework-card">
-                <div className="framework-card-num" style={{ color: '#FF6B00' }}>03</div>
+                <div className="framework-card-num">03</div>
                 <div className="framework-card-title">Real Measurement</div>
                 <p className="framework-card-desc">
                   Real phone calls, form submissions, and Google Maps direction requests tracked over a realistic 3 to 6-month timeframe.
@@ -290,7 +295,7 @@ export default function CaseStudiesPage() {
               </div>
 
               <div className="framework-card">
-                <div className="framework-card-num" style={{ color: '#FF6B00' }}>04</div>
+                <div className="framework-card-num">04</div>
                 <div className="framework-card-title">Plain Language Reports</div>
                 <p className="framework-card-desc">
                   Direct monthly video and PDF reports tying search rankings to actual business revenue rather than vanity impressions.
@@ -309,16 +314,17 @@ export default function CaseStudiesPage() {
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
               <Link to="/contact" className="btn btn-primary" style={{ padding: '13px 26px' }}>
-                Request My Free SEO Audit
+                Request My Free SEO Audit <i className="bi bi-arrow-right" style={{ marginLeft: '4px' }}></i>
               </Link>
               <a
                 href="https://wa.me/918604625862?text=Hi%20Anirudh!%20I%20would%20like%20to%20discuss%20case%20studies%20for%20my%20business."
                 target="_blank"
                 rel="noreferrer"
-                className="btn btn-whatsapp"
+                className="btn btn-outline"
                 style={{ padding: '13px 24px' }}
               >
-                💬 Chat on WhatsApp (+91 86046 25862)
+                <i className="bi bi-whatsapp" style={{ marginRight: '8px', color: '#FF6B00' }}></i>
+                Chat on WhatsApp (+91 86046 25862)
               </a>
             </div>
           </div>

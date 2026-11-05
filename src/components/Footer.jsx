@@ -39,12 +39,14 @@ export default function Footer() {
             <p style={{ color: 'var(--text2)', fontSize: '0.92rem', lineHeight: 1.6, maxWidth: '360px' }}>
               Freelance SEO Expert &amp; Digital Marketer. Remote across India. On-site in Lucknow, Kanpur and Noida.
             </p>
-            <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.88rem', color: 'var(--text2)' }}>
-              <div>
-                📞 Call: <a href="tel:+918604625862" style={{ color: '#FF6B00', fontWeight: 600 }}>+91 86046 25862</a>
+            <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem', color: 'var(--text2)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <i className="bi bi-telephone-fill" style={{ color: '#FF6B00' }}></i>
+                <span>Call:</span> <a href="tel:+918604625862" style={{ color: '#FF6B00', fontWeight: 600 }}>+91 86046 25862</a>
               </div>
-              <div>
-                💬 WhatsApp:{' '}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <i className="bi bi-whatsapp" style={{ color: '#FF6B00' }}></i>
+                <span>WhatsApp:</span>{' '}
                 <a
                   href="https://wa.me/918604625862"
                   target="_blank"
@@ -54,8 +56,9 @@ export default function Footer() {
                   Chat on WhatsApp
                 </a>
               </div>
-              <div>
-                ✉️ Email: <a href="mailto:anirudhkumarseo@gmail.com" style={{ color: '#FF8800', fontWeight: 600 }}>anirudhkumarseo@gmail.com</a>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <i className="bi bi-envelope-fill" style={{ color: '#FF8800' }}></i>
+                <span>Email:</span> <a href="mailto:anirudhkumarseo@gmail.com" style={{ color: '#FF8800', fontWeight: 600 }}>anirudhkumarseo@gmail.com</a>
               </div>
             </div>
 

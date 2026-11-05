@@ -155,7 +155,7 @@ export default function InteractivePricing({ onSelectPlan }) {
                     boxShadow: '0 4px 15px rgba(255, 107, 0, 0.4)',
                   }}
                 >
-                  ⚡ Most Popular
+                  <i className="bi bi-star-fill" style={{ marginRight: '5px' }}></i> Most Popular
                 </div>
               )}
 
