@@ -49,7 +49,7 @@ export default function ThankYouPage() {
               className="btn btn-whatsapp"
               style={{ justifyContent: 'center', padding: '14px' }}
             >
-              💬 Connect on WhatsApp for Faster Response
+              <i className="bi bi-whatsapp" style={{ marginRight: '8px' }}></i> Connect on WhatsApp for Faster Response
             </a>
             <Link to="/" className="btn btn-outline" style={{ justifyContent: 'center', padding: '12px' }}>
               ← Return to Homepage

@@ -187,7 +187,7 @@ export default function HomePage() {
                   className="btn btn-outline"
                   style={{ padding: '14px 26px', fontSize: '0.98rem' }}
                 >
-                  <i className="bi bi-whatsapp" style={{ marginRight: '8px', color: '#FF6B00' }}></i>
+                  <i className="bi bi-whatsapp" style={{ marginRight: '8px', color: '#25D366', fontSize: '1.15rem' }}></i>
                   Chat on WhatsApp
                 </a>
               </div>
@@ -675,12 +675,12 @@ export default function HomePage() {
                   </div>
 
                   <div className="contact-item" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                    <div className="contact-icon" style={{ width: '42px', height: '42px', borderRadius: '50%', background: 'rgba(255,107,0,0.12)', border: '1px solid rgba(255,107,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF6B00' }}>
+                    <div className="contact-icon" style={{ width: '42px', height: '42px', borderRadius: '50%', background: 'rgba(37, 211, 102, 0.12)', border: '1px solid rgba(37, 211, 102, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#25D366' }}>
                       <i className="bi bi-whatsapp"></i>
                     </div>
                     <div>
                       <div className="contact-label" style={{ fontSize: '0.75rem', color: 'var(--text3)', textTransform: 'uppercase' }}>WhatsApp</div>
-                      <a href="https://wa.me/918604625862" target="_blank" rel="noreferrer" className="contact-value" style={{ fontWeight: 700, color: '#FF6B00' }}>
+                      <a href="https://wa.me/918604625862" target="_blank" rel="noreferrer" className="contact-value" style={{ fontWeight: 700, color: '#25D366' }}>
                         +91 86046 25862 (Direct Line)
                       </a>
                     </div>

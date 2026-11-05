@@ -47,7 +47,7 @@ export default function AboutPage() {
                   className="btn btn-whatsapp"
                   style={{ padding: '13px 22px' }}
                 >
-                  💬 Chat on WhatsApp
+                  <i className="bi bi-whatsapp" style={{ marginRight: '8px' }}></i> Chat on WhatsApp
                 </a>
               </div>
             </div>

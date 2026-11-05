@@ -343,10 +343,10 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
               <button
                 type="button"
                 onClick={handleWhatsApp}
-                className="btn btn-outline"
-                style={{ width: '100%', justifyContent: 'center', cursor: 'pointer', borderColor: '#FF6B00', color: '#FF6B00' }}
+                className="btn btn-whatsapp"
+                style={{ width: '100%', justifyContent: 'center', cursor: 'pointer', padding: '12px 20px' }}
               >
-                💬 Chat on WhatsApp (+91 86046 25862)
+                <i className="bi bi-whatsapp" style={{ marginRight: '8px' }}></i> Chat on WhatsApp (+91 86046 25862)
               </button>
             </div>
           </div>

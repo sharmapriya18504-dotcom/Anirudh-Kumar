@@ -201,7 +201,7 @@ export default function InteractiveLocations() {
                 className="btn btn-whatsapp"
                 style={{ padding: '10px 20px', fontSize: '0.88rem', borderRadius: '24px' }}
               >
-                💬 Chat for {loc.city}
+                <i className="bi bi-whatsapp" style={{ marginRight: '6px' }}></i> Chat for {loc.city}
               </a>
             </div>
           </div>

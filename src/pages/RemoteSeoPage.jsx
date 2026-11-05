@@ -71,7 +71,7 @@ export default function RemoteSeoPage() {
                 className="btn btn-whatsapp"
                 style={{ padding: '14px 24px' }}
               >
-                💬 Chat on WhatsApp (+91 86046 25862)
+                <i className="bi bi-whatsapp" style={{ marginRight: '8px' }}></i> Chat on WhatsApp (+91 86046 25862)
               </a>
             </div>
           </div>

@@ -51,15 +51,15 @@ export default function Footer() {
                 <span>Call:</span> <a href="tel:+918604625862" style={{ color: '#FF6B00', fontWeight: 600 }}>+91 86046 25862</a>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <i className="bi bi-whatsapp" style={{ color: '#FF6B00' }}></i>
+                <i className="bi bi-whatsapp" style={{ color: '#25D366', fontSize: '1.05rem' }}></i>
                 <span>WhatsApp:</span>{' '}
                 <a
                   href="https://wa.me/918604625862"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: '#FF6B00', fontWeight: 600 }}
+                  style={{ color: '#25D366', fontWeight: 600 }}
                 >
-                  Chat on WhatsApp
+                  Chat on WhatsApp (+91 86046 25862)
                 </a>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

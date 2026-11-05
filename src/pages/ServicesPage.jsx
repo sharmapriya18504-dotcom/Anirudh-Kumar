@@ -150,7 +150,7 @@ export default function ServicesPage() {
               className="btn btn-outline"
               style={{ padding: '13px 24px' }}
             >
-              <i className="bi bi-whatsapp" style={{ marginRight: '8px', color: '#FF6B00' }}></i>
+              <i className="bi bi-whatsapp" style={{ marginRight: '8px', color: '#25D366', fontSize: '1.15rem' }}></i>
               Chat on WhatsApp
             </a>
           </div>

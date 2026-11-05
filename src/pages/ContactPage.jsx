@@ -165,15 +165,15 @@ export default function ContactPage() {
                     alignItems: 'center',
                     gap: '16px',
                     textDecoration: 'none',
-                    border: '1px solid rgba(255, 107, 0, 0.3)',
+                    border: '1px solid rgba(37, 211, 102, 0.35)',
                     transition: 'all 0.2s ease',
                   }}
                 >
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(255, 107, 0, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF6B00', fontSize: '1.3rem' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(37, 211, 102, 0.15)', border: '1px solid rgba(37, 211, 102, 0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#25D366', fontSize: '1.3rem' }}>
                     <i className="bi bi-whatsapp"></i>
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.75rem', color: '#FF6B00', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 700 }}>
+                    <div style={{ fontSize: '0.75rem', color: '#25D366', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 700 }}>
                       Chat on WhatsApp (Fastest Response)
                     </div>
                     <div style={{ fontSize: '1.1rem', color: 'var(--text)', fontWeight: 700 }}>

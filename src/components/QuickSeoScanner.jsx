@@ -219,7 +219,7 @@ export default function QuickSeoScanner() {
               className="btn btn-whatsapp"
               style={{ padding: '8px 16px', fontSize: '0.82rem', borderRadius: '20px' }}
             >
-              📱 Get Free Fix Plan on WhatsApp →
+              <i className="bi bi-whatsapp" style={{ marginRight: '6px' }}></i> Get Free Fix Plan on WhatsApp →
             </a>
           </div>
         </div>

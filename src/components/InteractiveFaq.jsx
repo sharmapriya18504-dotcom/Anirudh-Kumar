@@ -146,9 +146,9 @@ export default function InteractiveFaq() {
               target="_blank"
               rel="noreferrer"
               className="btn btn-outline"
-              style={{ display: 'inline-flex', alignItems: 'center', marginTop: '14px', padding: '10px 22px', fontSize: '0.88rem', borderColor: '#FF6B00', color: '#FF6B00' }}
+              style={{ display: 'inline-flex', alignItems: 'center', marginTop: '14px', padding: '10px 22px', fontSize: '0.88rem', borderColor: '#25D366', color: '#25D366' }}
             >
-              <i className="bi bi-whatsapp" style={{ marginRight: '6px' }}></i> Chat on WhatsApp (+91 86046 25862)
+              <i className="bi bi-whatsapp" style={{ marginRight: '6px', color: '#25D366' }}></i> Chat on WhatsApp (+91 86046 25862)
             </a>
           </div>
         ) : (

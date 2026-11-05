@@ -282,14 +282,17 @@
     }
 
     .btn-whatsapp {
-      background: #FF6B00;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(255, 107, 0, 0.3)
+      background: #25D366 !important;
+      color: #fff !important;
+      border: 1px solid #20BA5A !important;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4) !important;
     }
 
     .btn-whatsapp:hover {
+      background: #20BA5A !important;
+      color: #fff !important;
       transform: translateY(-2px);
-      box-shadow: 0 0 40px rgba(255, 107, 0, 0.4)
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.55) !important;
     }
 
     /* â”€â”€â”€ NAV â”€â”€â”€ */
@@ -2223,7 +2226,8 @@
     }
 
     .wa-bubble {
-      background: #FF6B00;
+      background: #25D366 !important;
+      color: #fff !important;
       width: 56px;
       height: 56px;
       border-radius: 50%;
@@ -2231,7 +2235,7 @@
       align-items: center;
       justify-content: center;
       font-size: 1.6rem;
-      box-shadow: 0 8px 24px rgba(255, 107, 0, 0.4);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45) !important;
       animation: float1 3s ease-in-out infinite;
       transition: transform var(--transition)
     }
@@ -3061,14 +3065,17 @@
     }
 
     .btn-whatsapp {
-      background: #FF6B00;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(255, 107, 0, 0.3)
+      background: #25D366 !important;
+      color: #fff !important;
+      border: 1px solid #20BA5A !important;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4) !important;
     }
 
     .btn-whatsapp:hover {
+      background: #20BA5A !important;
+      color: #fff !important;
       transform: translateY(-2px);
-      box-shadow: 0 0 40px rgba(255, 107, 0, 0.4)
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.55) !important;
     }
 
     /* ─── NAV ─── */
@@ -4942,7 +4949,8 @@
     }
 
     .wa-bubble {
-      background: #FF6B00;
+      background: #25D366 !important;
+      color: #fff !important;
       width: 56px;
       height: 56px;
       border-radius: 50%;
@@ -4950,7 +4958,7 @@
       align-items: center;
       justify-content: center;
       font-size: 1.6rem;
-      box-shadow: 0 8px 24px rgba(255, 107, 0, 0.4);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45) !important;
       animation: float1 3s ease-in-out infinite;
       transition: transform var(--transition)
     }
@@ -5856,7 +5864,7 @@ input:focus, textarea:focus, select:focus {
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  background: rgba(255, 107, 0, 0.45);
+  background: rgba(37, 211, 102, 0.45) !important;
   z-index: -1;
   animation: waPulseRipple 2.2s cubic-bezier(0.1, 0.5, 0.6, 1) infinite;
 }
@@ -8462,5 +8470,47 @@ html, body, #root, .page-wrapper {
     grid-template-columns: 1fr !important;
     gap: 8px !important;
   }
+}
+
+/* ========================================================
+   AUTHENTIC WHATSAPP GREEN STYLING (#25D366)
+   - Guarantees EVERY WhatsApp icon, bubble, and button is vibrant WhatsApp green
+   - Consistent across the entire site in both Dark & Light themes
+   ======================================================== */
+.bi-whatsapp,
+i.bi-whatsapp,
+[class*="whatsapp"] i,
+a[href*="wa.me"] i {
+  color: #25D366 !important;
+}
+
+.btn-whatsapp {
+  background: #25D366 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #20BA5A !important;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4) !important;
+}
+
+.btn-whatsapp:hover {
+  background: #20BA5A !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55) !important;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp i,
+.btn-whatsapp .bi-whatsapp,
+.wa-bubble i,
+.wa-bubble .bi-whatsapp {
+  color: #FFFFFF !important;
+}
+
+.wa-bubble {
+  background: #25D366 !important;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45) !important;
+}
+
+.wa-bubble::before {
+  background: rgba(37, 211, 102, 0.45) !important;
 }
 
