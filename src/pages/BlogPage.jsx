@@ -86,10 +86,10 @@ export default function BlogPage() {
                 width: '100%',
                 padding: '14px 20px 14px 46px',
                 borderRadius: '50px',
-                background: 'rgba(14, 21, 52, 0.75)',
+                background: 'var(--card)',
                 backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(41, 121, 255, 0.3)',
-                color: '#fff',
+                border: '1px solid var(--border)',
+                color: 'var(--text)',
                 fontSize: '0.94rem',
                 outline: 'none',
               }}
@@ -107,8 +107,8 @@ export default function BlogPage() {
                 type="button"
                 onClick={() => handleCategory(cat)}
                 style={{
-                  background: selectedCategory === cat ? 'linear-gradient(135deg, #FF9100, #FF6B00)' : 'rgba(14, 21, 52, 0.6)',
-                  color: selectedCategory === cat ? '#050814' : '#98a7c6',
+                  background: selectedCategory === cat ? 'var(--accent)' : 'var(--bg2)',
+                  color: selectedCategory === cat ? '#fff' : 'var(--text2)',
                   border: selectedCategory === cat ? '1px solid #FF6B00' : '1px solid rgba(255, 107, 0, 0.2)',
                   borderRadius: '30px',
                   padding: '6px 16px',
@@ -158,7 +158,7 @@ export default function BlogPage() {
                         position: 'absolute',
                         top: '12px',
                         left: '12px',
-                        background: 'rgba(5, 8, 20, 0.85)',
+                        background: 'var(--card)',
                         backdropFilter: 'blur(8px)',
                         color: '#FF6B00',
                         fontSize: '0.75rem',

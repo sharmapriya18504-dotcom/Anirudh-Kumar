@@ -129,9 +129,9 @@ export default function SeoExpertNoidaPage() {
                   'Working alongside your in-house team as an active SEO or digital marketing lead.',
                   'Training and upskilling your marketing team on modern algorithmic best practices.',
                 ].map((item, idx) => (
-                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'rgba(14, 21, 52, 0.5)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.15)' }}>
+                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'var(--card)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.15)' }}>
                     <span style={{ color: '#FF6B00', fontWeight: 800 }}>⚡</span>
-                    <span style={{ color: '#dbe4f5', fontSize: '0.92rem' }}>{item}</span>
+                    <span style={{ color: 'var(--text)', fontSize: '0.92rem' }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -162,7 +162,7 @@ export default function SeoExpertNoidaPage() {
       </section>
 
       {/* Noida Project Form */}
-      <section id="audit-form" style={{ padding: '70px 0', background: 'rgba(7, 11, 28, 0.85)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
+      <section id="audit-form" style={{ padding: '70px 0', background: 'var(--bg2)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container" style={{ maxWidth: '780px' }}>
           <div style={{ textAlign: 'center', marginBottom: '35px' }}>
             <span className="tag">Project Discussion</span>
@@ -205,7 +205,7 @@ export default function SeoExpertNoidaPage() {
             <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '14px', fontSize: '1rem', justifyContent: 'center' }}>
               🚀 Send Project Details
             </button>
-            <p style={{ textAlign: 'center', color: '#657599', fontSize: '0.8rem', marginTop: '14px', margin: '14px 0 0' }}>
+            <p style={{ textAlign: 'center', color: 'var(--text3)', fontSize: '0.8rem', marginTop: '14px', margin: '14px 0 0' }}>
               Prompt reply within 24 hours guaranteed. No sales pitch, you talk directly with me.
             </p>
           </form>

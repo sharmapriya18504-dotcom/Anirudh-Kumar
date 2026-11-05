@@ -129,9 +129,9 @@ export default function SeoExpertLucknowPage() {
                   'Competitors rank above you for the exact high-value services you sell.',
                   'Traffic comes occasionally, but no one calls, sends an email or fills out your enquiry form.',
                 ].map((prob, idx) => (
-                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'rgba(14, 21, 52, 0.5)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.15)' }}>
+                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: 'var(--card)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.15)' }}>
                     <span style={{ color: '#ff4757', fontWeight: 800 }}>⚠️</span>
-                    <span style={{ color: '#dbe4f5', fontSize: '0.92rem' }}>{prob}</span>
+                    <span style={{ color: 'var(--text)', fontSize: '0.92rem' }}>{prob}</span>
                   </div>
                 ))}
               </div>
@@ -142,7 +142,7 @@ export default function SeoExpertLucknowPage() {
               <p style={{ color: 'var(--text2)', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '20px' }}>
                 I handle end-to-end local search optimization tailored to Lucknow's competitive neighborhoods:
               </p>
-              <ul style={{ color: '#dbe4f5', fontSize: '0.92rem', lineHeight: 1.8, paddingLeft: '20px', margin: 0 }}>
+              <ul style={{ color: 'var(--text)', fontSize: '0.92rem', lineHeight: 1.8, paddingLeft: '20px', margin: 0 }}>
                 <li><strong>Local SEO &amp; Google Business Profile:</strong> Complete map pin optimization, citation consistency, and review strategies.</li>
                 <li><strong>On-Page &amp; Technical SEO:</strong> Fixing site speed, mobile rendering, meta tags, and structured schema.</li>
                 <li><strong>Neighborhood Location Pages:</strong> Dedicated pages targeting Gomti Nagar, Hazratganj, Aliganj, and Indira Nagar.</li>
@@ -161,7 +161,7 @@ export default function SeoExpertLucknowPage() {
       </section>
 
       {/* Lucknow Contact / Audit Form */}
-      <section id="audit-form" style={{ padding: '70px 0', background: 'rgba(7, 11, 28, 0.85)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
+      <section id="audit-form" style={{ padding: '70px 0', background: 'var(--bg2)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container" style={{ maxWidth: '780px' }}>
           <div style={{ textAlign: 'center', marginBottom: '35px' }}>
             <span className="tag">Free Technical Review</span>
@@ -204,7 +204,7 @@ export default function SeoExpertLucknowPage() {
             <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '14px', fontSize: '1rem', justifyContent: 'center' }}>
               🚀 Send Free Audit Request
             </button>
-            <p style={{ textAlign: 'center', color: '#657599', fontSize: '0.8rem', marginTop: '14px', margin: '14px 0 0' }}>
+            <p style={{ textAlign: 'center', color: 'var(--text3)', fontSize: '0.8rem', marginTop: '14px', margin: '14px 0 0' }}>
               Prompt response within 24 hours guaranteed. You work directly with me.
             </p>
           </form>

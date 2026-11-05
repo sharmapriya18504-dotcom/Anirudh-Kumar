@@ -131,7 +131,7 @@ export default function RemoteSeoPage() {
                 ].map((tool, idx) => (
                   <div key={idx} style={{ background: 'rgba(14, 21, 52, 0.6)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                     <div style={{ color: '#FF6B00', fontWeight: 700, fontSize: '0.95rem' }}>{tool.name}</div>
-                    <div style={{ color: '#657599', fontSize: '0.8rem', marginTop: '2px' }}>{tool.role}</div>
+                    <div style={{ color: 'var(--text3)', fontSize: '0.8rem', marginTop: '2px' }}>{tool.role}</div>
                   </div>
                 ))}
               </div>
@@ -142,7 +142,7 @@ export default function RemoteSeoPage() {
               <p style={{ color: 'var(--text2)', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '20px' }}>
                 I am open to different engagement formats depending on your business requirements:
               </p>
-              <ul style={{ color: '#dbe4f5', fontSize: '0.94rem', lineHeight: 2, paddingLeft: '20px', margin: '0 0 24px 0' }}>
+              <ul style={{ color: 'var(--text)', fontSize: '0.94rem', lineHeight: 2, paddingLeft: '20px', margin: '0 0 24px 0' }}>
                 <li><strong>Monthly Retainers:</strong> Comprehensive ongoing SEO &amp; marketing management.</li>
                 <li><strong>One-Time Projects:</strong> Technical site migrations, site audits, or speed overhauls.</li>
                 <li><strong>Remote Part-Time / Full-Time Roles:</strong> Embedded specialist driving growth for your product or agency.</li>
@@ -156,7 +156,7 @@ export default function RemoteSeoPage() {
       </section>
 
       {/* Remote Audit Request Form */}
-      <section id="audit-form" style={{ padding: '70px 0', background: 'rgba(7, 11, 28, 0.85)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
+      <section id="audit-form" style={{ padding: '70px 0', background: 'var(--bg2)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
         <div className="container" style={{ maxWidth: '780px' }}>
           <div style={{ textAlign: 'center', marginBottom: '35px' }}>
             <span className="tag">Free Review</span>
@@ -199,7 +199,7 @@ export default function RemoteSeoPage() {
             <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '14px', fontSize: '1rem', justifyContent: 'center' }}>
               🚀 Send Audit Request
             </button>
-            <p style={{ textAlign: 'center', color: '#657599', fontSize: '0.8rem', marginTop: '14px', margin: '14px 0 0' }}>
+            <p style={{ textAlign: 'center', color: 'var(--text3)', fontSize: '0.8rem', marginTop: '14px', margin: '14px 0 0' }}>
               Prompt reply within 24 hours guaranteed. You work directly with Anirudh.
             </p>
           </form>

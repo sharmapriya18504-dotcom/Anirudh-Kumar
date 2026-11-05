@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
           <h1 className="section-heading" style={{ fontSize: '2.4rem', color: 'var(--text)', marginBottom: '16px' }}>
             Privacy <span className="gradient-text">Policy</span>
           </h1>
-          <p style={{ color: '#657599', fontSize: '0.88rem', marginBottom: '32px' }}>
+          <p style={{ color: 'var(--text3)', fontSize: '0.88rem', marginBottom: '32px' }}>
             Last Updated: November 2026 • Anirudh Kumar (anirudhkumar.in)
           </p>
 

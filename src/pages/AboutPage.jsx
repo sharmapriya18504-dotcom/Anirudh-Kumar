@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <div className="page-wrapper about-page" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* Hero */}
-      <section style={{ padding: '80px 0 50px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '70px 0 50px', position: 'relative', overflow: 'hidden' }}>
         <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
         <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
 
@@ -59,10 +59,10 @@ export default function AboutPage() {
                   style={{
                     padding: '24px',
                     borderRadius: '28px',
-                    background: 'linear-gradient(135deg, rgba(14, 21, 52, 0.85), rgba(8, 12, 32, 0.95))',
-                    border: '1px solid rgba(255, 107, 0, 0.3)',
+                    background: 'var(--card)',
+                    border: '1px solid var(--border)',
                     maxWidth: '380px',
-                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 107, 0, 0.15)',
+                    boxShadow: 'var(--shadow)',
                   }}
                 >
                   <img
@@ -93,7 +93,7 @@ export default function AboutPage() {
       </section>
 
       {/* What I Believe & Approach */}
-      <section style={{ padding: '70px 0', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(255, 107, 0, 0.15)' }}>
+      <section style={{ padding: '70px 0', background: 'var(--bg2)', borderTop: '1px solid var(--border2)' }}>
         <div className="container">
           <div style={{ maxWidth: '850px', margin: '0 auto' }}>
             <div className="glass-panel" style={{ padding: '40px', marginBottom: '35px' }}>
@@ -122,9 +122,8 @@ export default function AboutPage() {
                 ].map((cert, idx) => (
                   <div
                     key={idx}
+                    className="glass-panel"
                     style={{
-                      background: 'rgba(14, 21, 52, 0.6)',
-                      border: '1px solid rgba(255, 107, 0, 0.25)',
                       borderRadius: '16px',
                       padding: '20px',
                       display: 'flex',
@@ -145,7 +144,7 @@ export default function AboutPage() {
             {/* Services Overview */}
             <div className="glass-panel" style={{ padding: '36px' }}>
               <h3 style={{ fontSize: '1.4rem', color: 'var(--text)', marginBottom: '16px' }}>What I Do</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px', color: '#dbe4f5', fontSize: '0.94rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px', color: 'var(--text)', fontSize: '0.94rem' }}>
                 <div>• Technical &amp; On-Page SEO</div>
                 <div>• Local SEO &amp; Google Business Profile</div>
                 <div>• Google Ads (Search &amp; Lead Gen)</div>
