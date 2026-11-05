@@ -8127,6 +8127,276 @@ input:focus, textarea:focus, select:focus {
   border-top-color: rgba(0, 0, 0, 0.07) !important;
 }
 
+/* ========================================================
+   MINIMAL EDITORIAL CASE STUDIES (ORNIX AGENCY STANDARD)
+   - Zero visual clutter, zero fake bar charts
+   - High-contrast, minimal, verified business results
+   ======================================================== */
+.portfolio-minimal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.portfolio-minimal-card {
+  background: var(--card);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.portfolio-minimal-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 107, 0, 0.45);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 107, 0, 0.12);
+}
+
+.portfolio-minimal-img-frame {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background: #090A12;
+}
+
+.portfolio-minimal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-minimal-card:hover .portfolio-minimal-img {
+  transform: scale(1.05);
+}
+
+.portfolio-minimal-category {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(6, 6, 14, 0.85);
+  color: #FF8800;
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+}
+
+.portfolio-minimal-loc {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(6, 6, 14, 0.82);
+  color: #94A3B8;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.portfolio-minimal-body {
+  padding: 26px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.portfolio-hero-stat-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border2);
+}
+
+.portfolio-hero-stat-num {
+  font-family: var(--ff-d);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #FF6B00;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.portfolio-hero-stat-lbl {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+
+.portfolio-hero-stat-pill {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: rgba(255, 107, 0, 0.08);
+  color: #FF944D;
+  border: 1px solid rgba(255, 107, 0, 0.22);
+}
+
+.portfolio-minimal-title {
+  font-family: var(--ff-d);
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  color: var(--text);
+  letter-spacing: -0.025em;
+}
+
+.portfolio-minimal-desc {
+  font-size: 0.9rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.portfolio-minimal-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.portfolio-tag-item {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border2);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.portfolio-minimal-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text3);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.portfolio-minimal-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border2);
+}
+
+.portfolio-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--accent);
+  transition: gap 0.2s ease;
+}
+
+.portfolio-minimal-card:hover .portfolio-action-link {
+  gap: 12px;
+}
+
+/* LIGHT MODE OVERRIDES FOR MINIMAL PORTFOLIO */
+[data-theme="light"] .portfolio-minimal-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.09) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="light"] .portfolio-minimal-card:hover {
+  border-color: rgba(255, 107, 0, 0.45) !important;
+  box-shadow: 0 16px 36px rgba(255, 107, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .portfolio-minimal-category {
+  background: rgba(255, 255, 255, 0.94) !important;
+  color: #D95300 !important;
+  border-color: rgba(255, 107, 0, 0.3) !important;
+}
+
+[data-theme="light"] .portfolio-minimal-loc {
+  background: rgba(255, 255, 255, 0.94) !important;
+  color: #475569 !important;
+}
+
+[data-theme="light"] .portfolio-hero-stat-row {
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .portfolio-hero-stat-lbl {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .portfolio-hero-stat-pill {
+  background: #FFF5ED !important;
+  color: #D95300 !important;
+  border-color: rgba(255, 107, 0, 0.28) !important;
+}
+
+[data-theme="light"] .portfolio-minimal-title {
+  color: #090A10 !important;
+}
+
+[data-theme="light"] .portfolio-minimal-desc {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .portfolio-tag-item {
+  background: #F8F9FD !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #090A10 !important;
+}
+
+[data-theme="light"] .portfolio-minimal-meta {
+  color: #64748B !important;
+}
+
+[data-theme="light"] .portfolio-minimal-footer {
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+@media (max-width: 992px) {
+  .portfolio-minimal-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-minimal-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .portfolio-minimal-body {
+    padding: 20px 18px 22px !important;
+  }
+}
+
 /* FRAMEWORK & CASE STUDY DETAILS — STRICTLY NO MUD GRAY */
 .framework-wrapper-card {
   background: var(--card);

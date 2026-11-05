@@ -444,54 +444,45 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="portfolio-grid">
+          <div className="portfolio-minimal-grid">
             {caseStudies.map((study, idx) => (
-              <div key={study.id} className="portfolio-card reveal" style={{ transitionDelay: `${idx * 0.1}s` }}>
-                <div>
-                  <div className="portfolio-top-bar">
-                    <span className="portfolio-sector-badge">
-                      {study.sector} • {study.location}
-                    </span>
-                    <span className="portfolio-verified-badge">
-                      <i className="bi bi-patch-check-fill"></i> Verified Data
-                    </span>
-                  </div>
+              <div key={study.id} className="portfolio-minimal-card reveal" style={{ transitionDelay: `${idx * 0.1}s` }}>
+                <div className="portfolio-minimal-img-frame">
+                  <img src={study.img} alt={study.title} className="portfolio-minimal-img" />
+                  <span className="portfolio-minimal-category">
+                    {study.sector}
+                  </span>
+                  <span className="portfolio-minimal-loc">{study.location}</span>
+                </div>
 
-                  <div className="portfolio-project-img-wrap">
-                    <img src={study.img} alt={study.title} className="portfolio-project-img" />
-                    <div className="portfolio-project-overlay-tag">{study.heroMetric}</div>
-                  </div>
-
-                  <h3>{study.title}</h3>
-                  <p className="portfolio-card-desc">{study.outcome}</p>
-
-                  {/* Minimal Hero Result Strip */}
-                  <div className="portfolio-hero-metric-wrap">
+                <div className="portfolio-minimal-body">
+                  <div className="portfolio-hero-stat-row">
                     <div>
-                      <div className="portfolio-hero-metric-val">{study.heroMetric}</div>
-                      <div style={{ fontSize: '0.8rem', color: '#FF8800', fontWeight: 600, marginTop: '2px' }}>
-                        {study.beforeAfter}
-                      </div>
+                      <div className="portfolio-hero-stat-num">{study.heroMetric}</div>
+                      <div className="portfolio-hero-stat-lbl">{study.heroMetricLabel}</div>
                     </div>
-                    <div className="portfolio-hero-metric-lbl">{study.heroMetricLabel}</div>
+                    <div className="portfolio-hero-stat-pill">
+                      {study.beforeAfter}
+                    </div>
                   </div>
 
-                  {/* Clean Proof Highlights */}
-                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '20px' }}>
+                  <h3 className="portfolio-minimal-title">{study.title}</h3>
+                  <p className="portfolio-minimal-desc">{study.outcome}</p>
+
+                  <div className="portfolio-minimal-tags">
                     {study.highlights.map((item, hidx) => (
-                      <span key={hidx} className="portfolio-minimal-badge">
-                        <i className="bi bi-check2" style={{ color: '#FF6B00', fontWeight: 800 }}></i>
-                        <span>{item}</span>
+                      <span key={hidx} className="portfolio-tag-item">
+                        <i className="bi bi-check2" style={{ color: '#FF6B00' }}></i> {item}
                       </span>
                     ))}
                   </div>
-                </div>
 
-                <div className="portfolio-card-footer">
-                  <Link to="/case-studies" className="portfolio-detail-btn">
-                    <span>View Case Study Strategy</span>
-                    <i className="bi bi-arrow-right"></i>
-                  </Link>
+                  <div className="portfolio-minimal-footer">
+                    <Link to="/case-studies" className="portfolio-action-link">
+                      <span>View Strategy Details</span>
+                      <i className="bi bi-arrow-right"></i>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
