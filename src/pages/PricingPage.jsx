@@ -1,65 +1,59 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import confetti from 'canvas-confetti';
-import Toast from '../components/Toast.jsx';
 import InteractivePricing from '../components/InteractivePricing.jsx';
-
+import InteractiveFaq from '../components/InteractiveFaq.jsx';
 
 export default function PricingPage() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [showToast, setShowToast] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setShowToast(true);
-
-    try {
-      confetti({
-        particleCount: 80,
-        spread: 60,
-        origin: { y: 0.6 }
-      });
-    } catch (err) {}
-
-    const btn = e.target.querySelector('button[type="submit"], input[type="submit"], .btn-primary');
-    if (btn) {
-      const originalText = btn.textContent;
-      btn.textContent = '✅ Submitted! 24 hrs mein reply milega.';
-      btn.style.background = '#00D68F';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-        setFormSubmitted(false);
-        setShowToast(false);
-      }, 4500);
-    }
-  };
-
   return (
-    <div className="page-wrapper pricingpage">
-    <div style={{"height":"var(--nav-h)"}}></div>
-    <section id="pricing">
-            <div className="container">
-                <div className="section-header center text-center reveal visible">
-                    <span className="tag">Transparent Pricing</span>
-                    <div className="divider"></div>
-                    <h2 className="section-heading">Simple, Clear             <span className="gradient-text">Packages</span></h2>
-                    <p className="section-sub">Koi hidden charges nahi. Jo package choose karo, wahi milega. Sabhi packages mein free
-          SEO audit included hai.</p>
-          </div>
-                <InteractivePricing />
-                <p className="text-center mt-4" style={{"color":"var(--text2)","fontSize":"0.85rem"}}>Custom requirements hain?           <Link to="/contact" style={{"color":"var(--accent)","fontWeight":"700"}}>Contact karein</Link> — aapke liye custom package
-        bana deta hoon.</p>
+    <div className="page-wrapper pricing-page" style={{ paddingTop: 'var(--nav-h)' }}>
+      {/* Hero */}
+      <section style={{ padding: '80px 0 50px', position: 'relative', overflow: 'hidden' }}>
+        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+          <span className="tag" style={{ marginBottom: '14px', display: 'inline-block' }}>
+            Transparent Retainers
+          </span>
+          <h1
+            className="section-heading"
+            style={{
+              fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
+              lineHeight: 1.15,
+              marginBottom: '18px',
+              color: '#f0f4fc',
+            }}
+          >
+            Simple, Clear <span className="gradient-text">Pricing</span>
+          </h1>
+          <p style={{ fontSize: '1.15rem', color: '#98a7c6', lineHeight: 1.65, marginBottom: '20px' }}>
+            Every package starts with a free SEO audit. No hidden charges. Prices in INR. No long-term lock-in contract—work is month-to-month.
+          </p>
         </div>
       </section>
-      <Toast
-        isVisible={showToast}
-        message="24 hours mein aapko callback ya email reply mil jayega."
-        onClose={() => setShowToast(false)}
-      />
+
+      {/* Pricing Table Section */}
+      <section style={{ padding: '20px 0 80px' }}>
+        <div className="container">
+          <InteractivePricing />
+        </div>
+      </section>
+
+      {/* FAQ Related to Pricing */}
+      <section style={{ padding: '60px 0 80px', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(41, 121, 255, 0.15)' }}>
+        <div className="container" style={{ maxWidth: '850px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '35px' }}>
+            <span className="tag">Pricing FAQs</span>
+            <h2 className="section-heading" style={{ marginTop: '10px' }}>
+              Frequently Asked <span className="gradient-text">Questions</span>
+            </h2>
+            <p style={{ color: '#98a7c6', fontSize: '0.94rem' }}>
+              Common questions about budgeting, contracts, and expectations.
+            </p>
+          </div>
+          <InteractiveFaq />
+        </div>
+      </section>
     </div>
   );
 }

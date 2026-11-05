@@ -1,215 +1,234 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import TiltCard3D from './TiltCard3D.jsx';
 
 export default function InteractivePricing({ onSelectPlan }) {
-  const [cycle, setCycle] = useState('monthly'); // 'monthly' | 'quarterly'
   const navigate = useNavigate();
 
   const plans = [
     {
+      id: 'starter',
       name: 'Starter',
-      monthlyPrice: 8000,
-      quarterlyMonthly: 6800,
-      desc: 'Chhote businesses aur startups ke liye. Digital presence banana shuru karein.',
+      price: '₹8,000',
+      period: '/month',
+      desc: 'For small businesses and startups building their online presence.',
       popular: false,
       features: [
-        'On-Page SEO (10 pages)',
-        'Google Business Profile Setup',
-        '2 Blog Posts/Month',
-        'Monthly Report',
-        'WhatsApp Support',
-        'Meta/Google Ads (Optional Add-on)',
-        'Social Media Management (Optional)'
-      ]
+        'On-page SEO (up to 10 pages)',
+        'Google Business Profile setup',
+        '2 blog posts per month',
+        'Monthly report',
+        'WhatsApp support',
+      ],
+      notIncluded: [
+        'Ad management',
+        'Social media management',
+      ],
+      ctaText: 'Get Started with Starter',
     },
     {
+      id: 'professional',
       name: 'Professional',
-      monthlyPrice: 18000,
-      quarterlyMonthly: 15300,
-      desc: 'Growing businesses ke liye. Full digital marketing + ads management.',
+      price: '₹18,000',
+      period: '/month',
+      desc: 'For growing businesses that need SEO and ads together.',
       popular: true,
       features: [
         'Complete SEO (20+ pages)',
-        'Social Media (2 platforms)',
-        'Meta Ads Management',
-        '4 Blog Posts/Month',
-        'Weekly Reporting',
-        'Google Ads Setup',
-        'Priority WhatsApp Support'
-      ]
+        'Social media management (2 platforms)',
+        'Meta Ads management',
+        'Google Ads setup',
+        '4 blog posts per month',
+        'Weekly reporting',
+        'Priority WhatsApp support',
+      ],
+      notIncluded: [],
+      ctaText: 'Get Started with Professional',
     },
     {
+      id: 'enterprise',
       name: 'Enterprise',
-      monthlyPrice: 35000,
-      quarterlyMonthly: 29750,
-      desc: 'Established brands ke liye. Full-scale digital marketing dominance.',
+      price: '₹35,000',
+      period: '/month',
+      desc: 'For established brands that want full-scale digital marketing.',
       popular: false,
       features: [
         'Everything in Professional',
-        'Full Social Media (4 platforms)',
-        'Meta + Google Ads Both',
-        '8 Blog Posts + Content Strategy',
-        'YouTube SEO & Management',
-        'Website Development Included',
-        'Dedicated Account Manager (Me!)'
-      ]
-    }
+        'Social media management (4 platforms)',
+        'Meta Ads and Google Ads',
+        '8 blog posts per month with content strategy',
+        'YouTube SEO and management',
+        'Website development included',
+        'Me as your dedicated point of contact',
+      ],
+      notIncluded: [],
+      ctaText: "Let's Talk Enterprise",
+    },
   ];
 
-  const handleChoose = (planName) => {
+  const handleChoose = (plan) => {
     const contact = document.getElementById('contact');
     if (contact) {
       contact.scrollIntoView({ behavior: 'smooth' });
       const select = document.querySelector('select[name="service"], select');
       if (select) {
-        for (let i = 0; i < select.options.length; i++) {
-          if (select.options[i].text.toLowerCase().includes('seo') || select.options[i].value.toLowerCase().includes('seo')) {
-            select.selectedIndex = i;
-            break;
-          }
-        }
+        select.value = 'SEO Services';
       }
-      const msg = document.querySelector('textarea');
+      const msg = document.querySelector('textarea[name="message"], textarea');
       if (msg) {
-        msg.value = `Hi Anirudh, I want to get started with the ${planName} Plan (${cycle === 'quarterly' ? 'Quarterly - 15% OFF' : 'Monthly'}). Please share the next steps.`;
+        msg.value = `Hi Anirudh, I am interested in your ${plan.name} Package (${plan.price}/month). Please share the roadmap and audit details.`;
         msg.focus();
       }
     } else {
-      navigate('/contact');
+      navigate(`/contact?plan=${plan.id}`);
     }
-    if (onSelectPlan) onSelectPlan(planName);
+    if (onSelectPlan) onSelectPlan(plan.name);
   };
 
   return (
-    <div>
-      {/* BILLING TOGGLE */}
+    <div className="pricing-wrap" style={{ position: 'relative' }}>
+      {/* Background ambient lighting */}
       <div
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '12px',
-          marginBottom: '40px'
+          position: 'absolute',
+          top: '20%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '600px',
+          height: '400px',
+          background: 'radial-gradient(circle, rgba(41, 121, 255, 0.12) 0%, transparent 70%)',
+          filter: 'blur(70px)',
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* PRICING CARDS GRID */}
+      <div
+        className="pricing-grid"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
+          gap: '30px',
+          alignItems: 'stretch',
         }}
       >
-        <span
-          style={{
-            fontSize: '0.95rem',
-            fontWeight: 600,
-            color: cycle === 'monthly' ? 'var(--text)' : 'var(--text3)',
-            cursor: 'pointer'
-          }}
-          onClick={() => setCycle('monthly')}
-        >
-          Monthly Retainer
-        </span>
-        <button
-          type="button"
-          onClick={() => setCycle(c => c === 'monthly' ? 'quarterly' : 'monthly')}
-          style={{
-            width: '60px',
-            height: '32px',
-            borderRadius: '50px',
-            background: cycle === 'quarterly' ? 'var(--accent)' : 'var(--bg2)',
-            border: '1px solid var(--border)',
-            position: 'relative',
-            cursor: 'pointer',
-            transition: 'background 0.3s ease',
-            padding: '2px'
-          }}
-          aria-label="Toggle billing cycle"
-        >
-          <div
-            style={{
-              width: '26px',
-              height: '26px',
-              borderRadius: '50%',
-              background: '#fff',
-              transform: cycle === 'quarterly' ? 'translateX(28px)' : 'translateX(2px)',
-              transition: 'transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1)',
-              boxShadow: '0 2px 5px rgba(0,0,0,0.3)'
-            }}
-          ></div>
-        </button>
-        <span
-          style={{
-            fontSize: '0.95rem',
-            fontWeight: 600,
-            color: cycle === 'quarterly' ? 'var(--accent)' : 'var(--text3)',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px'
-          }}
-          onClick={() => setCycle('quarterly')}
-        >
-          Quarterly Plan
-          <span
-            style={{
-              background: 'rgba(0, 214, 143, 0.15)',
-              color: '#00D68F',
-              border: '1px solid #00D68F',
-              fontSize: '0.72rem',
-              fontWeight: 800,
-              padding: '2px 8px',
-              borderRadius: '20px'
-            }}
+        {plans.map((p) => (
+          <TiltCard3D
+            key={p.id}
+            maxTilt={8}
+            className={`pricing-card-wrap ${p.popular ? 'popular' : ''}`}
+            style={{ height: '100%' }}
           >
-            SAVE 15%
-          </span>
-        </span>
-      </div>
-
-      {/* PRICING GRID */}
-      <div className="pricing-grid">
-        {plans.map((p, idx) => {
-          const price = cycle === 'quarterly' ? p.quarterlyMonthly : p.monthlyPrice;
-          return (
             <div
-              key={p.name}
-              className={`pricing-card reveal ${p.popular ? 'popular' : ''}`}
+              className={`pricing-card ${p.popular ? 'popular' : ''}`}
               style={{
-                transitionDelay: `${0.1 * (idx + 1)}s`,
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                background: p.popular
+                  ? 'linear-gradient(180deg, rgba(16, 26, 68, 0.85) 0%, rgba(9, 14, 38, 0.95) 100%)'
+                  : 'rgba(12, 18, 44, 0.75)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                border: p.popular ? '1px solid rgba(0, 229, 255, 0.5)' : '1px solid rgba(41, 121, 255, 0.2)',
+                borderRadius: '24px',
+                padding: '36px 30px',
+                boxShadow: p.popular
+                  ? '0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(41, 121, 255, 0.25)'
+                  : '0 12px 35px rgba(0, 0, 0, 0.45)',
                 position: 'relative',
-                transform: p.popular ? 'scale(1.03)' : 'none',
-                borderColor: p.popular ? 'var(--accent)' : 'var(--border2)'
               }}
             >
               {p.popular && (
-                <div className="popular-badge" style={{ animation: 'bounceBadge 2s infinite' }}>
-                  🔥 Most Popular
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '-14px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    background: 'linear-gradient(135deg, #00E5FF, #2979FF)',
+                    color: '#050814',
+                    fontWeight: 800,
+                    fontSize: '0.75rem',
+                    letterSpacing: '0.8px',
+                    textTransform: 'uppercase',
+                    padding: '5px 18px',
+                    borderRadius: '30px',
+                    boxShadow: '0 4px 15px rgba(0, 229, 255, 0.4)',
+                  }}
+                >
+                  ⚡ Most Popular
                 </div>
               )}
-              <div className="pricing-name">{p.name}</div>
-              <div className="pricing-price">
-                ₹{price.toLocaleString('en-IN')}{' '}
-                <span>/month</span>
+
+              <div style={{ marginBottom: '16px' }}>
+                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#f0f4fc', fontFamily: 'var(--ff-d)', letterSpacing: '0.5px' }}>
+                  {p.name}
+                </div>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px', marginTop: '10px' }}>
+                  <span style={{ fontSize: '2.5rem', fontWeight: 900, color: p.popular ? '#00E5FF' : '#f0f4fc', fontFamily: 'var(--ff-d)' }}>
+                    {p.price}
+                  </span>
+                  <span style={{ fontSize: '0.95rem', color: '#98a7c6' }}>{p.period}</span>
+                </div>
+                <p style={{ color: '#98a7c6', fontSize: '0.88rem', marginTop: '10px', lineHeight: 1.5, minHeight: '42px' }}>
+                  {p.desc}
+                </p>
               </div>
-              {cycle === 'quarterly' && (
-                <div style={{ fontSize: '0.8rem', color: '#00D68F', marginTop: '-10px', marginBottom: '15px', fontWeight: 600 }}>
-                  Billed quarterly (Save ₹{((p.monthlyPrice - p.quarterlyMonthly) * 3).toLocaleString('en-IN')})
-                </div>
-              )}
-              <p className="pricing-desc">{p.desc}</p>
-              <div className="pricing-features">
-                {p.features.map((feat, fidx) => (
-                  <div key={fidx} className="pf">
-                    <div className="pf-check">✓</div>
-                    {feat}
+
+              <div style={{ height: '1px', background: 'rgba(255, 255, 255, 0.08)', margin: '14px 0 20px' }}></div>
+
+              <div className="pricing-features" style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '30px' }}>
+                {p.features.map((feat, idx) => (
+                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.88rem', color: '#dbe4f5' }}>
+                    <span style={{ color: '#00E5FF', fontWeight: 800, lineHeight: 1.2 }}>✓</span>
+                    <span>{feat}</span>
+                  </div>
+                ))}
+                {p.notIncluded.map((feat, idx) => (
+                  <div key={`no-${idx}`} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.85rem', color: '#657599' }}>
+                    <span style={{ color: '#4b5563', fontWeight: 800, lineHeight: 1.2 }}>✗</span>
+                    <span style={{ textDecoration: 'line-through' }}>{feat}</span>
                   </div>
                 ))}
               </div>
+
               <button
                 type="button"
-                onClick={() => handleChoose(p.name)}
+                onClick={() => handleChoose(p)}
                 className={`btn ${p.popular ? 'btn-primary' : 'btn-outline'}`}
-                style={{ width: '100%', marginTop: 'auto', cursor: 'pointer' }}
+                style={{
+                  width: '100%',
+                  padding: '13px',
+                  borderRadius: '12px',
+                  fontSize: '0.92rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  justifyContent: 'center',
+                }}
               >
-                {p.name === 'Enterprise' ? "Let's Talk" : 'Get Started'}
+                {p.ctaText}
               </button>
             </div>
-          );
-        })}
+          </TiltCard3D>
+        ))}
+      </div>
+
+      <div style={{ textAlign: 'center', marginTop: '30px', color: '#98a7c6', fontSize: '0.92rem' }}>
+        Need something custom?{' '}
+        <a
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            const contact = document.getElementById('contact');
+            if (contact) contact.scrollIntoView({ behavior: 'smooth' });
+            else navigate('/contact');
+          }}
+          style={{ color: '#00E5FF', fontWeight: 700, textDecoration: 'underline' }}
+        >
+          Tell me what you need
+        </a>{' '}
+        and I will build a package for you.
       </div>
     </div>
   );

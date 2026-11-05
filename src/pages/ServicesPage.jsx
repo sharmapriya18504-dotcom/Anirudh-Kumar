@@ -1,223 +1,263 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import confetti from 'canvas-confetti';
-import Toast from '../components/Toast.jsx';
-
+import TiltCard3D from '../components/TiltCard3D.jsx';
 
 export default function ServicesPage() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [showToast, setShowToast] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setShowToast(true);
-
-    try {
-      confetti({
-        particleCount: 80,
-        spread: 60,
-        origin: { y: 0.6 }
-      });
-    } catch (err) {}
-
-    const btn = e.target.querySelector('button[type="submit"], input[type="submit"], .btn-primary');
-    if (btn) {
-      const originalText = btn.textContent;
-      btn.textContent = '✅ Submitted! 24 hrs mein reply milega.';
-      btn.style.background = '#00D68F';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-        setFormSubmitted(false);
-        setShowToast(false);
-      }, 4500);
-    }
-  };
+  const servicesList = [
+    {
+      id: 'seo',
+      number: '01',
+      title: 'SEO (Search Engine Optimization)',
+      tagline: 'Rank for searches your customers actually make',
+      desc: 'Get your website to rank on Google for the searches your customers actually make. Technical fixes, on-page SEO, content and link building.',
+      icon: 'bi-search',
+      color: '#00E5FF',
+      details: [
+        'Technical SEO (Site speed, Core Web Vitals, Crawlability)',
+        'On-Page Optimization (Title tags, Schema markup, Meta robots)',
+        'Search Intent Content Strategy (Articles that answer customer queries)',
+        'Sustainable, White-Hat Link Building & Digital Authority',
+      ],
+      linkText: 'Learn more about SEO',
+      cityLink: '/seo-expert-lucknow',
+    },
+    {
+      id: 'local-seo',
+      number: '02',
+      title: 'Local SEO & Google Business Profile',
+      tagline: 'Dominate Google Maps & "Near Me" searches',
+      desc: "Show up in Google Maps and 'near me' searches so nearby customers call you first instead of the competitor down the street.",
+      icon: 'bi-geo-alt-fill',
+      color: '#2979FF',
+      details: [
+        'Google Business Profile setup, claim & suspension resolution',
+        'Map 3-Pack rank tracking across target city neighborhoods',
+        'NAP citation consistency on local Indian directories',
+        'Review generation frameworks to build authentic social proof',
+      ],
+      linkText: 'Learn more about Local SEO',
+      cityLink: '/seo-expert-lucknow',
+    },
+    {
+      id: 'ads',
+      number: '03',
+      title: 'Google Ads & Meta Ads',
+      tagline: 'Paid campaigns built around leads and sales, not just clicks',
+      desc: 'Paid advertising campaigns designed to generate measurable revenue. Clear tracking so you know what each rupee returns.',
+      icon: 'bi-bullseye',
+      color: '#7C4DFF',
+      details: [
+        'High-intent Google Search Ads targeting active buyers',
+        'Meta Ads (Facebook & Instagram) hyper-targeted by location & interest',
+        'Conversion tracking setup via GA4 & server-side events',
+        'Negative keyword sculpting to eliminate wasted budget',
+      ],
+      linkText: 'Learn more about Paid Ads',
+      cityLink: '/contact?service=ads',
+    },
+    {
+      id: 'smm',
+      number: '04',
+      title: 'Social Media Marketing',
+      tagline: 'Consistent branding that builds long-term recall and trust',
+      desc: 'Consistent content and community building on Instagram, LinkedIn and more, so people remember and trust your brand.',
+      icon: 'bi-share-fill',
+      color: '#00E5FF',
+      details: [
+        'Visual identity & social post templates',
+        'Educational and promotional content calendar planning',
+        'Engagement and community interaction strategies',
+        'Repurposing blog content into multi-slide carousels & reels',
+      ],
+      linkText: 'Learn more about Social Media',
+      cityLink: '/contact?service=smm',
+    },
+    {
+      id: 'webdev',
+      number: '05',
+      title: 'Website Development',
+      tagline: 'Fast, mobile-friendly websites designed to convert',
+      desc: 'Fast, mobile-friendly websites and landing pages designed to turn visitors into enquiries with SEO built in from day one.',
+      icon: 'bi-laptop-fill',
+      color: '#2979FF',
+      details: [
+        'Clean React / Vite / Modern HTML architecture with 0 bloat',
+        'Sub-second load times and 90+ Mobile Core Web Vitals compliance',
+        'Strategic conversion elements and prominent call-to-actions',
+        'Built-in structured data and self-referencing canonical tags',
+      ],
+      linkText: 'Learn more about Website Development',
+      cityLink: '/contact?service=webdev',
+    },
+    {
+      id: 'growth',
+      number: '06',
+      title: 'Growth Advisory',
+      tagline: 'Direct strategy sessions for marketing clarity',
+      desc: 'Not ready for a full retainer? Book a strategy session. I review your marketing, find the bottlenecks, and give you a clear action plan.',
+      icon: 'bi-compass-fill',
+      color: '#7C4DFF',
+      details: [
+        'Full digital architecture and competitor review',
+        'Identification of wasted ad spend and lost search traffic',
+        'Prioritized 90-day execution roadmap tailored to your budget',
+        'Direct 1-on-1 consultation with no agency intermediaries',
+      ],
+      linkText: 'Learn more about Growth Advisory',
+      cityLink: '/contact?service=advisory',
+    },
+  ];
 
   return (
-    <div className="page-wrapper servicespage">
-    <section id="services">
-            <div className="container">
-                <div className="section-header center text-center reveal visible">
-                    <span className="tag">My Services</span>
-                    <div className="divider"></div>
-                    <h2 className="section-heading">Complete             <span className="gradient-text">Digital Marketing</span>            <br />Services in Lucknow
-          & Kanpur
-        </h2>
-                    <p className="section-sub">From dominating search results to scaling campaigns reliably, experience comprehensive
-          growth with the Best Digital Marketer in Lucknow.</p>
-          </div>
-                <div className="services-grid">
-                    <div className="service-card reveal visible" style={{"transitionDelay":"0.1s"}}>
-                        <div className="service-arrow">→</div>
-                        <div className="service-icon-wrap">🔍</div>
-                        <h3>SEO Services Lucknow</h3>
-                        <p>Rank #1 with the best SEO Expert in Lucknow. From powerful Local SEO to deep technical optimization, I help
-            your business dominate search rankings sustainably.</p>
-                        <div className="service-tags">
-                            <span className="stag">Local SEO</span>
-                            <span className="stag">Technical SEO</span>
-                            <span className="stag">On-Page</span>
-                            <span className="stag">Link Building</span>
-              </div>
-            </div>
-                    <div className="service-card reveal visible" style={{"transitionDelay":"0.15s"}}>
-                        <div className="service-arrow">→</div>
-                        <div className="service-icon-wrap">📱</div>
-                        <h3>Social Media Marketing Lucknow</h3>
-                        <p>I craft viral strategies across Instagram, Facebook, and LinkedIn. Build brand authority and actively
-            engage your highest-value prospects with our proven frameworks.</p>
-                        <div className="service-tags">
-                            <span className="stag">Instagram Growth</span>
-                            <span className="stag">Facebook Ads</span>
-                            <span className="stag">YouTube SEO</span>
-                            <span className="stag">LinkedIn</span>
-              </div>
-            </div>
-                    <div className="service-card reveal visible" style={{"transitionDelay":"0.2s"}}>
-                        <div className="service-arrow">→</div>
-                        <div className="service-icon-wrap">🎯</div>
-                        <h3>Google Ads Lucknow</h3>
-                        <p>Maximize your ROI with top-tier Google Ads Expert Lucknow services. Setup targeted PPC campaigns that
-            acquire real intent-driven leads instantly.</p>
-                        <div className="service-tags">
-                            <span className="stag">Meta Ads</span>
-                            <span className="stag">Google PPC</span>
-                            <span className="stag">Retargeting</span>
-                            <span className="stag">Lead Gen</span>
-              </div>
-            </div>
-                    <div className="service-card reveal visible" style={{"transitionDelay":"0.25s"}}>
-                        <div className="service-arrow">→</div>
-                        <div className="service-icon-wrap">🌐</div>
-                        <h3>Website Development Lucknow</h3>
-                        <p>As the premium Digital Marketing Expert in Kanpur & Lucknow, I specialize in building blazing fast,
-            mobile-first, highly SEO-optimized websites.</p>
-                        <div className="service-tags">
-                            <span className="stag">Custom HTML</span>
-                            <span className="stag">WordPress</span>
-                            <span className="stag">Landing Pages</span>
-                            <span className="stag">E-commerce</span>
-              </div>
-            </div>
-                    <div className="service-card reveal visible" style={{"transitionDelay":"0.3s"}}>
-                        <div className="service-arrow">→</div>
-                        <div className="service-icon-wrap">🚀</div>
-                        <h3>Digital Marketing Kanpur</h3>
-                        <p>Full-funnel digital marketing services explicitly tailored for Kanpur and Lucknow local markets, providing
-            comprehensive omnichannel visibility.</p>
-                        <div className="service-tags">
-                            <span className="stag">Blog Writing</span>
-                            <span className="stag">Video Strategy</span>
-                            <span className="stag">Reel Content</span>
-                            <span className="stag">Copywriting</span>
-              </div>
-            </div>
-                    <div className="service-card reveal visible" style={{"transitionDelay":"0.35s"}}>
-                        <div className="service-arrow">→</div>
-                        <div className="service-icon-wrap">💡</div>
-                        <h3>SEO Consultant Lucknow</h3>
-                        <p>Get in-depth strategic consultation from a premium Freelance SEO Expert Lucknow. Perfect for businesses
-            needing auditing and long-term search blueprints.</p>
-                        <div className="service-tags">
-                            <span className="stag">Strategy</span>
-                            <span className="stag">Consultation</span>
-                            <span className="stag">Planning</span>
-                            <span className="stag">Audits</span>
-              </div>
-            </div>
-          </div>
-                <div className="flex-center mt-6">
-                    <Link className="btn btn-primary" to="/contact">Discuss All Services →</Link>
+    <div className="page-wrapper services-page" style={{ paddingTop: 'var(--nav-h)' }}>
+      {/* Services Hero */}
+      <section style={{ padding: '80px 0 60px', position: 'relative', overflow: 'hidden' }}>
+        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '820px', margin: '0 auto' }}>
+          <span className="tag" style={{ marginBottom: '14px', display: 'inline-block' }}>
+            What I Can Do For Your Business
+          </span>
+          <h1
+            className="section-heading"
+            style={{
+              fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
+              lineHeight: 1.15,
+              marginBottom: '20px',
+              color: '#f0f4fc',
+            }}
+          >
+            Digital Marketing &amp; <span className="gradient-text">SEO Services</span>
+          </h1>
+          <p style={{ fontSize: '1.15rem', color: '#98a7c6', lineHeight: 1.65, marginBottom: '28px' }}>
+            Pick one service or combine them. I will tell you honestly what your business needs first. You work directly with me—no account managers, no interns, no lock-in contract.
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
+            <Link to="/contact" className="btn btn-primary" style={{ padding: '14px 28px' }}>
+              🚀 Request My Free SEO Audit
+            </Link>
+            <a
+              href="https://wa.me/918604625862?text=Hi%20Anirudh!%20I%20would%20like%20to%20discuss%20your%20services."
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-whatsapp"
+              style={{ padding: '14px 24px' }}
+            >
+              💬 Chat on WhatsApp
+            </a>
           </div>
         </div>
       </section>
-    <section id="process" style={{"background":"var(--bg2)"}}>
-            <div className="container">
-                <div className="section-header center text-center reveal visible">
-                    <span className="tag">My Process</span>
-                    <div className="divider"></div>
-                    <h2 className="section-heading">How I             <span className="gradient-text">Deliver Results</span></h2>
-                    <p className="section-sub">A proven 5-step system jo consistently Lucknow & Kanpur ke businesses ke liye results
-          deliver karta hai.</p>
-          </div>
-                <div className="process-steps">
-                    <div className="process-step reveal visible" style={{"transitionDelay":"0.1s"}}>
-                        <div className="process-num">01</div>
-                        <h4>Free Audit & Analysis</h4>
-                        <p>Aapki website, competitors aur current SEO health ka deep analysis. Bilkul free.</p>
-            </div>
-                    <div className="process-step reveal visible" style={{"transitionDelay":"0.2s"}}>
-                        <div className="process-num">02</div>
-                        <h4>Custom Strategy</h4>
-                        <p>Aapke business goals ke hisaab se personalized digital marketing roadmap taiaar karna.</p>
-            </div>
-                    <div className="process-step reveal visible" style={{"transitionDelay":"0.3s"}}>
-                        <div className="process-num">03</div>
-                        <h4>Implementation</h4>
-                        <p>SEO, content, ads — sab execute karna with precision. On-time, always.</p>
-            </div>
-                    <div className="process-step reveal visible" style={{"transitionDelay":"0.4s"}}>
-                        <div className="process-num">04</div>
-                        <h4>Monitor & Optimize</h4>
-                        <p>Data-driven decisions. Jo kaam kare use scale karein, jo nahi kare use fix karein.</p>
-            </div>
-                    <div className="process-step reveal visible" style={{"transitionDelay":"0.5s"}}>
-                        <div className="process-num">05</div>
-                        <h4>Report & Scale</h4>
-                        <p>Weekly transparent reporting. Results ke saath aage badhte rehte hain — scale up karte hain.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    <section id="comparison" style={{"padding":"60px 0"}}>
-            <div className="container">
-                <div className="section-header center text-center reveal visible">
-                    <h2 className="section-heading">Service             <span className="gradient-text">Comparison</span></h2>
-                    <p className="section-sub">Choose the right path for your business growth in Lucknow & Kanpur.</p>
-          </div>
-                <div className="vs-table" style={{"maxWidth":"900px","margin":"40px auto"}}>
-                    <div className="vs-header">
-                        <div>Capability</div>
-                        <div className="col-me">SEO Focus</div>
-                        <div>Ads Focus</div>
-            </div>
-                    <div className="vs-row">            <span className="label">Time to Results</span>            <span className="vs-yes">3-6 Months</span>            <span className="vs-no">Instant (24 hrs)</span></div>
-                    <div className="vs-row">            <span className="label">Long-term ROI</span>            <span className="vs-yes">Extremely High</span>            <span className="vs-no">Stable</span></div>
-                    <div className="vs-row">            <span className="label">Traffic Source</span>            <span className="vs-yes">Organic Search</span>            <span className="vs-no">Paid Placements</span></div>
-                    <div className="vs-row">            <span className="label">Cost Over Time</span>            <span className="vs-yes">Decreases per Lead</span>            <span className="vs-no">Constant per Lead</span></div>
-          </div>
-        </div>
-      </section>
-    <section id="service-faq" style={{"padding":"60px 0","background":"var(--bg3)"}}>
-            <div className="container">
-                <div className="section-header center text-center reveal visible">
-                    <h2 className="section-heading">Services             <span className="gradient-text">FAQ</span></h2>
-          </div>
-                <div className="faq-list" style={{"maxWidth":"800px","margin":"0 auto"}}>
-                    <div className="faq-item reveal visible">
-                        <div className="faq-q">Do you offer one-time SEO?               <div className="faq-icon">+</div>
-              </div>
-                        <div className="faq-a">Yes, I offer technical SEO audits and one-time optimization, but for consistent ranking
-            growth in competitive markets like Lucknow, monthly maintenance is recommended.</div>
-            </div>
-                    <div className="faq-item reveal visible">
-                        <div className="faq-q">Which is better: Meta or Google Ads?               <div className="faq-icon">+</div>
-              </div>
-                        <div className="faq-a">It depends on your business. For visual products or lifestyle services, Meta Ads work
-            great. For intent-driven services (like plumbers, doctors, or lawyers), Google Ads is superior.</div>
-            </div>
+
+      {/* 6 3D Service Cards Grid */}
+      <section style={{ padding: '40px 0 80px' }}>
+        <div className="container">
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gap: '30px',
+            }}
+          >
+            {servicesList.map((s) => (
+              <TiltCard3D key={s.id} maxTilt={9} style={{ height: '100%' }}>
+                <div className="service-3d-card" style={{ height: '100%', justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
+                      <div className="service-3d-icon-wrap" style={{ margin: 0 }}>
+                        <i className={`bi ${s.icon}`}></i>
+                      </div>
+                      <span style={{ fontFamily: 'var(--ff-d)', fontSize: '1.6rem', color: '#657599' }}>
+                        {s.number}
+                      </span>
+                    </div>
+
+                    <h3 style={{ fontSize: '1.3rem', color: '#f0f4fc', marginBottom: '8px' }}>{s.title}</h3>
+                    <div style={{ fontSize: '0.82rem', color: '#00E5FF', fontWeight: 600, marginBottom: '14px' }}>
+                      {s.tagline}
+                    </div>
+                    <p style={{ color: '#98a7c6', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '20px' }}>
+                      {s.desc}
+                    </p>
+
+                    <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px', marginBottom: '20px' }}>
+                      <div style={{ fontSize: '0.78rem', color: '#657599', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 700, marginBottom: '10px' }}>
+                        Key Deliverables
+                      </div>
+                      <ul style={{ paddingLeft: '18px', margin: 0, color: '#dbe4f5', fontSize: '0.86rem', lineHeight: 1.7 }}>
+                        {s.details.map((d, didx) => (
+                          <li key={didx}>{d}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <Link
+                    to={s.cityLink}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: '#00E5FF',
+                      fontWeight: 700,
+                      fontSize: '0.9rem',
+                      textDecoration: 'none',
+                      marginTop: '10px',
+                    }}
+                  >
+                    <span>{s.linkText}</span>
+                    <i className="bi bi-arrow-right"></i>
+                  </Link>
+                </div>
+              </TiltCard3D>
+            ))}
           </div>
         </div>
       </section>
-      <Toast
-        isVisible={showToast}
-        message="24 hours mein aapko callback ya email reply mil jayega."
-        onClose={() => setShowToast(false)}
-      />
+
+      {/* City Hub Cards Linkage */}
+      <section style={{ padding: '60px 0 80px', background: 'rgba(9, 14, 36, 0.6)', borderTop: '1px solid rgba(41, 121, 255, 0.15)' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <span className="tag">Where I Work</span>
+          <h2 className="section-heading" style={{ marginTop: '10px' }}>
+            Available On-Site &amp; <span className="gradient-text">Remotely Across India</span>
+          </h2>
+          <p style={{ color: '#98a7c6', maxWidth: '600px', margin: '0 auto 40px' }}>
+            Choose your city for localized search strategies and in-person meeting details:
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
+            {[
+              { city: 'Lucknow', tag: 'On-site in Gomti Nagar', link: '/seo-expert-lucknow' },
+              { city: 'Kanpur', tag: 'On-site in Civil Lines / Panki', link: '/seo-expert-kanpur' },
+              { city: 'Noida', tag: 'On-site & Hybrid in NCR', link: '/seo-expert-noida' },
+              { city: 'Remote India', tag: 'Pan-India Client Support', link: '/remote-seo-services' },
+            ].map((loc, idx) => (
+              <Link
+                key={idx}
+                to={loc.link}
+                className="glass-panel"
+                style={{
+                  padding: '24px',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  transition: 'all 0.25s ease',
+                }}
+              >
+                <div style={{ fontSize: '1.4rem', color: '#00E5FF', marginBottom: '8px' }}>📍</div>
+                <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#f0f4fc' }}>{loc.city}</div>
+                <div style={{ fontSize: '0.8rem', color: '#98a7c6', marginTop: '4px' }}>{loc.tag}</div>
+                <span style={{ color: '#2979FF', fontSize: '0.82rem', fontWeight: 700, marginTop: '12px' }}>
+                  Explore Local Services →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

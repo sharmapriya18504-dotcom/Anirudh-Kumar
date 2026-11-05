@@ -1,908 +1,1168 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import confetti from 'canvas-confetti';
-import Toast from '../components/Toast.jsx';
-import Typewriter from '../components/Typewriter.jsx';
+import HeroGlobe3D from '../components/HeroGlobe3D.jsx';
+import TiltCard3D from '../components/TiltCard3D.jsx';
 import InteractivePricing from '../components/InteractivePricing.jsx';
 import RoiCalculator from '../components/RoiCalculator.jsx';
 import InteractiveFaq from '../components/InteractiveFaq.jsx';
 import SeoAuditModal from '../components/SeoAuditModal.jsx';
+import Toast from '../components/Toast.jsx';
+import { BLOGS } from '../data/blogs.js';
 
 export default function HomePage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [showToast, setShowToast] = useState(false);
-  const [toastMsg, setToastMsg] = useState('24 hours mein aapko callback ya email reply mil jayega.');
+  const [toastMsg, setToastMsg] = useState('Prompt response within 24 hours guaranteed.');
   const [auditModalOpen, setAuditModalOpen] = useState(false);
-  const [portfolioTab, setPortfolioTab] = useState('all');
+
+  // Honeypot & form state
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    website: '',
+    service: '',
+    message: '',
+    honeypot: '' // spam trap
+  });
 
   const copyToClipboard = (text, label) => {
-    navigator.clipboard.writeText(text);
-    setToastMsg(`📋 ${label} copied to clipboard: ${text}`);
-    setShowToast(true);
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+      setToastMsg(`📋 ${label} copied to clipboard: ${text}`);
+      setShowToast(true);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check honeypot
+    if (formData.honeypot) {
+      return; // silently discard bot submission
+    }
+
     setFormSubmitted(true);
-    setToastMsg('✅ Thank you! 24 hours mein aapko callback ya email reply mil jayega.');
+    setToastMsg('✅ Thank you! I have received your request. I will personally review your site and contact you within 24 hours.');
     setShowToast(true);
 
     try {
       confetti({
-        particleCount: 80,
-        spread: 60,
+        particleCount: 90,
+        spread: 70,
         origin: { y: 0.6 }
       });
     } catch (err) {}
 
-    const btn = e.target.querySelector('button[type="submit"], input[type="submit"], .btn-primary');
+    const btn = e.target.querySelector('button[type="submit"]');
     if (btn) {
       const originalText = btn.textContent;
-      btn.textContent = '✅ Submitted! 24 hrs mein reply milega.';
-      btn.style.background = '#00D68F';
+      btn.textContent = '✅ Message Sent! Expect a reply within 24 hours';
+      btn.style.background = '#00E5FF';
+      btn.style.color = '#050814';
       btn.disabled = true;
       setTimeout(() => {
         btn.textContent = originalText;
         btn.style.background = '';
+        btn.style.color = '';
         btn.disabled = false;
         setFormSubmitted(false);
-        setShowToast(false);
-      }, 4500);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          website: '',
+          service: '',
+          message: '',
+          honeypot: ''
+        });
+      }, 5000);
     }
   };
 
+  // 6 Interactive 3D Service Cards definitions
+  const servicesList = [
+    {
+      id: 'seo',
+      title: 'SEO (Search Engine Optimization)',
+      tagline: 'Technical SEO, On-page SEO, Content SEO & Link Building',
+      desc: 'Build lasting organic authority on Google. I audit your technical foundation, optimize your site architecture, produce high-intent keyword content, and secure genuine backlinks that drive qualified buyers.',
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          <path d="M11 8v6M8 11h6" />
+        </svg>
+      ),
+      linkText: 'Learn more about SEO →',
+      linkUrl: '/services#seo'
+    },
+    {
+      id: 'local-seo',
+      title: 'Local SEO & Google Business Profile',
+      tagline: 'Improve Google Maps visibility and local enquiries',
+      desc: 'Dominate the Google 3-Pack in your city. I optimize your Google Business Profile, structure consistent local NAP citations, generate customer review momentum, and capture customers searching nearby.',
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+      ),
+      linkText: 'Learn more about Local SEO →',
+      linkUrl: '/services#local-seo'
+    },
+    {
+      id: 'ads',
+      title: 'Google Ads & Meta Ads',
+      tagline: 'Paid advertising and lead generation campaigns',
+      desc: 'High-intent PPC search campaigns and laser-targeted social ads on Facebook & Instagram. Strict negative keyword control, conversion-driven ad copy, and relentless bid management to maximize your ROAS.',
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="12" cy="12" r="6" />
+          <circle cx="12" cy="12" r="2" />
+        </svg>
+      ),
+      linkText: 'Learn more about Paid Ads →',
+      linkUrl: '/services#ads'
+    },
+    {
+      id: 'smm',
+      title: 'Social Media Marketing',
+      tagline: 'Social media strategy, content and growth',
+      desc: 'Turn your social channels into active enquiry funnels. Tailored content calendars, carousel designs, reel scripts, and community growth focused on establishing credibility and driving inbound interest.',
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+        </svg>
+      ),
+      linkText: 'Learn more about Social Media →',
+      linkUrl: '/services#smm'
+    },
+    {
+      id: 'web-dev',
+      title: 'Website Development',
+      tagline: 'Professional, responsive and conversion-focused websites',
+      desc: 'Fast, secure, mobile-first websites engineered with clean semantic code, optimized Core Web Vitals, intuitive user navigation, and clear call-to-actions that turn clicks into phone calls and enquiries.',
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+          <line x1="14" y1="4" x2="10" y2="20" />
+        </svg>
+      ),
+      linkText: 'Learn more about Web Development →',
+      linkUrl: '/services#web-dev'
+    },
+    {
+      id: 'growth',
+      title: 'Growth Advisory & Consulting',
+      tagline: 'Digital strategy and business growth guidance',
+      desc: 'Strategic 1-on-1 advisory for founders and marketing teams. I audit your complete digital presence, identify revenue leaks, prioritize high-impact growth levers, and provide actionable roadmaps.',
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      ),
+      linkText: 'Learn more about Growth Advisory →',
+      linkUrl: '/services#growth'
+    }
+  ];
+
   return (
     <div className="page-wrapper homepage">
-    <section id="hero">
-            <div className="container">
-                <div className="hero-grid">
-                    <div className="hero-content">
-                        <div className="hero-eyebrow">
-                            <div className="hero-dot"></div>
-                            <span className="tag">Lucknow & Kanpur ka #1 Digital Marketing Expert</span>
+      {/* =========================================================================
+          HERO SECTION — 3D INTERACTIVE DIGITAL GLOBE & VALUE PROPOSITION
+          ========================================================================= */}
+      <section id="hero" style={{ position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '110px', paddingBottom: '60px' }}>
+        {/* Subtle ambient lighting backdrop */}
+        <div style={{ position: 'absolute', top: '-10%', left: '5%', width: '450px', height: '450px', background: 'radial-gradient(circle, rgba(41,121,255,0.12) 0%, transparent 70%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+        <div style={{ position: 'absolute', top: '20%', right: '5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(124,77,255,0.12) 0%, transparent 70%)', filter: 'blur(90px)', pointerEvents: 'none', zIndex: 0 }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
+            {/* Left Hero Content */}
+            <div className="hero-content">
+              <div className="hero-eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '6px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '30px', marginBottom: '20px' }}>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#00E5FF', display: 'inline-block', boxShadow: '0 0 10px #00E5FF' }}></span>
+                <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#00E5FF', letterSpacing: '0.04em' }}>
+                  Available for New Projects • Pan-India & UP / NCR
+                </span>
               </div>
-                        <h1 className="hero-h1">
-                            <span className="line1">ANIRUDH KUMAR –</span>
-                            <Typewriter />
-                            <span style={{"display":"block","fontFamily":"var(--ff-d)","fontSize":"inherit","lineHeight":"inherit","color":"var(--text)"}}>&
-              DIGITAL MARKETING CONSULTANT IN LUCKNOW</span>
-                            <span className="line3">Helping businesses in Lucknow & Kanpur rank on Google, generate leads and grow online.
-              Let's work together to dominate local search and maximize your revenue.</span>
+
+              <h1 className="hero-h1" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-0.02em', color: '#FFFFFF', marginBottom: '20px' }}>
+                SEO Expert & Digital Marketer for{' '}
+                <span className="gradient-text">Growing Businesses</span>
               </h1>
-                        <div className="hero-btns">
-                            <button type="button" onClick={() => setAuditModalOpen(true)} className="btn btn-primary" style={{"cursor":"pointer"}}>                <i className="bi bi-rocket-takeoff" style={{"marginRight":"8px"}}></i>
-              Claim Free SEO Audit</button>
-                            <a href="#portfolio" className="btn btn-outline">                <i className="bi bi-shield-check" style={{"marginRight":"8px"}}></i>
-              See Verified Results</a>
+
+              <p className="hero-sub" style={{ fontSize: '1.1rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.8)', marginBottom: '28px', maxWidth: '580px' }}>
+                Hi, I'm <strong style={{ color: '#FFFFFF' }}>Anirudh Kumar</strong>. I help businesses get found on Google, Maps and social media, and turn that visibility into real enquiries and sales. I work remotely across India and on-site in Lucknow, Kanpur and Noida.
+              </p>
+
+              {/* Direct Working Promise Note */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '12px', marginBottom: '32px', maxWidth: '540px' }}>
+                <span style={{ fontSize: '1.2rem', color: '#00E5FF' }}>🛡️</span>
+                <span style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.4 }}>
+                  <strong>You work directly with me.</strong> No account managers, no interns, no lock-in contract.
+                </span>
               </div>
-                        <div className="hero-stats">
-                            <div className="stat-item">
-                                <div className="stat-num" data-target="200">0</div>
-                                <div className="stat-label">+ Clients Served</div>
+
+              {/* CTA Buttons */}
+              <div className="hero-btns" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '36px' }}>
+                <button
+                  type="button"
+                  onClick={() => setAuditModalOpen(true)}
+                  className="btn btn-primary"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '14px 26px', fontSize: '0.95rem' }}
+                >
+                  <i className="bi bi-rocket-takeoff" style={{ fontSize: '1.1rem' }}></i>
+                  Get My Free SEO Audit
+                </button>
+                <a
+                  href="https://wa.me/918604625862?text=Hi%20Anirudh%2C%20I%20would%20like%20to%20discuss%20digital%20marketing%20for%20my%20business."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 24px', fontSize: '0.95rem', borderColor: 'rgba(37,211,102,0.4)', color: '#25D366' }}
+                >
+                  <i className="bi bi-whatsapp" style={{ fontSize: '1.1rem' }}></i>
+                  Chat on WhatsApp
+                </a>
+              </div>
+
+              {/* Trust Bar (PDF B3 & B5 Specification: Replace marquee with clean certified credentials) */}
+              <div className="trust-bar" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', alignItems: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
+                  <span style={{ color: '#00E5FF' }}>✓</span> Google Analytics Certified
                 </div>
-                            <div className="stat-item">
-                                <div className="stat-num" data-target="5">0</div>
-                                <div className="stat-label">+ Years Experience</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
+                  <span style={{ color: '#2979FF' }}>✓</span> Google Ads Certified
                 </div>
-                            <div className="stat-item">
-                                <div className="stat-num" data-target="87">0</div>
-                                <div className="stat-label">★ 5-Star Reviews</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
+                  <span style={{ color: '#7C4DFF' }}>✓</span> Meta Ads Certified
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
+                  <span style={{ color: '#00D68F' }}>✓</span> 100% White-Hat SEO
                 </div>
               </div>
             </div>
-                    <div className="hero-visual">
-                        <div className="hero-3d-wrap">
-                            <div className="orbit-ring">
-                                <div className="orbit-dot"></div>
-                </div>
-                            <div className="orbit-ring">
-                                <div className="orbit-dot" style={{"background":"var(--accent2)"}}></div>
-                </div>
-                            <img src="/Untitled design (12).png" alt="Anirudh Kumar" className="hero-persona-img" />
-              </div>
-                        <div className="hero-card-float card1">
-                            <div className="float-card-icon">                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                                    <polyline points="17 6 23 6 23 12" />
-                  </svg></div>
-                            <div className="float-card-label">Organic Traffic</div>
-                            <div className="float-card-value">+340%</div>
-              </div>
-                        <div className="hero-card-float card2">
-                            <div className="float-card-icon">                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="12" cy="12" r="10" />
-                                    <circle cx="12" cy="12" r="6" />
-                                    <circle cx="12" cy="12" r="2" />
-                  </svg></div>
-                            <div className="float-card-label">ROI on Meta Ads</div>
-                            <div className="float-card-value">7.2x</div>
-              </div>
-                        <div className="hero-card-float card3">
-                            <div className="float-card-icon">                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg></div>
-                            <div className="float-card-label">Google Rating</div>
-                            <div className="float-card-value">4.9/5</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <div className="marquee-section">
-            <div className="marquee-track">
-                <div className="marquee-item">          <i className="bi bi-search"></i> SEO Expert Lucknow</div>
-                <div className="marquee-item">          <i className="bi bi-phone"></i> Social Media Marketing</div>
-                <div className="marquee-item">          <i className="bi bi-bullseye"></i> Meta Ads Specialist</div>
-                <div className="marquee-item">          <i className="bi bi-globe"></i> Website Development</div>
-                <div className="marquee-item">          <i className="bi bi-graph-up"></i> Google Ads Expert</div>
-                <div className="marquee-item">          <i className="bi bi-pencil-square"></i> Content Marketing</div>
-                <div className="marquee-item">          <i className="bi bi-geo-alt"></i> Local SEO Lucknow</div>
-                <div className="marquee-item">          <i className="bi bi-rocket-takeoff"></i> Digital Marketing Kanpur</div>
-                <div className="marquee-item">          <i className="bi bi-lightbulb"></i> Personal Brand Expert</div>
-                <div className="marquee-item">          <i className="bi bi-bar-chart"></i> Traffic Growth Specialist</div>
-                {/* duplicate for seamless loop */}
-                <div className="marquee-item">          <i className="bi bi-search"></i> SEO Expert Lucknow</div>
-                <div className="marquee-item">          <i className="bi bi-phone"></i> Social Media Marketing</div>
-                <div className="marquee-item">          <i className="bi bi-bullseye"></i> Meta Ads Specialist</div>
-                <div className="marquee-item">          <i className="bi bi-globe"></i> Website Development</div>
-                <div className="marquee-item">          <i className="bi bi-graph-up"></i> Google Ads Expert</div>
-                <div className="marquee-item">          <i className="bi bi-pencil-square"></i> Content Marketing</div>
-                <div className="marquee-item">          <i className="bi bi-geo-alt"></i> Local SEO Lucknow</div>
-                <div className="marquee-item">          <i className="bi bi-rocket-takeoff"></i> Digital Marketing Kanpur</div>
-                <div className="marquee-item">          <i className="bi bi-lightbulb"></i> Personal Brand Expert</div>
-                <div className="marquee-item">          <i className="bi bi-bar-chart"></i> Traffic Growth Specialist</div>
-        </div>
-      </div>
-    <section id="services">
-            <div className="container">
-                <div className="section-header text-center reveal">
-                    <span className="tag">How We Grow Brands</span>
-                    <h2 className="section-heading mt-4">Professional             <span className="gradient-text">Digital Solutions</span></h2>
-                    <p className="section-sub mx-auto">Proven strategies to scale your business in the Lucknow & Kanpur market.</p>
-          </div>
-                <div className="services-grid">
-                    {/* SEO */}
-                    <Link className="service-card reveal" to="/seo-lucknow">
-                        <div className="service-img-wrap">
-                            <img src="/service-seo.png" alt="SEO Services" className="service-card-img" />
-              </div>
-                        <h3>SEO Services Lucknow</h3>
-                        <p>Dominating Google rankings with high-intent keywords and local authority building.</p>
-                        <div className="mt-4" style={{"color":"var(--accent)","fontWeight":"700"}}>Explore SEO →</div>
-            </Link>
-                    {/* SMM */}
-                    <Link className="service-card reveal" to="/smm-lucknow">
-                        <div className="service-img-wrap">
-                            <img src="/service-smm.png" alt="SMM Services" className="service-card-img" />
-              </div>
-                        <h3>Social Media Marketing</h3>
-                        <p>Viral content and community management that turns followers into loyal customers.</p>
-                        <div className="mt-4" style={{"color":"var(--accent)","fontWeight":"700"}}>Explore SMM →</div>
-            </Link>
-                    {/* ADS */}
-                    <Link className="service-card reveal" to="/ads-lucknow">
-                        <div className="service-img-wrap">
-                            <img src="/service-ads.png" alt="Ads Services" className="service-card-img" />
-              </div>
-                        <h3>Google & Meta Ads</h3>
-                        <p>High-ROI performance marketing that delivers instant leads and scalable sales.</p>
-                        <div className="mt-4" style={{"color":"var(--accent)","fontWeight":"700"}}>Explore Ads →</div>
-            </Link>
-                    {/* WEB */}
-                    <Link className="service-card reveal" to="/web-dev-lucknow">
-                        <div className="service-img-wrap">
-                            <img src="/service-web.png" alt="Web Dev Services" className="service-card-img" />
-              </div>
-                        <h3>Website Development</h3>
-                        <p>Blazing fast, SEO-ready websites designed for high conversion and speed.</p>
-                        <div className="mt-4" style={{"color":"var(--accent)","fontWeight":"700"}}>Explore Web →</div>
-            </Link>
-                    {/* KANPUR */}
-                    <Link className="service-card reveal" to="/marketing-kanpur">
-                        <div className="service-img-wrap">
-                            <img src="/service-kanpur.png" alt="Marketing Kanpur" className="service-card-img" />
-              </div>
-                        <h3>Marketing Kanpur</h3>
-                        <p>Specialized digital growth for the industrial and service hub of Kanpur city.</p>
-                        <div className="mt-4" style={{"color":"var(--accent)","fontWeight":"700"}}>Explore Kanpur →</div>
-            </Link>
-                    {/* CONSULTANT */}
-                    <Link className="service-card reveal" to="/seo-consultant">
-                        <div className="service-img-wrap">
-                            <img src="/service-consulting.png" alt="SEO Consultant" className="service-card-img" />
-              </div>
-                        <h3>SEO Consulting</h3>
-                        <p>Strategic high-level audits and training for established brands and teams.</p>
-                        <div className="mt-4" style={{"color":"var(--accent)","fontWeight":"700"}}>Explore Consulting →</div>
-            </Link>
-          </div>
-        </div>
-      </section>
-    <section id="about">
-            <div className="container">
-                <div className="about-grid">
-                    <div className="about-img-wrap reveal-left">
-                        <div className="about-photo-frame">
-                            <div className="about-photo-bg">
-                                <img src="/Untitled design (12).png" alt="Anirudh Kumar Portfolio" className="about-persona-img" />
-                                <div className="about-photo-badge">📍 Lucknow, Uttar Pradesh</div>
-                </div>
-              </div>
-                        <div className="about-badge-float">
-                            <div className="big">5+</div>
-                            <div className="small">Years of Experience                <br />in Digital Marketing</div>
-              </div>
-            </div>
-                    <div className="about-content reveal-right">
-                        <span className="tag">About Me</span>
-                        <div className="divider"></div>
-                        <h2 className="section-heading">Anirudh Kumar —               <span className="gradient-text">Top Freelance SEO Expert</span>
-              </h2>
-                        <p>Hi, I am Anirudh Kumar, widely regarded as the Best Digital Marketer in Lucknow. With an intensive 5+ years
-            of experience actively accelerating business growth, my goal is to maximize your digital performance.</p>
-                        <p>As a highly verified SEO expert, Google Ads expert, and Social media specialist, I have successfully helped
-            200+ businesses secure Page 1 dominance. I exclusively focus on delivering exponential ROI with a fully
-            transparent, direct-expert approach—no middlemen.</p>
-                        <div className="cert-grid">
-                            <div className="cert-item">                <span className="cert-icon">🏆</span>                <span className="cert-text">Google Analytics
-                Certified</span></div>
-                            <div className="cert-item">                <span className="cert-icon">🎯</span>                <span className="cert-text">Meta Ads Certified</span>
-                </div>
-                            <div className="cert-item">                <span className="cert-icon">📊</span>                <span className="cert-text">Google Ads Certified</span>
-                </div>
-              </div>
-                        <div className="skill-bars">
-                            <div className="skill-row">
-                                <div className="skill-label">                  <span>SEO & Organic Growth</span>                  <span>98%</span></div>
-                                <div className="skill-bar-track">
-                                    <div className="skill-bar-fill animate" style={{"transform":"scaleX(0.98)"}}></div>
-                  </div>
-                </div>
-                            <div className="skill-row">
-                                <div className="skill-label">                  <span>Google & Meta Ads (ROI focus)</span>                  <span>95%</span></div>
-                                <div className="skill-bar-track">
-                                    <div className="skill-bar-fill animate" style={{"transform":"scaleX(0.95)"}}></div>
-                  </div>
-                </div>
-                            <div className="skill-row">
-                                <div className="skill-label">                  <span>Social Media Strategy</span>                  <span>92%</span></div>
-                                <div className="skill-bar-track">
-                                    <div className="skill-bar-fill animate" style={{"transform":"scaleX(0.92)"}}></div>
-                  </div>
-                </div>
-              </div>
-                        <div className="mt-6">
-                            <Link className="btn btn-outline" to="/about">Read My Full Story →</Link>
-              </div>
+
+            {/* Right Hero: Real Interactive 3D Digital Globe */}
+            <div className="hero-visual" style={{ position: 'relative', width: '100%', minHeight: '440px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <HeroGlobe3D />
             </div>
           </div>
         </div>
       </section>
-    <section id="why" className="page-section" style={{"background":"var(--bg2)"}}>
-            <div className="container">
-                <div className="service-contact-grid">
-                    <div className="reveal-left">
-                        <span className="tag">The Anirudh Advantage</span>
-                        <h2 className="section-heading mt-4">Why Businesses               <span className="gradient-text">Trust Us?</span></h2>
-                        <p className="mb-6">We don't just provide services; we build growth partnerships. Our focus is 100% on your Return
-            on Investment (ROI).</p>
-                        <ul style={{"color":"var(--text2)","lineHeight":"2.2","marginBottom":"30px","listStyle":"none","paddingLeft":"0"}}>
-                            <li>                <i className="bi bi-check-circle-fill" style={{"color":"var(--accent)","marginRight":"10px"}}></i> Transparent
-              Reporting & Daily Updates</li>
-                            <li>                <i className="bi bi-check-circle-fill" style={{"color":"var(--accent)","marginRight":"10px"}}></i> Deep Local
-              Market Expertise (UP)</li>
-                            <li>                <i className="bi bi-check-circle-fill" style={{"color":"var(--accent)","marginRight":"10px"}}></i> 100% White-Hat
-              Ethical Strategies</li>
-                            <li>                <i className="bi bi-check-circle-fill" style={{"color":"var(--accent)","marginRight":"10px"}}></i> Custom Built
-              Strategy for Every Niche</li>
-              </ul>
-                        <Link className="btn btn-outline" to="/why-choose-us">Learn More About Us</Link>
-            </div>
-                    <div className="reveal-right">
-                        <div style={{"background":"var(--card)","padding":"40px","borderRadius":"30px","border":"1px solid var(--border2)","textAlign":"center"}}>
-                            <div style={{"fontSize":"4rem","marginBottom":"20px","color":"var(--accent)"}}>                <i className="bi bi-building"></i></div>
-                            <h3 style={{"fontFamily":"var(--ff-d)","fontSize":"3rem"}}>200+</h3>
-                            <p style={{"color":"var(--text2)"}}>Businesses Scaled in Lucknow & Kanpur</p>
-                            <hr style={{"margin":"20px 0","opacity":"0.1"}} />
-                            <div style={{"fontSize":"1.5rem","color":"var(--accent)"}}>⭐⭐⭐⭐⭐</div>
-                            <p style={{"fontSize":"0.85rem","marginTop":"5px"}}>4.9/5 Average Client Rating</p>
-              </div>
-            </div>
+
+      {/* =========================================================================
+          SECTION 6: SIX INTERACTIVE 3D SERVICE CARDS
+          ========================================================================= */}
+      <section id="services" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+        <div className="container">
+          <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+              What I Do
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
+              Specialized <span className="gradient-text">Digital Growth Solutions</span>
+            </h2>
+            <p className="section-sub" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>
+              Comprehensive digital marketing services designed for measurable search rankings, qualified inbound enquiries, and transparent business ROI.
+            </p>
           </div>
-        </div>
-      </section>
-    <section id="results" className="page-section">
-            <div className="container">
-                <div className="section-header text-center reveal">
-                    <span className="tag">Proof of Growth</span>
-                    <h2 className="section-heading mt-4">Featured             <span className="gradient-text">Case Studies</span></h2>
-                    <p className="section-sub mx-auto">Actual results from real businesses in Lucknow and Kanpur.</p>
-          </div>
-                <div className="case-grid">
-                    {/* CASE 1 */}
-                    <article className="case-card reveal">
-                        <div className="case-img">              <i className="bi bi-graph-up-arrow"></i></div>
-                        <div className="case-content">
-                            <div className="case-meta">                <span>SEO</span>                 <span>•</span>                 <span>4 Months</span></div>
-                            <h3>Ranking a Luxury Real Estate Brand in Gomti Nagar</h3>
-                            <div className="case-results-grid">
-                                <div>
-                                    <div className="res-val">+320%</div>
-                                    <div className="res-label">Traffic</div>
-                  </div>
-                                <div>
-                                    <div className="res-val">150+</div>
-                                    <div className="res-label">Leads</div>
-                  </div>
-                </div>
-                            <Link className="read-more-link mt-4" to="/case-studies" style={{"display":"inline-block"}}>Full Case Study →</Link>
-              </div>
-            </article>
-                    {/* CASE 2 */}
-                    <article className="case-card reveal">
-                        <div className="case-img">              <i className="bi bi-facebook"></i></div>
-                        <div className="case-content">
-                            <div className="case-meta">                <span>Meta Ads</span>                 <span>•</span>                 <span>6 Months</span></div>
-                            <h3>Scaling an E-commerce Brand from Kanpur</h3>
-                            <div className="case-results-grid">
-                                <div>
-                                    <div className="res-val">4.5x</div>
-                                    <div className="res-label">ROAS</div>
-                  </div>
-                                <div>
-                                    <div className="res-val">-40%</div>
-                                    <div className="res-label">CPA</div>
-                  </div>
-                </div>
-                            <Link className="read-more-link mt-4" to="/case-studies" style={{"display":"inline-block"}}>Full Case Study →</Link>
-              </div>
-            </article>
-          </div>
-                <div className="text-center mt-8">
-                    <Link className="btn btn-outline" to="/case-studies">View All Success Stories</Link>
-          </div>
-        </div>
-      </section>
-    <section id="why">
-            <div className="container">
-                <div className="why-grid">
-                    <div className="reveal-left">
-                        <span className="tag">Why Choose Me</span>
-                        <div className="divider"></div>
-                        <h2 className="section-heading">Better Than Agencies —               <span className="gradient-text">Direct Expert Support</span>
-              </h2>
-                        <p className="section-sub" style={{"marginBottom":"0"}}>Hire the Best Digital Marketer in Lucknow and receive immediate
-            expert support. I personally mandate your success.</p>
-                        <div className="why-points">
-                            <div className="why-point">
-                                <div className="why-point-icon">🤝</div>
-                                <div>
-                                    <div className="why-point-title">Direct Expert Support</div>
-                                    <div className="why-point-desc">No agency delays. No assigned interns. You receive active consultation
-                  directly from a leading Digital Marketing Expert Kanpur & Lucknow.</div>
-                  </div>
-                </div>
-                            <div className="why-point">
-                                <div className="why-point-icon">📊</div>
-                                <div>
-                                    <div className="why-point-title">No Agency Middleman</div>
-                                    <div className="why-point-desc">Avoid high markups. I deliver fast execution, instant transparency, and
-                  dedicated strategy uniquely aligned to your vertical.</div>
-                  </div>
-                </div>
-                            <div className="why-point">
-                                <div className="why-point-icon">💰</div>
-                                <div>
-                                    <div className="why-point-title">Transparent Pricing</div>
-                                    <div className="why-point-desc">Crystal clear quotes on our top SEO services. Complete visibility into what
-                  you pay for standard SEO, Google Ads, and Meta marketing.</div>
-                  </div>
-                </div>
-                            <div className="why-point">
-                                <div className="why-point-icon">📍</div>
-                                <div>
-                                    <div className="why-point-title">Local Market Understanding</div>
-                                    <div className="why-point-desc">Extensive knowledge targeting both Lucknow and Kanpur. Dominate nearby local
-                  searches specifically optimized for your physical audience.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-                    <div className="reveal-right">
-                        <div className="vs-table">
-                            <div className="vs-header">
-                                <div>Feature</div>
-                                <div className="col-me">✅ Anirudh Kumar</div>
-                                <div>❌ Typical Agency</div>
-                </div>
-                            <div className="vs-row">                <span className="label">Personal Expert Attention</span>                <span className="vs-yes">✅
-                Always</span>                <span className="vs-no">❌ Intern assigned</span></div>
-                            <div className="vs-row">                <span className="label">Transparent Pricing</span>                <span className="vs-yes">✅ Clear
-                packages</span>                <span className="vs-no">❌ Hidden charges</span></div>
-                            <div className="vs-row">                <span className="label">Direct Communication</span>                <span className="vs-yes">✅ WhatsApp
-                24/7</span>                <span className="vs-no">❌ Emails only</span></div>
-                            <div className="vs-row">                <span className="label">Weekly Reports</span>                <span className="vs-yes">✅ Detailed PDF</span>                <span className="vs-no">❌ Monthly (maybe)</span></div>
-                            <div className="vs-row">                <span className="label">Local SEO Expertise</span>                <span className="vs-yes">✅
-                Lucknow/Kanpur</span>                <span className="vs-no">❌ Generic strategies</span></div>
-                            <div className="vs-row">                <span className="label">Free SEO Audit</span>                <span className="vs-yes">✅ Hamesha free</span>                <span className="vs-no">❌ ₹2000-5000</span></div>
-                            <div className="vs-row">                <span className="label">No Lock-in Contract</span>                <span className="vs-yes">✅
-                Month-to-month</span>                <span className="vs-no">❌ 6-12 month lock</span></div>
-                            <div className="vs-row">                <span className="label">Website Speed (PageSpeed)</span>                <span className="vs-yes">✅ 95+
-                Score</span>                <span className="vs-no">❌ 40-60 score</span></div>
-              </div>
-                        <div style={{"marginTop":"16px","padding":"16px 20px","background":"rgba(255,107,0,0.08)","border":"1px solid rgba(255,107,0,0.2)","borderRadius":"var(--radius-sm)","fontSize":"0.85rem","color":"var(--text2)"}}>
-            💡               <strong style={{"color":"var(--text)"}}>Pro Tip:</strong> Digital Jugglers jaisi agencies se zyada expensive
-            hain aur results deliver karne mein slow. Ek dedicated expert se seedha kaam karein — better results, faster
-            turnaround.
-          </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <section id="process">
-            <div className="container">
-                <div className="section-header center text-center reveal">
-                    <span className="tag">My Process</span>
-                    <div className="divider"></div>
-                    <h2 className="section-heading">How I             <span className="gradient-text">Deliver Results</span></h2>
-                    <p className="section-sub">A proven 5-step system jo consistently Lucknow & Kanpur ke businesses ke liye results
-          deliver karta hai.</p>
-          </div>
-                <div className="process-steps">
-                    <div className="process-step reveal" style={{"transitionDelay":"0.1s"}}>
-                        <div className="process-num">01</div>
-                        <h4>Free Audit & Analysis</h4>
-                        <p>Aapki website, competitors aur current SEO health ka deep analysis. Bilkul free.</p>
-            </div>
-                    <div className="process-step reveal" style={{"transitionDelay":"0.2s"}}>
-                        <div className="process-num">02</div>
-                        <h4>Custom Strategy</h4>
-                        <p>Aapke business goals ke hisaab se personalized digital marketing roadmap taiaar karna.</p>
-            </div>
-                    <div className="process-step reveal" style={{"transitionDelay":"0.3s"}}>
-                        <div className="process-num">03</div>
-                        <h4>Implementation</h4>
-                        <p>SEO, content, ads — sab execute karna with precision. On-time, always.</p>
-            </div>
-                    <div className="process-step reveal" style={{"transitionDelay":"0.4s"}}>
-                        <div className="process-num">04</div>
-                        <h4>Monitor & Optimize</h4>
-                        <p>Data-driven decisions. Jo kaam kare use scale karein, jo nahi kare use fix karein.</p>
-            </div>
-                    <div className="process-step reveal" style={{"transitionDelay":"0.5s"}}>
-                        <div className="process-num">05</div>
-                        <h4>Report & Scale</h4>
-                        <p>Weekly transparent reporting. Results ke saath aage badhte rehte hain — scale up karte hain.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    <section id="portfolio">
-            <div className="container">
-                <div className="section-header center text-center reveal">
-                    <span className="tag">Believable Results</span>
-                    <div className="divider"></div>
-                    <h2 className="section-heading">Real Growth,             <span className="gradient-text">Real Clients</span></h2>
-                    <p className="section-sub">Numbers speak louder than words. See how the premier Freelance SEO Expert Lucknow
-          consistently secures remarkable Google rankings.</p>
-                    {/* Interactive Filter Pills */}
-                    <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }}>
-                      {[
-                        { id: 'all', label: 'All Case Studies (3)' },
-                        { id: 'healthcare', label: '🏥 Healthcare' },
-                        { id: 'ecommerce', label: '🛍️ E-Commerce' },
-                        { id: 'education', label: '🎓 Education' }
-                      ].map(tab => (
-                        <button
-                          key={tab.id}
-                          type="button"
-                          onClick={() => setPortfolioTab(tab.id)}
-                          style={{
-                            background: portfolioTab === tab.id ? 'var(--accent)' : 'var(--bg2)',
-                            color: portfolioTab === tab.id ? '#fff' : 'var(--text2)',
-                            border: portfolioTab === tab.id ? '1px solid var(--accent)' : '1px solid var(--border)',
-                            borderRadius: '30px',
-                            padding: '6px 16px',
-                            fontSize: '0.85rem',
-                            fontWeight: 600,
-                            cursor: 'pointer',
-                            transition: 'all 0.2s ease'
-                          }}
-                        >
-                          {tab.label}
-                        </button>
-                      ))}
+
+          <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '28px' }}>
+            {servicesList.map((srv) => (
+              <TiltCard3D key={srv.id} maxTilt={9} scale={1.02}>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    height: '100%',
+                    padding: '32px 28px',
+                    background: 'linear-gradient(145deg, rgba(14,21,56,0.7) 0%, rgba(8,13,34,0.85) 100%)',
+                    borderRadius: '20px',
+                    border: '1px solid rgba(41,121,255,0.2)',
+                    boxShadow: '0 12px 36px rgba(0,0,0,0.35)',
+                    transition: 'border-color 0.3s ease'
+                  }}
+                >
+                  <div>
+                    {/* 3D Icon Badge */}
+                    <div
+                      style={{
+                        width: '60px',
+                        height: '60px',
+                        borderRadius: '16px',
+                        background: 'linear-gradient(135deg, rgba(41,121,255,0.2) 0%, rgba(124,77,255,0.2) 100%)',
+                        border: '1px solid rgba(41,121,255,0.4)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#00E5FF',
+                        marginBottom: '20px',
+                        boxShadow: '0 8px 20px rgba(41,121,255,0.15)'
+                      }}
+                    >
+                      {srv.icon}
                     </div>
+
+                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '6px' }}>
+                      {srv.title}
+                    </h3>
+
+                    <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#00E5FF', marginBottom: '14px' }}>
+                      {srv.tagline}
+                    </div>
+
+                    <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)', marginBottom: '24px' }}>
+                      {srv.desc}
+                    </p>
+                  </div>
+
+                  <Link
+                    to={srv.linkUrl}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      fontSize: '0.9rem',
+                      fontWeight: 700,
+                      color: '#2979FF',
+                      textDecoration: 'none',
+                      transition: 'gap 0.2s ease, color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = '#00E5FF'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = '#2979FF'; }}
+                  >
+                    {srv.linkText}
+                  </Link>
+                </div>
+              </TiltCard3D>
+            ))}
           </div>
-                <div className="portfolio-grid">
-                    {(portfolioTab === 'all' || portfolioTab === 'healthcare') && (
-                    <div className="portfolio-card reveal" style={{"transitionDelay":"0.1s"}}>
-                        <div className="portfolio-img">
-                            <span style={{"position":"relative","zIndex":"1","color":"var(--accent)","fontSize":"2rem"}}>                <i className="bi bi-hospital"></i></span>
-                            <div className="graph-visual">
-                                <div className="graph-bar" style={{"height":"30%"}}></div>
-                                <div className="graph-bar" style={{"height":"45%"}}></div>
-                                <div className="graph-bar" style={{"height":"40%"}}></div>
-                                <div className="graph-bar" style={{"height":"60%"}}></div>
-                                <div className="graph-bar" style={{"height":"55%"}}></div>
-                                <div className="graph-bar" style={{"height":"75%"}}></div>
-                                <div className="graph-bar" style={{"height":"90%"}}></div>
-                                <div className="graph-bar" style={{"height":"100%"}}></div>
-                </div>
-              </div>
-                        <div className="portfolio-body">
-                            <div className="portfolio-tag">Healthcare | Lucknow</div>
-                            <h3>Multi-Specialty Clinic — Gomti Nagar, Lucknow</h3>
-                            <p>Our localized SEO operations significantly boosted organic Google traffic, increasing qualified patient
-              appointments by 3x.</p>
-                            <div className="portfolio-results">
-                                <span className="result-chip">300% Traffic Growth</span>
-                                <span className="result-chip">Page 1 Rankings</span>
-                                <span className="result-chip">3x Appointments</span>
-                </div>
-              </div>
-            </div>
-                    )}
-                    {(portfolioTab === 'all' || portfolioTab === 'ecommerce') && (
-                    <div className="portfolio-card reveal" style={{"transitionDelay":"0.2s"}}>
-                        <div className="portfolio-img">
-                            <span style={{"position":"relative","zIndex":"1","color":"var(--accent)","fontSize":"2rem"}}>                <i className="bi bi-shop"></i></span>
-                            <div className="graph-visual">
-                                <div className="graph-bar" style={{"height":"20%"}}></div>
-                                <div className="graph-bar" style={{"height":"35%"}}></div>
-                                <div className="graph-bar" style={{"height":"50%"}}></div>
-                                <div className="graph-bar" style={{"height":"45%"}}></div>
-                                <div className="graph-bar" style={{"height":"65%"}}></div>
-                                <div className="graph-bar" style={{"height":"80%"}}></div>
-                                <div className="graph-bar" style={{"height":"95%"}}></div>
-                                <div className="graph-bar" style={{"height":"100%"}}></div>
-                </div>
-              </div>
-                        <div className="portfolio-body">
-                            <div className="portfolio-tag">E-commerce | Kanpur</div>
-                            <h3>Fashion Retail Brand — Kanpur City</h3>
-                            <p>Our Meta Ads and hyper-targeted remarketing generated a 5x ROI, scaling their e-commerce sales rapidly
-              across local areas.</p>
-                            <div className="portfolio-results">
-                                <span className="result-chip">5x Sales Growth</span>
-                                <span className="result-chip">7.2x ROAS</span>
-                                <span className="result-chip">₹15L Revenue/Month</span>
-                </div>
-              </div>
-            </div>
-                    )}
-                    {(portfolioTab === 'all' || portfolioTab === 'education') && (
-                    <div className="portfolio-card reveal" style={{"transitionDelay":"0.3s"}}>
-                        <div className="portfolio-img">
-                            <span style={{"position":"relative","zIndex":"1","color":"var(--accent)","fontSize":"2rem"}}>                <i className="bi bi-mortarboard"></i></span>
-                            <div className="graph-visual">
-                                <div className="graph-bar" style={{"height":"25%"}}></div>
-                                <div className="graph-bar" style={{"height":"30%"}}></div>
-                                <div className="graph-bar" style={{"height":"50%"}}></div>
-                                <div className="graph-bar" style={{"height":"55%"}}></div>
-                                <div className="graph-bar" style={{"height":"70%"}}></div>
-                                <div className="graph-bar" style={{"height":"85%"}}></div>
-                                <div className="graph-bar" style={{"height":"90%"}}></div>
-                                <div className="graph-bar" style={{"height":"100%"}}></div>
-                </div>
-              </div>
-                        <div className="portfolio-body">
-                            <div className="portfolio-tag">Education | Lucknow</div>
-                            <h3>Coaching Institute — Hazratganj, Lucknow</h3>
-                            <p>Our powerful Local SEO and optimized Google Ads drastically skyrocketed admissions by securing the top
-              spot for highly competitive keywords.</p>
-                            <div className="portfolio-results">
-                                <span className="result-chip">200+ Clients Served</span>
-                                <span className="result-chip">#1 Google Rank</span>
-                                <span className="result-chip">Massive ROI</span>
-                </div>
-              </div>
-            </div>
-                    )}
-          </div>
-                <div className="flex-center mt-6">
-                    <a href="#contact" className="btn btn-outline">📋 Start Your Growth Story Today — Let's Talk →</a>
+
+          <div style={{ textAlign: 'center', marginTop: '48px' }}>
+            <Link
+              to="/services"
+              className="btn btn-outline"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 28px', fontSize: '0.95rem' }}
+            >
+              Explore All Service Deliverables & Inclusions →
+            </Link>
           </div>
         </div>
       </section>
-    <section id="testimonials">
-            <div className="container">
-                <div className="section-header center text-center reveal">
-                    <span className="tag">Client Reviews</span>
-                    <div className="divider"></div>
-                    <h2 className="section-heading">Verified Client             <span className="gradient-text">Testimonials</span></h2>
-                    <p className="section-sub">Real clients, real reviews — Lucknow aur Kanpur ke successful businesses jo apni growth
-          ka श्रेय Anirudh Kumar ko dete hain.</p>
-          </div>
-                <div className="testimonials-grid">
-                    <div className="testi-card reveal" style={{"transitionDelay":"0.1s"}}>
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testi-text">"Anirudh ne hamare clinic ki Google ranking completely transform kar di. Pehle page 4
-            par the, ab page 1 par aate hain. Appointments 3 guna ho gayi. Bilkul genuine aur dedicated person hai."</p>
-                        <div className="testi-author">
-                            <div className="testi-avatar">DR</div>
-                            <div>
-                                <div className="testi-name">Dr. Rahul Mishra</div>
-                                <div className="testi-role">Multi-Specialty Clinic Owner</div>
-                                <div className="testi-city">📍 Gomti Nagar, Lucknow</div>
+
+      {/* =========================================================================
+          SECTION 7: ABOUT ME
+          ========================================================================= */}
+      <section id="about" className="page-section" style={{ position: 'relative', background: '#050814', padding: '90px 0' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
+            {/* Visual Persona Card */}
+            <div style={{ position: 'relative' }}>
+              <TiltCard3D maxTilt={7} scale={1.01}>
+                <div
+                  style={{
+                    position: 'relative',
+                    background: 'linear-gradient(145deg, rgba(14,21,56,0.6) 0%, rgba(8,13,34,0.9) 100%)',
+                    borderRadius: '24px',
+                    border: '1px solid rgba(41,121,255,0.25)',
+                    padding: '24px',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+                    textAlign: 'center',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <img
+                    src="/Untitled design (12).png"
+                    alt="Anirudh Kumar - SEO Expert & Digital Marketer"
+                    style={{
+                      width: '100%',
+                      maxHeight: '440px',
+                      objectFit: 'cover',
+                      borderRadius: '16px',
+                      filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.3))'
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '36px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      background: 'rgba(5,8,20,0.85)',
+                      backdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(0,229,255,0.3)',
+                      borderRadius: '30px',
+                      padding: '8px 20px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      whiteSpace: 'nowrap'
+                    }}
+                  >
+                    <span style={{ color: '#00E5FF' }}>📍</span>
+                    <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#fff' }}>
+                      Lucknow, UP • On-Site & Remote Pan-India
+                    </span>
+                  </div>
+                </div>
+              </TiltCard3D>
+            </div>
+
+            {/* About Copy matching PDF A4 */}
+            <div>
+              <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '14px' }}>
+                About Me
+              </span>
+              <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.2vw, 2.6rem)', fontWeight: 800, color: '#fff', marginBottom: '20px', lineHeight: 1.25 }}>
+                Independent SEO Expert & <span className="gradient-text">Growth Partner</span>
+              </h2>
+
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.85)', marginBottom: '16px' }}>
+                Hi, I'm <strong style={{ color: '#fff' }}>Anirudh Kumar</strong>. I help businesses get found on Google, Maps and social media, and turn that visibility into real enquiries and sales.
+              </p>
+
+              <p style={{ fontSize: '0.98rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.75)', marginBottom: '20px' }}>
+                I work remotely across India and on-site in Lucknow, Kanpur and Noida. I work as an independent consultant rather than a bloated agency. When you hire me, you work directly with me — no account managers, no junior interns, and no bureaucratic layers.
+              </p>
+
+              {/* Core Philosophy Bullets */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '28px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <span style={{ color: '#00E5FF', fontSize: '1.1rem', marginTop: '2px' }}>🎯</span>
+                  <div style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>
+                    <strong style={{ color: '#fff' }}>Revenue Over Vanity:</strong> Traffic is meaningless if it doesn't convert. I focus on high-intent keywords that drive paying clients.
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <span style={{ color: '#00E5FF', fontSize: '1.1rem', marginTop: '2px' }}>📊</span>
+                  <div style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>
+                    <strong style={{ color: '#fff' }}>100% Transparency:</strong> You get straightforward reporting on what was done, what moved, and what I am optimizing next.
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <span style={{ color: '#00E5FF', fontSize: '1.1rem', marginTop: '2px' }}>🔓</span>
+                  <div style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>
+                    <strong style={{ color: '#fff' }}>Month-to-Month Flexibility:</strong> No long-term lock-in contracts. You continue working with me because you see measurable value.
+                  </div>
                 </div>
               </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px' }}>
+                <Link to="/about" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '0.95rem' }}>
+                  Read My Full Story & Principles →
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setAuditModalOpen(true)}
+                  className="btn btn-primary"
+                  style={{ padding: '12px 24px', fontSize: '0.95rem', cursor: 'pointer' }}
+                >
+                  Request Free SEO Audit
+                </button>
+              </div>
             </div>
-                    <div className="testi-card reveal" style={{"transitionDelay":"0.2s"}}>
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testi-text">"Meta Ads ke baare mein mujhe kuch nahi pata tha. Anirudh ne sab samjhaya aur hamare
-            products ki sales 5x ho gayi. ROAS 7x se zyada aa raha hai. Best investment tha hamare business ke liye!"
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 8: WHY WORK WITH ME (4 PILLARS + VERIFIED COMPARISON TABLE)
+          ========================================================================= */}
+      <section id="why" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+        <div className="container">
+          <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+              Why Work With Me
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
+              Direct Partnership, <span className="gradient-text">Zero Agency Friction</span>
+            </h2>
+            <p className="section-sub" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>
+              A senior consultant executing your campaign directly — faster turnarounds, honest communication, and no wasted retainer overhead.
+            </p>
+          </div>
+
+          {/* 4 Pillars Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', marginBottom: '50px' }}>
+            <div style={{ padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '14px' }}>🤝</div>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>Direct Access to Me</h3>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
+                You speak directly with the specialist executing the strategy. No junior account managers or miscommunicated requests.
+              </p>
+            </div>
+
+            <div style={{ padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '14px' }}>📊</div>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>Clear, Honest Reporting</h3>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
+                Understandable monthly summaries and weekly updates showing keyword positions, impressions, organic traffic, and enquiries.
+              </p>
+            </div>
+
+            <div style={{ padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '14px' }}>📍</div>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>Local & Remote Flexibility</h3>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
+                Available for in-person meetings across Lucknow, Kanpur, and Noida; seamless remote consulting for businesses nationwide.
+              </p>
+            </div>
+
+            <div style={{ padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '14px' }}>🔓</div>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>No Lock-in Contracts</h3>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
+                Work on straightforward monthly retainers. You stay because you get value and steady progress, not because you signed a 12-month lock.
+              </p>
+            </div>
+          </div>
+
+          {/* Honest Comparison Table */}
+          <div style={{ background: 'rgba(14,21,56,0.7)', borderRadius: '20px', border: '1px solid rgba(41,121,255,0.2)', padding: '28px', overflowX: 'auto' }}>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '20px', textAlign: 'center' }}>
+              Working With Anirudh Kumar vs. A Typical Marketing Agency
+            </h3>
+            <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px', fontSize: '0.92rem' }}>
+              <thead>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <th style={{ textAlign: 'left', padding: '14px 16px', color: 'rgba(255,255,255,0.6)', fontWeight: 600 }}>Feature</th>
+                  <th style={{ textAlign: 'left', padding: '14px 16px', color: '#00E5FF', fontWeight: 700, background: 'rgba(41,121,255,0.15)', borderRadius: '8px 8px 0 0' }}>✓ Working With Me</th>
+                  <th style={{ textAlign: 'left', padding: '14px 16px', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>Typical Agency</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                  <td style={{ padding: '14px 16px', color: '#FFFFFF', fontWeight: 600 }}>Point of Contact</td>
+                  <td style={{ padding: '14px 16px', color: '#00E5FF', background: 'rgba(41,121,255,0.08)' }}>Direct communication with Anirudh</td>
+                  <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.6)' }}>Junior account managers or interns</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                  <td style={{ padding: '14px 16px', color: '#FFFFFF', fontWeight: 600 }}>Pricing Structure</td>
+                  <td style={{ padding: '14px 16px', color: '#00E5FF', background: 'rgba(41,121,255,0.08)' }}>Transparent, flat monthly packages from ₹8,000</td>
+                  <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.6)' }}>Vague retainers + hidden implementation fees</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                  <td style={{ padding: '14px 16px', color: '#FFFFFF', fontWeight: 600 }}>Commitment</td>
+                  <td style={{ padding: '14px 16px', color: '#00E5FF', background: 'rgba(41,121,255,0.08)' }}>Month-to-month, cancel anytime</td>
+                  <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.6)' }}>6-12 month binding contracts</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                  <td style={{ padding: '14px 16px', color: '#FFFFFF', fontWeight: 600 }}>Strategy & Execution</td>
+                  <td style={{ padding: '14px 16px', color: '#00E5FF', background: 'rgba(41,121,255,0.08)' }}>Tailored to your specific city and buyers</td>
+                  <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.6)' }}>Recycled generic templates across clients</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '14px 16px', color: '#FFFFFF', fontWeight: 600 }}>Response Time</td>
+                  <td style={{ padding: '14px 16px', color: '#00E5FF', background: 'rgba(41,121,255,0.08)', borderRadius: '0 0 8px 8px' }}>Prompt response within 24 hours guaranteed</td>
+                  <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.6)' }}>Slow email ticketing queues</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 9: WORK PROCESS (5-STEP ANIMATED TIMELINE)
+          ========================================================================= */}
+      <section id="process" className="page-section" style={{ position: 'relative', background: '#050814', padding: '90px 0' }}>
+        <div className="container">
+          <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+              My Process
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
+              How I <span className="gradient-text">Deliver Results</span>
+            </h2>
+            <p className="section-sub" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>
+              A transparent, systematic 5-step methodology built to eliminate guesswork and scale your search visibility.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', position: 'relative' }}>
+            {[
+              {
+                step: '01',
+                title: 'Free SEO Audit',
+                desc: 'A complete technical and competitive health check of your current search presence, architecture, and local rankings.'
+              },
+              {
+                step: '02',
+                title: 'Custom Strategy',
+                desc: 'A tailored, prioritized roadmap outlining high-intent keywords, content requirements, and technical fixes.'
+              },
+              {
+                step: '03',
+                title: 'Implementation',
+                desc: 'Hands-on execution of on-page optimization, Google Business Profile enhancements, code fixes, and authority building.'
+              },
+              {
+                step: '04',
+                title: 'Tracking & Improvement',
+                desc: 'Continuous monitoring of Google Search Console, GA4 events, ranking fluctuations, and user intent patterns.'
+              },
+              {
+                step: '05',
+                title: 'Reporting & Scaling',
+                desc: 'Clear monthly reviews, honest performance debriefs, and strategic expansion into more competitive search queries.'
+              }
+            ].map((st, i) => (
+              <div
+                key={st.step}
+                style={{
+                  position: 'relative',
+                  padding: '24px 20px',
+                  background: 'rgba(14,21,56,0.6)',
+                  border: '1px solid rgba(41,121,255,0.2)',
+                  borderRadius: '16px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px'
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: '1.8rem',
+                    fontWeight: 900,
+                    fontFamily: 'monospace',
+                    color: '#00E5FF',
+                    opacity: 0.9
+                  }}
+                >
+                  {st.step}
+                </div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF' }}>{st.title}</h3>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.55, color: 'rgba(255,255,255,0.7)' }}>{st.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <button
+              type="button"
+              onClick={() => setAuditModalOpen(true)}
+              className="btn btn-primary"
+              style={{ padding: '14px 28px', fontSize: '0.95rem', cursor: 'pointer' }}
+            >
+              Start Step 1: Claim Your Free Audit
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 10: CASE STUDIES & RESULTS FRAMEWORK (AUTHENTIC & COMPLIANT)
+          ========================================================================= */}
+      <section id="results" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+        <div className="container">
+          <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+              Results & Proof
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
+              Verified Performance & <span className="gradient-text">Client Integrity</span>
+            </h2>
+            <p className="section-sub" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>
+              I measure growth through verified analytics and revenue metrics, respecting full client privacy and competitive non-disclosure.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px', marginBottom: '40px' }}>
+            <TiltCard3D maxTilt={8} scale={1.01}>
+              <div style={{ height: '100%', padding: '32px 26px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '20px' }}>
+                <div style={{ fontSize: '2rem', marginBottom: '16px' }}>🔒</div>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>Client Confidentiality First</h3>
+                <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
+                  Many of my clients operate in highly competitive local markets. I uphold strict non-disclosure policies and will never publicly expose a client's proprietary keyword targets or revenue data without explicit written consent.
+                </p>
+              </div>
+            </TiltCard3D>
+
+            <TiltCard3D maxTilt={8} scale={1.01}>
+              <div style={{ height: '100%', padding: '32px 26px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '20px' }}>
+                <div style={{ fontSize: '2rem', marginBottom: '16px' }}>📈</div>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>How I Measure Success</h3>
+                <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
+                  Search rankings are good indicators, but real enquiries and revenue are what matter. Every campaign is tracked using Google Search Console, Google Analytics 4, and conversion events to verify organic return on investment.
+                </p>
+              </div>
+            </TiltCard3D>
+
+            <TiltCard3D maxTilt={8} scale={1.01}>
+              <div style={{ height: '100%', padding: '32px 26px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '20px' }}>
+                <div style={{ fontSize: '2rem', marginBottom: '16px' }}>🚀</div>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>Become My Next Case Study</h3>
+                <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
+                  Looking for a transparent partner to handle your SEO, Google Ads, or local presence? Let's conduct a baseline audit of your business today and set realistic, achievable growth milestones.
+                </p>
+              </div>
+            </TiltCard3D>
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <Link to="/case-studies" className="btn btn-outline" style={{ padding: '12px 26px', fontSize: '0.95rem' }}>
+              Read My Case Studies & Measurement Framework →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          ROI CALCULATOR SECTION
+          ========================================================================= */}
+      <section className="page-section" style={{ background: '#050814', padding: '80px 0' }}>
+        <div className="container">
+          <RoiCalculator />
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 12: PRICING SECTION (PDF A2 VERIFIED PACKAGES)
+          ========================================================================= */}
+      <section id="pricing" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+        <div className="container">
+          <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+              Transparent Pricing
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
+              Simple, Clear <span className="gradient-text">Packages</span>
+            </h2>
+            <p className="section-sub" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>
+              No hidden fees, no agency markups, and no lock-in contracts. Choose the plan that fits your current stage.
+            </p>
+          </div>
+
+          <InteractivePricing />
+
+          <p style={{ textAlign: 'center', marginTop: '30px', color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem' }}>
+            Need a custom combination of SEO, Google Ads, and Website Development?{' '}
+            <a href="#contact" style={{ color: '#00E5FF', fontWeight: 600, textDecoration: 'underline' }}>
+              Contact me for a custom proposal
+            </a>
           </p>
-                        <div className="testi-author">
-                            <div className="testi-avatar">                <i className="bi bi-person-circle"></i></div>
-                            <div>
-                                <div className="testi-name">Priya Sharma</div>
-                                <div className="testi-role">Fashion Brand Founder</div>
-                                <div className="testi-city">                  <i className="bi bi-geo-alt"></i> Kanpur City</div>
-                </div>
-              </div>
-            </div>
-                    <div className="testi-card reveal" style={{"transitionDelay":"0.3s"}}>
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testi-text">"Hamari coaching ke admissions bohot slow the. Anirudh Kumar ka SEO + Google Ads
-            combination kamaal ka tha. 6 mahine mein hum Lucknow ke top 3 coaching results mein aa gaye. Outstanding
-            results!"</p>
-                        <div className="testi-author">
-                            <div className="testi-avatar">                <i className="bi bi-person-circle"></i></div>
-                            <div>
-                                <div className="testi-name">Amit Verma</div>
-                                <div className="testi-role">Coaching Institute Director</div>
-                                <div className="testi-city">                  <i className="bi bi-geo-alt"></i> Hazratganj, Lucknow</div>
-                </div>
-              </div>
-            </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 13: WHERE I WORK (SERVICE LOCATIONS)
+          ========================================================================= */}
+      <section id="locations" className="page-section" style={{ position: 'relative', background: '#050814', padding: '90px 0' }}>
+        <div className="container">
+          <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+              Service Coverage
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
+              Local Focus, <span className="gradient-text">Pan-India Reach</span>
+            </h2>
+            <p className="section-sub" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>
+              On-site consulting in Uttar Pradesh and NCR, backed by seamless remote operations across India.
+            </p>
           </div>
-                <div className="text-center mt-6" style={{"padding":"20px","background":"rgba(255,107,0,0.05)","border":"1px solid rgba(255,107,0,0.15)","borderRadius":"var(--radius)","marginTop":"32px"}}>
-                    <div style={{"fontSize":"0.85rem","color":"var(--text2)"}}>Google Reviews par verified ⭐ 4.9/5 rating — 87+ satisfied
-          clients</div>
-                    <div style={{"fontFamily":"var(--ff-d)","fontSize":"2rem","color":"var(--accent)","marginTop":"8px"}}>⭐⭐⭐⭐⭐ 4.9 / 5.0</div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
+            {/* Lucknow */}
+            <TiltCard3D maxTilt={7} scale={1.01}>
+              <div style={{ height: '100%', padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🏛️</div>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>SEO Expert in Lucknow</h3>
+                  <div style={{ fontSize: '0.85rem', color: '#00E5FF', fontWeight: 600, marginBottom: '12px' }}>Capital City & Regional Hub</div>
+                  <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, marginBottom: '16px' }}>
+                    Dedicated local SEO for Gomti Nagar, Hazratganj, Aliganj, and Indira Nagar businesses. In-person meetings available.
+                  </p>
+                </div>
+                <Link to="/seo-expert-lucknow" style={{ color: '#2979FF', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                  Explore Lucknow SEO →
+                </Link>
+              </div>
+            </TiltCard3D>
+
+            {/* Kanpur */}
+            <TiltCard3D maxTilt={7} scale={1.01}>
+              <div style={{ height: '100%', padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🏭</div>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>SEO Expert in Kanpur</h3>
+                  <div style={{ fontSize: '0.85rem', color: '#00E5FF', fontWeight: 600, marginBottom: '12px' }}>Commercial & Industrial Center</div>
+                  <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, marginBottom: '16px' }}>
+                    B2B and local search strategies for manufacturing, retail, and service brands across Civil Lines, Swaroop Nagar, and Kidwai Nagar.
+                  </p>
+                </div>
+                <Link to="/seo-expert-kanpur" style={{ color: '#2979FF', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                  Explore Kanpur SEO →
+                </Link>
+              </div>
+            </TiltCard3D>
+
+            {/* Noida */}
+            <TiltCard3D maxTilt={7} scale={1.01}>
+              <div style={{ height: '100%', padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🏢</div>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>SEO Expert in Noida</h3>
+                  <div style={{ fontSize: '0.85rem', color: '#00E5FF', fontWeight: 600, marginBottom: '12px' }}>Tech & Corporate Hub</div>
+                  <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, marginBottom: '16px' }}>
+                    Consulting for startups, D2C brands, and tech companies across Sectors 62, 125, Greater Noida, and Delhi NCR.
+                  </p>
+                </div>
+                <Link to="/seo-expert-noida" style={{ color: '#2979FF', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                  Explore Noida SEO →
+                </Link>
+              </div>
+            </TiltCard3D>
+
+            {/* Remote India */}
+            <TiltCard3D maxTilt={7} scale={1.01}>
+              <div style={{ height: '100%', padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🌐</div>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>Remote SEO Pan-India</h3>
+                  <div style={{ fontSize: '0.85rem', color: '#00E5FF', fontWeight: 600, marginBottom: '12px' }}>Seamless Remote Workflow</div>
+                  <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, marginBottom: '16px' }}>
+                    Serving clients in Delhi, Bengaluru, Mumbai, Pune, and nationwide with weekly Google Meet sessions and real-time dashboards.
+                  </p>
+                </div>
+                <Link to="/remote-seo-services" style={{ color: '#2979FF', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                  Explore Remote Services →
+                </Link>
+              </div>
+            </TiltCard3D>
           </div>
         </div>
       </section>
-      <div className="container">
-        <RoiCalculator />
-      </div>
-    <section id="pricing">
-            <div className="container">
-                <div className="section-header center text-center reveal">
-                    <span className="tag">Transparent Pricing</span>
-                    <div className="divider"></div>
-                    <h2 className="section-heading">Simple, Clear             <span className="gradient-text">Packages</span></h2>
-                    <p className="section-sub">Koi hidden charges nahi. Jo package choose karo, wahi milega. Sabhi packages mein free
-          SEO audit included hai.</p>
+
+      {/* =========================================================================
+          SECTION 14: BLOG & GUIDES PREVIEW (VERIFIED GUIDES FROM DATA)
+          ========================================================================= */}
+      <section id="blog" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+        <div className="container">
+          <div className="section-header text-center reveal" style={{ maxWidth: '720px', margin: '0 auto 50px' }}>
+            <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+              SEO & Marketing Insights
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
+              Actionable Guides for <span className="gradient-text">Growing Brands</span>
+            </h2>
+            <p className="section-sub" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>
+              Practical, no-fluff guides on local search, SEO pricing, Google Maps ranking, and converting website visitors into buyers.
+            </p>
           </div>
-                <InteractivePricing />
-                <p className="text-center mt-4" style={{"color":"var(--text2)","fontSize":"0.85rem"}}>Custom requirements hain?           <a href="#contact" style={{"color":"var(--accent)","fontWeight":"700"}}>Contact karein</a> — aapke liye custom package
-        bana deta hoon.</p>
-        </div>
-      </section>
-    <section id="locations">
-            <div className="container">
-                <div className="section-header center text-center reveal">
-                    <span className="tag">Service Areas</span>
-                    <div className="divider"></div>
-                    <h2 className="section-heading">Lucknow & Kanpur —             <span className="gradient-text">Dono Shehar Covered</span></h2>
-                    <p className="section-sub">Local market expertise ke saath aapke city mein results deliver karta hoon. Uttar Pradesh
-          ka #1 Digital Marketing Expert.</p>
-          </div>
-                <div className="locations-grid">
-                    <div className="location-card reveal-left">
-                        <div className="location-map">
-                            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="200" cy="100" r="80" stroke="#FF6B00" strokeWidth="1" stroke-dasharray="8 4" />
-                                <circle cx="200" cy="100" r="40" stroke="#FF6B00" strokeWidth="1" stroke-dasharray="4 4" />
-                                <circle cx="200" cy="100" r="8" fill="#FF6B00" />
-                                <line x1="120" y1="100" x2="280" y2="100" stroke="#FF6B00" strokeWidth="0.5" />
-                                <line x1="200" y1="20" x2="200" y2="180" stroke="#FF6B00" strokeWidth="0.5" />
-                </svg>
-                            <span style={{"position":"relative","zIndex":"1","fontSize":"2.5rem"}}>🏛️</span>
-              </div>
-                        <div className="location-body">
-                            <h3>Digital Marketing Expert in Lucknow</h3>
-                            <div className="city-sub">🏆 #1 SEO Expert | Uttar Pradesh Capital</div>
-                            <p>Lucknow ke real estate, healthcare, education, retail aur restaurant sectors mein deep expertise. Gomti
-              Nagar se Hazratganj tak — aapka business online dominate kare.</p>
-                            <div className="location-areas">
-                                <span className="area-chip">Gomti Nagar</span>
-                                <span className="area-chip">Hazratganj</span>
-                                <span className="area-chip">Alambagh</span>
-                                <span className="area-chip">Indira Nagar</span>
-                                <span className="area-chip">Aliganj</span>
-                                <span className="area-chip">Mahanagar</span>
-                                <span className="area-chip">Chinhat</span>
-                </div>
-                            <a href="#contact" className="btn btn-primary" style={{"fontSize":"0.85rem","padding":"10px 20px"}}>Lucknow SEO Audit —
-              Free</a>
-              </div>
-            </div>
-                    <div className="location-card reveal-right">
-                        <div className="location-map">
-                            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="200" cy="100" r="80" stroke="#FFB800" strokeWidth="1" stroke-dasharray="8 4" />
-                                <circle cx="200" cy="100" r="40" stroke="#FFB800" strokeWidth="1" stroke-dasharray="4 4" />
-                                <circle cx="200" cy="100" r="8" fill="#FFB800" />
-                                <line x1="120" y1="100" x2="280" y2="100" stroke="#FFB800" strokeWidth="0.5" />
-                                <line x1="200" y1="20" x2="200" y2="180" stroke="#FFB800" strokeWidth="0.5" />
-                </svg>
-                            <span style={{"position":"relative","zIndex":"1","fontSize":"2.5rem"}}>🏭</span>
-              </div>
-                        <div className="location-body">
-                            <h3>Digital Marketing Expert in Kanpur</h3>
-                            <div className="city-sub" style={{"color":"var(--accent2)"}}>🏆 #1 SEO Expert | Industrial Hub of UP</div>
-                            <p>Kanpur ke textile, leather, manufacturing, education aur retail businesses ke liye specialized digital
-              marketing. Is industrial city ka #1 digital partner.</p>
-                            <div className="location-areas">
-                                <span className="area-chip">Civil Lines</span>
-                                <span className="area-chip">Swaroop Nagar</span>
-                                <span className="area-chip">Kidwai Nagar</span>
-                                <span className="area-chip">Kakadeo</span>
-                                <span className="area-chip">Panki</span>
-                                <span className="area-chip">Kalyanpur</span>
-                                <span className="area-chip">Armapur</span>
-                </div>
-                            <a href="#contact" className="btn btn-outline" style={{"fontSize":"0.85rem","padding":"10px 20px","borderColor":"var(--accent2)","color":"var(--accent2)"}}>Kanpur SEO
-              Audit — Free</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <section id="blog">
-            <div className="container">
-                <div className="section-header center text-center reveal">
-                    <span className="tag">Digital Marketing Blog</span>
-                    <div className="divider"></div>
-                    <h2 className="section-heading">Actionable Insights,             <span className="gradient-text">Real Value</span></h2>
-                    <p className="section-sub">Practical digital marketing intelligence for Lucknow and Kanpur. Master SEO strategies to
-          dominate search globally.</p>
-          </div>
-                <div className="blog-grid">
-                    <div className="blog-card reveal" style={{"transitionDelay":"0.1s"}}>
-                        <div className="blog-img">
-                            <div className="blog-img-bg"></div>
-                            <span style={{"position":"relative","zIndex":"1"}}>🔍</span>
-              </div>
-                        <div className="blog-body">
-                            <div className="blog-meta">                <span className="blog-cat">SEO</span>                <span>5 min read</span>                <span>Jan 2026</span></div>
-                            <h3>Best SEO Expert in Lucknow</h3>
-                            <p>Discover complete strategies on how to choose a reliable SEO expert and what guarantees to expect for
-              your business in 2026.</p>
-                            <Link className="blog-link" to="/blog-post?post=best-seo-expert-in-lucknow">Read More →</Link>
-              </div>
-            </div>
-                    <div className="blog-card reveal" style={{"transitionDelay":"0.2s"}}>
-                        <div className="blog-img">
-                            <div className="blog-img-bg" style={{"background":"linear-gradient(145deg,var(--bg3),rgba(255,184,0,0.15))"}}></div>
-                            <span style={{"position":"relative","zIndex":"1"}}>💰</span>
-              </div>
-                        <div className="blog-body">
-                            <div className="blog-meta">                <span className="blog-cat">Marketing</span>                <span>7 min read</span>                <span>Feb 2026</span>
-                </div>
-                            <h3>SEO Cost in Lucknow</h3>
-                            <p>A complete breakdown of standard pricing models and actionable tips on optimizing your Digital Marketing
-              ROI locally.</p>
-                            <Link className="blog-link" to="/blog-post?post=seo-cost-in-lucknow">Read More →</Link>
-              </div>
-            </div>
-                    <div className="blog-card reveal" style={{"transitionDelay":"0.3s"}}>
-                        <div className="blog-img">
-                            <div className="blog-img-bg" style={{"background":"linear-gradient(145deg,var(--bg3),rgba(255,51,102,0.1))"}}></div>
-                            <span style={{"position":"relative","zIndex":"1"}}>📍</span>
-              </div>
-                        <div className="blog-body">
-                            <div className="blog-meta">                <span className="blog-cat">Local SEO</span>                <span>6 min read</span>                <span>Mar 2026</span>
-                </div>
-                            <h3>How to Rank Business in Lucknow</h3>
-                            <p>Mastering Google Business Profiles, robust entity clustering, and localized strategies specifically for
-              physical local businesses.</p>
-                            <Link className="blog-link" to="/blog-post?post=how-to-rank-business-in-lucknow">Read More →</Link>
-              </div>
-            </div>
-          </div>
-                <div className="flex-center mt-6">
-                    <Link className="btn btn-outline" to="/blog">📚 Explore All Articles →</Link>
-          </div>
-        </div>
-      </section>
-    <section id="faq">
-            <div className="container">
-                <div className="faq-grid">
-                    <div>
-                        <span className="tag reveal">Frequently Asked Questions</span>
-                        <div className="divider reveal"></div>
-                        <h2 className="section-heading reveal">Aapke               <span className="gradient-text">Sawaal,                <br />Mere Jawab</span></h2>
-                        <p className="section-sub reveal" style={{"marginBottom":"32px"}}>Koi bhi doubt ho toh seedha WhatsApp karein — main
-            personally jawab deta hoon.</p>
-                        <InteractiveFaq />
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px' }}>
+            {BLOGS.slice(0, 3).map((post) => (
+              <TiltCard3D key={post.slug} maxTilt={6} scale={1.01}>
+                <div style={{ height: '100%', padding: '28px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+                      <span style={{ fontSize: '0.78rem', fontWeight: 700, padding: '4px 10px', background: 'rgba(41,121,255,0.15)', color: '#00E5FF', borderRadius: '12px' }}>
+                        {post.category}
+                      </span>
+                      <span style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
+                        {post.readTime}
+                      </span>
                     </div>
-                    <div className="faq-sidebar">
-                        <div className="faq-sidebar-card reveal-right">
-                            <h3>🚀 Need a Free SEO Audit?</h3>
-                            <p>Schedule a complete technical health check instantly. I personally review your architecture and send over
-              a robust, actionable blueprint.</p>
-                            <button type="button" onClick={() => setAuditModalOpen(true)} className="btn btn-primary" style={{"width":"100%","justifyContent":"center","cursor":"pointer"}}>Request Free Audit</button>
+                    <h3 style={{ fontSize: '1.18rem', fontWeight: 700, color: '#fff', marginBottom: '12px', lineHeight: 1.35 }}>
+                      {post.title}
+                    </h3>
+                    <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '20px' }}>
+                      {post.excerpt}
+                    </p>
+                  </div>
+                  <Link
+                    to={`/blog-post?post=${post.slug}`}
+                    style={{ color: '#2979FF', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}
+                  >
+                    Read Guide →
+                  </Link>
+                </div>
+              </TiltCard3D>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <Link to="/blog" className="btn btn-outline" style={{ padding: '12px 28px', fontSize: '0.95rem' }}>
+              View All 10 Marketing Guides →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 15: FAQ
+          ========================================================================= */}
+      <section id="faq" className="page-section" style={{ position: 'relative', background: '#050814', padding: '90px 0' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'start' }}>
+            <div>
+              <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+                Common Questions
+              </span>
+              <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
+                Frequently Asked <span className="gradient-text">Questions</span>
+              </h2>
+              <p className="section-sub" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, marginBottom: '32px' }}>
+                Straight answers about how I work, timelines, and deliverables. Have a question not listed here? Message me directly.
+              </p>
+
+              <InteractiveFaq />
+            </div>
+
+            {/* Sidebar CTA cards */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div style={{ padding: '30px', background: 'linear-gradient(145deg, rgba(14,21,56,0.8) 0%, rgba(8,13,34,0.9) 100%)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>
+                  🚀 Claim Your Free SEO Audit
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55, marginBottom: '20px' }}>
+                  I will personally audit your website for technical errors, keyword opportunities, and Google Maps visibility, and send you an actionable report.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setAuditModalOpen(true)}
+                  className="btn btn-primary"
+                  style={{ width: '100%', justifyContent: 'center', cursor: 'pointer' }}
+                >
+                  Request Free Audit
+                </button>
               </div>
-                        <div className="faq-sidebar-card reveal-right" style={{"transitionDelay":"0.2s","background":"rgba(37,211,102,0.05)","borderColor":"rgba(37,211,102,0.2)"}}>
-                            <h3>💬 WhatsApp Par Baat Karein</h3>
-                            <p>Seedha WhatsApp karein — main 10 mins mein reply karta hoon. Aapke sawaal ka jawab abhi milega.</p>
-                            <a href="https://wa.me/919999999999?text=Hi%20Anirudh!%20I%20need%20digital%20marketing%20help%20for%20my%20business." className="btn btn-whatsapp" style={{"width":"100%","justifyContent":"center"}} target="_blank" rel="noreferrer">📱 WhatsApp Now</a>
+
+              <div style={{ padding: '30px', background: 'rgba(37,211,102,0.06)', border: '1px solid rgba(37,211,102,0.3)', borderRadius: '20px' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>
+                  💬 Chat on WhatsApp
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55, marginBottom: '20px' }}>
+                  Have an urgent enquiry or prefer quick messaging? Connect directly with me on WhatsApp. Prompt response within 24 hours guaranteed.
+                </p>
+                <a
+                  href="https://wa.me/918604625862?text=Hi%20Anirudh%2C%20I%20have%20a%20question%20regarding%20digital%20marketing."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline"
+                  style={{ width: '100%', justifyContent: 'center', borderColor: '#25D366', color: '#25D366' }}
+                >
+                  Message on WhatsApp
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
-    <section id="contact">
-            <div className="container">
-                <div className="contact-grid">
-                    <div>
-                        <span className="tag reveal">Get in Touch</span>
-                        <div className="divider reveal"></div>
-                        <h2 className="section-heading reveal">Aaj Hi Start               <span className="gradient-text">Karein!</span></h2>
-                        <p className="section-sub reveal">Free consultation + free SEO audit — koi charge nahi. Batao kya chahiye, main
-            solution deta hoon.</p>
-                        <div className="contact-info">
-                            <div className="contact-item reveal" style={{"transitionDelay":"0.1s","cursor":"pointer"}} onClick={() => copyToClipboard('+919999999999', 'Phone Number')} title="Click to copy number">
-                                <div className="contact-icon">                  <i className="bi bi-whatsapp"></i></div>
-                                <div>
-                                    <div className="contact-label">WhatsApp / Call (Click to Copy)</div>
-                                    <div className="contact-value">+91-9999999999</div>
+
+      {/* =========================================================================
+          SECTION 16: CONTACT SECTION (VERIFIED DETAILS & REAL FORM)
+          ========================================================================= */}
+      <section id="contact" className="page-section" style={{ position: 'relative', background: '#080d22', padding: '90px 0' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'start' }}>
+            {/* Contact Details */}
+            <div>
+              <span className="tag" style={{ display: 'inline-block', padding: '4px 14px', background: 'rgba(41,121,255,0.1)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '20px', fontSize: '0.85rem', color: '#00E5FF', marginBottom: '12px' }}>
+                Get In Touch
+              </span>
+              <h2 className="section-heading" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
+                Let's Discuss Your <span className="gradient-text">Growth</span>
+              </h2>
+              <p className="section-sub" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, marginBottom: '32px' }}>
+                Fill out the form with your details or connect directly via WhatsApp/phone. Prompt response within 24 hours guaranteed.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {/* Phone */}
+                <div
+                  onClick={() => copyToClipboard('+91 86046 25862', 'Phone Number')}
+                  style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '14px', cursor: 'pointer' }}
+                  title="Click to copy phone number"
+                >
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(41,121,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#00E5FF', fontSize: '1.2rem' }}>
+                    <i className="bi bi-telephone"></i>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>Phone / WhatsApp (Click to copy)</div>
+                    <div style={{ fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>+91 86046 25862</div>
                   </div>
                 </div>
-                            <div className="contact-item reveal" style={{"transitionDelay":"0.2s","cursor":"pointer"}} onClick={() => copyToClipboard('hello@anirudhkumar.in', 'Email')} title="Click to copy email">
-                                <div className="contact-icon">                  <i className="bi bi-envelope"></i></div>
-                                <div>
-                                    <div className="contact-label">Email (Click to Copy)</div>
-                                    <div className="contact-value">hello@anirudhkumar.in</div>
+
+                {/* Email */}
+                <div
+                  onClick={() => copyToClipboard('anirudhkumarseo@gmail.com', 'Email Address')}
+                  style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '14px', cursor: 'pointer' }}
+                  title="Click to copy email"
+                >
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(41,121,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#00E5FF', fontSize: '1.2rem' }}>
+                    <i className="bi bi-envelope"></i>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>Direct Email (Click to copy)</div>
+                    <div style={{ fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>anirudhkumarseo@gmail.com</div>
                   </div>
                 </div>
-                            <div className="contact-item reveal" style={{"transitionDelay":"0.3s"}}>
-                                <div className="contact-icon">                  <i className="bi bi-geo-alt"></i></div>
-                                <div>
-                                    <div className="contact-label">Location</div>
-                                    <div className="contact-value">Gomti Nagar, Lucknow, UP</div>
+
+                {/* Location */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(14,21,56,0.6)', border: '1px solid rgba(41,121,255,0.2)', borderRadius: '14px' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(41,121,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#00E5FF', fontSize: '1.2rem' }}>
+                    <i className="bi bi-geo-alt"></i>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>Based in</div>
+                    <div style={{ fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>Lucknow, UP • On-site in Lucknow, Kanpur, Noida & Remote Pan-India</div>
                   </div>
                 </div>
               </div>
             </div>
-                    <form className="contact-form reveal-right" onSubmit={handleSubmit}>
-                        <h3 style={{"fontSize":"1.2rem","fontWeight":"800","marginBottom":"8px"}}>Book Your Free SEO Audit Now</h3>
-                        <p style={{"fontSize":"0.85rem","color":"var(--text2)","marginBottom":"24px"}}>24 hours rapid reply guaranteed - let us
-            scale your growth.</p>
-                        <div className="form-row">
-                            <div className="form-group">                <label>Your Name *</label>                <input type="text" name="name" required placeholder="John Doe" /></div>
-                            <div className="form-group">                <label>Phone Number *</label>                <input type="tel" name="phone" required placeholder="+91 98765 43210" /></div>
-              </div>
-                        <div className="form-group">              <label>Email Address</label>              <input type="email" name="email" placeholder="aapka@email.com" /></div>
-                        <div className="form-group">
-                            <label>Required Service</label>
-                            <select name="service">
-                                <option value="">— Select Service —</option>
-                                <option>SEO Services</option>
-                                <option>Social Media Marketing</option>
-                                <option>Meta Ads / Google Ads</option>
-                                <option>Website Development</option>
-                                <option>Complete Digital Marketing</option>
-                                <option>Free SEO Audit</option>
-                </select>
-              </div>
-                        <div className="form-group">              <label>Describe your business or goals</label>              <textarea name="message" placeholder="Share what you need help with so I can come prepared with an audit..."></textarea></div>
-                        <button type="submit" className="btn btn-primary" style={{"width":"100%","justifyContent":"center","fontSize":"1rem"}}>🚀 Book Your Free SEO Audit Now</button>
-                        <p style={{"fontSize":"0.75rem","color":"var(--text2)","textAlign":"center","marginTop":"12px"}}>100% Free Consultation. We
-            reply immediately.</p>
-            </form>
+
+            {/* Direct Form */}
+            <div style={{ background: 'rgba(14,21,56,0.85)', padding: '36px 32px', borderRadius: '24px', border: '1px solid rgba(41,121,255,0.25)', boxShadow: '0 20px 50px rgba(0,0,0,0.4)' }}>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>
+                Request a Free SEO Audit & Consultation
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', marginBottom: '24px' }}>
+                Prompt response within 24 hours guaranteed.
+              </p>
+
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                {/* Honeypot field (hidden from legitimate users) */}
+                <div style={{ display: 'none' }} aria-hidden="true">
+                  <input
+                    type="text"
+                    name="honeypot"
+                    tabIndex="-1"
+                    autoComplete="off"
+                    value={formData.honeypot}
+                    onChange={handleInputChange}
+                  />
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '6px' }}>
+                      Your Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="e.g. Rahul Sharma"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '6px' }}>
+                      Phone / WhatsApp *
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      placeholder="+91 98765 43210"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
+                    />
+                  </div>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '6px' }}>
+                      Email Address (Optional)
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="you@company.com"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '6px' }}>
+                      Website URL
+                    </label>
+                    <input
+                      type="text"
+                      name="website"
+                      placeholder="https://example.com"
+                      value={formData.website}
+                      onChange={handleInputChange}
+                      style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '6px' }}>
+                    Service Required
+                  </label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.9)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem' }}
+                  >
+                    <option value="">— Select Primary Goal —</option>
+                    <option value="Free SEO Audit">Free SEO Audit & Analysis</option>
+                    <option value="Complete SEO Retainer">Complete SEO Retainer (Technical + On-page + Links)</option>
+                    <option value="Local SEO & Google Maps">Local SEO & Google Maps Optimization</option>
+                    <option value="Google Ads / Meta Ads">Google Ads / Meta Ads Campaign</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="Growth Advisory">Growth Advisory & Consulting</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#fff', marginBottom: '6px' }}>
+                    Describe your business & goals
+                  </label>
+                  <textarea
+                    name="message"
+                    rows="3"
+                    placeholder="Tell me about your target city, current rankings, or what you want to achieve..."
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    style={{ width: '100%', padding: '12px 14px', background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(41,121,255,0.3)', borderRadius: '10px', color: '#fff', fontSize: '0.92rem', resize: 'vertical' }}
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '1rem', cursor: 'pointer' }}
+                >
+                  🚀 Request Free SEO Audit
+                </button>
+
+                <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)', textAlign: 'center', marginTop: '4px' }}>
+                  🔒 100% Confidential. Your data is never shared. Prompt response within 24 hours guaranteed.
+                </p>
+              </form>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* SEO Audit Scanner Modal */}
       <SeoAuditModal
         isOpen={auditModalOpen}
         onClose={() => setAuditModalOpen(false)}
       />
+
+      {/* Global Toast */}
       <Toast
         isVisible={showToast}
         message={toastMsg}

@@ -1,111 +1,111 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import confetti from 'canvas-confetti';
-import Toast from '../components/Toast.jsx';
-
 
 export default function CaseStudiesPage() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [showToast, setShowToast] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setShowToast(true);
-
-    try {
-      confetti({
-        particleCount: 80,
-        spread: 60,
-        origin: { y: 0.6 }
-      });
-    } catch (err) {}
-
-    const btn = e.target.querySelector('button[type="submit"], input[type="submit"], .btn-primary');
-    if (btn) {
-      const originalText = btn.textContent;
-      btn.textContent = '✅ Submitted! 24 hrs mein reply milega.';
-      btn.style.background = '#00D68F';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-        setFormSubmitted(false);
-        setShowToast(false);
-      }, 4500);
-    }
-  };
-
   return (
-    <div className="page-wrapper casestudiespage">
-    <header className="page-hero">
-            <div className="container">
-                <div className="text-center">
-                    <span className="tag">Proven ROI</span>
-                    <h1 className="section-heading mt-4">Growth             <span className="gradient-text">Case Studies</span></h1>
-                    <p className="section-sub mx-auto">See the data-driven strategies that turned local Lucknow businesses into industry leaders.</p>
-          </div>
+    <div className="page-wrapper case-studies-page" style={{ paddingTop: 'var(--nav-h)' }}>
+      {/* Hero */}
+      <section style={{ padding: '80px 0 60px', position: 'relative', overflow: 'hidden' }}>
+        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+          <span className="tag" style={{ marginBottom: '14px', display: 'inline-block' }}>
+            Verified Results Policy
+          </span>
+          <h1
+            className="section-heading"
+            style={{
+              fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
+              lineHeight: 1.15,
+              marginBottom: '20px',
+              color: '#f0f4fc',
+            }}
+          >
+            Project Case <span className="gradient-text">Studies &amp; Results</span>
+          </h1>
+          <p style={{ fontSize: '1.1rem', color: '#98a7c6', lineHeight: 1.65, marginBottom: '28px' }}>
+            I believe in 100% authentic data. In digital marketing, unverified claims and template screenshots damage trust. Here is how I evaluate, document, and publish project outcomes.
+          </p>
         </div>
-      </header>
-    <section className="page-section">
-            <div className="container">
-                <div className="case-grid">
-                    {/* CASE 1 */}
-                    <article className="case-card">
-                        <div className="case-img">📊</div>
-                        <div className="case-content">
-                            <div className="case-meta">                <span>SEO</span>                 <span>•</span>                 <span>4 Months</span></div>
-                            <h3>Ranking a Luxury Real Estate Brand in Gomti Nagar</h3>
-                            <p>Problem: Zero organic visibility for high-value keywords.</p>
-                            <p>Strategy: Aggressive Local SEO & High-Intent Landing Pages.</p>
-                            <div className="case-results-grid">
-                                <div>
-                                    <div className="res-val">+320%</div>
-                                    <div className="res-label">Org. Traffic</div>
-                  </div>
-                                <div>
-                                    <div className="res-val">150+</div>
-                                    <div className="res-label">Monthly Leads</div>
-                  </div>
-                </div>
+      </section>
+
+      {/* Verification Framework */}
+      <section style={{ padding: '40px 0 80px' }}>
+        <div className="container" style={{ maxWidth: '860px' }}>
+          <div className="glass-panel" style={{ padding: '40px', marginBottom: '35px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+              <span style={{ fontSize: '1.5rem', color: '#00E5FF' }}>🔒</span>
+              <h2 style={{ fontSize: '1.5rem', color: '#f0f4fc', margin: 0 }}>
+                Client Privacy &amp; Verified Reporting Standards
+              </h2>
+            </div>
+            <p style={{ color: '#98a7c6', lineHeight: 1.7, margin: '0 0 16px 0' }}>
+              Many of my private clients in healthcare, industrial manufacturing, and professional services sign Non-Disclosure Agreements (NDAs). To respect their competitive advantage and privacy, I publish detailed case studies only with explicit written consent and verified Google Search Console / GBP insights.
+            </p>
+            <p style={{ color: '#98a7c6', lineHeight: 1.7, margin: 0 }}>
+              If you would like to see anonymized traffic growth curves, keyword progression logs, or relevant sector examples during my initial strategy consultation, I am glad to walk you through live Search Console dashboards.
+            </p>
+          </div>
+
+          {/* Framework Template Card */}
+          <div className="glass-panel" style={{ padding: '36px', marginBottom: '40px' }}>
+            <h3 style={{ fontSize: '1.25rem', color: '#00E5FF', marginBottom: '16px' }}>
+              The 4-Part Framework for Every Project
+            </h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
+              <div style={{ background: 'rgba(5, 8, 20, 0.65)', padding: '20px', borderRadius: '14px', border: '1px solid rgba(41, 121, 255, 0.2)' }}>
+                <div style={{ color: '#ff4757', fontWeight: 700, marginBottom: '6px' }}>1. The Initial Problem</div>
+                <p style={{ color: '#98a7c6', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
+                  What was stopping the business from appearing in search? Missing pages, penalty, or map misconfigurations.
+                </p>
               </div>
-            </article>
-                    {/* CASE 2 */}
-                    <article className="case-card">
-                        <div className="case-img">📱</div>
-                        <div className="case-content">
-                            <div className="case-meta">                <span>Meta Ads</span>                 <span>•</span>                 <span>6 Months</span></div>
-                            <h3>Scaling an E-commerce Brand from Kanpur to National</h3>
-                            <p>Problem: High acquisition costs and low scale.</p>
-                            <p>Strategy: Creative testing & Advanced lookalike audiences.</p>
-                            <div className="case-results-grid">
-                                <div>
-                                    <div className="res-val">4.5x</div>
-                                    <div className="res-label">Ad ROAS</div>
-                  </div>
-                                <div>
-                                    <div className="res-val">-40%</div>
-                                    <div className="res-label">CPA reduction</div>
-                  </div>
-                </div>
+              <div style={{ background: 'rgba(5, 8, 20, 0.65)', padding: '20px', borderRadius: '14px', border: '1px solid rgba(41, 121, 255, 0.2)' }}>
+                <div style={{ color: '#2979FF', fontWeight: 700, marginBottom: '6px' }}>2. Specific Actions Taken</div>
+                <p style={{ color: '#98a7c6', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
+                  Precise technical fixes, on-page optimization, content cluster creation, and local citation building.
+                </p>
               </div>
-            </article>
+              <div style={{ background: 'rgba(5, 8, 20, 0.65)', padding: '20px', borderRadius: '14px', border: '1px solid rgba(41, 121, 255, 0.2)' }}>
+                <div style={{ color: '#00d68f', fontWeight: 700, marginBottom: '6px' }}>3. Real Measurement</div>
+                <p style={{ color: '#98a7c6', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
+                  Calls, form fills, and direction requests tracked over a realistic 3 to 6-month timeframe.
+                </p>
+              </div>
+              <div style={{ background: 'rgba(5, 8, 20, 0.65)', padding: '20px', borderRadius: '14px', border: '1px solid rgba(41, 121, 255, 0.2)' }}>
+                <div style={{ color: '#00E5FF', fontWeight: 700, marginBottom: '6px' }}>4. Plain Language Reports</div>
+                <p style={{ color: '#98a7c6', fontSize: '0.86rem', lineHeight: 1.6, margin: 0 }}>
+                  Direct metrics tying rankings to business revenue rather than vanity impressions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div style={{ textAlign: 'center', background: 'rgba(14, 21, 52, 0.5)', padding: '40px', borderRadius: '20px', border: '1px solid rgba(41, 121, 255, 0.2)' }}>
+            <h3 style={{ fontSize: '1.6rem', color: '#f0f4fc', marginBottom: '12px' }}>
+              Want to see how your site compares?
+            </h3>
+            <p style={{ color: '#98a7c6', fontSize: '0.96rem', maxWidth: '540px', margin: '0 auto 24px' }}>
+              Send me your website link. I will personally review your search presence and show you live ranking opportunities in your niche.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
+              <Link to="/contact" className="btn btn-primary" style={{ padding: '14px 28px' }}>
+                Request My Free SEO Audit
+              </Link>
+              <a
+                href="https://wa.me/918604625862?text=Hi%20Anirudh!%20I%20would%20like%20to%20discuss%20case%20studies%20for%20my%20business."
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-whatsapp"
+                style={{ padding: '14px 24px' }}
+              >
+                💬 Chat on WhatsApp (+91 86046 25862)
+              </a>
+            </div>
           </div>
         </div>
       </section>
-    <section className="page-section" style={{"background":"var(--bg3)"}}>
-            <div className="container text-center">
-                <h2 className="section-heading">Want Similar           <span className="gradient-text">Results?</span></h2>
-                <p className="section-sub mx-auto mb-6">Let's discuss your custom growth roadmap.</p>
-                <Link className="btn btn-primary" to="/contact">Start My Case Study</Link>
-        </div>
-      </section>
-      <Toast
-        isVisible={showToast}
-        message="24 hours mein aapko callback ya email reply mil jayega."
-        onClose={() => setShowToast(false)}
-      />
     </div>
   );
 }

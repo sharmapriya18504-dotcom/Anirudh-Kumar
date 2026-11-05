@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { BLOGS } from '../data/blogs.js';
+import TiltCard3D from '../components/TiltCard3D.jsx';
 
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -8,7 +9,10 @@ export default function BlogPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 6;
 
-  const categories = ['all', 'SEO', 'Marketing', 'Local SEO', 'Meta Ads'];
+  const categories = useMemo(() => {
+    const set = new Set(BLOGS.map((b) => b.category));
+    return ['all', ...Array.from(set)];
+  }, []);
 
   const filteredBlogs = useMemo(() => {
     return BLOGS.filter((blog) => {
@@ -42,113 +46,195 @@ export default function BlogPage() {
 
   const goToPage = (page) => {
     setCurrentPage(page);
-    const listing = document.getElementById('blog-listing');
-    if (listing) {
-      window.scrollTo({ top: listing.offsetTop - 100, behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 300, behavior: 'smooth' });
   };
 
   return (
-    <div className="blog-page-wrap">
+    <div className="blog-page-wrap" style={{ paddingTop: 'var(--nav-h)' }}>
       {/* BLOG HERO */}
-      <header className="blog-hero">
-        <div className="container">
-          <span className="tag">Digital Marketing Insights</span>
-          <h1 className="section-heading mt-4">
-            Insights &amp; <span className="gradient-text">Growth Stories</span>
+      <header style={{ padding: '80px 0 50px', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
+        <div className="ambient-glow-cyan" style={{ top: '-100px', left: '-100px' }} />
+        <div className="ambient-glow-violet" style={{ top: '100px', right: '-150px' }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '800px', margin: '0 auto' }}>
+          <span className="tag" style={{ marginBottom: '14px', display: 'inline-block' }}>
+            Actionable SEO Intelligence
+          </span>
+          <h1
+            className="section-heading"
+            style={{
+              fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
+              lineHeight: 1.15,
+              marginBottom: '18px',
+              color: '#f0f4fc',
+            }}
+          >
+            Digital Marketing &amp; <span className="gradient-text">SEO Guides</span>
           </h1>
-          <p className="section-sub mx-auto">
-            Actionable guides, local case studies, and modern marketing trends for businesses in Lucknow &amp; Kanpur.
+          <p style={{ fontSize: '1.15rem', color: '#98a7c6', lineHeight: 1.65, margin: '0 auto 30px' }}>
+            Practical search insights for business owners in Lucknow, Kanpur, Noida and across India. Learn how to rank higher on Google Maps and turn visibility into enquiries.
           </p>
+
+          {/* Search Bar */}
+          <div style={{ maxWidth: '540px', margin: '0 auto 24px', position: 'relative' }}>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={handleSearch}
+              placeholder="Search guides (e.g. Google Maps, Cost, Clinic, Kanpur, Timeline)..."
+              style={{
+                width: '100%',
+                padding: '14px 20px 14px 46px',
+                borderRadius: '50px',
+                background: 'rgba(14, 21, 52, 0.75)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(41, 121, 255, 0.3)',
+                color: '#fff',
+                fontSize: '0.94rem',
+                outline: 'none',
+              }}
+            />
+            <span style={{ position: 'absolute', left: '18px', top: '50%', transform: 'translateY(-50%)', color: '#00E5FF' }}>
+              <i className="bi bi-search"></i>
+            </span>
+          </div>
+
+          {/* Category Filter Pills */}
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px' }}>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => handleCategory(cat)}
+                style={{
+                  background: selectedCategory === cat ? 'linear-gradient(135deg, #00E5FF, #2979FF)' : 'rgba(14, 21, 52, 0.6)',
+                  color: selectedCategory === cat ? '#050814' : '#98a7c6',
+                  border: selectedCategory === cat ? '1px solid #00E5FF' : '1px solid rgba(41, 121, 255, 0.2)',
+                  borderRadius: '30px',
+                  padding: '6px 16px',
+                  fontSize: '0.82rem',
+                  fontWeight: selectedCategory === cat ? 800 : 500,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  textTransform: 'capitalize',
+                }}
+              >
+                {cat === 'all' ? 'All Articles (10)' : cat}
+              </button>
+            ))}
+          </div>
         </div>
       </header>
 
-      {/* BLOG LISTING */}
-      <section className="page-section" id="blog-listing">
+      {/* BLOG GRID */}
+      <section style={{ padding: '40px 0 80px' }}>
         <div className="container">
-          <div className="blog-controls">
-            <div className="search-bar">
-              <i className="bi bi-search"></i>
-              <input
-                type="text"
-                placeholder="Search articles..."
-                value={searchQuery}
-                onChange={handleSearch}
-                aria-label="Search articles"
-              />
-            </div>
-            <div className="category-filters">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  className={`filter-btn ${selectedCategory === cat ? 'active' : ''}`}
-                  onClick={() => handleCategory(cat)}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(330px, 1fr))', gap: '30px' }}>
+            {currentBlogs.map((b) => (
+              <TiltCard3D key={b.id} maxTilt={7} style={{ height: '100%' }}>
+                <article
+                  className="glass-panel"
+                  style={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    overflow: 'hidden',
+                    borderRadius: '20px',
+                    transition: 'all 0.25s ease',
+                  }}
                 >
-                  {cat === 'all' ? 'All' : cat}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="blog-grid-dynamic" id="blogGrid">
-            {currentBlogs.length === 0 ? (
-              <div style={{ gridColumn: '1/-1', textAlign: 'center', padding: '100px 0' }}>
-                <h3>No articles found matching your criteria.</h3>
-              </div>
-            ) : (
-              currentBlogs.map((blog) => (
-                <article key={blog.id || blog.slug} className="modern-blog-card">
-                  <div className="card-img-wrap">
-                    <span className="card-category">{blog.category}</span>
+                  <div style={{ position: 'relative', height: '200px', overflow: 'hidden' }}>
                     <img
-                      src={blog.image}
-                      alt={blog.title}
+                      src={b.image}
+                      alt={b.title}
                       loading="lazy"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       onError={(e) => {
-                        e.target.onerror = null;
                         e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800';
                       }}
                     />
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: '12px',
+                        left: '12px',
+                        background: 'rgba(5, 8, 20, 0.85)',
+                        backdropFilter: 'blur(8px)',
+                        color: '#00E5FF',
+                        fontSize: '0.75rem',
+                        fontWeight: 700,
+                        padding: '4px 12px',
+                        borderRadius: '20px',
+                        border: '1px solid rgba(0, 229, 255, 0.3)',
+                      }}
+                    >
+                      {b.category}
+                    </span>
                   </div>
-                  <div className="card-body">
-                    <div className="card-meta">
-                      <span>📅 {blog.date}</span>
-                      <span>⏱️ {blog.readTime}</span>
+
+                  <div style={{ padding: '24px', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', gap: '12px', fontSize: '0.78rem', color: '#657599', marginBottom: '10px' }}>
+                      <span>📅 {b.date}</span>
+                      <span>⏱️ {b.readTime}</span>
                     </div>
-                    <h3 className="card-title">{blog.title}</h3>
-                    <p className="card-excerpt">{blog.excerpt}</p>
-                    <div className="card-footer">
-                      <Link to={`/blog-post?post=${blog.slug}`} className="read-more-link">
-                        Read Article <span>→</span>
+
+                    <h2 style={{ fontSize: '1.25rem', color: '#f0f4fc', lineHeight: 1.35, marginBottom: '10px' }}>
+                      <Link to={`/blog-post?post=${b.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                        {b.title}
                       </Link>
-                    </div>
+                    </h2>
+
+                    <p style={{ color: '#98a7c6', fontSize: '0.88rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '20px' }}>
+                      {b.excerpt}
+                    </p>
+
+                    <Link
+                      to={`/blog-post?post=${b.slug}`}
+                      style={{
+                        color: '#00E5FF',
+                        fontWeight: 700,
+                        fontSize: '0.88rem',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        textDecoration: 'none',
+                        marginTop: 'auto',
+                      }}
+                    >
+                      <span>Read Full Guide</span>
+                      <i className="bi bi-arrow-right"></i>
+                    </Link>
                   </div>
                 </article>
-              ))
-            )}
+              </TiltCard3D>
+            ))}
           </div>
 
+          {/* Pagination */}
           {totalPages > 1 && (
-            <div className="pagination" id="blogPagination">
-              {currentPage > 1 && (
-                <button className="page-btn" onClick={() => goToPage(currentPage - 1)}>
-                  ← Prev
-                </button>
-              )}
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => (
-                <div
-                  key={num}
-                  className={`page-num ${num === currentPage ? 'active' : ''}`}
-                  onClick={() => goToPage(num)}
-                >
-                  {num}
-                </div>
-              ))}
-              {currentPage < totalPages && (
-                <button className="page-btn" onClick={() => goToPage(currentPage + 1)}>
-                  Next →
-                </button>
-              )}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '50px' }}>
+              {Array.from({ length: totalPages }).map((_, idx) => {
+                const p = idx + 1;
+                return (
+                  <button
+                    key={p}
+                    type="button"
+                    onClick={() => goToPage(p)}
+                    style={{
+                      width: '42px',
+                      height: '42px',
+                      borderRadius: '10px',
+                      border: currentPage === p ? '1px solid #00E5FF' : '1px solid rgba(41, 121, 255, 0.25)',
+                      background: currentPage === p ? '#2979FF' : 'rgba(14, 21, 52, 0.6)',
+                      color: '#fff',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {p}
+                  </button>
+                );
+              })}
             </div>
           )}
         </div>

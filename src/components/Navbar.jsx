@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useLoader } from '../context/LoaderContext.jsx';
 
 export default function Navbar() {
@@ -18,7 +18,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
@@ -31,11 +31,11 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
   const toggleMenu = () => {
-    setMenuOpen(prev => !prev);
+    setMenuOpen((prev) => !prev);
   };
 
   const handleNavClick = (e, path) => {
@@ -51,93 +51,118 @@ export default function Navbar() {
 
   return (
     <>
-      <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
+      <nav id="navbar" className={isScrolled ? 'scrolled glass-panel' : ''} style={{ transition: 'all 0.3s ease' }}>
         <div className="container nav-inner">
           <a
             className="nav-logo"
             href="/"
             onClick={(e) => handleNavClick(e, '/')}
             title="Anirudh Kumar - Home"
+            style={{ display: 'flex', alignItems: 'center', gap: '12px' }}
           >
-            <img src="/Untitled design (12).png" alt="Anirudh Kumar" className="nav-portrait" />
-            <span className="nav-logo-text">ANIRUDH KUMAR</span>
+            <div style={{ position: 'relative' }}>
+              <img
+                src="/Untitled design (12).png"
+                alt="Anirudh Kumar, SEO expert in Lucknow"
+                className="nav-portrait"
+                style={{
+                  width: '42px',
+                  height: '42px',
+                  borderRadius: '50%',
+                  border: '2px solid #00E5FF',
+                  boxShadow: '0 0 14px rgba(0, 229, 255, 0.4)',
+                }}
+              />
+              <span
+                style={{
+                  position: 'absolute',
+                  bottom: '1px',
+                  right: '1px',
+                  width: '10px',
+                  height: '10px',
+                  borderRadius: '50%',
+                  background: '#00d68f',
+                  border: '2px solid #050814',
+                }}
+              ></span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <span className="nav-logo-text" style={{ fontSize: '1.25rem', letterSpacing: '1px', color: '#f0f4fc', lineHeight: 1 }}>
+                ANIRUDH KUMAR
+              </span>
+              <span style={{ fontSize: '0.65rem', color: '#00E5FF', letterSpacing: '0.5px', fontWeight: 700, marginTop: '2px' }}>
+                SEO EXPERT &amp; DIGITAL MARKETER
+              </span>
+            </div>
           </a>
 
           <ul className="nav-links">
             <li>
               <a
                 href="/"
-                className={isActive('/') ? 'active-nav-link' : ''}
+                className={isActive('/') && location.pathname === '/' ? 'active-nav-link' : ''}
                 onClick={(e) => handleNavClick(e, '/')}
               >
                 Home
               </a>
             </li>
 
+            <li>
+              <a
+                href="/about"
+                className={isActive('/about') ? 'active-nav-link' : ''}
+                onClick={(e) => handleNavClick(e, '/about')}
+              >
+                About
+              </a>
+            </li>
+
             <li className="nav-item-dropdown">
               <a
                 href="/services"
-                className={isActive('/services') || isActive('/seo-') || isActive('/smm-') || isActive('/ads-') || isActive('/web-dev') || isActive('/marketing-') ? 'active-nav-link' : ''}
+                className={isActive('/services') || isActive('/seo-expert') || isActive('/remote-seo') ? 'active-nav-link' : ''}
                 onClick={(e) => handleNavClick(e, '/services')}
               >
                 Services <i className="bi bi-chevron-down" style={{ fontSize: '0.7rem', marginLeft: '4px' }}></i>
               </a>
               <div className="dropdown-menu">
-                <a href="/seo-lucknow" onClick={(e) => handleNavClick(e, '/seo-lucknow')}>
-                  <span>SEO Services Lucknow</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                <a href="/services" onClick={(e) => handleNavClick(e, '/services')}>
+                  <span>All 6 Services Overview</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
-                <a href="/smm-lucknow" onClick={(e) => handleNavClick(e, '/smm-lucknow')}>
-                  <span>Social Media Marketing</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)', margin: '6px 0' }}></div>
+                <a href="/seo-expert-lucknow" onClick={(e) => handleNavClick(e, '/seo-expert-lucknow')}>
+                  <span>📍 SEO Expert Lucknow (On-Site)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
-                <a href="/ads-lucknow" onClick={(e) => handleNavClick(e, '/ads-lucknow')}>
-                  <span>Google &amp; Meta Ads</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                <a href="/seo-expert-kanpur" onClick={(e) => handleNavClick(e, '/seo-expert-kanpur')}>
+                  <span>📍 SEO Expert Kanpur (On-Site)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
-                <a href="/web-dev-lucknow" onClick={(e) => handleNavClick(e, '/web-dev-lucknow')}>
-                  <span>Website Development</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                <a href="/seo-expert-noida" onClick={(e) => handleNavClick(e, '/seo-expert-noida')}>
+                  <span>📍 SEO Expert Noida (On-Site / Hybrid)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
-                <a href="/marketing-kanpur" onClick={(e) => handleNavClick(e, '/marketing-kanpur')}>
-                  <span>Digital Marketing Kanpur</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
-                </a>
-                <a href="/seo-consultant" onClick={(e) => handleNavClick(e, '/seo-consultant')}>
-                  <span>SEO Consultant</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
+                <a href="/remote-seo-services" onClick={(e) => handleNavClick(e, '/remote-seo-services')}>
+                  <span>🌐 Remote SEO Services (Pan-India)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
               </div>
             </li>
 
-            <li className="nav-item-dropdown">
+            <li>
               <a
-                href="/results"
-                className={isActive('/results') || isActive('/testimonials') || isActive('/case-studies') ? 'active-nav-link' : ''}
-                onClick={(e) => handleNavClick(e, '/results')}
+                href="/case-studies"
+                className={isActive('/case-studies') ? 'active-nav-link' : ''}
+                onClick={(e) => handleNavClick(e, '/case-studies')}
               >
-                Results <i className="bi bi-chevron-down" style={{ fontSize: '0.7rem', marginLeft: '4px' }}></i>
+                Case Studies
               </a>
-              <div className="dropdown-menu">
-                <a href="/testimonials" onClick={(e) => handleNavClick(e, '/testimonials')}>
-                  <span>Client Reviews</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
-                </a>
-                <a href="/case-studies" onClick={(e) => handleNavClick(e, '/case-studies')}>
-                  <span>Case Studies</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
-                </a>
-              </div>
             </li>
 
-            <li className="nav-item-dropdown">
+            <li>
               <a
-                href="/about"
-                className={isActive('/about') || isActive('/why-choose-us') ? 'active-nav-link' : ''}
-                onClick={(e) => handleNavClick(e, '/about')}
+                href="/pricing"
+                className={isActive('/pricing') ? 'active-nav-link' : ''}
+                onClick={(e) => handleNavClick(e, '/pricing')}
               >
-                About <i className="bi bi-chevron-down" style={{ fontSize: '0.7rem', marginLeft: '4px' }}></i>
+                Pricing
               </a>
-              <div className="dropdown-menu">
-                <a href="/about" onClick={(e) => handleNavClick(e, '/about')}>
-                  <span>My Story</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
-                </a>
-                <a href="/why-choose-us" onClick={(e) => handleNavClick(e, '/why-choose-us')}>
-                  <span>Why Choose Us</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
-                </a>
-              </div>
             </li>
 
             <li>
@@ -167,19 +192,25 @@ export default function Navbar() {
               onClick={toggleTheme}
               aria-label="Toggle theme"
               title="Dark/Light Mode"
+              style={{ display: 'none' }} // Futuristic dark theme is standard
             >
-              {theme === 'dark' ? (
-                <i className="bi bi-brightness-high-fill"></i>
-              ) : (
-                <i className="bi bi-moon-stars-fill"></i>
-              )}
+              {theme === 'dark' ? <i className="bi bi-brightness-high-fill"></i> : <i className="bi bi-moon-stars-fill"></i>}
             </button>
             <a
-              className="nav-cta"
+              className="btn btn-primary nav-cta"
               href="/contact"
               onClick={(e) => handleNavClick(e, '/contact')}
+              style={{
+                padding: '9px 20px',
+                fontSize: '0.86rem',
+                borderRadius: '30px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+              }}
             >
-              Free SEO Audit
+              <span>Get Free SEO Audit</span>
+              <i className="bi bi-arrow-right-short" style={{ fontSize: '1.2rem' }}></i>
             </a>
             <div
               className={`hamburger ${menuOpen ? 'active' : ''}`}
@@ -205,13 +236,18 @@ export default function Navbar() {
         </button>
         <div className="mobile-menu-links">
           <a href="/" onClick={(e) => handleNavClick(e, '/')}>Home</a>
-          <a href="/services" onClick={(e) => handleNavClick(e, '/services')}>Services</a>
-          <a href="/results" onClick={(e) => handleNavClick(e, '/results')}>Results</a>
           <a href="/about" onClick={(e) => handleNavClick(e, '/about')}>About</a>
+          <a href="/services" onClick={(e) => handleNavClick(e, '/services')}>Services Overview</a>
+          <a href="/seo-expert-lucknow" onClick={(e) => handleNavClick(e, '/seo-expert-lucknow')}>📍 Lucknow SEO (On-Site)</a>
+          <a href="/seo-expert-kanpur" onClick={(e) => handleNavClick(e, '/seo-expert-kanpur')}>📍 Kanpur SEO (On-Site)</a>
+          <a href="/seo-expert-noida" onClick={(e) => handleNavClick(e, '/seo-expert-noida')}>📍 Noida SEO (On-Site / Hybrid)</a>
+          <a href="/remote-seo-services" onClick={(e) => handleNavClick(e, '/remote-seo-services')}>🌐 Remote SEO (Pan-India)</a>
+          <a href="/case-studies" onClick={(e) => handleNavClick(e, '/case-studies')}>Case Studies</a>
+          <a href="/pricing" onClick={(e) => handleNavClick(e, '/pricing')}>Pricing</a>
           <a href="/blog" onClick={(e) => handleNavClick(e, '/blog')}>Blog</a>
           <a href="/contact" onClick={(e) => handleNavClick(e, '/contact')}>Contact</a>
           <a className="btn btn-primary mobile-cta" href="/contact" onClick={(e) => handleNavClick(e, '/contact')}>
-            Free SEO Audit
+            Get Free SEO Audit
           </a>
         </div>
       </div>

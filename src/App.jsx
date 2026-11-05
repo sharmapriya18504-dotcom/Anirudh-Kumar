@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import Preloader from './components/Preloader.jsx';
@@ -10,24 +10,23 @@ import MouseFollower from './components/MouseFollower.jsx';
 import { useSiteInteractions } from './hooks/useSiteInteractions.js';
 import { LoaderProvider, useLoader } from './context/LoaderContext.jsx';
 
-// Pages
+// Core Pages
 import HomePage from './pages/HomePage.jsx';
 import ServicesPage from './pages/ServicesPage.jsx';
-import SeoLucknowPage from './pages/SeoLucknowPage.jsx';
-import SmmLucknowPage from './pages/SmmLucknowPage.jsx';
-import AdsLucknowPage from './pages/AdsLucknowPage.jsx';
-import WebDevLucknowPage from './pages/WebDevLucknowPage.jsx';
-import MarketingKanpurPage from './pages/MarketingKanpurPage.jsx';
-import SeoConsultantPage from './pages/SeoConsultantPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
-import ResultsPage from './pages/ResultsPage.jsx';
-import TestimonialsPage from './pages/TestimonialsPage.jsx';
 import CaseStudiesPage from './pages/CaseStudiesPage.jsx';
-import WhyChooseUsPage from './pages/WhyChooseUsPage.jsx';
 import PricingPage from './pages/PricingPage.jsx';
 import BlogPage from './pages/BlogPage.jsx';
 import BlogPostPage from './pages/BlogPostPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import ThankYouPage from './pages/ThankYouPage.jsx';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx';
+
+// Location Hub Pages (500+ words unique content per PDF A3)
+import SeoExpertLucknowPage from './pages/SeoExpertLucknowPage.jsx';
+import SeoExpertKanpurPage from './pages/SeoExpertKanpurPage.jsx';
+import SeoExpertNoidaPage from './pages/SeoExpertNoidaPage.jsx';
+import RemoteSeoPage from './pages/RemoteSeoPage.jsx';
 
 function AppContent() {
   const { refreshKey } = useLoader();
@@ -42,29 +41,44 @@ function AppContent() {
 
       <main className="main-content">
         <Routes>
+          {/* Main Pages */}
           <Route path="/" element={<HomePage key={`home-${refreshKey}`} />} />
-          <Route path="/services" element={<ServicesPage key={`services-${refreshKey}`} />} />
-          <Route path="/seo-lucknow" element={<SeoLucknowPage key={`seo-${refreshKey}`} />} />
-          <Route path="/smm-lucknow" element={<SmmLucknowPage key={`smm-${refreshKey}`} />} />
-          <Route path="/ads-lucknow" element={<AdsLucknowPage key={`ads-${refreshKey}`} />} />
-          <Route path="/web-dev-lucknow" element={<WebDevLucknowPage key={`web-${refreshKey}`} />} />
-          <Route path="/marketing-kanpur" element={<MarketingKanpurPage key={`mkt-${refreshKey}`} />} />
-          <Route path="/seo-consultant" element={<SeoConsultantPage key={`seoc-${refreshKey}`} />} />
           <Route path="/about" element={<AboutPage key={`about-${refreshKey}`} />} />
-          <Route path="/results" element={<ResultsPage key={`res-${refreshKey}`} />} />
-          <Route path="/testimonials" element={<TestimonialsPage key={`testi-${refreshKey}`} />} />
+          <Route path="/services" element={<ServicesPage key={`services-${refreshKey}`} />} />
           <Route path="/case-studies" element={<CaseStudiesPage key={`case-${refreshKey}`} />} />
-          <Route path="/why-choose-us" element={<WhyChooseUsPage key={`why-${refreshKey}`} />} />
-          <Route path="/pricing" element={<PricingPage key={`price-${refreshKey}`} />} />
+          <Route path="/pricing" element={<PricingPage key={`pricing-${refreshKey}`} />} />
           <Route path="/blog" element={<BlogPage key={`blog-${refreshKey}`} />} />
           <Route path="/blog-post" element={<BlogPostPage key={`post-${refreshKey}`} />} />
           <Route path="/contact" element={<ContactPage key={`contact-${refreshKey}`} />} />
+          <Route path="/thank-you" element={<ThankYouPage key={`thanks-${refreshKey}`} />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage key={`privacy-${refreshKey}`} />} />
+
+          {/* Location Landing Pages (PDF A3 & Developer Change Report B1) */}
+          <Route path="/seo-expert-lucknow" element={<SeoExpertLucknowPage key={`lucknow-${refreshKey}`} />} />
+          <Route path="/seo-expert-kanpur" element={<SeoExpertKanpurPage key={`kanpur-${refreshKey}`} />} />
+          <Route path="/seo-expert-noida" element={<SeoExpertNoidaPage key={`noida-${refreshKey}`} />} />
+          <Route path="/remote-seo-services" element={<RemoteSeoPage key={`remote-${refreshKey}`} />} />
+
+          {/* Legacy Aliases & 301-equivalent redirects (PDF B1) */}
+          <Route path="/seo-lucknow" element={<Navigate to="/seo-expert-lucknow" replace />} />
+          <Route path="/marketing-kanpur" element={<Navigate to="/seo-expert-kanpur" replace />} />
+          <Route path="/results" element={<Navigate to="/case-studies" replace />} />
+          <Route path="/testimonials" element={<Navigate to="/case-studies" replace />} />
+          <Route path="/why-choose-us" element={<Navigate to="/about" replace />} />
+          <Route path="/seo-consultant" element={<Navigate to="/services" replace />} />
+          <Route path="/smm-lucknow" element={<Navigate to="/services" replace />} />
+          <Route path="/ads-lucknow" element={<Navigate to="/services" replace />} />
+          <Route path="/web-dev-lucknow" element={<Navigate to="/services" replace />} />
+
           {/* Legacy .html links */}
-          <Route path="/services.html" element={<ServicesPage />} />
-          <Route path="/about.html" element={<AboutPage />} />
-          <Route path="/blog.html" element={<BlogPage />} />
-          <Route path="/blog-post.html" element={<BlogPostPage />} />
-          <Route path="/contact.html" element={<ContactPage />} />
+          <Route path="/services.html" element={<Navigate to="/services" replace />} />
+          <Route path="/about.html" element={<Navigate to="/about" replace />} />
+          <Route path="/blog.html" element={<Navigate to="/blog" replace />} />
+          <Route path="/blog-post.html" element={<Navigate to="/blog-post" replace />} />
+          <Route path="/contact.html" element={<Navigate to="/contact" replace />} />
+          <Route path="/privacy-policy.html" element={<Navigate to="/privacy-policy" replace />} />
+
+          {/* Fallback */}
           <Route path="*" element={<HomePage />} />
         </Routes>
       </main>

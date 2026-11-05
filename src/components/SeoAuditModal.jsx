@@ -9,11 +9,11 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
   if (!isOpen) return null;
 
   const stepsList = [
-    'Connecting to website host & verifying SSL certificates...',
-    'Analyzing Google Core Web Vitals (LCP, FID, CLS)...',
-    'Auditing On-Page SEO, H1-H6 tags & Schema Markup...',
-    'Checking Local Citations in Lucknow & Kanpur Google Maps...',
-    'Synthesizing SEO Audit Action Plan...'
+    'Verifying DNS resolution & Core Web Vitals (LCP, INP, CLS)...',
+    'Analyzing Google Maps Local Entity & Business Profile signals...',
+    'Auditing On-page SEO, Schema markup & Keyword cannibalization...',
+    'Checking Competitor Rankings in Lucknow, Kanpur, Noida & India...',
+    'Compiling Actionable SEO Roadmap for Anirudh Kumar review...',
   ];
 
   const handleStartScan = (e) => {
@@ -34,9 +34,9 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
           try {
             confetti({ particleCount: 70, spread: 60, origin: { y: 0.5 } });
           } catch (err) {}
-        }, 600);
+        }, 500);
       }
-    }, 650);
+    }, 600);
   };
 
   const handleBookAudit = () => {
@@ -45,18 +45,22 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
     if (contact) {
       contact.scrollIntoView({ behavior: 'smooth' });
     }
-    const msg = document.querySelector('textarea');
+    const websiteInput = document.querySelector('input[name="website"]');
+    if (websiteInput) {
+      websiteInput.value = url;
+    }
+    const msg = document.querySelector('textarea[name="message"], textarea');
     if (msg) {
-      msg.value = `Hi Anirudh, I ran the instant audit on my site (${url}). My score was ~74/100 with critical Local Schema & PageSpeed issues. Please share the complete roadmap to fix this.`;
+      msg.value = `Hi Anirudh, I ran the instant SEO scan on my website (${url}). Please review my site and share your prioritized action plan to get real enquiries.`;
       msg.focus();
     }
   };
 
   const handleWhatsApp = () => {
     const text = encodeURIComponent(
-      `Hi Anirudh! I tested my website (${url}) on your instant SEO scanner. Can you help me fix the SEO issues and rank #1 in Lucknow/Kanpur?`
+      `Hi Anirudh! I checked my website (${url}) on your SEO scanner. Can you help me audit the issues and rank on Google?`
     );
-    window.open(`https://wa.me/919999999999?text=${text}`, '_blank');
+    window.open(`https://wa.me/918604625862?text=${text}`, '_blank');
   };
 
   return (
@@ -65,27 +69,28 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
         position: 'fixed',
         inset: 0,
         zIndex: 10001,
-        background: 'rgba(6, 6, 15, 0.85)',
-        backdropFilter: 'blur(10px)',
+        background: 'rgba(3, 6, 18, 0.88)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '20px'
+        padding: '20px',
       }}
       onClick={onClose}
     >
       <div
         style={{
-          background: 'var(--bg2)',
-          border: '1px solid var(--border)',
+          background: 'rgba(10, 16, 42, 0.95)',
+          border: '1px solid rgba(41, 121, 255, 0.35)',
           borderRadius: '24px',
           width: '100%',
           maxWidth: '560px',
           padding: '36px',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 107, 0, 0.15)',
+          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 229, 255, 0.15)',
           position: 'relative',
-          color: 'var(--text)',
-          animation: 'modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+          color: '#f0f4fc',
+          animation: 'modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -99,7 +104,7 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
             right: '20px',
             background: 'rgba(255, 255, 255, 0.08)',
             border: 'none',
-            color: 'var(--text2)',
+            color: '#98a7c6',
             width: '36px',
             height: '36px',
             borderRadius: '50%',
@@ -108,7 +113,7 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            transition: 'all 0.2s ease'
+            transition: 'all 0.2s ease',
           }}
           aria-label="Close dialog"
         >
@@ -123,30 +128,31 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
               style={{
                 marginBottom: '14px',
                 display: 'inline-block',
-                background: 'rgba(255, 107, 0, 0.12)',
-                color: 'var(--accent)'
+                background: 'rgba(41, 121, 255, 0.15)',
+                color: '#00E5FF',
+                border: '1px solid rgba(0, 229, 255, 0.3)',
               }}
             >
-              ⚡ Instant Website Audit Scanner
+              ⚡ Instant SEO Audit Scanner
             </span>
             <h3
               style={{
                 fontFamily: 'var(--ff-d)',
-                fontSize: '1.8rem',
+                fontSize: '1.9rem',
                 margin: '10px 0 12px 0',
-                lineHeight: '1.2'
+                lineHeight: '1.2',
+                color: '#f0f4fc',
               }}
             >
-              Analyze Your <span className="gradient-text">Website SEO Health</span>
+              Analyze Your <span className="gradient-text">Website Search Visibility</span>
             </h3>
-            <p style={{ color: 'var(--text2)', fontSize: '0.9rem', marginBottom: '24px', lineHeight: '1.6' }}>
-              Apni website URL dalein. Hamara automated scanner aapke PageSpeed, Meta Tags aur Local SEO
-              rankings ka instant snapshot nikalega.
+            <p style={{ color: '#98a7c6', fontSize: '0.92rem', marginBottom: '24px', lineHeight: '1.6' }}>
+              Enter your website link below. I will check what is stopping your business from being found on Google and Maps. Free, with no obligation.
             </p>
 
             <form onSubmit={handleStartScan}>
-              <div style={{ marginBottom: '18px' }}>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px' }}>
+              <div style={{ marginBottom: '20px' }}>
+                <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 600, marginBottom: '8px', color: '#c2d2ea' }}>
                   Website URL *
                 </label>
                 <div style={{ position: 'relative' }}>
@@ -160,11 +166,11 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
                       width: '100%',
                       padding: '14px 16px 14px 44px',
                       borderRadius: '12px',
-                      background: 'var(--bg)',
-                      border: '1px solid var(--border)',
-                      color: 'var(--text)',
+                      background: 'rgba(5, 8, 20, 0.8)',
+                      border: '1px solid rgba(41, 121, 255, 0.3)',
+                      color: '#f0f4fc',
                       fontSize: '0.95rem',
-                      outline: 'none'
+                      outline: 'none',
                     }}
                   />
                   <span
@@ -173,7 +179,7 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
                       left: '16px',
                       top: '50%',
                       transform: 'translateY(-50%)',
-                      color: 'var(--accent)'
+                      color: '#00E5FF',
                     }}
                   >
                     <i className="bi bi-globe2"></i>
@@ -192,39 +198,39 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
 
             <div
               style={{
-                marginTop: '18px',
+                marginTop: '20px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '16px',
-                fontSize: '0.78rem',
-                color: 'var(--text3)'
+                fontSize: '0.8rem',
+                color: '#657599',
               }}
             >
               <span>🔒 100% Free &amp; Confidential</span>
-              <span>⚡ No Signup Required</span>
+              <span>⚡ Reviewed Personally by Anirudh</span>
             </div>
           </div>
         )}
 
         {/* STEP 2: SCANNING PROGRESS */}
         {step === 'scanning' && (
-          <div style={{ textAlign: 'center', padding: '20px 0' }}>
+          <div style={{ textAlign: 'center', padding: '24px 0' }}>
             <div
               style={{
                 width: '70px',
                 height: '70px',
                 borderRadius: '50%',
-                border: '3px solid rgba(255, 107, 0, 0.2)',
-                borderTopColor: 'var(--accent)',
+                border: '3px solid rgba(41, 121, 255, 0.2)',
+                borderTopColor: '#00E5FF',
                 animation: 'spin 1s linear infinite',
-                margin: '0 auto 24px auto'
+                margin: '0 auto 24px auto',
               }}
-            ></div>
-            <h4 style={{ fontFamily: 'var(--ff-d)', fontSize: '1.4rem', marginBottom: '8px' }}>
+            />
+            <h4 style={{ fontFamily: 'var(--ff-d)', fontSize: '1.5rem', marginBottom: '8px', color: '#f0f4fc' }}>
               Scanning <span className="gradient-text">{url}</span>
             </h4>
-            <p style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '0.9rem', minHeight: '44px' }}>
+            <p style={{ color: '#00E5FF', fontWeight: 600, fontSize: '0.9rem', minHeight: '44px' }}>
               {stepsList[Math.min(scanStep, stepsList.length - 1)]}
             </p>
 
@@ -232,22 +238,22 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
               style={{
                 width: '100%',
                 height: '6px',
-                background: 'rgba(255, 255, 255, 0.1)',
+                background: 'rgba(255, 255, 255, 0.08)',
                 borderRadius: '10px',
                 overflow: 'hidden',
-                margin: '20px 0 10px 0'
+                margin: '20px 0 10px 0',
               }}
             >
               <div
                 style={{
                   height: '100%',
-                  background: 'var(--gradient)',
+                  background: 'linear-gradient(90deg, #00E5FF, #2979FF, #7C4DFF)',
                   width: `${((scanStep + 1) / stepsList.length) * 100}%`,
-                  transition: 'width 0.4s ease'
+                  transition: 'width 0.4s ease',
                 }}
-              ></div>
+              />
             </div>
-            <span style={{ fontSize: '0.8rem', color: 'var(--text3)' }}>
+            <span style={{ fontSize: '0.8rem', color: '#657599' }}>
               Step {Math.min(scanStep + 1, stepsList.length)} of {stepsList.length}
             </span>
           </div>
@@ -257,10 +263,10 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
         {step === 'results' && (
           <div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-              <span className="tag" style={{ background: 'rgba(0, 214, 143, 0.15)', color: '#00D68F' }}>
-                ✓ Audit Completed
+              <span className="tag" style={{ background: 'rgba(0, 214, 143, 0.15)', color: '#00D68F', border: '1px solid #00D68F' }}>
+                ✓ Initial Health Audit Complete
               </span>
-              <span style={{ fontSize: '0.82rem', color: 'var(--text3)' }}>{url}</span>
+              <span style={{ fontSize: '0.82rem', color: '#657599' }}>{url}</span>
             </div>
 
             <div
@@ -268,11 +274,11 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '20px',
-                background: 'var(--bg)',
+                background: 'rgba(5, 8, 20, 0.75)',
                 padding: '20px',
                 borderRadius: '16px',
-                border: '1px solid var(--border)',
-                marginBottom: '20px'
+                border: '1px solid rgba(41, 121, 255, 0.25)',
+                marginBottom: '20px',
               }}
             >
               <div
@@ -280,11 +286,11 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
                   width: '74px',
                   height: '74px',
                   borderRadius: '50%',
-                  background: 'conic-gradient(#00D68F 0% 74%, rgba(255,255,255,0.1) 74% 100%)',
+                  background: 'conic-gradient(#00E5FF 0% 72%, rgba(255,255,255,0.1) 72% 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  flexShrink: 0
+                  flexShrink: 0,
                 }}
               >
                 <div
@@ -292,35 +298,35 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
                     width: '60px',
                     height: '60px',
                     borderRadius: '50%',
-                    background: 'var(--bg2)',
+                    background: '#0a102a',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
                   }}
                 >
-                  <span style={{ fontWeight: 900, fontSize: '1.2rem', color: '#00D68F', lineHeight: '1' }}>74</span>
-                  <span style={{ fontSize: '0.62rem', color: 'var(--text3)' }}>/100</span>
+                  <span style={{ fontWeight: 900, fontSize: '1.25rem', color: '#00E5FF', lineHeight: '1' }}>72</span>
+                  <span style={{ fontSize: '0.62rem', color: '#657599' }}>/100</span>
                 </div>
               </div>
 
               <div>
-                <h4 style={{ margin: '0 0 4px 0', fontSize: '1.1rem' }}>Overall SEO Health: Fair</h4>
-                <p style={{ margin: 0, fontSize: '0.82rem', color: 'var(--text2)', lineHeight: '1.4' }}>
-                  Aapki website mein high growth potential hai, lekin 3 critical technical issues rankings roke hue hain.
+                <h4 style={{ margin: '0 0 4px 0', fontSize: '1.1rem', color: '#f0f4fc' }}>Search Visibility Score: Fair</h4>
+                <p style={{ margin: 0, fontSize: '0.85rem', color: '#98a7c6', lineHeight: '1.4' }}>
+                  Your website has solid growth potential, but key Google Maps and technical on-page gaps are letting competitors capture calls.
                 </p>
               </div>
             </div>
 
-            {/* Critical Issues Box */}
-            <div style={{ marginBottom: '22px', fontSize: '0.84rem' }}>
-              <div style={{ fontWeight: 700, marginBottom: '8px', color: '#FF4757', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span>⚠️ 3 Critical Issues Detected:</span>
+            {/* Identified Technical Opportunities */}
+            <div style={{ marginBottom: '22px', fontSize: '0.86rem' }}>
+              <div style={{ fontWeight: 700, marginBottom: '8px', color: '#00E5FF', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span>🎯 Key Opportunities Identified:</span>
               </div>
-              <ul style={{ paddingLeft: '18px', margin: 0, color: 'var(--text2)', lineHeight: '1.6' }}>
-                <li>Missing LocalBusiness Schema &amp; Google Map entity linking</li>
-                <li>Mobile Core Web Vitals (LCP: 3.8s) causing visitor drop-off</li>
-                <li>Competitor keywords missing from Meta Titles in Lucknow/Kanpur</li>
+              <ul style={{ paddingLeft: '18px', margin: 0, color: '#98a7c6', lineHeight: '1.6' }}>
+                <li>Google Business Profile optimization needed for local 'near me' rankings</li>
+                <li>Mobile Core Web Vitals can be optimized to prevent visitor drop-offs</li>
+                <li>Missing location-targeted keyword clusters on key service pages</li>
               </ul>
             </div>
 
@@ -332,7 +338,7 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
                 className="btn btn-primary audit-modal-book-btn"
                 style={{ width: '100%', justifyContent: 'center', cursor: 'pointer' }}
               >
-                📋 Book Free 1-on-1 Plan to Fix These →
+                📋 Get Custom Action Plan from Anirudh →
               </button>
               <button
                 type="button"
@@ -340,7 +346,7 @@ export default function SeoAuditModal({ isOpen, onClose, defaultUrl = '' }) {
                 className="btn btn-whatsapp audit-modal-whatsapp-btn"
                 style={{ width: '100%', justifyContent: 'center', cursor: 'pointer' }}
               >
-                💬 WhatsApp This Report to Anirudh
+                💬 Chat on WhatsApp (+91 86046 25862)
               </button>
             </div>
           </div>
