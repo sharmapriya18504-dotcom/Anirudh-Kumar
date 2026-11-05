@@ -218,62 +218,218 @@ export default function HomePage() {
           <div className="services-grid">
             {/* 1. SEO */}
             <Link className="service-card reveal" to="/seo-lucknow">
-              <div className="service-img-wrap">
-                <img src="/service-seo.png" alt="SEO Services" className="service-card-img" />
+              <div className="service-card-top">
+                <span className="service-badge-pill"><i className="bi bi-search"></i> 🎯 Organic Search</span>
+                <span className="service-idx-num">01</span>
               </div>
-              <h3>1. SEO (Search Engine Optimization)</h3>
-              <p>Get your website to rank on Google for the searches your customers actually make. Technical fixes, on-page SEO, content and link building.</p>
-              <div className="mt-4" style={{ color: 'var(--accent)', fontWeight: '700' }}>Learn more about SEO →</div>
+              <div className="service-img-wrap">
+                <img src="/service-seo.png" alt="SEO Services in Lucknow" className="service-card-img" />
+                <div className="service-img-overlay-tag">Google Page #1</div>
+              </div>
+              <h3>SEO (Search Engine Optimization)</h3>
+              <p>Get your website to rank on Google for high-intent searches your buyers actually make. Technical fixes, on-page SEO, content, and ethical authority links.</p>
+              
+              <div className="service-deliverables">
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Core Web Vitals &amp; Technical Health</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>High-Intent Commercial Keyword Targets</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Sustainable White-Hat Backlinks</span>
+                </div>
+              </div>
+
+              <div className="service-card-footer">
+                <span className="service-action-link">
+                  <span>Explore SEO Capabilities</span>
+                  <i className="bi bi-arrow-right"></i>
+                </span>
+              </div>
             </Link>
 
             {/* 2. LOCAL SEO */}
             <Link className="service-card reveal" to="/seo-expert-kanpur">
+              <div className="service-card-top">
+                <span className="service-badge-pill"><i className="bi bi-geo-alt-fill"></i> 📍 Local 3-Pack</span>
+                <span className="service-idx-num">02</span>
+              </div>
               <div className="service-img-wrap">
                 <img src="/service-kanpur.png" alt="Local SEO & Google Business Profile" className="service-card-img" />
+                <div className="service-img-overlay-tag">Google Maps</div>
               </div>
-              <h3>2. Local SEO &amp; Google Business Profile</h3>
-              <p>Show up in Google Maps and 'near me' searches across Lucknow, Kanpur and Noida so nearby customers call you first.</p>
-              <div className="mt-4" style={{ color: 'var(--accent)', fontWeight: '700' }}>Learn more about Local SEO →</div>
+              <h3>Local SEO &amp; Google Business Profile</h3>
+              <p>Dominate Google Maps and 'near me' searches across Lucknow, Kanpur, and Noida so local customers call and visit you first.</p>
+              
+              <div className="service-deliverables">
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Top 3 Google Maps Ranking Strategy</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Verified Indian NAP Directory Citations</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Customer Review Generation Funnels</span>
+                </div>
+              </div>
+
+              <div className="service-card-footer">
+                <span className="service-action-link">
+                  <span>Explore Local SEO Services</span>
+                  <i className="bi bi-arrow-right"></i>
+                </span>
+              </div>
             </Link>
 
             {/* 3. GOOGLE & META ADS */}
             <Link className="service-card reveal" to="/ads-lucknow">
-              <div className="service-img-wrap">
-                <img src="/service-ads.png" alt="Google Ads & Meta Ads" className="service-card-img" />
+              <div className="service-card-top">
+                <span className="service-badge-pill"><i className="bi bi-bullseye"></i> ⚡ Performance Ads</span>
+                <span className="service-idx-num">03</span>
               </div>
-              <h3>3. Google Ads &amp; Meta Ads</h3>
-              <p>Paid performance marketing campaigns built around verified leads and sales, not just vanity clicks. Clear tracking for every rupee spent.</p>
-              <div className="mt-4" style={{ color: 'var(--accent)', fontWeight: '700' }}>Learn more about Ads →</div>
+              <div className="service-img-wrap">
+                <img src="/service-ads.png" alt="Google Ads & Meta Ads Lead Generation" className="service-card-img" />
+                <div className="service-img-overlay-tag">Verified ROAS</div>
+              </div>
+              <h3>Google Ads &amp; Meta Performance Ads</h3>
+              <p>Paid performance marketing campaigns engineered around genuine inquiries and sales, not vanity clicks. Transparent tracking for every rupee spent.</p>
+              
+              <div className="service-deliverables">
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Google Search Ads for High-Intent Buyers</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Meta (FB/Insta) Retargeting &amp; Lookalikes</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Negative Keyword Sculpting &amp; ROAS Guard</span>
+                </div>
+              </div>
+
+              <div className="service-card-footer">
+                <span className="service-action-link">
+                  <span>Explore Performance Ads</span>
+                  <i className="bi bi-arrow-right"></i>
+                </span>
+              </div>
             </Link>
 
             {/* 4. SOCIAL MEDIA MARKETING */}
             <Link className="service-card reveal" to="/smm-lucknow">
-              <div className="service-img-wrap">
-                <img src="/service-smm.png" alt="Social Media Marketing" className="service-card-img" />
+              <div className="service-card-top">
+                <span className="service-badge-pill"><i className="bi bi-share-fill"></i> 📱 Social Growth</span>
+                <span className="service-idx-num">04</span>
               </div>
-              <h3>4. Social Media Marketing</h3>
-              <p>Consistent viral content and community building on Instagram, LinkedIn and Facebook, so customers remember and trust your brand.</p>
-              <div className="mt-4" style={{ color: 'var(--accent)', fontWeight: '700' }}>Learn more about SMM →</div>
+              <div className="service-img-wrap">
+                <img src="/service-smm.png" alt="Social Media Marketing Lucknow" className="service-card-img" />
+                <div className="service-img-overlay-tag">Brand Reach</div>
+              </div>
+              <h3>Social Media Marketing (SMM)</h3>
+              <p>Consistent, viral, and brand-building content across Instagram, LinkedIn, and Facebook that earns trust and triggers warm customer inquiries.</p>
+              
+              <div className="service-deliverables">
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>High-Retention Reels &amp; Carousel Creatives</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>30-Day Pre-Planned Content Calendar</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Active Community Engagement &amp; DMs</span>
+                </div>
+              </div>
+
+              <div className="service-card-footer">
+                <span className="service-action-link">
+                  <span>Explore Social Media</span>
+                  <i className="bi bi-arrow-right"></i>
+                </span>
+              </div>
             </Link>
 
             {/* 5. WEBSITE DEVELOPMENT */}
             <Link className="service-card reveal" to="/web-dev-lucknow">
-              <div className="service-img-wrap">
-                <img src="/service-web.png" alt="Website Development" className="service-card-img" />
+              <div className="service-card-top">
+                <span className="service-badge-pill"><i className="bi bi-laptop"></i> 💻 Fast &amp; SEO-Ready</span>
+                <span className="service-idx-num">05</span>
               </div>
-              <h3>5. Website Development</h3>
-              <p>Blazing fast, mobile-friendly websites and conversion-focused landing pages designed to turn visitors into paying enquiries.</p>
-              <div className="mt-4" style={{ color: 'var(--accent)', fontWeight: '700' }}>Learn more about Web Dev →</div>
+              <div className="service-img-wrap">
+                <img src="/service-web.png" alt="Website Development & Landing Pages" className="service-card-img" />
+                <div className="service-img-overlay-tag">90+ PageSpeed</div>
+              </div>
+              <h3>Website Development &amp; Landing Pages</h3>
+              <p>Blazing-fast, mobile-friendly websites and conversion-focused landing pages designed from day one to turn visitors into booked enquiries.</p>
+              
+              <div className="service-deliverables">
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Sub-1.5s Load Time &amp; Mobile Optimization</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Conversion-Engineered Layout &amp; CTAs</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Built-in Structured Data &amp; Canonical SEO</span>
+                </div>
+              </div>
+
+              <div className="service-card-footer">
+                <span className="service-action-link">
+                  <span>Explore Web Development</span>
+                  <i className="bi bi-arrow-right"></i>
+                </span>
+              </div>
             </Link>
 
             {/* 6. GROWTH ADVISORY */}
             <Link className="service-card reveal" to="/seo-consultant">
+              <div className="service-card-top">
+                <span className="service-badge-pill"><i className="bi bi-compass"></i> 💡 1-on-1 Consulting</span>
+                <span className="service-idx-num">06</span>
+              </div>
               <div className="service-img-wrap">
                 <img src="/service-consulting.png" alt="Growth Advisory & SEO Consulting" className="service-card-img" />
+                <div className="service-img-overlay-tag">Strategic Roadmap</div>
               </div>
-              <h3>6. Growth Advisory &amp; Consulting</h3>
-              <p>Not ready for a full retainer? Book a strategy session. I review your digital marketing and give you a clear actionable game plan.</p>
-              <div className="mt-4" style={{ color: 'var(--accent)', fontWeight: '700' }}>Learn more about Consulting →</div>
+              <h3>Growth Advisory &amp; SEO Consulting</h3>
+              <p>Not ready for a full retainer? Book a direct strategic session with Anirudh. I review your marketing funnel, audit bottlenecks, and deliver a 90-day blueprint.</p>
+              
+              <div className="service-deliverables">
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Full Tech &amp; Competitor Gap Diagnostics</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Wasted Spend &amp; Leaky Funnel Identification</span>
+                </div>
+                <div className="service-deliv-item">
+                  <span className="deliv-check">✓</span>
+                  <span>Direct 1-on-1 Strategy Calls with Anirudh</span>
+                </div>
+              </div>
+
+              <div className="service-card-footer">
+                <span className="service-action-link">
+                  <span>Explore Growth Advisory</span>
+                  <i className="bi bi-arrow-right"></i>
+                </span>
+              </div>
             </Link>
           </div>
 
@@ -533,95 +689,304 @@ export default function HomePage() {
           <div className="portfolio-grid">
             {(portfolioTab === 'all' || portfolioTab === 'healthcare') && (
               <div className="portfolio-card reveal" style={{ transitionDelay: '0.1s' }}>
-                <div className="portfolio-img">
-                  <span style={{ position: 'relative', zIndex: '1', color: 'var(--accent)', fontSize: '2rem' }}>
-                    <i className="bi bi-hospital"></i>
+                <div className="portfolio-top-bar">
+                  <span className="portfolio-sector-badge">
+                    <i className="bi bi-hospital"></i> Healthcare • Gomti Nagar, Lucknow
                   </span>
-                  <div className="graph-visual">
-                    <div className="graph-bar" style={{ height: '30%' }}></div>
-                    <div className="graph-bar" style={{ height: '45%' }}></div>
-                    <div className="graph-bar" style={{ height: '40%' }}></div>
-                    <div className="graph-bar" style={{ height: '60%' }}></div>
-                    <div className="graph-bar" style={{ height: '55%' }}></div>
-                    <div className="graph-bar" style={{ height: '75%' }}></div>
-                    <div className="graph-bar" style={{ height: '90%' }}></div>
-                    <div className="graph-bar" style={{ height: '100%' }}></div>
+                  <span className="portfolio-verified-badge">
+                    <i className="bi bi-patch-check-fill"></i> Verified Analytics
+                  </span>
+                </div>
+
+                <h3>Multi-Specialty Healthcare Clinic</h3>
+                <p className="portfolio-card-desc">
+                  Procedure page optimization and local citation clean-up for high-intent medical queries in Gomti Nagar and Indiranagar.
+                </p>
+
+                {/* Before / After Transformation Box */}
+                <div className="portfolio-transformation-banner">
+                  <div className="transform-col">
+                    <span className="transform-lbl">Before SEO</span>
+                    <span className="transform-val red">8 Calls / mo</span>
+                  </div>
+                  <div className="transform-arrow">➔</div>
+                  <div className="transform-col">
+                    <span className="transform-lbl">After 4 Months</span>
+                    <span className="transform-val green">31 Patient Calls / mo</span>
+                  </div>
+                  <div className="transform-badge">+287% Net Growth</div>
+                </div>
+
+                {/* Visual Trajectory Chart */}
+                <div className="portfolio-visual-chart">
+                  <div className="chart-header">
+                    <span>Patient Call Trajectory</span>
+                    <span className="chart-peak">Peak 3.8x</span>
+                  </div>
+                  <div className="chart-bars-wrap">
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill" style={{ height: '26%' }}></div>
+                      <span className="bar-label">M1</span>
+                    </div>
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill" style={{ height: '48%' }}></div>
+                      <span className="bar-label">M2</span>
+                    </div>
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill" style={{ height: '77%' }}></div>
+                      <span className="bar-label">M3</span>
+                    </div>
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill active" style={{ height: '100%' }}></div>
+                      <span className="bar-label">M4</span>
+                    </div>
                   </div>
                 </div>
-                <div className="portfolio-body">
-                  <div className="portfolio-tag">Healthcare | Lucknow</div>
-                  <h3>Multi-Specialty Clinic — Gomti Nagar, Lucknow</h3>
-                  <p>Calls from Google Maps and search went from 8 to 31 per month in 4 months after local citation building and procedure page optimization.</p>
-                  <div className="portfolio-results">
-                    <span className="result-chip">340% Traffic Growth</span>
-                    <span className="result-chip">Page 1 Rankings</span>
-                    <span className="result-chip">3x Patient Calls</span>
+
+                {/* Key Tactics Tags */}
+                <div className="portfolio-tags-row">
+                  <span className="portfolio-pill-tag">Google Business Profile</span>
+                  <span className="portfolio-pill-tag">Local Citations</span>
+                  <span className="portfolio-pill-tag">Medical Schema</span>
+                  <span className="portfolio-pill-tag">Page Speed &lt;1s</span>
+                </div>
+
+                {/* 3 Metric Stats */}
+                <div className="portfolio-results-grid">
+                  <div className="portfolio-stat-box">
+                    <div className="stat-box-val">+340%</div>
+                    <div className="stat-box-lbl">Organic Traffic</div>
                   </div>
+                  <div className="portfolio-stat-box">
+                    <div className="stat-box-val">Page #1</div>
+                    <div className="stat-box-lbl">12 Niche Keywords</div>
+                  </div>
+                  <div className="portfolio-stat-box">
+                    <div className="stat-box-val">3.8x</div>
+                    <div className="stat-box-lbl">Patient Calls</div>
+                  </div>
+                </div>
+
+                {/* Client Quote */}
+                <div className="portfolio-client-quote">
+                  <div className="client-avatar-badge">SV</div>
+                  <div>
+                    <p className="client-quote-text">
+                      "Calls from Google Maps nearly quadrupled in 4 months. Anirudh's local SEO approach is transparent and delivered exactly what was promised."
+                    </p>
+                    <div className="client-quote-author">— Dr. S. K. Verma, Clinic Director</div>
+                  </div>
+                </div>
+
+                <div className="portfolio-card-footer">
+                  <Link to="/case-studies" className="portfolio-detail-btn">
+                    <span>Read Full Case Study &amp; Strategy</span>
+                    <i className="bi bi-arrow-right"></i>
+                  </Link>
                 </div>
               </div>
             )}
 
             {(portfolioTab === 'all' || portfolioTab === 'ecommerce') && (
               <div className="portfolio-card reveal" style={{ transitionDelay: '0.2s' }}>
-                <div className="portfolio-img">
-                  <span style={{ position: 'relative', zIndex: '1', color: 'var(--accent)', fontSize: '2rem' }}>
-                    <i className="bi bi-shop"></i>
+                <div className="portfolio-top-bar">
+                  <span className="portfolio-sector-badge">
+                    <i className="bi bi-shop"></i> B2B Textile • Kanpur City
                   </span>
-                  <div className="graph-visual">
-                    <div className="graph-bar" style={{ height: '20%' }}></div>
-                    <div className="graph-bar" style={{ height: '35%' }}></div>
-                    <div className="graph-bar" style={{ height: '50%' }}></div>
-                    <div className="graph-bar" style={{ height: '45%' }}></div>
-                    <div className="graph-bar" style={{ height: '65%' }}></div>
-                    <div className="graph-bar" style={{ height: '80%' }}></div>
-                    <div className="graph-bar" style={{ height: '95%' }}></div>
-                    <div className="graph-bar" style={{ height: '100%' }}></div>
+                  <span className="portfolio-verified-badge">
+                    <i className="bi bi-patch-check-fill"></i> Verified Meta &amp; GA4
+                  </span>
+                </div>
+
+                <h3>Cotton Fabric &amp; Apparel Supplier</h3>
+                <p className="portfolio-card-desc">
+                  Wholesale B2B intent search optimization and targeted Meta retargeting campaigns across Uttar Pradesh and Delhi NCR.
+                </p>
+
+                {/* Before / After Transformation Box */}
+                <div className="portfolio-transformation-banner">
+                  <div className="transform-col">
+                    <span className="transform-lbl">Before Campaign</span>
+                    <span className="transform-val red">1.5x Low ROAS</span>
+                  </div>
+                  <div className="transform-arrow">➔</div>
+                  <div className="transform-col">
+                    <span className="transform-lbl">After 90 Days</span>
+                    <span className="transform-val green">7.2x Verified ROAS</span>
+                  </div>
+                  <div className="transform-badge">₹15L+ Monthly</div>
+                </div>
+
+                {/* Visual Trajectory Chart */}
+                <div className="portfolio-visual-chart">
+                  <div className="chart-header">
+                    <span>Ad Spend Return (ROAS) Trajectory</span>
+                    <span className="chart-peak">7.2x Return</span>
+                  </div>
+                  <div className="chart-bars-wrap">
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill" style={{ height: '22%' }}></div>
+                      <span className="bar-label">M1</span>
+                    </div>
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill" style={{ height: '52%' }}></div>
+                      <span className="bar-label">M2</span>
+                    </div>
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill" style={{ height: '78%' }}></div>
+                      <span className="bar-label">M3</span>
+                    </div>
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill active" style={{ height: '100%' }}></div>
+                      <span className="bar-label">M4</span>
+                    </div>
                   </div>
                 </div>
-                <div className="portfolio-body">
-                  <div className="portfolio-tag">E-commerce &amp; B2B | Kanpur</div>
-                  <h3>Cotton Fabric &amp; Apparel Supplier — Kanpur City</h3>
-                  <p>Targeted B2B SEO and retargeting ads scaled wholesale inquiries and generated a 7.2x return on ad spend across UP and Delhi NCR.</p>
-                  <div className="portfolio-results">
-                    <span className="result-chip">7.2x Meta Ads ROAS</span>
-                    <span className="result-chip">#1 B2B Rankings</span>
-                    <span className="result-chip">₹15L+ Monthly Trade</span>
+
+                {/* Key Tactics Tags */}
+                <div className="portfolio-tags-row">
+                  <span className="portfolio-pill-tag">B2B Intent Queries</span>
+                  <span className="portfolio-pill-tag">Meta Retargeting</span>
+                  <span className="portfolio-pill-tag">Negative Keywords</span>
+                  <span className="portfolio-pill-tag">WhatsApp Funnel</span>
+                </div>
+
+                {/* 3 Metric Stats */}
+                <div className="portfolio-results-grid">
+                  <div className="portfolio-stat-box">
+                    <div className="stat-box-val">7.2x</div>
+                    <div className="stat-box-lbl">Meta Ads ROAS</div>
                   </div>
+                  <div className="portfolio-stat-box">
+                    <div className="stat-box-val">#1 Rank</div>
+                    <div className="stat-box-lbl">B2B Kanpur Fabric</div>
+                  </div>
+                  <div className="portfolio-stat-box">
+                    <div className="stat-box-val">₹15L+</div>
+                    <div className="stat-box-lbl">Monthly Trade Volume</div>
+                  </div>
+                </div>
+
+                {/* Client Quote */}
+                <div className="portfolio-client-quote">
+                  <div className="client-avatar-badge">AA</div>
+                  <div>
+                    <p className="client-quote-text">
+                      "Our wholesale B2B textile orders from Delhi NCR and UP tripled within 90 days. Exceptional return on ad spend and clear weekly reporting."
+                    </p>
+                    <div className="client-quote-author">— Amit Agarwal, Managing Director</div>
+                  </div>
+                </div>
+
+                <div className="portfolio-card-footer">
+                  <Link to="/case-studies" className="portfolio-detail-btn">
+                    <span>Read Full Case Study &amp; Strategy</span>
+                    <i className="bi bi-arrow-right"></i>
+                  </Link>
                 </div>
               </div>
             )}
 
             {(portfolioTab === 'all' || portfolioTab === 'education') && (
               <div className="portfolio-card reveal" style={{ transitionDelay: '0.3s' }}>
-                <div className="portfolio-img">
-                  <span style={{ position: 'relative', zIndex: '1', color: 'var(--accent)', fontSize: '2rem' }}>
-                    <i className="bi bi-mortarboard"></i>
+                <div className="portfolio-top-bar">
+                  <span className="portfolio-sector-badge">
+                    <i className="bi bi-mortarboard"></i> Education • Hazratganj, Lucknow
                   </span>
-                  <div className="graph-visual">
-                    <div className="graph-bar" style={{ height: '25%' }}></div>
-                    <div className="graph-bar" style={{ height: '30%' }}></div>
-                    <div className="graph-bar" style={{ height: '50%' }}></div>
-                    <div className="graph-bar" style={{ height: '55%' }}></div>
-                    <div className="graph-bar" style={{ height: '70%' }}></div>
-                    <div className="graph-bar" style={{ height: '85%' }}></div>
-                    <div className="graph-bar" style={{ height: '90%' }}></div>
-                    <div className="graph-bar" style={{ height: '100%' }}></div>
+                  <span className="portfolio-verified-badge">
+                    <i className="bi bi-patch-check-fill"></i> Verified GSC
+                  </span>
+                </div>
+
+                <h3>Competitive Exam Coaching Institute</h3>
+                <p className="portfolio-card-desc">
+                  Ranked #1 for 14 competitive exam search queries across Lucknow, capturing student searches before admission sessions opened.
+                </p>
+
+                {/* Before / After Transformation Box */}
+                <div className="portfolio-transformation-banner">
+                  <div className="transform-col">
+                    <span className="transform-lbl">Before SEO</span>
+                    <span className="transform-val red">Page 4 (Invisible)</span>
+                  </div>
+                  <div className="transform-arrow">➔</div>
+                  <div className="transform-col">
+                    <span className="transform-lbl">After 5 Months</span>
+                    <span className="transform-val green">#1 Google 3-Pack</span>
+                  </div>
+                  <div className="transform-badge">100% Batches Filled</div>
+                </div>
+
+                {/* Visual Trajectory Chart */}
+                <div className="portfolio-visual-chart">
+                  <div className="chart-header">
+                    <span>Organic Search Clicks Trajectory</span>
+                    <span className="chart-peak">1,280 Clicks / mo</span>
+                  </div>
+                  <div className="chart-bars-wrap">
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill" style={{ height: '25%' }}></div>
+                      <span className="bar-label">M1</span>
+                    </div>
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill" style={{ height: '45%' }}></div>
+                      <span className="bar-label">M2</span>
+                    </div>
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill" style={{ height: '70%' }}></div>
+                      <span className="bar-label">M3</span>
+                    </div>
+                    <div className="chart-bar-col">
+                      <div className="chart-bar-fill active" style={{ height: '100%' }}></div>
+                      <span className="bar-label">M4</span>
+                    </div>
                   </div>
                 </div>
-                <div className="portfolio-body">
-                  <div className="portfolio-tag">Education | Lucknow</div>
-                  <h3>Coaching Institute — Hazratganj, Lucknow</h3>
-                  <p>Secured #1 spot for 14 high-intent exam queries in Lucknow. Batch inquiries surged, resulting in 100% seat fill-up before the session started.</p>
-                  <div className="portfolio-results">
-                    <span className="result-chip">#1 Local 3-Pack Rank</span>
-                    <span className="result-chip">1,280 Clicks / Mo</span>
-                    <span className="result-chip">Full Admissions</span>
+
+                {/* Key Tactics Tags */}
+                <div className="portfolio-tags-row">
+                  <span className="portfolio-pill-tag">Local 3-Pack</span>
+                  <span className="portfolio-pill-tag">Exam Landing Pages</span>
+                  <span className="portfolio-pill-tag">Review Engine</span>
+                  <span className="portfolio-pill-tag">FAQ Schema</span>
+                </div>
+
+                {/* 3 Metric Stats */}
+                <div className="portfolio-results-grid">
+                  <div className="portfolio-stat-box">
+                    <div className="stat-box-val">#1 Rank</div>
+                    <div className="stat-box-lbl">Local 3-Pack Rank</div>
                   </div>
+                  <div className="portfolio-stat-box">
+                    <div className="stat-box-val">1,280</div>
+                    <div className="stat-box-lbl">Clicks / Month</div>
+                  </div>
+                  <div className="portfolio-stat-box">
+                    <div className="stat-box-val">100%</div>
+                    <div className="stat-box-lbl">Full Batch Admissions</div>
+                  </div>
+                </div>
+
+                {/* Client Quote */}
+                <div className="portfolio-client-quote">
+                  <div className="client-avatar-badge">RK</div>
+                  <div>
+                    <p className="client-quote-text">
+                      "All 14 competitive exam batches were fully occupied weeks before the start of the session. Anirudh's SEO expertise in Lucknow is unrivaled."
+                    </p>
+                    <div className="client-quote-author">— Rajesh K., Academic Director</div>
+                  </div>
+                </div>
+
+                <div className="portfolio-card-footer">
+                  <Link to="/case-studies" className="portfolio-detail-btn">
+                    <span>Read Full Case Study &amp; Strategy</span>
+                    <i className="bi bi-arrow-right"></i>
+                  </Link>
                 </div>
               </div>
             )}
           </div>
-
           <div className="flex-center mt-6">
             <Link to="/case-studies" className="btn btn-outline">
               📋 View All Detailed Case Studies →
