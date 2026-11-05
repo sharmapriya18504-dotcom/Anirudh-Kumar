@@ -10,17 +10,17 @@ export default function Toast({ message, isVisible, onClose }) {
         bottom: '30px',
         right: '30px',
         zIndex: 10002,
-        background: 'linear-gradient(135deg, rgba(20, 20, 35, 0.95), rgba(10, 10, 20, 0.98))',
+        background: 'var(--card)',
         backdropFilter: 'blur(16px)',
-        border: '1px solid var(--accent)',
-        boxShadow: '0 10px 40px rgba(255, 107, 0, 0.25), 0 0 15px rgba(255, 107, 0, 0.15)',
+        border: '1.5px solid var(--accent)',
+        boxShadow: '0 10px 40px rgba(0, 0, 0, 0.25)',
         borderRadius: '16px',
         padding: '16px 24px',
         display: 'flex',
         alignItems: 'center',
         gap: '14px',
-        color: '#fff',
-        fontFamily: 'var(--ff-b)',
+        color: 'var(--text)',
+        fontFamily: 'var(--ff)',
         fontSize: '0.95rem',
         animation: 'slideUpToast 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards'
       }}
@@ -43,7 +43,7 @@ export default function Toast({ message, isVisible, onClose }) {
         ✓
       </div>
       <div>
-        <div style={{ fontWeight: 700, color: '#fff', marginBottom: '2px' }}>
+        <div style={{ fontWeight: 700, color: 'var(--text)', marginBottom: '2px' }}>
           Success! Request Sent
         </div>
         <div style={{ fontSize: '0.85rem', color: 'var(--text2)' }}>
@@ -55,17 +55,17 @@ export default function Toast({ message, isVisible, onClose }) {
         style={{
           background: 'none',
           border: 'none',
-          color: 'var(--text3)',
+          color: 'var(--text2)',
           cursor: 'pointer',
           marginLeft: '12px',
-          fontSize: '1.2rem',
-          lineHeight: 1
+          fontSize: '1.1rem',
+          lineHeight: '1',
+          padding: '4px'
         }}
-        aria-label="Close"
+        aria-label="Close notification"
       >
         ✕
       </button>
     </div>
   );
 }
-

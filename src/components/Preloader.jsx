@@ -14,7 +14,7 @@ export default function Preloader() {
           <span
             key={`${index}-${loadingPct > 0 ? 1 : 0}`}
             className="loader-char"
-            style={{ animationDelay: `${0.04 * index}s` }}
+            style={{ animationDelay: `${0.04 * index}s`, color: 'var(--text)' }}
           >
             {char === ' ' ? '\u00A0' : char}
           </span>
@@ -26,7 +26,7 @@ export default function Preloader() {
           style={{ width: `${loadingPct}%`, transition: 'width 0.08s ease-out' }}
         ></div>
       </div>
-      <div className="loader-pct" id="loaderPct">
+      <div className="loader-pct" id="loaderPct" style={{ color: 'var(--text2)', fontWeight: 700 }}>
         {loadingPct}%
       </div>
     </div>

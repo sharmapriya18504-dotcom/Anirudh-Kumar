@@ -46,7 +46,7 @@
       font-family: var(--ff-d);
       font-size: clamp(2rem, 8vw, 5rem);
       font-weight: 900;
-      color: #f8f7f7;
+      color: var(--text);
       letter-spacing: -0.04em;
       overflow: hidden;
       display: flex
@@ -68,7 +68,7 @@
       margin-top: 48px;
       width: 200px;
       height: 1px;
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--border2);
       overflow: hidden
     }
 
@@ -6011,4 +6011,23 @@ input:focus, textarea:focus, select:focus {
 [data-theme="light"] .certifications-trust-bar {
   background: #FFFFFF !important;
   border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme="light"] #loader {
+  background: #F8F9FA !important;
+}
+
+[data-theme="light"] .loader-name,
+[data-theme="light"] .loader-char {
+  color: #0E121B !important;
+}
+
+[data-theme="light"] .loader-pct {
+  color: #343A40 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] .loader-bar-wrap {
+  background: rgba(0, 0, 0, 0.12) !important;
+  height: 2px !important;
 }

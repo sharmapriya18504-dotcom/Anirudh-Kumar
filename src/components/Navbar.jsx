@@ -129,7 +129,7 @@ export default function Navbar() {
                 <a href="/services" onClick={(e) => handleNavClick(e, '/services')}>
                   <span>All 6 Services Overview</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
-                <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)', margin: '6px 0' }}></div>
+                <div style={{ height: '1px', background: 'var(--border2)', margin: '6px 0' }}></div>
                 <a href="/seo-expert-lucknow" onClick={(e) => handleNavClick(e, '/seo-expert-lucknow')}>
                   <span>📍 SEO Expert Lucknow (On-Site)</span> <i className="bi bi-arrow-right dropdown-arrow"></i>
                 </a>
