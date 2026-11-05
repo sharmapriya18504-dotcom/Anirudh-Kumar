@@ -2828,24 +2828,24 @@
 
 
     :root {
-      --bg: #06060F;
-      --bg2: #0C0C1A;
-      --bg3: #111124;
-      --card: #0F0F20;
-      --border: rgba(255, 107, 0, 0.15);
-      --border2: rgba(255, 255, 255, 0.06);
+      --bg: #050508;
+      --bg2: #090A0F;
+      --bg3: #0E0F17;
+      --card: #0A0B12;
+      --border: rgba(255, 107, 0, 0.22);
+      --border2: rgba(255, 255, 255, 0.08);
       --accent: #FF6B00;
-      --accent2: #FFB800;
-      --accent3: #FF6B00;
-      --text: #F0F0FF;
-      --text2: #9898B8;
-      --text3: #6868888;
-      --glow: rgba(255, 107, 0, 0.3);
-      --glass: rgba(255, 255, 255, 0.04);
+      --accent2: #FFA000;
+      --accent3: #FF8800;
+      --text: #FFFFFF;
+      --text2: #A1A7B8;
+      --text3: #6C7284;
+      --glow: rgba(255, 107, 0, 0.28);
+      --glass: rgba(12, 13, 20, 0.75);
       --nav-h: 72px;
       --radius: 16px;
       --radius-sm: 10px;
-      --shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
       --ff: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --ff-d: 'Outfit', 'Space Grotesk', -apple-system, sans-serif;
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2853,17 +2853,17 @@
 
     [data-theme="light"] {
       --bg: #FAFAFC;
-      --bg2: #F1F3F7;
-      --bg3: #E7EAF0;
+      --bg2: #F1F4F9;
+      --bg3: #E6EAF2;
       --card: #FFFFFF;
-      --border: rgba(255, 107, 0, 0.25);
-      --border2: rgba(0, 0, 0, 0.09);
-      --text: #090A10;
-      --text2: #475569;
-      --text3: #64748B;
-      --glass: rgba(255, 255, 255, 0.92);
+      --border: rgba(255, 107, 0, 0.35);
+      --border2: rgba(0, 0, 0, 0.08);
+      --text: #08090E;
+      --text2: #3E4552;
+      --text3: #626A7A;
+      --glass: rgba(255, 255, 255, 0.94);
       --glow: rgba(255, 107, 0, 0.15);
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
     *,
@@ -7024,65 +7024,60 @@ input:focus, textarea:focus, select:focus {
 
 
 /* ========================================================
-   HERO ABSTRACT 3D COMPOSITION (STRICTLY NO GLOBE)
+   CLEAN & SIMPLE HERO PORTRAIT (ULTRA-RESPONSIVE, ZERO LAG)
+   - Real photograph of Anirudh Kumar (/Untitled design (12).png)
+   - Elegant obsidian studio frame with warm ambient orange rim glow
+   - Strictly NO 3D Globe, NO heavy WebGL lag, NO horizontal overflow
+   - 100% responsive on all mobile screens
 ======================================================== */
-.hero-abstract-container {
+.hero-portrait-container {
   position: relative;
   width: 100%;
-  max-width: 580px;
-  height: 560px;
+  max-width: 440px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px 0;
 }
 
-.hero-three-mount {
-  position: absolute;
-  inset: 0;
+.hero-portrait-frame {
+  position: relative;
   width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: auto;
-}
-
-/* Central Portrait Studio Portal */
-.hero-portrait-portal-wrap {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-portrait-portal {
-  position: relative;
-  width: 330px;
-  height: 440px;
-  border-radius: 28px;
+  max-width: 380px;
+  height: 480px;
+  border-radius: 24px;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 32%, rgba(255, 107, 0, 0.28) 0%, #050508 72%);
-  border: 2px solid rgba(255, 107, 0, 0.42);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 45px rgba(255, 107, 0, 0.22);
+  background: radial-gradient(circle at 50% 30%, rgba(255, 107, 0, 0.22) 0%, #07070D 75%);
+  border: 1px solid rgba(255, 107, 0, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(255, 107, 0, 0.15);
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
-.portal-ambient-halo {
+.hero-portrait-frame:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 107, 0, 0.6);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 50px rgba(255, 107, 0, 0.25);
+}
+
+.hero-portrait-ambient-glow {
   position: absolute;
-  top: 15%;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 107, 0, 0.4) 0%, rgba(255, 107, 0, 0) 70%);
-  filter: blur(25px);
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.35) 0%, rgba(255, 107, 0, 0) 70%);
+  filter: blur(35px);
   pointer-events: none;
   z-index: 1;
 }
 
-.hero-portrait-cutout {
+.hero-portrait-image {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -7090,41 +7085,45 @@ input:focus, textarea:focus, select:focus {
   object-fit: cover;
   object-position: top center;
   display: block;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
+  transition: transform 0.45s ease;
+}
+
+.hero-portrait-frame:hover .hero-portrait-image {
   transform: scale(1.02);
 }
 
-.portal-bottom-fade {
+.hero-portrait-bottom-fade {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 90px;
-  background: linear-gradient(to top, #050508 10%, rgba(5, 5, 8, 0) 100%);
+  height: 100px;
+  background: linear-gradient(to top, #07070D 15%, rgba(7, 7, 13, 0) 100%);
   z-index: 3;
   pointer-events: none;
 }
 
-.portal-nameplate {
+.hero-portrait-badge {
   position: absolute;
-  bottom: 16px;
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
-  background: rgba(6, 6, 12, 0.88);
-  border: 1px solid rgba(255, 107, 0, 0.4);
+  background: rgba(8, 9, 16, 0.9);
+  border: 1px solid rgba(255, 107, 0, 0.45);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 999px;
-  padding: 6px 16px;
+  padding: 7px 18px;
   display: flex;
   align-items: center;
   gap: 8px;
   white-space: nowrap;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-.nameplate-dot {
+.hero-pulse-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -7133,338 +7132,57 @@ input:focus, textarea:focus, select:focus {
   animation: pulseDot 2s infinite;
 }
 
-.nameplate-text {
-  font-size: 0.78rem;
+.hero-badge-text {
+  font-size: 0.8rem;
   font-weight: 700;
   color: #FFFFFF;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
-/* Floating Glassmorphism SEO Analytics Cards */
-.hero-floating-card {
-  position: absolute;
-  z-index: 5;
-  background: rgba(7, 7, 14, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 107, 0, 0.32);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(255, 107, 0, 0.12);
-  border-radius: 16px;
-  padding: 14px 18px;
-  pointer-events: none;
-  transition: transform 0.3s ease;
+/* Light Mode Overrides for Simple Hero Portrait */
+[data-theme="light"] .hero-portrait-frame {
+  background: radial-gradient(circle at 50% 30%, rgba(255, 107, 0, 0.18) 0%, #FFFFFF 75%) !important;
+  border: 1px solid rgba(255, 107, 0, 0.3) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08), 0 0 30px rgba(255, 107, 0, 0.1) !important;
 }
 
-/* 1. Top Rank Card */
-.card-rank-minimal {
-  top: 40px;
-  right: -10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  animation: floatCard1 4.5s ease-in-out infinite;
+[data-theme="light"] .hero-portrait-bottom-fade {
+  background: linear-gradient(to top, #FFFFFF 15%, rgba(255, 255, 255, 0) 100%) !important;
 }
 
-/* 2. Bottom Growth Card */
-.card-growth-minimal {
-  bottom: 40px;
-  left: -10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  animation: floatCard2 5s ease-in-out infinite;
-}
-
-.hero-card-icon-pill {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(255, 107, 0, 0.12);
-  border: 1px solid rgba(255, 107, 0, 0.32);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
-  flex-shrink: 0;
-}
-
-.hero-card-title {
-  font-size: 0.9rem;
-  font-weight: 800;
-  color: var(--text);
-  line-height: 1.2;
-}
-
-.hero-card-sub {
-  font-size: 0.72rem;
-  color: var(--text2);
-  margin-top: 2px;
-  font-weight: 500;
-}
-
-[data-theme="light"] .hero-card-title {
-  color: #090A10 !important;
-}
-
-[data-theme="light"] .hero-card-sub {
-  color: #475569 !important;
-}
-
-/* 1. Top Rank Card */
-.card-rank {
-  top: 35px;
-  left: -15px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  animation: floatCard1 4.5s ease-in-out infinite;
-}
-
-.card-rank-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: rgba(255, 107, 0, 0.15);
-  border: 1px solid rgba(255, 107, 0, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-
-.glass-card-tag {
-  font-size: 0.7rem;
-  font-weight: 800;
-  color: #FF8800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.glass-card-title {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  line-height: 1.25;
-}
-
-.glass-card-meta {
-  font-size: 0.72rem;
-  color: #A2A6B8;
-  margin-top: 2px;
-}
-
-/* 2. Traffic Spike Card */
-.card-traffic {
-  bottom: 45px;
-  left: -20px;
-  min-width: 175px;
-  animation: floatCard2 5s ease-in-out infinite;
-}
-
-.card-traffic-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 6px;
-}
-
-.traffic-val {
-  font-family: var(--ff-d);
-  font-size: 1.6rem;
-  color: #FF6B00;
-  line-height: 1;
-}
-
-.traffic-lbl {
-  font-size: 0.7rem;
-  color: #A2A6B8;
-  font-weight: 600;
-}
-
-.sparkline-wrapper {
-  width: 100%;
-  height: 32px;
-  margin-bottom: 6px;
-}
-
-.sparkline-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.card-verified-note {
-  font-size: 0.68rem;
-  color: #A2A6B8;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: 600;
-}
-
-/* 3. Conversion / Leads Card */
-.card-leads {
-  top: 90px;
-  right: -20px;
-  min-width: 165px;
-  animation: floatCard3 4.8s ease-in-out infinite;
-}
-
-.card-leads-pulse-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-
-.live-pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #FF6B00;
-  box-shadow: 0 0 8px #FF6B00;
-  animation: pulseDot 1.8s infinite;
-}
-
-.card-leads-badge {
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: #FF944D;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.leads-metric-row {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-}
-
-.leads-val {
-  font-family: var(--ff-d);
-  font-size: 1.65rem;
-  color: #FFFFFF;
-  line-height: 1;
-}
-
-.leads-context {
-  font-size: 0.78rem;
-  color: #A2A6B8;
-  font-weight: 600;
-}
-
-.leads-sub-detail {
-  font-size: 0.7rem;
-  color: #C5C5D8;
-  margin-top: 4px;
-}
-
-.leads-sub-detail strong {
-  color: #FF8800;
-}
-
-@keyframes floatCard1 {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@keyframes floatCard2 {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(7px); }
-}
-
-@keyframes floatCard3 {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* Light Mode Overrides for Hero Abstract 3D */
-[data-theme="light"] .hero-portrait-portal {
-  background: radial-gradient(circle at 50% 32%, rgba(255, 107, 0, 0.22) 0%, #FFFFFF 72%) !important;
-  border-color: rgba(255, 107, 0, 0.35) !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 0 35px rgba(255, 107, 0, 0.12) !important;
-}
-
-[data-theme="light"] .portal-bottom-fade {
-  background: linear-gradient(to top, #FFFFFF 10%, rgba(255, 255, 255, 0) 100%) !important;
-}
-
-[data-theme="light"] .portal-nameplate {
-  background: rgba(255, 255, 255, 0.92) !important;
+[data-theme="light"] .hero-portrait-badge {
+  background: rgba(255, 255, 255, 0.94) !important;
   border-color: rgba(255, 107, 0, 0.35) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
 }
 
-[data-theme="light"] .nameplate-text {
-  color: #08080C !important;
+[data-theme="light"] .hero-badge-text {
+  color: #0A0D14 !important;
 }
 
-[data-theme="light"] .hero-floating-card {
-  background: rgba(255, 255, 255, 0.94) !important;
-  border-color: rgba(255, 107, 0, 0.28) !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(255, 107, 0, 0.08) !important;
-}
-
-[data-theme="light"] .glass-card-title,
-[data-theme="light"] .leads-val {
-  color: #08080C !important;
-}
-
-[data-theme="light"] .glass-card-meta,
-[data-theme="light"] .traffic-lbl,
-[data-theme="light"] .card-verified-note,
-[data-theme="light"] .leads-context,
-[data-theme="light"] .leads-sub-detail {
-  color: #444455 !important;
-}
-
-/* Responsive Media Queries for Hero Abstract 3D */
 @media (max-width: 992px) {
-  .hero-abstract-container {
-    height: 480px !important;
-  }
-  .hero-portrait-portal {
-    width: 290px !important;
-    height: 390px !important;
+  .hero-portrait-frame {
+    max-width: 320px;
+    height: 410px;
   }
 }
 
 @media (max-width: 640px) {
-  .hero-abstract-container {
-    height: 380px !important;
+  .hero-portrait-container {
+    max-width: 100%;
+    padding: 0 10px;
   }
-  .hero-portrait-portal {
-    width: 240px !important;
-    height: 320px !important;
-    border-radius: 20px !important;
+  .hero-portrait-frame {
+    max-width: 270px;
+    height: 350px;
+    border-radius: 20px;
   }
-  .card-rank-minimal {
-    top: 10px !important;
-    right: 0px !important;
-    transform: scale(0.85) !important;
-    transform-origin: top right !important;
+  .hero-portrait-badge {
+    bottom: 12px;
+    padding: 5px 14px;
   }
-  .card-growth-minimal {
-    bottom: 10px !important;
-    left: 0px !important;
-    transform: scale(0.85) !important;
-    transform-origin: bottom left !important;
-  }
-  .card-rank {
-    top: 5px !important;
-    left: 0% !important;
-    transform: scale(0.8) !important;
-    transform-origin: top left !important;
-  }
-  .card-leads {
-    top: auto !important;
-    bottom: -10px !important;
-    right: 0% !important;
-    transform: scale(0.8) !important;
-    transform-origin: bottom right !important;
-  }
-  .card-traffic {
-    display: none !important;
+  .hero-badge-text {
+    font-size: 0.72rem;
   }
 }
 
@@ -8534,10 +8252,42 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 12px 28px rgba(255, 107, 0, 0.1) !important;
 }
 
-/* RESPONSIVE LAYOUTS */
+/* ========================================================
+   COMPREHENSIVE GLOBAL RESPONSIVENESS & MOBILE LUXURY SYSTEM
+   - Perfectly tuned for iPhone, Android, Tablet & Desktop
+   - Zero horizontal overflow, touch-friendly tap targets
+   - Flawless contrast in both Deep Obsidian and Pure White
+   ======================================================== */
+
+html, body, #root, .page-wrapper {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* Tablet & Mobile Screens (<= 992px) */
 @media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+    text-align: center;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-eyebrow,
+  .hero-ctas,
+  .hero-proof-row {
+    justify-content: center !important;
+  }
+  .hero-btns {
+    justify-content: center !important;
+  }
   .services-grid,
-  .portfolio-grid {
+  .portfolio-grid,
+  .portfolio-minimal-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 22px !important;
   }
@@ -8546,19 +8296,125 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
+/* Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  .hero-h1 {
+    font-size: clamp(2rem, 7.5vw, 3rem) !important;
+    line-height: 1.15 !important;
+  }
+  .hero-sub {
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
+    max-width: 520px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hero-btns {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto 28px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  .hero-btns .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 14px 20px !important;
+    font-size: 0.95rem !important;
+  }
+  .hero-stats {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+  .stat-item {
+    padding: 12px 6px !important;
+    text-align: center !important;
+  }
+  .stat-num {
+    font-size: 1.5rem !important;
+  }
+  .stat-lbl {
+    font-size: 0.68rem !important;
+  }
+
+  /* Interactive Process Timeline Mobile Touch Swipe */
+  .timeline-step-tabs {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 10px !important;
+    padding-bottom: 12px !important;
+    scrollbar-width: none !important;
+  }
+  .timeline-step-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+  .timeline-step-btn {
+    flex: 0 0 115px !important;
+    padding: 14px 10px !important;
+  }
+
+  /* Form controls: 16px font-size prevents iOS Safari auto-zoom */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+/* Compact Mobile (<= 640px) */
 @media (max-width: 640px) {
+  .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
   .services-grid,
-  .portfolio-grid {
+  .portfolio-grid,
+  .portfolio-minimal-grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
   .service-card,
   .portfolio-card,
+  .portfolio-minimal-card,
   .framework-wrapper-card {
     padding: 24px 20px !important;
+    border-radius: 16px !important;
+  }
+  .service-img-wrap,
+  .portfolio-minimal-img-frame {
+    height: 180px !important;
   }
   .case-cta-banner {
     padding: 34px 18px !important;
+    border-radius: 16px !important;
+  }
+  .case-cta-banner h3 {
+    font-size: 1.45rem !important;
+  }
+  .about-photo-frame {
+    max-width: 290px !important;
+  }
+  .nav-logo-text {
+    font-size: 1.05rem !important;
+  }
+}
+
+/* Extra Small Phones (<= 380px) */
+@media (max-width: 380px) {
+  .hero-h1 {
+    font-size: 1.85rem !important;
+  }
+  .hero-portrait-frame {
+    max-width: 240px !important;
+    height: 310px !important;
+  }
+  .hero-stats {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
   }
 }
 

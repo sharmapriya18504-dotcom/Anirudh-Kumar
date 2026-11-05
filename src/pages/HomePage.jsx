@@ -26,7 +26,7 @@ export default function HomePage() {
         spread: 60,
         origin: { y: 0.6 }
       });
-    } catch (err) {}
+    } catch (err) { }
 
     const btn = e.target.querySelector('button[type="submit"]');
     if (btn) {
