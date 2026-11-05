@@ -9,7 +9,7 @@ import InteractiveFaq from '../components/InteractiveFaq.jsx';
 import SeoAuditModal from '../components/SeoAuditModal.jsx';
 
 // Interactive & Visual Components (Matching Orange, Black & White Branding)
-import HeroGlobe3D from '../components/HeroGlobe3D.jsx';
+import HeroAbstract3D from '../components/HeroAbstract3D.jsx';
 import QuickSeoScanner from '../components/QuickSeoScanner.jsx';
 import SerpSimulator from '../components/SerpSimulator.jsx';
 import CertificationsTrustBar from '../components/CertificationsTrustBar.jsx';
@@ -122,7 +122,7 @@ export default function HomePage() {
             </div>
 
             <div className="hero-visual" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <HeroGlobe3D />
+              <HeroAbstract3D />
             </div>
           </div>
 

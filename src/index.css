@@ -6997,38 +6997,381 @@ input:focus, textarea:focus, select:focus {
 }
 
 
-/* 3D Hero Globe Responsive Container (Three.js Optimization) */
-.hero-globe-container {
-  max-width: 560px;
+/* ========================================================
+   HERO ABSTRACT 3D COMPOSITION (STRICTLY NO GLOBE)
+======================================================== */
+.hero-abstract-container {
+  position: relative;
   width: 100%;
-  height: 520px;
+  max-width: 580px;
+  height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.hero-three-mount {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* Central Portrait Studio Portal */
+.hero-portrait-portal-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-portrait-portal {
+  position: relative;
+  width: 330px;
+  height: 440px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 32%, rgba(255, 107, 0, 0.28) 0%, #050508 72%);
+  border: 2px solid rgba(255, 107, 0, 0.42);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 45px rgba(255, 107, 0, 0.22);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.portal-ambient-halo {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.4) 0%, rgba(255, 107, 0, 0) 70%);
+  filter: blur(25px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-portrait-cutout {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
+  transform: scale(1.02);
+}
+
+.portal-bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(to top, #050508 10%, rgba(5, 5, 8, 0) 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.portal-nameplate {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  background: rgba(6, 6, 12, 0.88);
+  border: 1px solid rgba(255, 107, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 999px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.nameplate-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FF6B00;
+  box-shadow: 0 0 10px #FF6B00;
+  animation: pulseDot 2s infinite;
+}
+
+.nameplate-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+}
+
+/* Floating Glassmorphism SEO Analytics Cards */
+.hero-floating-card {
+  position: absolute;
+  z-index: 5;
+  background: rgba(7, 7, 14, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 107, 0, 0.32);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(255, 107, 0, 0.12);
+  border-radius: 16px;
+  padding: 14px 18px;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+/* 1. Top Rank Card */
+.card-rank {
+  top: 35px;
+  left: -15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: floatCard1 4.5s ease-in-out infinite;
+}
+
+.card-rank-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 107, 0, 0.15);
+  border: 1px solid rgba(255, 107, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.glass-card-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #FF8800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.glass-card-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.25;
+}
+
+.glass-card-meta {
+  font-size: 0.72rem;
+  color: #A2A6B8;
+  margin-top: 2px;
+}
+
+/* 2. Traffic Spike Card */
+.card-traffic {
+  bottom: 45px;
+  left: -20px;
+  min-width: 175px;
+  animation: floatCard2 5s ease-in-out infinite;
+}
+
+.card-traffic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.traffic-val {
+  font-family: var(--ff-d);
+  font-size: 1.6rem;
+  color: #FF6B00;
+  line-height: 1;
+}
+
+.traffic-lbl {
+  font-size: 0.7rem;
+  color: #A2A6B8;
+  font-weight: 600;
+}
+
+.sparkline-wrapper {
+  width: 100%;
+  height: 32px;
+  margin-bottom: 6px;
+}
+
+.sparkline-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.card-verified-note {
+  font-size: 0.68rem;
+  color: #A2A6B8;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}
+
+/* 3. Conversion / Leads Card */
+.card-leads {
+  top: 90px;
+  right: -20px;
+  min-width: 165px;
+  animation: floatCard3 4.8s ease-in-out infinite;
+}
+
+.card-leads-pulse-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.live-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #FF6B00;
+  box-shadow: 0 0 8px #FF6B00;
+  animation: pulseDot 1.8s infinite;
+}
+
+.card-leads-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #FF944D;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.leads-metric-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.leads-val {
+  font-family: var(--ff-d);
+  font-size: 1.65rem;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.leads-context {
+  font-size: 0.78rem;
+  color: #A2A6B8;
+  font-weight: 600;
+}
+
+.leads-sub-detail {
+  font-size: 0.7rem;
+  color: #C5C5D8;
+  margin-top: 4px;
+}
+
+.leads-sub-detail strong {
+  color: #FF8800;
+}
+
+@keyframes floatCard1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes floatCard2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(7px); }
+}
+
+@keyframes floatCard3 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Light Mode Overrides for Hero Abstract 3D */
+[data-theme="light"] .hero-portrait-portal {
+  background: radial-gradient(circle at 50% 32%, rgba(255, 107, 0, 0.22) 0%, #FFFFFF 72%) !important;
+  border-color: rgba(255, 107, 0, 0.35) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 0 35px rgba(255, 107, 0, 0.12) !important;
+}
+
+[data-theme="light"] .portal-bottom-fade {
+  background: linear-gradient(to top, #FFFFFF 10%, rgba(255, 255, 255, 0) 100%) !important;
+}
+
+[data-theme="light"] .portal-nameplate {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(255, 107, 0, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .nameplate-text {
+  color: #08080C !important;
+}
+
+[data-theme="light"] .hero-floating-card {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(255, 107, 0, 0.28) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(255, 107, 0, 0.08) !important;
+}
+
+[data-theme="light"] .glass-card-title,
+[data-theme="light"] .leads-val {
+  color: #08080C !important;
+}
+
+[data-theme="light"] .glass-card-meta,
+[data-theme="light"] .traffic-lbl,
+[data-theme="light"] .card-verified-note,
+[data-theme="light"] .leads-context,
+[data-theme="light"] .leads-sub-detail {
+  color: #444455 !important;
+}
+
+/* Responsive Media Queries for Hero Abstract 3D */
 @media (max-width: 992px) {
-  .hero-globe-container {
-    height: 440px !important;
+  .hero-abstract-container {
+    height: 480px !important;
+  }
+  .hero-portrait-portal {
+    width: 290px !important;
+    height: 390px !important;
   }
 }
 
 @media (max-width: 640px) {
-  .hero-globe-container {
-    height: 360px !important;
+  .hero-abstract-container {
+    height: 380px !important;
   }
-  .hero-glass-card-2 {
-    display: none !important;
+  .hero-portrait-portal {
+    width: 240px !important;
+    height: 320px !important;
+    border-radius: 20px !important;
   }
-  .hero-glass-card-1 {
-    top: -5px !important;
+  .card-rank {
+    top: 5px !important;
     left: 0% !important;
-    transform: scale(0.82) !important;
+    transform: scale(0.8) !important;
     transform-origin: top left !important;
   }
-  .hero-glass-card-3 {
-    bottom: -10px !important;
+  .card-leads {
     top: auto !important;
-    left: 50% !important;
-    transform: translateX(-50%) scale(0.82) !important;
-    width: max-content !important;
+    bottom: -10px !important;
+    right: 0% !important;
+    transform: scale(0.8) !important;
+    transform-origin: bottom right !important;
+  }
+  .card-traffic {
+    display: none !important;
   }
 }
 
