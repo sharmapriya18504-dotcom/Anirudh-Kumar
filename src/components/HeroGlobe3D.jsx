@@ -357,6 +357,7 @@ export default function HeroGlobe3D() {
 
   return (
     <div
+      className="hero-globe-container"
       style={{
         position: 'relative',
         width: '100%',

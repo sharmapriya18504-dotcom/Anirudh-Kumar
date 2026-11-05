@@ -57,6 +57,7 @@ function AppContent() {
           <Route path="/about" element={<AboutPage key={`about-${refreshKey}`} />} />
           <Route path="/services" element={<ServicesPage key={`services-${refreshKey}`} />} />
           <Route path="/case-studies" element={<CaseStudiesPage key={`case-${refreshKey}`} />} />
+          <Route path="/portfolio" element={<Navigate to="/case-studies" replace />} />
           <Route path="/pricing" element={<PricingPage key={`pricing-${refreshKey}`} />} />
           <Route path="/blog" element={<BlogPage key={`blog-${refreshKey}`} />} />
           <Route path="/blog-post" element={<BlogPostPage key={`post-${refreshKey}`} />} />

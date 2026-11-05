@@ -129,7 +129,7 @@ export default function RemoteSeoPage() {
                   { name: 'Google Business Profile', role: 'Local & Map Signals' },
                   { name: 'Google Looker Studio', role: 'Live Dashboard Reports' },
                 ].map((tool, idx) => (
-                  <div key={idx} style={{ background: 'rgba(14, 21, 52, 0.6)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
+                  <div key={idx} style={{ background: 'var(--bg2)', padding: '16px', borderRadius: '12px', border: '1px solid var(--border2)' }}>
                     <div style={{ color: '#FF6B00', fontWeight: 700, fontSize: '0.95rem' }}>{tool.name}</div>
                     <div style={{ color: 'var(--text3)', fontSize: '0.8rem', marginTop: '2px' }}>{tool.role}</div>
                   </div>

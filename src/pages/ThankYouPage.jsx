@@ -24,7 +24,7 @@ export default function ThankYouPage() {
           className="glass-panel"
           style={{
             padding: '50px 36px',
-            background: 'linear-gradient(135deg, rgba(14, 21, 52, 0.85), rgba(8, 12, 32, 0.95))',
+            background: 'var(--card)',
             border: '1px solid rgba(255, 136, 0, 0.35)',
             borderRadius: '24px',
             boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 107, 0, 0.15)',

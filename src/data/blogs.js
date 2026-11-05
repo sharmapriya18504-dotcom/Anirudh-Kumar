@@ -24,9 +24,9 @@ export const BLOGS = [
       <h3>4. Local NAP Citations Across Indian Directories</h3>
       <p>Your Name, Address, and Phone Number (NAP) must be identical across Justdial, IndiaMART, Sulekha, and local UP business directories. Inconsistent phone numbers or slight spelling variations confuse Google's entity engine.</p>
 
-      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 16px;">
+      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 16px;">
         <h4>Want me to audit your Lucknow Google Maps ranking?</h4>
-        <p>I will review your Google Business Profile and identify the exact citation and category gaps holding you back. Request my <a href="/seo-expert-lucknow" style="color: #00E5FF; font-weight: 700;">Free Lucknow SEO Audit</a> today.</p>
+        <p>I will review your Google Business Profile and identify the exact citation and category gaps holding you back. Request my <a href="/seo-expert-lucknow" style="color: #FF6B00; font-weight: 700;">Free Lucknow SEO Audit</a> today.</p>
       </div>
     `,
     author: 'Anirudh Kumar',
@@ -54,9 +54,9 @@ export const BLOGS = [
       <h3>3. Weekly Google Updates &amp; Posts</h3>
       <p>Treat your GBP like a mini social media feed. Posting weekly offers, case highlights, and customer tips signals to Google that your business is active and open.</p>
 
-      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 16px;">
+      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 16px;">
         <h4>Need help optimizing your profile?</h4>
-        <p>I personally help small businesses set up and optimize their Google Business Profile. <a href="/contact" style="color: #00E5FF; font-weight: 700;">Contact me directly</a> or message on WhatsApp.</p>
+        <p>I personally help small businesses set up and optimize their Google Business Profile. <a href="/contact" style="color: #FF6B00; font-weight: 700;">Contact me directly</a> or message on WhatsApp.</p>
       </div>
     `,
     author: 'Anirudh Kumar',
@@ -85,9 +85,9 @@ export const BLOGS = [
       <h3>2. Why Cheap ₹3,000 - ₹5,000 SEO Is Dangerous</h3>
       <p>Low-cost packages often rely on automated link spamming software from foreign forums. Within 3 to 6 months, Google's SpamBrain algorithm flags the domain, resulting in complete de-indexing that costs tens of thousands of rupees to recover from.</p>
 
-      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 16px;">
+      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 16px;">
         <h4>View My Transparent Packages</h4>
-        <p>I operate on clear month-to-month retainers with no lock-in contracts. Check my full <a href="/pricing" style="color: #00E5FF; font-weight: 700;">Pricing Packages</a> or request a custom proposal.</p>
+        <p>I operate on clear month-to-month retainers with no lock-in contracts. Check my full <a href="/pricing" style="color: #FF6B00; font-weight: 700;">Pricing Packages</a> or request a custom proposal.</p>
       </div>
     `,
     author: 'Anirudh Kumar',
@@ -115,9 +115,9 @@ export const BLOGS = [
       <h3>3. Patient Privacy and YMYL Compliance</h3>
       <p>Healthcare falls under Google's strict "Your Money or Your Life" (YMYL) guidelines. Every medical article must feature an author bio with medical qualifications, source citations, and clear clinic contact details.</p>
 
-      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 16px;">
+      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 16px;">
         <h4>Run a Clinic or Medical Practice?</h4>
-        <p>I help healthcare providers rank #1 on Google Maps. <a href="/contact" style="color: #00E5FF; font-weight: 700;">Get a free patient acquisition audit</a> for your clinic.</p>
+        <p>I help healthcare providers rank #1 on Google Maps. <a href="/contact" style="color: #FF6B00; font-weight: 700;">Get a free patient acquisition audit</a> for your clinic.</p>
       </div>
     `,
     author: 'Anirudh Kumar',
@@ -142,9 +142,9 @@ export const BLOGS = [
       <h3>2. Video Testimonials and Proof of Results</h3>
       <p>Embed genuine video interviews and topper testimonials with schema markup. Authentic student stories reduce parent hesitation and dramatically increase direct phone enquiries.</p>
 
-      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 16px;">
+      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 16px;">
         <h4>Scale Your Institute's Admissions</h4>
-        <p>I combine Local SEO with hyper-targeted Google &amp; Meta Ads for coaching institutes. <a href="/contact" style="color: #00E5FF; font-weight: 700;">Request an admissions growth plan</a>.</p>
+        <p>I combine Local SEO with hyper-targeted Google &amp; Meta Ads for coaching institutes. <a href="/contact" style="color: #FF6B00; font-weight: 700;">Request an admissions growth plan</a>.</p>
       </div>
     `,
     author: 'Anirudh Kumar',
@@ -169,9 +169,9 @@ export const BLOGS = [
       <h3>Meta Ads: Creating Visual Demand and Local Brand Recall</h3>
       <p>Meta Ads (Instagram and Facebook) excel for visual, lifestyle, and aspirational purchases: fashion retail, luxury restaurants, real estate walkthroughs, and salon treatments. You target users by exact neighborhood radius and specific interest groups.</p>
 
-      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 16px;">
+      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 16px;">
         <h4>Need Paid Lead Generation?</h4>
-        <p>I run campaigns focused on leads and sales, not vanity clicks. Check out my <a href="/services" style="color: #00E5FF; font-weight: 700;">Google &amp; Meta Ads Services</a>.</p>
+        <p>I run campaigns focused on leads and sales, not vanity clicks. Check out my <a href="/services" style="color: #FF6B00; font-weight: 700;">Google &amp; Meta Ads Services</a>.</p>
       </div>
     `,
     author: 'Anirudh Kumar',
@@ -199,9 +199,9 @@ export const BLOGS = [
       <h3>3. Weak or Missing Social Proof</h3>
       <p>Indian consumers want to know who is behind the business. Showcase real team photos, verified Google review links, and clear physical office locations.</p>
 
-      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 16px;">
+      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 16px;">
         <h4>Want a Fast, Conversion-Built Website?</h4>
-        <p>I build mobile-first websites with built-in SEO and high-converting CTA structures. <a href="/services" style="color: #00E5FF; font-weight: 700;">Explore Website Development</a>.</p>
+        <p>I build mobile-first websites with built-in SEO and high-converting CTA structures. <a href="/services" style="color: #FF6B00; font-weight: 700;">Explore Website Development</a>.</p>
       </div>
     `,
     author: 'Anirudh Kumar',
@@ -226,9 +226,9 @@ export const BLOGS = [
       <h3>2. B2B Structured Data &amp; Schema</h3>
       <p>Implement Product and ItemList structured data so Google displays your manufacturing capacities, minimum order quantities (MOQ), and catalog listings directly in rich search results.</p>
 
-      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 16px;">
+      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 16px;">
         <h4>Kanpur Business Owner?</h4>
-        <p>I work on-site and remotely with Kanpur manufacturing firms. Read my dedicated guide on <a href="/seo-expert-kanpur" style="color: #00E5FF; font-weight: 700;">SEO Services in Kanpur</a>.</p>
+        <p>I work on-site and remotely with Kanpur manufacturing firms. Read my dedicated guide on <a href="/seo-expert-kanpur" style="color: #FF6B00; font-weight: 700;">SEO Services in Kanpur</a>.</p>
       </div>
     `,
     author: 'Anirudh Kumar',
@@ -254,9 +254,9 @@ export const BLOGS = [
         <li><strong>"Do you lock clients into long-term contracts?"</strong> Confident specialists work on a month-to-month basis because their performance keeps clients retained.</li>
       </ul>
 
-      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 16px;">
+      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 16px;">
         <h4>Ready to Work With Anirudh Directly?</h4>
-        <p>You speak directly with me, get clear monthly reports, and enjoy month-to-month flexibility. <a href="/about" style="color: #00E5FF; font-weight: 700;">Learn more about my background</a>.</p>
+        <p>You speak directly with me, get clear monthly reports, and enjoy month-to-month flexibility. <a href="/about" style="color: #FF6B00; font-weight: 700;">Learn more about my background</a>.</p>
       </div>
     `,
     author: 'Anirudh Kumar',
@@ -284,9 +284,9 @@ export const BLOGS = [
       <h3>Months 4-6: Page 1 Domination &amp; Inbound Enquiry Growth</h3>
       <p>High-intent commercial keywords move onto Page 1. Enquiries, phone calls, and direction requests compound predictably month-over-month.</p>
 
-      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 16px;">
+      <div class="blog-cta-box glass-panel" style="padding: 24px; margin: 30px 0; border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 16px;">
         <h4>Start Your 90-Day Ranking Roadmap</h4>
-        <p>I will give you an honest timeline estimate after reviewing your current website health. Request your <a href="/contact" style="color: #00E5FF; font-weight: 700;">Free SEO Audit</a> today.</p>
+        <p>I will give you an honest timeline estimate after reviewing your current website health. Request your <a href="/contact" style="color: #FF6B00; font-weight: 700;">Free SEO Audit</a> today.</p>
       </div>
     `,
     author: 'Anirudh Kumar',

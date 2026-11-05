@@ -6166,10 +6166,14 @@ input:focus, textarea:focus, select:focus {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #D6D6E8;
-  line-height: 1.4;
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.45;
+}
+.service-deliv-item span:last-child {
+  color: var(--text);
+  font-weight: 500;
 }
 
 .deliv-check {
@@ -6396,7 +6400,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .chart-bar-fill.active {
-  background: linear-gradient(to top, #FF6B00, #33FFB0);
+  background: linear-gradient(to top, #FF6B00, #FFA000);
   box-shadow: 0 0 12px rgba(255, 107, 0, 0.35);
 }
 
@@ -6628,9 +6632,9 @@ input:focus, textarea:focus, select:focus {
 }
 
 [data-theme="light"] .portfolio-verified-badge {
-  background: #E8F8F0 !important;
-  color: #FF6B00 !important;
-  border-color: #B8E8D0 !important;
+  background: #FFF2E8 !important;
+  color: #D95300 !important;
+  border-color: rgba(255, 107, 0, 0.25) !important;
 }
 
 [data-theme="light"] .portfolio-card h3 {
@@ -6696,8 +6700,8 @@ input:focus, textarea:focus, select:focus {
 }
 
 [data-theme="light"] .portfolio-stat-box {
-  background: #EAF9F1 !important;
-  border: 1px solid #BFEAD5 !important;
+  background: #FFF5EE !important;
+  border: 1px solid rgba(255, 107, 0, 0.22) !important;
 }
 
 [data-theme="light"] .stat-box-val {
@@ -6990,4 +6994,182 @@ input:focus, textarea:focus, select:focus {
   background: rgba(255, 255, 255, 0.95) !important;
   color: #0E121B !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* 3D Hero Globe Responsive Container (Three.js Optimization) */
+.hero-globe-container {
+  max-width: 560px;
+  width: 100%;
+  height: 520px;
+}
+
+@media (max-width: 992px) {
+  .hero-globe-container {
+    height: 440px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-globe-container {
+    height: 360px !important;
+  }
+  .hero-glass-card-2 {
+    display: none !important;
+  }
+  .hero-glass-card-1 {
+    top: -5px !important;
+    left: 0% !important;
+    transform: scale(0.82) !important;
+    transform-origin: top left !important;
+  }
+  .hero-glass-card-3 {
+    bottom: -10px !important;
+    top: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) scale(0.82) !important;
+    width: max-content !important;
+  }
+}
+
+
+/* ========================================================
+   CRISP DELIVERABLES & MOBILE MENU FIXES (LIGHT & DARK)
+======================================================== */
+[data-theme="light"] .service-deliv-item,
+[data-theme="light"] .service-deliv-item span,
+[data-theme="light"] .service-deliv-item span:last-child {
+  color: #0E121B !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="light"] .service-idx-num {
+  color: rgba(0, 0, 0, 0.22) !important;
+}
+
+/* FAQ Accordion high-contrast overrides */
+.faq-q {
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+.faq-a {
+  color: var(--text2);
+}
+[data-theme="light"] .faq-item {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+}
+[data-theme="light"] .faq-item.open {
+  background: #FFFFFF !important;
+  border-color: rgba(255, 107, 0, 0.45) !important;
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.08) !important;
+}
+[data-theme="light"] .faq-q {
+  color: #0E121B !important;
+}
+[data-theme="light"] .faq-item.open .faq-q {
+  color: #D95300 !important;
+}
+[data-theme="light"] .faq-a {
+  color: #343745 !important;
+  border-top-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Mobile Menu Comprehensive Responsive Drawer */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000000 !important;
+  z-index: 10005;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 85px 24px 50px;
+}
+.mobile-menu.open {
+  display: flex !important;
+}
+.mobile-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid var(--border2) !important;
+  color: #FFFFFF !important;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10006;
+}
+.mobile-close-btn:hover {
+  background: var(--accent) !important;
+  color: #FFFFFF !important;
+  transform: rotate(90deg);
+}
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.mobile-menu a {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.2s ease;
+  text-align: center;
+  display: block;
+}
+.mobile-menu a:hover {
+  background: rgba(255, 107, 0, 0.15) !important;
+  border-color: rgba(255, 107, 0, 0.45) !important;
+  color: var(--accent) !important;
+}
+.mobile-menu a.mobile-cta {
+  background: linear-gradient(135deg, #FF6B00 0%, #FF8800 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  font-weight: 800 !important;
+  margin-top: 8px;
+  padding: 14px 20px;
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.35);
+}
+[data-theme="light"] .mobile-menu {
+  background: #FFFFFF !important;
+}
+[data-theme="light"] .mobile-close-btn {
+  background: #F1F3F7 !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #08080C !important;
+}
+[data-theme="light"] .mobile-menu a {
+  background: #F8F9FE !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  color: #08080C !important;
+}
+[data-theme="light"] .mobile-menu a:hover {
+  background: #FFF2E8 !important;
+  border-color: rgba(255, 107, 0, 0.35) !important;
+  color: #D95300 !important;
+}
+[data-theme="light"] .mobile-menu a.mobile-cta {
+  background: linear-gradient(135deg, #FF6B00 0%, #FF8800 100%) !important;
+  color: #FFFFFF !important;
 }

@@ -225,8 +225,8 @@ export default function BlogPage() {
                       height: '42px',
                       borderRadius: '10px',
                       border: currentPage === p ? '1px solid #FF6B00' : '1px solid rgba(255, 107, 0, 0.25)',
-                      background: currentPage === p ? '#FF8800' : 'rgba(14, 21, 52, 0.6)',
-                      color: '#fff',
+                      background: currentPage === p ? '#FF6B00' : 'var(--bg2)',
+                      color: currentPage === p ? '#FFFFFF' : 'var(--text)',
                       fontWeight: 700,
                       cursor: 'pointer',
                     }}

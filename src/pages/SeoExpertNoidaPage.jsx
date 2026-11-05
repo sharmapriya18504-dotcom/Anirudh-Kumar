@@ -143,15 +143,15 @@ export default function SeoExpertNoidaPage() {
                 I offer flexible collaboration formats to fit your stage and bandwidth:
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
-                <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
+                <div style={{ padding: '14px', background: 'var(--bg2)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                   <div style={{ fontWeight: 700, color: 'var(--text)' }}>1. Monthly Retainer</div>
                   <div style={{ color: 'var(--text2)', fontSize: '0.86rem' }}>Hands-on execution, monthly roadmaps, and continuous ranking improvements.</div>
                 </div>
-                <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
+                <div style={{ padding: '14px', background: 'var(--bg2)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                   <div style={{ fontWeight: 700, color: 'var(--text)' }}>2. On-Site &amp; Hybrid Consulting</div>
                   <div style={{ color: 'var(--text2)', fontSize: '0.86rem' }}>Available for on-site working sessions in Noida to guide your team directly.</div>
                 </div>
-                <div style={{ padding: '14px', background: 'rgba(5, 8, 20, 0.7)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
+                <div style={{ padding: '14px', background: 'var(--bg2)', borderRadius: '10px', border: '1px solid rgba(255, 107, 0, 0.2)' }}>
                   <div style={{ fontWeight: 700, color: 'var(--text)' }}>3. One-Time Technical Audits</div>
                   <div style={{ color: 'var(--text2)', fontSize: '0.86rem' }}>Deep-dive crawl and architecture audit with a prioritized developer checklist.</div>
                 </div>

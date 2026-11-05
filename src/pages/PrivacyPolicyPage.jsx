@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
             <p>
               If you have any questions regarding this privacy policy or your stored information, you can reach out directly:
             </p>
-            <div style={{ background: 'rgba(5, 8, 20, 0.6)', padding: '16px', borderRadius: '10px', marginTop: '12px' }}>
+            <div style={{ background: 'var(--bg2)', padding: '16px', borderRadius: '10px', marginTop: '12px', border: '1px solid var(--border2)' }}>
               <div>Anirudh Kumar • Freelance SEO Expert</div>
               <div>Gomti Nagar, Lucknow, Uttar Pradesh, India</div>
               <div>Email: <a href="mailto:anirudhkumarseo@gmail.com" style={{ color: '#FF6B00' }}>anirudhkumarseo@gmail.com</a></div>

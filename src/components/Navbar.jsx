@@ -148,6 +148,16 @@ export default function Navbar() {
             <li>
               <a
                 href="/case-studies"
+                className={isActive('/portfolio') ? 'active-nav-link' : ''}
+                onClick={(e) => handleNavClick(e, '/case-studies')}
+              >
+                Portfolio
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/case-studies"
                 className={isActive('/case-studies') ? 'active-nav-link' : ''}
                 onClick={(e) => handleNavClick(e, '/case-studies')}
               >
@@ -279,6 +289,7 @@ export default function Navbar() {
           <a href="/seo-expert-kanpur" onClick={(e) => handleNavClick(e, '/seo-expert-kanpur')}>📍 Kanpur SEO (On-Site)</a>
           <a href="/seo-expert-noida" onClick={(e) => handleNavClick(e, '/seo-expert-noida')}>📍 Noida SEO (On-Site / Hybrid)</a>
           <a href="/remote-seo-services" onClick={(e) => handleNavClick(e, '/remote-seo-services')}>🌐 Remote SEO (Pan-India)</a>
+          <a href="/case-studies" onClick={(e) => handleNavClick(e, '/case-studies')}>Portfolio</a>
           <a href="/case-studies" onClick={(e) => handleNavClick(e, '/case-studies')}>Case Studies</a>
           <a href="/pricing" onClick={(e) => handleNavClick(e, '/pricing')}>Pricing</a>
           <a href="/blog" onClick={(e) => handleNavClick(e, '/blog')}>Blog</a>

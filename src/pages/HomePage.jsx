@@ -69,15 +69,15 @@ export default function HomePage() {
             <div className="hero-content">
               <div className="hero-eyebrow">
                 <div className="hero-dot"></div>
-                <span className="tag">📍 Lucknow, Kanpur &amp; Noida • Remote Pan-India</span>
+                <span className="tag">SEO EXPERT | DIGITAL MARKETER</span>
               </div>
               <h1 className="hero-h1">
-                <span className="line1">SEO EXPERT &amp; DIGITAL MARKETER</span>
-                <span className="line2 gradient-text">FOR GROWING BUSINESSES</span>
-                <span className="line3">
-                  Hi, I'm <strong style={{ color: 'var(--text)' }}>Anirudh Kumar</strong>. I help businesses get found on <span style={{ color: 'var(--accent)', fontWeight: 700 }}>Google</span>, <span style={{ color: 'var(--accent)', fontWeight: 700 }}>Maps</span> and social media, and turn that visibility into real <span style={{ color: 'var(--accent)', fontWeight: 700 }}>enquiries and sales</span>. I work remotely across India and on-site in Lucknow, Kanpur and Noida.
-                </span>
+                <span className="line1">SEO Expert &amp; Digital Marketer for</span>
+                <span className="line2 gradient-text">Growing Businesses</span>
               </h1>
+              <p className="hero-desc" style={{ fontSize: '1.05rem', color: 'var(--text2)', lineHeight: 1.7, margin: '16px 0 28px', maxWidth: '580px' }}>
+                Hi, I'm <strong style={{ color: 'var(--text)' }}>Anirudh Kumar</strong>. I help businesses get found on <span style={{ color: 'var(--accent)', fontWeight: 700 }}>Google</span>, <span style={{ color: 'var(--accent)', fontWeight: 700 }}>Maps</span> and social media, and turn that visibility into real <span style={{ color: 'var(--accent)', fontWeight: 700 }}>enquiries and sales</span>. I work remotely across India and on-site in Lucknow, Kanpur and Noida.
+              </p>
               <div className="hero-btns">
                 <button
                   type="button"
@@ -99,24 +99,24 @@ export default function HomePage() {
                 </a>
               </div>
 
-              {/* Direct Access Note */}
-              <div style={{ marginTop: '14px', fontSize: '0.82rem', color: 'var(--text2)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ color: '#FF6B00', fontWeight: 800 }}>✓</span>
-                <span>You work directly with Anirudh. Month-to-month, zero lock-in contracts.</span>
+              {/* Verified Trust Line */}
+              <div className="hero-trust-line" style={{ marginTop: '18px', fontSize: '0.86rem', color: 'var(--text2)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ color: 'var(--accent)', fontWeight: 900 }}>✓</span>
+                <span>You work directly with me. No account managers, no interns, no lock-in contract.</span>
               </div>
 
               <div className="hero-stats">
                 <div className="stat-item">
-                  <div className="stat-num" data-target="200">200</div>
-                  <div className="stat-label">+ Clients Scaled</div>
+                  <div className="stat-num">200+</div>
+                  <div className="stat-label">Clients Scaled</div>
                 </div>
                 <div className="stat-item">
-                  <div className="stat-num" data-target="5">5</div>
-                  <div className="stat-label">+ Years Experience</div>
+                  <div className="stat-num">5+</div>
+                  <div className="stat-label">Years Experience</div>
                 </div>
                 <div className="stat-item">
-                  <div className="stat-num" data-target="87">4.9</div>
-                  <div className="stat-label">★ Google Rating</div>
+                  <div className="stat-num">4.9★</div>
+                  <div className="stat-label">Client Rating</div>
                 </div>
               </div>
             </div>
