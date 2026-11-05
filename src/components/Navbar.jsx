@@ -87,10 +87,10 @@ export default function Navbar() {
               ></span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span className="nav-logo-text" style={{ fontSize: '1.25rem', letterSpacing: '1px', color: 'var(--text)', lineHeight: 1 }}>
+              <span className="nav-logo-text">
                 ANIRUDH KUMAR
               </span>
-              <span style={{ fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.5px', fontWeight: 700, marginTop: '2px' }}>
+              <span className="nav-logo-sub">
                 SEO EXPERT &amp; DIGITAL MARKETER
               </span>
             </div>

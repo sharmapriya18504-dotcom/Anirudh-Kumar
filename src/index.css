@@ -332,10 +332,33 @@
     }
 
     .nav-logo {
-      font-family: var(--ff-d);
+      font-family: 'Bebas Neue', var(--ff-d), sans-serif;
       font-size: 1.8rem;
       letter-spacing: 0.05em;
       color: var(--text);
+    }
+
+    .nav-logo-text {
+      font-family: 'Bebas Neue', var(--ff-d), sans-serif !important;
+      font-size: 1.68rem !important;
+      letter-spacing: 1.6px !important;
+      line-height: 1 !important;
+      font-weight: 400 !important;
+      color: var(--text) !important;
+      text-transform: uppercase !important;
+      display: block;
+    }
+
+    .nav-logo-sub {
+      font-family: var(--ff) !important;
+      font-size: 0.63rem !important;
+      color: var(--accent) !important;
+      letter-spacing: 0.8px !important;
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      margin-top: 2px !important;
+      display: block;
+      line-height: 1.1;
     }
 
     .nav-links {
@@ -3088,10 +3111,33 @@
     }
 
     .nav-logo {
-      font-family: var(--ff-d);
+      font-family: 'Bebas Neue', var(--ff-d), sans-serif;
       font-size: 1.8rem;
       letter-spacing: 0.05em;
       color: var(--text);
+    }
+
+    .nav-logo-text {
+      font-family: 'Bebas Neue', var(--ff-d), sans-serif !important;
+      font-size: 1.68rem !important;
+      letter-spacing: 1.6px !important;
+      line-height: 1 !important;
+      font-weight: 400 !important;
+      color: var(--text) !important;
+      text-transform: uppercase !important;
+      display: block;
+    }
+
+    .nav-logo-sub {
+      font-family: var(--ff) !important;
+      font-size: 0.63rem !important;
+      color: var(--accent) !important;
+      letter-spacing: 0.8px !important;
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      margin-top: 2px !important;
+      display: block;
+      line-height: 1.1;
     }
 
     .nav-links {
@@ -8399,7 +8445,7 @@ html, body, #root, .page-wrapper {
     max-width: 290px !important;
   }
   .nav-logo-text {
-    font-size: 1.05rem !important;
+    font-size: 1.35rem !important;
   }
 }
 

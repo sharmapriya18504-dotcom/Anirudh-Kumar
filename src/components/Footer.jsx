@@ -19,7 +19,6 @@ export default function Footer() {
               onClick={(e) => handleLinkClick(e, '/')}
               className="nav-logo"
               style={{
-                fontSize: '1.8rem',
                 marginBottom: '16px',
                 color: 'var(--text)',
                 display: 'inline-flex',
@@ -34,7 +33,14 @@ export default function Footer() {
                 className="nav-portrait"
                 style={{ width: '48px', height: '48px', borderRadius: '50%', border: '2px solid #FF6B00' }}
               />
-              ANIRUDH KUMAR
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <span className="nav-logo-text" style={{ fontSize: '1.75rem' }}>
+                  ANIRUDH KUMAR
+                </span>
+                <span className="nav-logo-sub">
+                  SEO EXPERT &amp; DIGITAL MARKETER
+                </span>
+              </div>
             </a>
             <p style={{ color: 'var(--text2)', fontSize: '0.92rem', lineHeight: 1.6, maxWidth: '360px' }}>
               Freelance SEO Expert &amp; Digital Marketer. Remote across India. On-site in Lucknow, Kanpur and Noida.
